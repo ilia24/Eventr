@@ -10,3 +10,5 @@ venue style (id'd)
 
 (comments)
 (RSVP)
+
+Gem for uploading: Paperclip
