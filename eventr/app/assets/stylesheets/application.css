@@ -14,6 +14,25 @@
  *= require_self
  */
 
+html {
+  margin: 0;
+}
+
+body {
+  margin: 0;
+}
+
+nav {
+  margin-top: 50px;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
 .logo {
   width: 157px;
+}
+
+.nav_links {
+  list-style-type: none;
+
 }
