@@ -1,0 +1,36 @@
+<%= form_for event do |f| %>
+<p>
+<%= f.label :name %>
+<%= f.text_field :name %>
+</p>
+
+<p>
+<%= f.label :description %>
+<%= f.text_field :description %>
+</p>
+
+<p>
+<%= f.label :date %>
+<%= f.date_field :date %>
+</p>
+
+<p>
+<%= f.label :image %>
+<%= f.text_field :picurl %>
+</p>
+
+<p>
+<%= f.label :location %>
+<%= f.text_field :location %>
+</p>
+
+<p>
+<%= f.label :price %>
+<%= f.number_field :price %>
+</p>
+
+<p>
+  <%= f.submit %>
+</p>
+
+<%end%>

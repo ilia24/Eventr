@@ -1,8 +1,13 @@
 <div class= "events">
+<img src="<%="#{event.picurl}"%>">
+<br>
 <%= link_to "#{event.name}", event %>
-<%= event.description %>
-<%= event.picurl %>
-<%= event.date %>
-<%= event.location %>
-<%= event.price %>
+<br>
+Date: <%= event.date %>
+<br>
+Location: <%= event.location %>
+<br>
+Description:<%= event.description %>
+<br>
+Price: <%= event.price %>
 </div>
