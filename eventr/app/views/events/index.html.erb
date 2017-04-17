@@ -10,10 +10,11 @@
   </div>
 </div>
 
-<main>
+<main class="index_main">
   <h2>happening near you</h2>
 </main>
 
+
 <% @events.each do |current_event| %>
-  <%= render 'single_event', event: current_event %>
+    <%= render 'single_event', event: current_event %>
 <% end %>
