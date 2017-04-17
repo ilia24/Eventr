@@ -8,6 +8,20 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
+  <nav>
+
+    <div class="logo">
+        <%= image_tag ("eventr-logo.svg")%>
+    </div>
+
+    <ul class="nav_links">
+      <li><a href="#">HOME</a></li>
+      <li><a href="#">BROWSE</a></li>
+      <li><a href="#">LOG IN</a></li>
+    </ul>
+
+  </nav>
+
   <body>
     <%= yield %>
   </body>
