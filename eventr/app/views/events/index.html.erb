@@ -4,9 +4,15 @@
   <%= link_to 'New Event', new_event_path %>
 </p> -->
 
+<div class="header_slider">
+  <div id="header_image_container">
+    <br>
+  </div>
+</div>
 
-
-
+<main>
+  <h2>happening near you</h2>
+</main>
 
 <% @events.each do |current_event| %>
   <%= render 'single_event', event: current_event %>
