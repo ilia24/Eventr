@@ -4,6 +4,14 @@
   <%= link_to 'New Event', new_event_path %>
 </p>
 
+<nav>
+  <div class="logo">
+      <%= image_tag ("eventr-logo.svg")%>
+  </div>
+</nav>
+
+
+
 <% @events.each do |current_event| %>
   <%= render 'single_event', event: current_event %>
 <% end %>
