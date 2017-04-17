@@ -15,6 +15,7 @@
  */
 
 html {
+  font-family: "Gotham", "Helvetica", sans-serif;
   margin: 0;
 }
 
@@ -30,9 +31,11 @@ nav {
 
 .logo {
   width: 157px;
+  display: inline-block;
 }
 
 .nav_links {
+  display: inline-block;
   list-style-type: none;
-
+  text-align: right;
 }
