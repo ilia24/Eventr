@@ -16,6 +16,7 @@
 
 html {
   font-family: "Gotham", "Helvetica", sans-serif;
+  color: #262626;
   margin: 0;
 }
 
@@ -105,7 +106,7 @@ hr {
 .event_container {
   border: solid 1px #ababab;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
-  max-width: 300px;
+  max-width: 350px;
   overflow: hidden;
 }
 
@@ -162,4 +163,10 @@ hr {
   font-size: 16px;
   font-weight: 500;
   color: #7f7f7f;
+}
+
+.event_content p{
+  padding-top: 12px;
+  text-transform: uppercase;
+  font-size: 14px;
 }
