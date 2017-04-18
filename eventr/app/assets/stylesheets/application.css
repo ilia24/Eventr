@@ -21,6 +21,7 @@ html {
 
 body {
   margin: 0;
+  margin-bottom: 100px;
 }
 
 nav {
@@ -112,4 +113,39 @@ h2 {
 
 .event_content {
   padding: 24px;
+}
+
+.event_date {
+  display: inline-block;
+  text-align: center;
+  float: left;
+  padding-right: 30px;
+}
+
+.event_mon {
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.event_day {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.event_name_time_loc {
+  display: inline-block;
+}
+
+.event_name {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.event_time {
+  padding-top: 12px;
+}
+
+.event_location {
+  padding-top: 24px;
 }
