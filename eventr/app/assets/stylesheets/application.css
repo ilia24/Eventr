@@ -82,3 +82,16 @@ h2 {
 .index_main {
   margin-top: 70px;
 }
+
+#events_near_you {
+  display: flex;
+  max-width: 1200px;
+  /*margin: auto;*/
+  justify-content: space-between;
+  padding-left: 0;
+  list-style-type: none;
+}
+
+.event_container img{
+  max-width: 330px;
+}
