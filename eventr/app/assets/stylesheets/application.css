@@ -49,6 +49,14 @@ h2 {
   font-weight: 500;
 }
 
+hr {
+  position: relative;
+  left: -5%;
+  width: 110%;
+  border-color: #ebebeb;
+  margin-top: 24px;
+}
+
 .logo {
   width: 157px;
   display: inline-block;
@@ -140,12 +148,18 @@ h2 {
 .event_name {
   font-size: 20px;
   font-weight: 500;
+  text-decoration: none;
 }
 
 .event_time {
   padding-top: 12px;
+  font-size: 16px;
+  font-weight: 400;
 }
 
 .event_location {
   padding-top: 24px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #7f7f7f;
 }
