@@ -90,8 +90,26 @@ h2 {
   justify-content: space-between;
   padding-left: 0;
   list-style-type: none;
+
 }
 
-.event_container img{
-  max-width: 330px;
+.event_container {
+  border: solid 1px #ababab;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  overflow: hidden;
+}
+
+.event_img {
+  max-height: 184px;
+  overflow: hidden;
+
+}
+
+.event_img img{
+  width: 100%;
+}
+
+.event_content {
+  padding: 24px;
 }
