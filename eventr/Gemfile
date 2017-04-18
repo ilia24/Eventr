@@ -49,6 +49,7 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
 end
+
 #this gem is necessary for map and location functionality
 gem 'geocoder'
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
