@@ -17,6 +17,7 @@
 html {
   font-family: "Gotham", "Helvetica", sans-serif;
   color: #262626;
+  background-color: #f8f8f8;
   margin: 0;
 }
 
@@ -27,12 +28,16 @@ body {
 
 nav {
   font-size: 16px;
-  margin-top: 50px;
-  margin-left: 100px;
-  margin-right: 100px;
+  background-color: white;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  padding-left: 100px;
+  padding-right: 100px;
+  box-shadow: 0 3px 30px rgba(0, 0, 0, 0.05);
   display: flex;
   align-items: center;
   justify-content: space-between;
+
 }
 
 main {
