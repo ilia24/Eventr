@@ -95,9 +95,10 @@ hr {
 
 #events_near_you {
   display: flex;
-  max-width: 1200px;
   /*margin: auto;*/
-  justify-content: space-between;
+  justify-content: space-around;
+  flex-shrink: 1;
+  flex-wrap: wrap;
   padding-left: 0;
   list-style-type: none;
 
@@ -105,9 +106,21 @@ hr {
 
 .event_container {
   border: solid 1px #ababab;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
-  max-width: 350px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
+  min-width: 230px;
+  max-width: 400px;
   overflow: hidden;
+  margin-left: 6px;
+  margin-right: 6px;
+  margin-bottom: 50px;
+}
+
+.event_container:first-child{
+  margin-left: 0;
+}
+
+.event_container:last-child{
+  margin-right: 0;
 }
 
 .event_img {
@@ -165,8 +178,24 @@ hr {
   color: #7f7f7f;
 }
 
-.event_content p{
+.event_going{
+  display: flex;
+  align-items: center;
   padding-top: 12px;
+  justify-content: space-between;
+}
+
+.event_content p{
   text-transform: uppercase;
   font-size: 14px;
+}
+
+.button_reg {
+  background-color: #262626;
+  color: white;
+  padding: 10px;
+  padding-left: 25px;
+  padding-right: 25px;
+  text-align: center;
+  text-transform: uppercase;
 }
