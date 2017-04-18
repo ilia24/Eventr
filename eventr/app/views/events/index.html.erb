@@ -16,7 +16,7 @@
   <ul id="events_near_you">
     <% @events.each do |current_event| %>
     <li class="event_container">
-      <%= render 'single_event', event: current_event %>
+      <%= render 'index_event', event: current_event %>
     </li>
     <% end %>
   </ul>

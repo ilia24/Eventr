@@ -1,0 +1,46 @@
+<div class= "events">
+
+  <div class="event_img">
+    <img src="<%="#{event.picurl}"%>">
+  </div>
+
+  <div class="event_content">
+
+    <div class="event_date">
+      <div class="event_day">
+        <%=
+        d = event.date
+        d.mday
+        %>
+      </div>
+      <div class="event_mon">
+        <%=
+        d = event.date
+          I18n.t("date.abbr_month_names")[d.month]
+        %>
+      </div>
+    </div>
+
+    <div class="event_name_time_loc">
+      <div class="event_name">
+        <%= link_to "#{event.name}", event %>
+      </div>
+      <div class="event_time">
+        <%=
+        d = event.time
+        d.strftime('%-I:%M %p')
+        %>
+      </div>
+      <div class="event_location">
+        <%= event.location %>
+      </div>
+    </div>
+    <hr>
+    <div class="event_going">
+      <p><strong>100</strong> eventrs going</p>
+      <div class="button_reg">
+        going
+      </div>
+    </div>
+  </div>
+</div>
