@@ -44,6 +44,8 @@ a {
 
 h2 {
   font-size: 24px;
+  text-transform: uppercase;
+  font-weight: 500;
 }
 
 .logo {
@@ -75,4 +77,21 @@ h2 {
   background-image: url("https://static.pexels.com/photos/196652/pexels-photo-196652.jpeg");
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+.index_main {
+  margin-top: 70px;
+}
+
+#events_near_you {
+  display: flex;
+  max-width: 1200px;
+  /*margin: auto;*/
+  justify-content: space-between;
+  padding-left: 0;
+  list-style-type: none;
+}
+
+.event_container img{
+  max-width: 330px;
 }
