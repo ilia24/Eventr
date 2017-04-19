@@ -49,6 +49,23 @@ a {
   text-decoration: none;
 }
 
+label {
+  font-size: 14px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #7f7f7f;
+
+}
+
+input[type=text] {
+  margin-top: 12px;
+  font-size: 16px;
+  margin-bottom: 6px;
+  border: 0;
+  background: #f2f2f2;
+}
+
 h2 {
   font-size: 24px;
   text-transform: uppercase;
@@ -212,4 +229,27 @@ hr {
 
 .link:hover {
   color: #7f7f7f;
+}
+
+.form_container {
+  margin-top: 80px;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+.new_event {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.input_field {
+  padding: 24px;
+  border: solid 1px #e0e0e0;
+  background-color: white;
+  margin-left: -1px;
+  margin-bottom: -1px;
+}
+
+.input_field p {
+  margin: 0;
 }

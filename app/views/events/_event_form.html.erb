@@ -1,52 +1,66 @@
-<%= form_for event do |f| %>
-<p>
-<%= f.label :name %>
-<%= f.text_field :name %>
-</p>
+<div class="form_container">
+  <%= form_for event do |f| %>
 
-<p>
-<%= f.label :description %>
-<%= f.text_field :description %>
-</p>
-
-<p>
-<%= f.label :date %>
-<%= f.date_field :date %>
-</p>
-
-<p>
-<%= f.label :image %>
-<%= f.text_field :picurl %>
-</p>
-
-<p>
-<%= f.label :location %>
-<%= f.text_field :location %>
-</p>
-
-<p>
-<%= f.label :price %>
-<%= f.number_field :price %>
-</p>
-
-<p>
-<%= f.label :time %>
-<%= f.time_field :time %>
-</p>
-
-<p>
-<%= f.label :venuestyle %>
-<%= f.text_field :venue_style %>
-</p>
-
-<p>
-<%= f.label :musicstyle %>
-<%= f.time_field :music_style %>
-</p>
-
+  <div class="input_field">
+    <p>
+    <%= f.label :name %>
+    <br><%= f.text_field :name %>
+    </p>
+  </div>
+  <div class="input_field">
+    <p>
+      <%= f.label :description %>
+      <br>
+      <%= f.text_field :description %>
+    </p>
+  </div>
+  <div class="input_field">
+    <p>
+    <%= f.label :date %>
+    <%= f.date_field :date %>
+    </p>
+  </div>
+  <div class="input_field">
+    <p>
+    <%= f.label :image %>
+    <%= f.text_field :picurl %>
+    </p>
+  </div>
+  <div class="input_field">
+    <p>
+    <%= f.label :location %>
+    <%= f.text_field :location %>
+    </p>
+  </div>
+  <div class="input_field">
+    <p>
+    <%= f.label :price %>
+    <%= f.number_field :price %>
+    </p>
+  </div>
+  <div class="input_field">
+    <p>
+    <%= f.label :time %>
+    <%= f.time_field :time %>
+    </p>
+  </div>
+  <div class="input_field">
+    <p>
+    <%= f.label :venuestyle %>
+    <%= f.text_field :venue_style %>
+    </p>
+  </div>
+  <div class="input_field">
+    <p>
+    <%= f.label :musicstyle %>
+    <%= f.time_field :music_style %>
+    </p>
+  </div>
 
 <p>
   <%= f.submit %>
 </p>
 
 <%end%>
+
+</div>
