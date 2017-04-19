@@ -1,4 +1,6 @@
 class Event < ApplicationRecord
+  validates :name, :description, :date, :location, presence: true
+  validates :price, numericality: {only_integer: true}
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   attr_accessor :avatar
