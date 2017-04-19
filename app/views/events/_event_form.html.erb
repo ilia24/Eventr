@@ -1,4 +1,6 @@
 <div class="form_container">
+  <h2> Create Public Event </h2>
+
   <%= form_for event do |f| %>
 
   <div id="input_name">
@@ -43,7 +45,7 @@
     </div>
 
   </div>
-  
+
   <div id="input_date">
     <p>
     <%= f.label :date %>
@@ -59,24 +61,18 @@
     <%= f.time_field :time %>
     </p>
   </div>
-  <div id="input_venuestyle">
+  <div id="input_eventstyle">
     <p>
     <%= f.label :venuestyle %>
     <br>
     <%= f.text_field :venue_style %>
     </p>
   </div>
-  <div id="input_musicstyle">
+  <div class="submit">
     <p>
-    <%= f.label :musicstyle %>
-    <br>
-    <%= f.time_field :music_style %>
+      <%= f.submit %>
     </p>
   </div>
-
-<p>
-  <%= f.submit %>
-</p>
 
 <%end%>
 
