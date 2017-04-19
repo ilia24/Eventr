@@ -1,58 +1,65 @@
 <div class="form_container">
   <%= form_for event do |f| %>
 
-  <div class="input_field">
+  <div id="input_name">
     <p>
     <%= f.label :name %>
     <br><%= f.text_field :name %>
     </p>
   </div>
-  <div class="input_field">
+  <div id="input_location">
+    <p>
+      <%= f.label :location %>
+      <br>
+      <%= f.text_field :location %>
+    </p>
+  </div>
+  <div id="input_description">
     <p>
       <%= f.label :description %>
       <br>
       <%= f.text_field :description %>
     </p>
   </div>
-  <div class="input_field">
+  <div id="input_date">
     <p>
     <%= f.label :date %>
+    <br>
     <%= f.date_field :date %>
     </p>
   </div>
-  <div class="input_field">
+  <div id="input_image">
     <p>
     <%= f.label :image %>
+    <br>
     <%= f.text_field :picurl %>
     </p>
   </div>
-  <div class="input_field">
-    <p>
-    <%= f.label :location %>
-    <%= f.text_field :location %>
-    </p>
-  </div>
-  <div class="input_field">
+  <div id="input_price">
     <p>
     <%= f.label :price %>
+    <br>
     <%= f.number_field :price %>
     </p>
   </div>
-  <div class="input_field">
+  <div id="input_time">
     <p>
     <%= f.label :time %>
+    <br>
     <%= f.time_field :time %>
     </p>
   </div>
-  <div class="input_field">
+  <div id="input_venuestyle">
     <p>
     <%= f.label :venuestyle %>
+    <br>
     <%= f.text_field :venue_style %>
     </p>
   </div>
-  <div class="input_field">
+  <div id="input_musicstyle">
     <p>
     <%= f.label :musicstyle %>
+    <br>
     <%= f.time_field :music_style %>
     </p>
   </div>

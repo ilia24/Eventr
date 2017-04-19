@@ -55,15 +55,37 @@ label {
   text-transform: uppercase;
   letter-spacing: 1px;
   color: #7f7f7f;
+}
 
+input:focus {
+  outline-width: 0;
 }
 
 input[type=text] {
+  margin-top: 8px;
+  font-size: 16px;
+  border: 0;
+}
+
+input[type=date] {
   margin-top: 12px;
   font-size: 16px;
   margin-bottom: 6px;
   border: 0;
-  background: #f2f2f2;
+}
+
+input[type=time] {
+  margin-top: 12px;
+  font-size: 16px;
+  margin-bottom: 6px;
+  border: 0;
+}
+
+input[type=number] {
+  margin-top: 12px;
+  font-size: 16px;
+  margin-bottom: 6px;
+  border: 0;
 }
 
 h2 {
@@ -242,12 +264,89 @@ hr {
   flex-wrap: wrap;
 }
 
-.input_field {
+.new_event p{
+  margin: 0;
+}
+
+#input_name {
   padding: 24px;
   border: solid 1px #e0e0e0;
   background-color: white;
   margin-left: -1px;
   margin-bottom: -1px;
+  flex-basis: 40%;
+  flex-grow: 1;
+}
+
+#input_location {
+  padding: 24px;
+  border: solid 1px #e0e0e0;
+  background-color: white;
+  margin-left: -1px;
+  margin-bottom: -1px;
+  flex-grow: 1;
+}
+
+#input_description {
+  padding: 24px;
+  border: solid 1px #e0e0e0;
+  background-color: white;
+  margin-left: -1px;
+  margin-bottom: -1px;
+  flex-basis: 100%;
+}
+
+#input_date {
+  padding: 24px;
+  border: solid 1px #e0e0e0;
+  background-color: white;
+  margin-left: -1px;
+  margin-bottom: -1px;
+  flex-basis: max-content;
+}
+
+#input_image {
+  padding: 24px;
+  border: solid 1px #e0e0e0;
+  background-color: white;
+  margin-left: -1px;
+  margin-bottom: -1px;
+  flex-basis: max-content;
+}
+
+#input_price {
+  padding: 24px;
+  border: solid 1px #e0e0e0;
+  background-color: white;
+  margin-left: -1px;
+  margin-bottom: -1px;
+  flex-basis: max-content;
+}
+#input_time {
+  padding: 24px;
+  border: solid 1px #e0e0e0;
+  background-color: white;
+  margin-left: -1px;
+  margin-bottom: -1px;
+  flex-basis: max-content;
+}
+
+#input_venuestyle{
+  padding: 24px;
+  border: solid 1px #e0e0e0;
+  background-color: white;
+  margin-left: -1px;
+  margin-bottom: -1px;
+  flex-basis: max-content;
+}
+
+#input_musicstyle{
+  padding: 24px;
+  border: solid 1px #e0e0e0;
+  background-color: white;
+  margin-left: -1px;
+  margin-bottom: -1px;
+  flex-basis: max-content;
 }
 
 .input_field p {
