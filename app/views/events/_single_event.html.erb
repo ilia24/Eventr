@@ -1,5 +1,11 @@
+<div class="events_wrapper">
+
 <div class= "events">
-<img src="<%="#{event.picurl}"%>">
+
+  <div class="event_header">
+    <img src="<%="#{event.picurl}"%>">
+
+  </div>
 <br>
 <%= link_to "#{event.name}", event %>
 <br>
@@ -16,4 +22,6 @@ Time: <%= event.time %>
 Venue Style: <%= event.venue_style %>
 <br>
 Music Style: <%= event.music_style %>
+</div>
+
 </div>
