@@ -7,34 +7,7 @@
     <br><%= f.text_field :name %>
     </p>
   </div>
-  <div id="input_location">
-    <p>
-      <%= f.label :location %>
-      <br>
-      <%= f.text_field :location %>
-    </p>
-  </div>
-  <div id="input_description">
-    <p>
-      <%= f.label :description %>
-      <br>
-      <%= f.text_field :description %>
-    </p>
-  </div>
-  <div id="input_date">
-    <p>
-    <%= f.label :date %>
-    <br>
-    <%= f.date_field :date %>
-    </p>
-  </div>
-  <div id="input_image">
-    <p>
-    <%= f.label :image %>
-    <br>
-    <%= f.text_field :picurl %>
-    </p>
-  </div>
+
   <div id="input_price">
     <p>
     <%= f.label :price %>
@@ -42,6 +15,43 @@
     <%= f.number_field :price %>
     </p>
   </div>
+
+  <div id="input_description">
+    <p>
+      <%= f.label :description %>
+      <br>
+      <%= f.text_field :description %>
+    </p>
+  </div>
+
+  <div id="input_image_location">
+
+    <div id="input_image">
+      <p>
+        <%= f.label :image %>
+        <br>
+        <%= f.text_field :picurl %>
+      </p>
+    </div>
+
+    <div id="input_location">
+      <p>
+        <%= f.label :location %>
+        <br>
+        <%= f.text_field :location %>
+      </p>
+    </div>
+
+  </div>
+  
+  <div id="input_date">
+    <p>
+    <%= f.label :date %>
+    <br>
+    <%= f.date_field :date %>
+    </p>
+  </div>
+
   <div id="input_time">
     <p>
     <%= f.label :time %>
