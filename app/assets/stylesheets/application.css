@@ -161,6 +161,7 @@ hr {
   margin-left: 6px;
   margin-right: 6px;
   margin-bottom: 50px;
+  flex-grow: 1;
 }
 
 .event_container:first-child{
@@ -172,12 +173,21 @@ hr {
 }
 
 .event_img {
-  max-height: 184px;
+  position: relative;
+  width: 400[];
+  height: 184px;
   overflow: hidden;
 }
 
 .event_img img{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: auto;
   width: 100%;
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
 }
 
 .event_content {

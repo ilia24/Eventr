@@ -1,19 +1,34 @@
-<div class= "events">
-<img src="<%="#{event.picurl}"%>">
-<br>
-<%= link_to "#{event.name}", event %>
-<br>
-Date: <%= event.date %>
-<br>
-Location: <%= event.location %>
-<br>
-Description:<%= event.description %>
-<br>
-Price: <%= event.price %>
-<br>
-Time: <%= event.time %>
-<br>
-Venue Style: <%= event.venue_style %>
-<br>
-Music Style: <%= event.music_style %>
+<div class="events_wrapper">
+
+  <div class= "events">
+
+    <div class="title_header">
+      <h2><%= link_to "#{event.name}", event %></h2>
+    </div>
+
+    <div class="event_header">
+      <img src="<%="#{event.picurl}"%>">
+    </div>
+
+    <div class="event_gen_info">
+      Date: <%= event.date %>
+      <br>
+      Location: <%= event.location %>
+    </div>
+
+    <br>
+
+    <br>
+    Description:<%= event.description %>
+    <br>
+    Price: <%= event.price %>
+    <br>
+    Time: <%= event.time %>
+    <br>
+    Venue Style: <%= event.venue_style %>
+    <br>
+    Music Style: <%= event.music_style %>
+
+  </div>
+
 </div>
