@@ -9,12 +9,15 @@
     <div class="event_header">
       <img src="<%="#{event.picurl}"%>">
     </div>
-    <br>
+
+    <div class="event_gen_info">
+      Date: <%= event.date %>
+      <br>
+      Location: <%= event.location %>
+    </div>
 
     <br>
-    Date: <%= event.date %>
-    <br>
-    Location: <%= event.location %>
+
     <br>
     Description:<%= event.description %>
     <br>

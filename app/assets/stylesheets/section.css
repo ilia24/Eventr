@@ -37,3 +37,11 @@
   -ms-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
 }
+
+.event_gen_info {
+  background-color: white;
+  padding: 24px;
+  margin-top: 24px;
+  border: solid 1px #dfdfdf;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08);
+}
