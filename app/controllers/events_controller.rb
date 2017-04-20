@@ -1,10 +1,15 @@
 class EventsController < ApplicationController
+  before_action :ensure_logged_in, only: [:create, :destroy, :edit, :update]
   def index
     @events = Event.all
   end
 
   def show
     @event = Event.find(params[:id])
+
+    if current_user
+      @review = @event.reviews.build
+    end
   end
 
   def new
