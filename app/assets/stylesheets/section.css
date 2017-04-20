@@ -39,6 +39,39 @@
 }
 
 .event_gen_info {
+  width: 70.5%
+  background-color: white;
+  padding: 24px;
+  border: solid 1px #dfdfdf;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08);
+}
+
+.event_info_wrapper {
+  display: flex;
+  margin-top: 24px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.map {
+  width: 28%;
+  background-color: white;
+  height: 150px;
+  padding: 24px;
+  border: solid 1px #dfdfdf;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08);
+}
+
+.event_gen_info{
+  height: 150px;
+  background-color: white;
+  height: 150px;
+  padding: 24px;
+  border: solid 1px #dfdfdf;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08);
+}
+
+.event_main_info{
   background-color: white;
   padding: 24px;
   margin-top: 24px;
