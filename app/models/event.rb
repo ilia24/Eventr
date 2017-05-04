@@ -1,4 +1,6 @@
 class Event < ApplicationRecord
+  belongs_to :host
+  has_many :groups
   validates :name, :description, :date, :location, presence: true
   validates :price, numericality: {only_integer: true}
 
