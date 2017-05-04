@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
 
+  get 'hosts/new'
+
+  get 'hosts/create'
+
+  get 'hosts/show'
+
+  get 'hosts/destroy'
+
   get 'groups/show'
 
   get 'groups/create'
