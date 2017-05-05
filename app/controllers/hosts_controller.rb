@@ -8,6 +8,7 @@ class HostsController < ApplicationController
 
     if @host.save
       flash[:notice] = 'Signed up succesfully!'
+      session[:host_id] = @host.id
       redirect_to events_url
     else
       render :new
