@@ -1,7 +1,7 @@
 <h1> <%= @event.name %> </h1>
 
 <p>
-  <%= link_to 'Back to all events', event_path %>
+  <%= link_to 'Back to all events', events_path %>
 </p>
 
 <%= render 'single_event', event: @event %>
