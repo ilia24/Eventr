@@ -24,11 +24,16 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(event_params)
 
-    if @event.save
-      redirect_to events_path
+        if @event.save
+          flash[:alert] = "The event #{@event.name} has been succesfully posted"
+          redirect_to events_path
+        else
+          flash[:alert] = "The event could not be created"
+          redirect_to new_event_path
+        end
+
     else
-      redirect_to new_event_path
-    end
+
   end
 
   def update
