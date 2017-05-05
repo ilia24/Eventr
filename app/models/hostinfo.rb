@@ -1,0 +1,2 @@
+class Hostinfo < ApplicationRecord
+end

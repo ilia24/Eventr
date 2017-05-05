@@ -1,0 +1,2 @@
+class Eventrinfo < ApplicationRecord
+end

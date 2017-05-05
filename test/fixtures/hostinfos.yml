@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  address: MyString
+  capacity: 1
+  website: MyString
+
+two:
+  address: MyString
+  capacity: 1
+  website: MyString
