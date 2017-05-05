@@ -1,2 +1,14 @@
-<h1>Eventrinfos#create</h1>
-<p>Find me in app/views/eventrinfos/create.html.erb</p>
+<h1>Step 1</h1>
+
+<%= form_for @eventrinfo do |f| %>
+
+<%= f.label :first_name %>
+<%= f.text_field :first_name %>
+
+<%= f.label :last_name %>
+<%= f.text_field :last_name %>
+
+<%= f.label :about_you %>
+<%= f.text_field :bio %>
+
+<%= f.submit 'Eventr' %>
