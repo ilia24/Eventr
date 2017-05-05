@@ -1,0 +1,2 @@
+module EventrinfosHelper
+end

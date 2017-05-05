@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170504212215) do
+ActiveRecord::Schema.define(version: 20170505192952) do
+
+  create_table "eventrinfos", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.text     "bio"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "events", force: :cascade do |t|
     t.string   "name"
@@ -23,7 +32,7 @@ ActiveRecord::Schema.define(version: 20170504212215) do
     t.datetime "updated_at",  null: false
     t.time     "time"
     t.string   "event_style"
-    t.integer  "host_id"
+    t.integer  "user_id"
   end
 
   create_table "groups", force: :cascade do |t|
@@ -40,12 +49,14 @@ ActiveRecord::Schema.define(version: 20170504212215) do
     t.index ["user_id", "group_id"], name: "index_groups_users_on_user_id_and_group_id"
   end
 
-  create_table "hosts", force: :cascade do |t|
+  create_table "hostinfos", force: :cascade do |t|
+    t.integer  "user_id"
     t.string   "name"
-    t.text     "description"
+    t.string   "address"
     t.integer  "capacity"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.string   "website"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -59,7 +70,6 @@ ActiveRecord::Schema.define(version: 20170504212215) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "name"
     t.string   "password_digest"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
