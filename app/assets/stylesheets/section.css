@@ -1,9 +1,4 @@
-
 /*INDEX*/
-
-.header_slider {
-  overflow: hidden;
-}
 
 #header_image_container {
   width: 70%;
@@ -17,6 +12,10 @@
 
 .index_main {
   margin-top: 70px;
+}
+
+.header_slider {
+  overflow: hidden;
 }
 
 #events_near_you {
@@ -69,7 +68,10 @@
 }
 
 .event_content {
-  padding: 24px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .event_date {
@@ -96,14 +98,14 @@
 }
 
 .event_name {
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 500;
   text-decoration: none;
 }
 
 .event_time {
-  padding-top: 12px;
-  font-size: 16px;
+  padding-top: 8px;
+  font-size: 14px;
   font-weight: 400;
 }
 
@@ -127,15 +129,9 @@
   height: 50%;
 }
 
+
 /*SHOW*/
 
-
-
-/*UPDATE*/
-
-
-
-/*NEW*/
 .events_wrapper {
   margin-left: 100px;
   margin-right: 100px;
