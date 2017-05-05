@@ -286,3 +286,28 @@ input[type=submit] {
 .submit {
   flex-basis: 100%;
 }
+
+/* HOME */
+
+.carousel_container {
+  height: 543px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.carousel {
+  height: 100%;
+  display: inline-flex;
+}
+
+.carousel_item {
+  height: 100%;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+.carousel_item > img {
+  height: 100%;
+}
