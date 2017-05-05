@@ -290,9 +290,10 @@ input[type=submit] {
 /* HOME */
 
 .carousel_container {
+  display: flex;
   height: 543px;
   width: 100%;
-  display: flex;
+  padding-top: 70px;
   justify-content: center;
   overflow: hidden;
 }
@@ -304,10 +305,12 @@ input[type=submit] {
 
 .carousel_item {
   height: 100%;
+  width: 1048px;
   padding-left: 25px;
   padding-right: 25px;
 }
 
 .carousel_item > img {
-  height: 100%;
+  width: 100%;
+
 }
