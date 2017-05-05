@@ -2,6 +2,7 @@ class EventsController < ApplicationController
   before_action :ensure_logged_in, only: [:create, :destroy, :edit, :update]
   def index
     @events = Event.all
+    @event = Event.new
   end
 
   def show
@@ -47,7 +48,7 @@ class EventsController < ApplicationController
 
 private
   def event_params
-    params.require(:event).permit(:avatar, :name, :description, :date, :picurl, :location, :price, :time, :event_style)
+    params.require(:event).permit(:name)
   end
 
 end

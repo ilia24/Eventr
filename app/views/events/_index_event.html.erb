@@ -11,13 +11,13 @@
       <div class="event_day">
         <%=
         d = event.date
-        d.mday
+        d.strftime("%d")
         %>
       </div>
       <div class="event_mon">
         <%=
         d = event.date
-          I18n.t("date.abbr_month_names")[d.month]
+          # I18n.t("date.abbr_month_names")[d.month]
         %>
       </div>
     </div>
@@ -29,7 +29,7 @@
       <div class="event_time">
         <%=
         d = event.time
-        d.strftime('%-I:%M %p')
+        # d.strftime('%-I:%M %p')
         %>
       </div>
       <div class="event_location">
