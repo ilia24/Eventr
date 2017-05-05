@@ -1,4 +1,10 @@
 class EventrinfosController < ApplicationController
+
+  def new
+    @eventrinfo = Eventrinfo.new
+
+  end
+
   def create
     @eventrinfo = Eventrinfo.new(eventrinfo_params)
     @eventrinfo.user = current_user
@@ -18,7 +24,7 @@ class EventrinfosController < ApplicationController
   end
 
   private
-  def user_params
+  def eventrinfo_params
     params.require(:eventrinfo).permit(:first_name, :last_name, :bio)
   end
 end
