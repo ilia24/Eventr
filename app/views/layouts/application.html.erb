@@ -16,9 +16,11 @@
     </div>
 
     <div class="nav_links">
-      <a href="#">HOME</a>
-      <a href="#">BROWSE</a>
-      <a href="#">LOG IN</a>
+      <a href="/">HOME</a>
+      <a href="/events">BROWSE</a>
+      <% if current_user==false && current_host==false %>
+      <a href="sessions/new">LOG IN</a>
+      <%end%>
     </div>
 
   </nav>
@@ -29,7 +31,7 @@
     <% elsif current_host %>
         Signed in as: <%= current_host.name %> <%= link_to 'Log Out', session_path("current"), :method => :delete%>
     <% else %>
-    <%= link_to 'Log in', new_session_path %> or <%= link_to 'Sign Up', new_user_path %>
+    <%= link_to 'Log in', new_session_path %> or <%= link_to 'Sign Up as User', new_user_path %> or <%= link_to 'Sign Up as Host', new_host_path %>
     <%end%>
 
     <p class="notice"><%= notice %></p>

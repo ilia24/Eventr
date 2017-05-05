@@ -17,7 +17,7 @@ class SessionsController < ApplicationController
       session[:host_id] = host.id
       flash[:notice] = "Logged in succesfully as #{host.name}!"
       redirect_to events_url
-      
+
     else
       flash[:alert] = 'Email and password combination does not match!'
       render :new
