@@ -8,6 +8,7 @@ class UsersController < ApplicationController
 
     if @user.save
       flash[:notice] = 'Signed up succesfully!'
+      session[:user_id] = @user.id
       redirect_to events_url
     else
       render :new

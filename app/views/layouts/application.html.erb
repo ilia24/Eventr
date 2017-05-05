@@ -16,9 +16,11 @@
     </div>
 
     <div class="nav_links">
-      <a href="#">HOME</a>
-      <a href="#">BROWSE</a>
-      <a href="/sessions/new">LOG IN</a>
+
+      <a href="/">HOME</a>
+      <a href="/events">BROWSE</a>
+      <a href="sessions/new">LOG IN</a>
+
     </div>
 
   </nav>
@@ -27,7 +29,7 @@
     <% if current_user %>
         Signed in as: <%= current_user.name %> <%= link_to 'Log Out', session_path("current"), :method => :delete%>
     <% else %>
-    <%= link_to 'Log in', new_session_path %> or <%= link_to 'Sign Up', new_user_path %>
+    <%= link_to 'Log in', new_session_path %> or <%= link_to 'Sign Up', new_user_path %> 
     <%end%>
 
     <p class="notice"><%= notice %></p>
