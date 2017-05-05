@@ -1,0 +1,8 @@
+<%= form_for ([@event, @group]) do |f| %>
+
+<%= f.label :name %>
+<%= f.text_field :name %>
+
+<%= f.submit 'create group' %>
+
+<%end%>
