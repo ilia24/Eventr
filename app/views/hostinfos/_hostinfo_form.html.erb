@@ -1,0 +1,19 @@
+<h1>Step 2: Host</h1>
+
+<%= form_for ([@user, @hostinfo]) do |f| %>
+
+<%= f.label :name %>
+<%= f.text_field :name %>
+
+<%= f.label :address %>
+<%= f.text_field :address %>
+
+<%= f.label :capacity %>
+<%= f.number_field :capacity %>
+
+<%= f.label :website %>
+<%= f.text_field :website %>
+
+<%= f.submit 'Eventr' %>
+
+<%end %>

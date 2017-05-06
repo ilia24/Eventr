@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
-  description: MyText
+  address: MyString
   capacity: 1
+  website: MyString
 
 two:
-  name: MyString
-  description: MyText
+  address: MyString
   capacity: 1
+  website: MyString

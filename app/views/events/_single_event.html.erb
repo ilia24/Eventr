@@ -20,31 +20,40 @@
           Time: <%= event.time %>
         </div>
 
-        <div class="event_main_info">
-          <p>Thank you for purchasing this card template from PhotographyPla.net! In this documentation we'll
-cover the process of editing the card template to suit your needs.
-The screenshots in this documentation may not be from the exact card that you purchased, but the basic
-editing process is the same.
-<br><br>
-Here are some details about our graduation announcement card templates:
-<br><br>
-• Some of the templates include both a font and back design, while others are intended for a
-single-sided card. The details of each template is listed on the product page on our site.
-<br>
-• The templates are for card sizes of 5 inches by 7 inches, with a bleed area included. The
-templates are created with the specs for printing at Bay Photo Lab, but you can use your printer
-or lab of choice. Regardless of where you choose to print your cards, be sure that you check
-their requirements and specifications before submitting them for printing. PhotographyPla.net
-cannot accept any responsibility related to the printed products created through the use of our
-templates.</p>
-        </div>
-        <div class="map">
-          ddasdsdasdasdsadasdasdsa
-        </div>
-
     </div>
 
   </div>
+
+
+  <h3>Google map test</h3>
+      <div style="height: 400px; width: 100%;" id="map">
+            <script>
+          function initMap() {
+            var uluru = {lat: -25.363, lng: 131.044};
+            var map = new google.maps.Map(document.getElementById('map'), {
+              zoom: 4,
+              center: uluru
+            });
+            var marker = new google.maps.Marker({
+              position: uluru,
+              map: map
+            });
+          }
+        </script>
+
+        <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCicAETBLou3SdGkO9emwhptyQWfSD6Sp0&callback=initMap">
+        </script>
+      </div>
+
+
+
+
+
+
+
+
+
 
     <br>
     Description:<%= event.description %>

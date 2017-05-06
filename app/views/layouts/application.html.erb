@@ -16,19 +16,31 @@
     </div>
 
     <div class="nav_links">
-      <a href="#">HOME</a>
-      <a href="#">BROWSE</a>
-      <a href="/sessions/new">LOG IN</a>
+
+      <a href="/">HOME</a>
+      <a href="/events">BROWSE</a>
+      <a href="sessions/new">LOG IN</a>
+
     </div>
 
   </nav>
 
   <body>
-    <!-- <% if current_user %>
-      <%= current_user.name %> <%= link_to 'Log Out', session_path("current"), :method => :delete%>
+    <% if current_user %>
+        Signed in as: <%= current_user.email %> <%= link_to 'Log Out', session_path("current"), :method => :delete%>
+        <% if User.find(session[:user_id]).eventrinfo ==nil && User.find(session[:user_id]).hostinfo == nil %>
+                <h2> <%= link_to 'Complete your profile!', new_user_eventrinfo_path(session[:user_id]) %> </h2>
+        <%end%>
+
     <% else %>
-      <%= link_to 'Log in', new_session_path %> or <%= link_to 'Sign Up', new_user_path %>
-    <%end%> -->
+    <%= link_to 'Log in', new_session_path %> or <%= link_to 'Sign Up', new_user_path %>
+    <%end%>
+
+
+
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+
     <%= yield %>
   </body>
 
