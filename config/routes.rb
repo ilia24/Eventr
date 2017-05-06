@@ -5,14 +5,14 @@ Rails.application.routes.draw do
 root 'events#index'
 
 resources :events do
-  resources :groups, only: %i(new show create destroy)
+  resources :groups, only: %i(show create destroy)
   resources :reviews, only: %i(show create destroy)
 end
 
 
 resources :users, only: %i(new create) do
   resources :hostinfos, only: %i(new create update destroy)
-  resources :eventrinfos, only: %i(new create update destroy)
+  resources :eventrinfos, only: %i(new create edit update destroy)
 end
 resources :sessions, only: %i(new create destroy)
 
