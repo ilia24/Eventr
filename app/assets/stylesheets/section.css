@@ -119,10 +119,12 @@
 }
 
 .event_going {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
   border-top: solid 1px #ebebeb;
+  bottom: 0;
 }
 
 .event_going .button_sm{
@@ -148,6 +150,7 @@
 }
 
 .events {
+  height: 347px;
   max-width: 900px;
   margin: auto;
 }

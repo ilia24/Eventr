@@ -36,7 +36,7 @@ class EventsController < ApplicationController
     if @event.update(event_params)
       redirect_to @event
     else
-      redirect_back_or_to @event
+      redirect_to @event
     end
   end
 
@@ -48,7 +48,7 @@ class EventsController < ApplicationController
 
 private
   def event_params
-    params.require(:event).permit(:name)
+    params.require(:event).permit(:name, :price, :picurl, :location, :date, :event_style, :time, :description)
   end
 
 end
