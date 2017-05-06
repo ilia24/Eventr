@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170505192952) do
+ActiveRecord::Schema.define(version: 20170506004700) do
 
   create_table "eventrinfos", force: :cascade do |t|
     t.integer  "user_id"
@@ -42,13 +42,6 @@ ActiveRecord::Schema.define(version: 20170505192952) do
     t.integer  "event_id"
   end
 
-  create_table "groups_users", id: false, force: :cascade do |t|
-    t.integer "group_id", null: false
-    t.integer "user_id",  null: false
-    t.index ["group_id", "user_id"], name: "index_groups_users_on_group_id_and_user_id"
-    t.index ["user_id", "group_id"], name: "index_groups_users_on_user_id_and_group_id"
-  end
-
   create_table "hostinfos", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "name"
@@ -57,6 +50,16 @@ ActiveRecord::Schema.define(version: 20170505192952) do
     t.string   "website"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "members", force: :cascade do |t|
+    t.integer  "group_id"
+    t.integer  "user_id"
+    t.boolean  "owner"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["group_id"], name: "index_members_on_group_id"
+    t.index ["user_id"], name: "index_members_on_user_id"
   end
 
   create_table "reviews", force: :cascade do |t|
