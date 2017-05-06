@@ -8,10 +8,8 @@ class GroupsController < ApplicationController
 
   def create
     @group = @event.groups.build(group_params)
-    @group.event = @event.id
 
-
-    if @eventrinfo.save
+    if @group.save
       flash[:notice] = 'group created succesfully!'
     else
       render :new

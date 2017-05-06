@@ -18,8 +18,20 @@ class HostinfosController < ApplicationController
       end
     end
 
-    def update
+    def edit
+      @hostinfo = Hostinfo.find(params[:id])
     end
+
+    def update
+      @hostinfo = Hostinfo.find(params[:id])
+
+      if @hostinfo.update_attributes(hostinfo_params)
+        redirect_to events_url
+      else
+        render :edit
+      end
+    end
+
 
     def destroy
     end

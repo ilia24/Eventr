@@ -19,10 +19,22 @@ before_action :load_user
     end
   end
 
-  def update
+def edit
+  @eventrinfo = Eventrinfo.find(params[:id])
+end
+
+def update
+  @eventrinfo = Eventrinfo.find(params[:id])
+
+  if @eventrinfo.update_attributes(eventrinfo_params)
+    redirect_to events_url
+  else
+    render :edit
   end
+end
 
   def destroy
+
   end
 
   private

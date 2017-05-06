@@ -14,11 +14,6 @@
   <p>
       <%= review.comment %>
       <br>
-      <% if review.user != nil %>
-       <em> by <%=review.user.name %> </em>
-       Added on: <%= review.created_at %>
-       Liked by: <%= review.liked_by %> Disliked by: <%= review.disliked_by %>
-       <%end %>
     </p>
   <%end%>
 
