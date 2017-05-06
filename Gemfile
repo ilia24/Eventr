@@ -38,7 +38,7 @@ group :development, :test do
   gem 'byebug', platform: :mri
 end
 
-gem 'bcrypt', '~> 3.1'
+gem 'bcrypt', '~> 3.1', '>= 3.1.11'
 
 group :development do
   # Use sqlite3 as the database for Active Record

@@ -1,9 +1,156 @@
+/*INDEX*/
+
+#header_image_container {
+  width: 70%;
+  height: 600px;
+  margin: auto;
+  margin-top: 70px;
+  background-image: url("https://static.pexels.com/photos/196652/pexels-photo-196652.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.index_main {
+  margin-top: 70px;
+}
+
+.header_slider {
+  overflow: hidden;
+}
+
+#events_near_you {
+  display: flex;
+  /*margin: auto;*/
+  justify-content: space-around;
+  flex-shrink: 1;
+  flex-wrap: wrap;
+  padding-left: 0;
+  list-style-type: none;
+
+}
+
+.event_container {
+  border: solid 1px #ababab;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
+  min-width: 230px;
+  max-width: 292px;
+  overflow: hidden;
+  margin-left: 6px;
+  margin-right: 6px;
+  margin-bottom: 50px;
+  flex-grow: 1;
+}
+
+.event_container:first-child{
+  margin-left: 0;
+}
+
+.event_container:last-child{
+  margin-right: 0;
+}
+
+.event_img {
+  position: relative;
+  height: 170px;
+  overflow: hidden;
+}
+
+.event_img img{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 120%;
+  width: auto;
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+}
+
+.event_content {
+  padding-top: 24px;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.event_date {
+  display: inline-block;
+  text-align: center;
+  float: left;
+  padding-right: 24px;
+}
+
+.event_mon {
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.event_day {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.event_name_time_loc {
+  display: inline-block;
+  max-width: 183px;
+  margin-bottom: 24px;
+}
+
+.event_name {
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.event_time {
+  padding-top: 12px;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.event_location {
+  height: 12px;
+  padding-top: 8px;
+  font-size: 12px;
+  font-weight: 400;
+  color: #7f7f7f;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.event_going {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: solid 1px #ebebeb;
+  bottom: 0;
+}
+
+.event_going .button_sm{
+  right: -24px;
+}
+
+.event_going > h6 {
+  margin-left: 24px;
+}
+
+.event_content p{
+  text-transform: uppercase;
+  font-size: 14px;
+  height: 50%;
+}
+
+
+/*SHOW*/
+
 .events_wrapper {
   margin-left: 100px;
   margin-right: 100px;
 }
 
 .events {
+  height: 347px;
   max-width: 900px;
   margin: auto;
 }

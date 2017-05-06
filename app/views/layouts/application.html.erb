@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>Eventr</title>
+
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -12,7 +13,6 @@
 
     <div class="logo">
       <a href="/"><%= image_tag ("eventr-logo.svg")%></a>
-
     </div>
 
     <div class="nav_links">
@@ -40,6 +40,8 @@
 
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
+
     <%= yield %>
   </body>
+
 </html>
