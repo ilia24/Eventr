@@ -1,8 +1,20 @@
 class EventsController < ApplicationController
   before_action :ensure_logged_in, only: [:new, :create, :destroy, :edit, :update]
   def index
-    @events = Event.all
+
     @event = Event.new
+    @event = Event.all
+
+    if params[:search]
+
+        @events = Event.search(params[:search]).order("created_at DESC")
+        flash[:notice] = "There are #{@events.count} results matching your search"
+
+    else
+      @events = Event.all.order("created_at DESC")
+    end
+
+
   end
 
   def show
