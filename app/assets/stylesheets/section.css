@@ -227,10 +227,17 @@
 
 /* EVENT INDEX */
 
-.index_header {
+.index_header_container {
   height: 300px;
   width: 100%;
   overflow: hidden;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.index_header {
+  height: 100%;
 }
 
 #jlegend {
@@ -242,5 +249,15 @@
 .index_header img {
   width: 100%;
   position: relative;
-  top: -70px;
+}
+
+.index_search {
+  width: 70vw;
+  height: 90px;
+  margin: auto;
+  position: relative;
+  top: -45px;
+  background-color: white;
+  border: solid 1px #d4d4d4;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
