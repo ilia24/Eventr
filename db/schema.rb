@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170506004700) do
+ActiveRecord::Schema.define(version: 20170506223354) do
 
   create_table "eventrinfos", force: :cascade do |t|
     t.integer  "user_id"
@@ -33,6 +33,8 @@ ActiveRecord::Schema.define(version: 20170506004700) do
     t.time     "time"
     t.string   "event_style"
     t.integer  "user_id"
+    t.float    "latitude"
+    t.float    "longitude"
   end
 
   create_table "groups", force: :cascade do |t|
