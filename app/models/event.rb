@@ -1,6 +1,8 @@
 class Event < ApplicationRecord
   belongs_to :user
   has_many :groups
+  geocoded_by :location
+  after_validation :geocode
   # validates :name, :description, :date, :location, presence: true
   # validates :price, numericality: {only_integer: true}
 
