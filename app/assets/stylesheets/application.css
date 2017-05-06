@@ -97,15 +97,26 @@ input[type=number] {
 h2 {
   font-size: 24px;
   text-transform: uppercase;
-  font-style: "Regular";
+  font-weight: 400;
+}
+
+h5 {
+  font-size: 12px;
+  margin: 0;
+}
+
+h6 {
+  font-size: 10px;
+  font-weight: 300;
+  margin: 0;
 }
 
 hr {
   position: relative;
-  left: -5%;
-  width: 110%;
+  left: -15%;
+  width: 140%;
   border-color: #ebebeb;
-  margin-top: 24px;
+  margin: 0;
 }
 
 /*NAV*/
@@ -126,15 +137,14 @@ hr {
   color: #333333;
 }
 
-
-
-
-
-
-.button_reg {
+.button_sm {
   background-color: #262626;
   color: white;
-  padding: 10px;
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 15px;
   padding-left: 25px;
   padding-right: 25px;
   text-align: center;
@@ -317,10 +327,16 @@ input[type=submit] {
 
 #weeknd_text {
   left: 0;
+  top: 360px;
   position: absolute;
   width: 100%;
 }
 
-#weeknd > h2{
+#weeknd_text > h2{
+  color: white;
+}
+
+.starboy {
+  font-size: 36px;
   color: white;
 }
