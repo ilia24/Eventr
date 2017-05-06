@@ -252,12 +252,54 @@
 }
 
 .index_search {
-  width: 70vw;
-  height: 90px;
   margin: auto;
   position: relative;
+  width: 70vw;
   top: -45px;
   background-color: white;
+  display: flex;
+  align-items: center;
   border: solid 1px #d4d4d4;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.search_label {
+  font-weight: normal;
+}
+
+.search_label > h5 {
+  color: #7f7f7f;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+.search_field {
+  font-weight: normal;
+  padding-top: 8px;
+}
+
+.search_field h4 {
+  font-weight: 400;
+}
+
+.search_search {
+  padding-left: 24px;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  border-right: solid 1px #d4d4d4;
+  width: 25%;
+}
+
+.search_where {
+  padding-left: 24px;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  border-right: solid 1px #d4d4d4;
+  width: 20%;
+}
+
+.search_category {
+  padding-left: 24px;
+  padding-top: 24px;
+  padding-bottom: 24px;
 }
