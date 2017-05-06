@@ -10,7 +10,7 @@ resources :events do
 end
 
 
-resources :users, only: %i(new create) do
+resources :users, only: %i(show new create) do
   resources :hostinfos, only: %i(new create edit update destroy)
   resources :eventrinfos, only: %i(new create edit update destroy)
 end
