@@ -11,6 +11,7 @@ class GroupsController < ApplicationController
 
     if @group.save
       flash[:notice] = 'group created succesfully!'
+      redirect_to event_path(@event)
     else
       render :new
     end
