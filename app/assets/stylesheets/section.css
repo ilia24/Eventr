@@ -224,3 +224,23 @@
   border: solid 1px #dfdfdf;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08);
 }
+
+/* EVENT INDEX */
+
+.index_header {
+  height: 300px;
+  width: 100%;
+  overflow: hidden;
+}
+
+#jlegend {
+  left: 0;
+  position: absolute;
+  width: 100%;
+}
+
+.index_header img {
+  width: 100%;
+  position: relative;
+  top: -70px;
+}
