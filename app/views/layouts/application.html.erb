@@ -22,16 +22,17 @@
         <% if current_user %>
             <%= current_user.email %> <%= link_to 'Log Out', session_path("current"), :method => :delete%>
             <% if User.find(session[:user_id]).eventrinfo ==nil && User.find(session[:user_id]).hostinfo == nil %>
-                    <h2> <%= link_to 'Complete your profile!', new_user_eventrinfo_path(session[:user_id]) %> </h2>
+                    <h4> <%= link_to 'Complete your profile!', new_user_eventrinfo_path(session[:user_id]) %> </h4>
             <%end%>
-
         <% else %>
         <%= link_to 'LOG IN', new_session_path %> <%= link_to 'SIGN UP', new_user_path %>
         <%end%>
 
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
-
+      <div class="invis_temp">
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
+      </div>
+    
     </div>
 
   </nav>

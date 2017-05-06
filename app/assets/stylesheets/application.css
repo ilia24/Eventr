@@ -132,6 +132,11 @@ hr {
   float: right;
 }
 
+.nav_links > h4 {
+  display: inline-block;
+  margin: 0;
+}
+
 .nav_links a {
   padding-left: 50px;
   color: #333333;
@@ -175,6 +180,11 @@ hr {
 
 .new_event p{
   margin: 0;
+}
+
+.invis_temp {
+  position: absolute;
+  display: none;
 }
 
 #input_name {
