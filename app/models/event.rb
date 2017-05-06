@@ -13,6 +13,6 @@ class Event < ApplicationRecord
 
 
 def self.search(search)
-  where("name LIKE ?", "%#{search}%")
+  where("name LIKE ? OR price LIKE ? OR description LIKE ? OR location LIKE ? OR event_style LIKE ?", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%" )
 end
 end
