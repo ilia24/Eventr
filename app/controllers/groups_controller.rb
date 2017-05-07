@@ -1,4 +1,5 @@
 class GroupsController < ApplicationController
+  before_action :ensure_logged_in, only: [:join, :create]
   before_action :load_event, :load_user
 
   def new
@@ -24,14 +25,17 @@ class GroupsController < ApplicationController
 
   def edit
     @group = Group.find(params[:id])
-
   end
   
   def join
     @group = Group.find(params[:id])
-    @group.users << @user
-    redirect_to event_path(@event)
-
+    if @group.users.include? @user
+      flash[:notice] = 'You are already in this group'
+      redirect_to event_path(@event)
+    else
+      @group.users << @user
+      redirect_to event_path(@event)
+    end
   end
 
   def update
