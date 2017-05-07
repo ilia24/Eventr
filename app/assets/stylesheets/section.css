@@ -339,22 +339,32 @@
   margin-top: 24px;
   margin-left: 100px;
   margin-right: 100px;
-  display: flex;
 }
 
 .event_main_info{
-  background-color: white;
-  padding: 24px;
-  border: solid 1px #dfdfdf;
-  flex-grow: 1;
-  margin-right: 12px;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08);
+  width: 70%;
+  float: left;
 }
 
 .event_side_info {
+  width: 30%;
+  float: left;
+}
+
+.event_description {
   background-color: white;
   padding: 24px;
-  flex-grow: 1;
   border: solid 1px #dfdfdf;
+  margin-right: 24px;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08);
+}
+
+.event_main_wrapper h4 {
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+}
+
+#map {
+  height: 300px;
+  width: 100%;
 }

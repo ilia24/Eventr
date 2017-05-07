@@ -10,16 +10,22 @@
 
   <div class="event_main_info">
 
-    Price: <%= event.price %>
-    <br>
-    Time: <%= event.time %>
-    <br>
-    Event Style: <%= event.event_style %>
+    <div class="event_description_wrapper">
+
+      <h4>DESCRIPTION</h4>
+      <div class="event_description">
+        Description <%= event.description %>
+      </div>
+
+    </div>
+
   </div>
 
   <div class="event_side_info">
-    <div style="height: 400px; width: 100%;" id="map" data-parameter1='<%= event.latitude %>' data-parameter2='<%= event.longitude %>'>
-          <script>
+    <div class="event_map_wrapper">
+      <h4>MAP</h4>
+      <div id="map" data-parameter1='<%= event.latitude %>' data-parameter2='<%= event.longitude %>'>
+        <script>
         function initMap() {
           var lat = parseFloat($('#map').attr('data-parameter1'));
           var lng = parseFloat($('#map').attr('data-parameter2'));
@@ -35,12 +41,15 @@
             label: 'E'
           });
         }
-      </script>
+        </script>
 
-      <script async defer
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCicAETBLou3SdGkO9emwhptyQWfSD6Sp0&callback=initMap">
-      </script>
+        <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCicAETBLou3SdGkO9emwhptyQWfSD6Sp0&callback=initMap">
+        </script>
+      </div>
+
     </div>
+
   </div>
 
 </div>
@@ -48,3 +57,10 @@
 
 
   <h3>Google map test</h3>
+
+  <br>
+  Price: <%= event.price %>
+  <br>
+  Time: <%= event.time %>
+  <br>
+  Event Style: <%= event.event_style %>
