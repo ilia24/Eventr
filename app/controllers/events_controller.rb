@@ -1,8 +1,20 @@
 class EventsController < ApplicationController
-  before_action :ensure_logged_in, only: [:create, :destroy, :edit, :update]
+  before_action :ensure_logged_in, only: [:new, :create, :destroy, :edit, :update]
   def index
-    @events = Event.all
+
     @event = Event.new
+    @events = Event.all
+
+    if params[:search]
+
+        @events = Event.search(params[:search]).order("created_at DESC")
+        flash[:notice] = "There are #{@events.count} results matching your search"
+
+    else
+      @events = Event.all.order("created_at DESC")
+    end
+
+
   end
 
   def show
@@ -23,16 +35,15 @@ class EventsController < ApplicationController
 
   def create
     @event = Event.new(event_params)
+    @event.user = current_user
 
-        if @event.save
-          flash[:alert] = "The event #{@event.name} has been succesfully posted"
-          redirect_to events_path
-        else
-          flash[:alert] = "The event could not be created"
-          redirect_to new_event_path
-        end
-
+    if @event.save
+      flash[:alert] = "The event #{@event.name} has been succesfully posted"
+      redirect_to events_path
     else
+      flash[:alert] = "The event could not be created"
+      redirect_to new_event_path
+    end
 
   end
 

@@ -1,5 +1,5 @@
 class GroupsController < ApplicationController
-  before_action :load_user
+  before_action :load_event
 
   def new
     @group = Group.new
@@ -11,6 +11,7 @@ class GroupsController < ApplicationController
 
     if @group.save
       flash[:notice] = 'group created succesfully!'
+      redirect_to event_path(@event)
     else
       render :new
     end
@@ -27,7 +28,7 @@ class GroupsController < ApplicationController
     params.require(:group).permit(:name)
   end
 
-  def load_user
+  def load_event
     @event = Event.find(params[:event_id])
   end
 

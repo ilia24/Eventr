@@ -25,18 +25,23 @@
   </div>
 
 
+
   <h3>Google map test</h3>
-      <div style="height: 400px; width: 100%;" id="map">
+      <div style="height: 400px; width: 100%;" id="map" data-parameter1='<%= event.latitude %>' data-parameter2='<%= event.longitude %>'>
             <script>
           function initMap() {
-            var uluru = {lat: -25.363, lng: 131.044};
+            var lat = parseFloat($('#map').attr('data-parameter1'));
+            var lng = parseFloat($('#map').attr('data-parameter2'));
+            var eventlocation = {lat, lng};
             var map = new google.maps.Map(document.getElementById('map'), {
-              zoom: 4,
-              center: uluru
+              zoom: 15,
+              center: eventlocation
             });
             var marker = new google.maps.Marker({
-              position: uluru,
-              map: map
+              position: eventlocation,
+              map: map,
+              title: 'Event location',
+              label: 'E'
             });
           }
         </script>

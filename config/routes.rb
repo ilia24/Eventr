@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 root 'home#index'
 
 resources :events do
-  resources :groups, only: %i(show create destroy)
+  resources :groups, only: %i(new show create destroy)
   resources :reviews, only: %i(show create destroy)
 end
 
