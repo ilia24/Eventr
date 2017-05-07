@@ -21,6 +21,12 @@ class GroupsController < ApplicationController
     end
   end
 
+  def join
+    @group = Group.find(params[:id])
+    @group.users << @user
+    redirect_to event_path(@event)
+  end
+
   def update
   end
 
