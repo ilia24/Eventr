@@ -12,7 +12,7 @@ class ReviewsController < ApplicationController
 
     if @review.save
       flash[:notice] = 'Review posted succesfully!'
-      redirect_to events_url
+      redirect_to event_path(@event)
     else
       flash[:alert] = 'Review NOT posted!'
       render 'events/show'
