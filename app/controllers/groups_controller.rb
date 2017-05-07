@@ -1,5 +1,5 @@
 class GroupsController < ApplicationController
-  before_action :load_event
+  before_action :load_event, :load_user
 
   def new
     @group = Group.new
@@ -11,6 +11,7 @@ class GroupsController < ApplicationController
 
   def create
     @group = @event.groups.build(group_params)
+    @group.users << @user
 
     if @group.save
       flash[:notice] = 'group created succesfully!'
@@ -33,6 +34,10 @@ class GroupsController < ApplicationController
 
   def load_event
     @event = Event.find(params[:event_id])
+  end
+
+  def load_user
+    @user = User.find(session[:user_id])
   end
 
 end
