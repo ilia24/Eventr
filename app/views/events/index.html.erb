@@ -14,12 +14,12 @@
 <main class="index_main">
   <h2>happening near you</h2>
   <h2> <%= link_to "Add an event near you", new_event_path %></h2>
-  
+
 
   <ul id="events_near_you">
     <% @events.each do |current_event| %>
     <li class="event_container">
-      <%= render 'index_event', event: current_event %>
+      <%= render 'index_event', eve nt: current_event %>
     </li>
     <% end %>
   </ul>
