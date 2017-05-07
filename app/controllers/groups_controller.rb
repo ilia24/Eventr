@@ -5,6 +5,9 @@ class GroupsController < ApplicationController
     @group = Group.new
   end
 
+  def show
+    @group = Group.find(params[:id])
+  end
 
   def create
     @group = @event.groups.build(group_params)
@@ -25,7 +28,7 @@ class GroupsController < ApplicationController
 
   private
   def group_params
-    params.require(:group).permit(:name)
+    params.require(:group).permit(:name, :event_id)
   end
 
   def load_event
