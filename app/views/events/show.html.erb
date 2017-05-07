@@ -2,6 +2,11 @@
 
 
 <h3> Group list </h3>
+<% @event.groups.each do |g| %>
+  <%= link_to g.name, event_group_path(@event) %>
+<%end%>
+
+
 <p> <%= link_to 'Create a new group', new_event_group_path(@event) %> </p>
 
 
@@ -14,37 +19,36 @@
 
 <h3> Review list </h3>
   <% @event.reviews.each do |review| %>
-    <p>
-        <%= review.comment %>
-        <br>
-    </p>
+    <p><%= review.comment %></p>
+    <p><%= review.user %></p> <br>
   <%end%>
 
+
+
+
 <% if current_user %>
-<h4> New Review </h4>
 
-<%= form_for([@event, @review]) do |f| %>
+  <%= form_for([@event, @review]) do |f| %>
+    <% if @review.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@review.errors.count, "error") %> prohibited this review from being saved:</h2>
 
-<% if @review.errors.any? %>
-  <div id="error_explanation">
-    <h2><%= pluralize(@review.errors.count, "error") %> prohibited this review from being saved:</h2>
+          <ul>
+            <% @review.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+          </ul>
+      </div>
+    <% end %>
 
-      <ul>
-        <% @review.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-  </div>
-<% end %>
+    <p>
+      <%= f.label :create_review %> <br>
+      <%= f.text_area :comment %>
+    </p>
 
-<p>
-<%= f.label :create_review %> <br>
-<%= f.text_area :comment %>
-</p>
-<p> <%= f.submit %> </p>
-<% end %>
+    <p> <%= f.submit %> </p>
+  <% end %>
 
-<% else %>
-<p> Please <%= link_to 'Log In', new_session_path %> or <%= link_to 'Sign Up', new_user_path%> to add a review
-</p>
+  <% else %>
+  <p> Please <%= link_to 'Log In', new_session_path %> or <%= link_to 'Sign Up', new_user_path%> to add a review </p>
 <% end %>
