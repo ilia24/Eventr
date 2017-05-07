@@ -48,6 +48,7 @@
     </div>
 
     <div class="groups_wrapper">
+
       <h4> GROUPS</h4>
 
       <div class="groups_container">
@@ -55,14 +56,26 @@
         <% @event.groups.each do |g| %>
 
           <% if g.id != nil %>
-            <li class="groups">
-          <%= render 'groups/single_group', g: g %> <br>
-        </li>
-          <%end%>
 
+          <li class="groups">
+            <div class="groups_content">
+              <%= render 'groups/single_group', g: g %> <br>
+            </div>
+
+            <div class="event_going">
+              <h6>
+                <strong>100</strong> EVENTRS GOING
+              </h6>
+              <div class="button_sm">
+                <%= link_to 'Join Group', join_group_path(@event, g.id) %> <br>
+              </div>
+            </div>
+          </li>
+          <%end%>
       <%end%>
 
       </div>
+
 
       <p> <%= link_to 'Create a new group', new_event_group_path(@event) %> </p>
 
