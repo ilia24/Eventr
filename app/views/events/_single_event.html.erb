@@ -1,61 +1,50 @@
-<div class="event_header">
+<div class="event_show_header">
   <img src="<%="#{event.picurl}"%>">
 </div>
 
-  <div class= "events">
+<div class="title_header">
+  <h2><%= link_to "#{event.name}", event %></h2>
+</div>
 
-    <div class="title_header">
-      <h2><%= link_to "#{event.name}", event %></h2>
-    </div>
+<div class="event_main_wrapper">
 
+  <div class="event_main_info">
 
-
-    <div class="event_info_wrapper">
-
-        <div class="event_gen_info">
-          Date: <%= event.date %>
-          <br>
-          Location: <%= event.location %>
-          <br>
-          Time: <%= event.time %>
-        </div>
-
-    </div>
-
-  </div>
-
-
-
-  <h3>Google map test</h3>
-      <div style="height: 400px; width: 100%;" id="map" data-parameter1='<%= event.latitude %>' data-parameter2='<%= event.longitude %>'>
-            <script>
-          function initMap() {
-            var lat = parseFloat($('#map').attr('data-parameter1'));
-            var lng = parseFloat($('#map').attr('data-parameter2'));
-            var eventlocation = {lat, lng};
-            var map = new google.maps.Map(document.getElementById('map'), {
-              zoom: 15,
-              center: eventlocation
-            });
-            var marker = new google.maps.Marker({
-              position: eventlocation,
-              map: map,
-              title: 'Event location',
-              label: 'E'
-            });
-          }
-        </script>
-
-        <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCicAETBLou3SdGkO9emwhptyQWfSD6Sp0&callback=initMap">
-        </script>
-      </div>
-
-    <br>
-    Description:<%= event.description %>
-    <br>
     Price: <%= event.price %>
     <br>
     Time: <%= event.time %>
     <br>
     Event Style: <%= event.event_style %>
+  </div>
+
+  <div class="event_side_info">
+    <div style="height: 400px; width: 100%;" id="map" data-parameter1='<%= event.latitude %>' data-parameter2='<%= event.longitude %>'>
+          <script>
+        function initMap() {
+          var lat = parseFloat($('#map').attr('data-parameter1'));
+          var lng = parseFloat($('#map').attr('data-parameter2'));
+          var eventlocation = {lat, lng};
+          var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 15,
+            center: eventlocation
+          });
+          var marker = new google.maps.Marker({
+            position: eventlocation,
+            map: map,
+            title: 'Event location',
+            label: 'E'
+          });
+        }
+      </script>
+
+      <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCicAETBLou3SdGkO9emwhptyQWfSD6Sp0&callback=initMap">
+      </script>
+    </div>
+  </div>
+
+</div>
+
+
+
+  <h3>Google map test</h3>
