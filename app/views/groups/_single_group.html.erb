@@ -1,4 +1,6 @@
-name: <%= link_to g.name, event_group_path(@event, g.id) %> <br>
-<% g.users.each do |u| %>
-  <%= u.email %>
-  <% end %>
+<%= link_to g.name, event_group_path(@event, g.id) %> <br>
+<ul>
+  <% g.users.each do |u| %>
+    <li> <%= u.email %> </li>
+    <% end %>
+</ul>
