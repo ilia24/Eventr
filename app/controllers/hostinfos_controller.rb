@@ -26,15 +26,16 @@ class HostinfosController < ApplicationController
       @hostinfo = Hostinfo.find(params[:id])
 
       if @hostinfo.update_attributes(hostinfo_params)
-        redirect_to events_url
+        redirect_to user_path(@user)
       else
         render :edit
       end
     end
 
-
-    def destroy
-    end
+  def destroy
+        @hostinfo = Hostinfo.find(params[:id])
+        @Hostinfo.destroy
+  end
 
     private
     def hostinfo_params

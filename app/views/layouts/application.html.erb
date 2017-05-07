@@ -20,19 +20,31 @@
       <a href="/">HOME</a>
       <a href="/events">BROWSE</a>
         <% if current_user %>
-            <%= current_user.email %> <%= link_to 'Log Out', session_path("current"), :method => :delete%>
-            <% if User.find(session[:user_id]).eventrinfo ==nil && User.find(session[:user_id]).hostinfo == nil %>
+
+            <% if User.find(session[:user_id]).eventrinfo ==nil  %>
                     <h4> <%= link_to 'Complete your profile!', new_user_eventrinfo_path(session[:user_id]) %> </h4>
-            <%end%>
+                    <%= link_to 'Log Out', session_path("current"), :method => :delete%>
+            <%else%>
+                    <%= link_to "#{current_user.eventrinfo.first_name}", user_path(session[:user_id]) %>
+                    <%= link_to 'Log Out', session_path("current"), :method => :delete%>
+              <% end %>
+
         <% else %>
         <%= link_to 'LOG IN', new_session_path %> <%= link_to 'SIGN UP', new_user_path %>
         <%end%>
+
+        <div>
+          <%= form_tag(events_path, :method => "get", id: "search-form") do %>
+            <%= text_field_tag :search, params[:search], placeholder: "Search Events" %>
+            <%= submit_tag "Search", :name => nil %>
+          <% end %>
+        </div>  
 
       <div class="invis_temp">
         <p class="notice"><%= notice %></p>
         <p class="alert"><%= alert %></p>
       </div>
-    
+
     </div>
 
   </nav>

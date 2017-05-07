@@ -19,6 +19,8 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find(params[:id])
+    @group = @event.groups.build
+
 
     if current_user
       @review = @event.reviews.build
@@ -47,12 +49,14 @@ class EventsController < ApplicationController
 
   end
 
+
   def update
     @event = Event.find(params[:id])
-    if @event.update(event_params)
-      redirect_to @event
+
+    if @event.update_attributes(event_params)
+      redirect_to event_path(@event)
     else
-      redirect_to @event
+      render :edit
     end
   end
 

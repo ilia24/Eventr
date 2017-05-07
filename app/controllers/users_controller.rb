@@ -20,9 +20,27 @@ end
     end
   end
 
+  def update
+    @user = User.find(params[:id])
+
+    if @user.update_attributes(user_params)
+      redirect_to user_path(@user)
+    else
+      render :edit
+    end
+  end
+
+  def delete
+    @user = User.find(params[:id])
+    @user.destroy
+
+  end
+
+
+
   private
   def user_params
-    params.require(:user).permit(:email, :name, :password, :password_confirmation)
+    params.require(:user).permit(:email, :password, :password_confirmation)
   end
 
 end

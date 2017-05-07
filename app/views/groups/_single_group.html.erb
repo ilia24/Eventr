@@ -1,4 +1,7 @@
-<p>SINGLE GROUP</p>
-
-name: <%= @event.group.name %>
-event: <%= @event.name %>
+<%= link_to g.name, event_group_path(@event, g.id) %> <br>
+<ul>
+  <% g.users.each do |u| %>
+    <li> <%= u.email %> </li>
+    <% end %>
+</ul>
+<%= link_to 'Join Group', join_group_path(@event, g.id) %> <br>
