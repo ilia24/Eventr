@@ -34,7 +34,8 @@ def update
 end
 
   def destroy
-
+    @eventrinfo = Eventrinfo.find(params[:id])
+    @eventrinfo.destroy
   end
 
   private

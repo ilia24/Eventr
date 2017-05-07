@@ -32,9 +32,10 @@ class HostinfosController < ApplicationController
       end
     end
 
-
-    def destroy
-    end
+  def destroy
+        @hostinfo = Hostinfo.find(params[:id])
+        @Hostinfo.destroy
+  end
 
     private
     def hostinfo_params
