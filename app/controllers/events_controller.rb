@@ -3,7 +3,7 @@ class EventsController < ApplicationController
   def index
 
     @event = Event.new
-    @event = Event.all
+    @events = Event.all
 
     if params[:search]
 
