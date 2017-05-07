@@ -27,7 +27,7 @@ def update
   @eventrinfo = Eventrinfo.find(params[:id])
 
   if @eventrinfo.update_attributes(eventrinfo_params)
-    redirect_to events_url
+    redirect_to user_path(@user)
   else
     render :edit
   end
