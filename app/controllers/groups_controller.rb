@@ -21,16 +21,32 @@ class GroupsController < ApplicationController
     end
   end
 
+
+  def edit
+    @group = Group.find(params[:id])
+
+  end
+  
   def join
     @group = Group.find(params[:id])
     @group.users << @user
     redirect_to event_path(@event)
+
   end
 
   def update
+    @group = Group.find(params[:id])
+
+    if @group.update_attributes(group_params)
+      redirect_to event_path(@event)
+    else
+      render :edit
+    end
   end
 
   def destroy
+    @group = Group.find(params[:id])
+    @group.destroy
   end
 
   private
