@@ -357,6 +357,7 @@
 .event_main_info{
   width: 70%;
   float: left;
+  font-size: 14px;
 }
 
 .event_side_info {
@@ -364,12 +365,14 @@
   float: left;
 }
 
+.event_description_wrapper {
+  margin-right: 24px;
+}
+
 .event_description {
   background-color: white;
   padding: 24px;
   border: solid 1px #dfdfdf;
-  margin-right: 24px;
-
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08);
 }
 
@@ -411,4 +414,34 @@
 .title_location {
   font-size: 12px;
   color: #7f7f7f;
+}
+
+.groups_container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.groups_wrapper {
+  margin-right: 24px;
+  margin-top: 24px;
+}
+
+.groups {
+  display: inline-block;
+  flex-grow: 1;
+  margin-bottom: 24px;
+  width: 30%;
+  background-color: white;
+  border: solid 1px #7f7f7f;
+  list-style-type: none;
+
+}
+
+.groups:nth-child(3n-1){
+  margin-left: 24px;
+  margin-right: 24px;
+}
+
+.groups ul > li {
+  list-style-type: none;
 }

@@ -47,20 +47,28 @@
 
     </div>
 
-    <div class="groupie">
-      <h3> Group list </h3>
-      <% @event.groups.each do |g| %>
-        <% if g.id != nil %>
+    <div class="groups_wrapper">
+      <h4> GROUPS</h4>
+
+      <div class="groups_container">
+
+        <% @event.groups.each do |g| %>
+
+          <% if g.id != nil %>
+            <li class="groups">
           <%= render 'groups/single_group', g: g %> <br>
-        <%end%>
+        </li>
+          <%end%>
+
       <%end%>
 
+      </div>
 
       <p> <%= link_to 'Create a new group', new_event_group_path(@event) %> </p>
 
-
-
       <p><%= link_to 'Back to all events', events_path %></p>
+
+
     </div>
 
     <div class="reviews">
@@ -72,9 +80,6 @@
           <p><%= review.comment %></p>
           <p><%= review.user %></p> <br>
         <%end%>
-
-
-
 
       <% if current_user %>
 
