@@ -4,7 +4,7 @@
 <h3> Group list </h3>
 <% @event.groups.each do |g| %>
   <% if g.id != nil %>
-    <%= link_to g.name, event_group_path(@event, g.id) %> <br>
+    <%= render 'groups/single_group', g: g %> <br>
   <%end%>
 <%end%>
 
