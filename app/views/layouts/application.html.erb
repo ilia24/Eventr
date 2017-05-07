@@ -21,9 +21,12 @@
       <a href="/events">BROWSE</a>
         <% if current_user %>
             <%= current_user.email %> <%= link_to 'Log Out', session_path("current"), :method => :delete%>
-            <% if User.find(session[:user_id]).eventrinfo ==nil && User.find(session[:user_id]).hostinfo == nil %>
+            <% if User.find(session[:user_id]).eventrinfo ==nil  %>
                     <h4> <%= link_to 'Complete your profile!', new_user_eventrinfo_path(session[:user_id]) %> </h4>
-            <%end%>
+            <%else%>
+                    <%= link_to "#{current_user.eventrinfo.first_name}", user_path(session[:user_id]) %>
+              <% end %>
+
         <% else %>
         <%= link_to 'LOG IN', new_session_path %> <%= link_to 'SIGN UP', new_user_path %>
         <%end%>
@@ -32,7 +35,7 @@
         <p class="notice"><%= notice %></p>
         <p class="alert"><%= alert %></p>
       </div>
-    
+
     </div>
 
   </nav>
