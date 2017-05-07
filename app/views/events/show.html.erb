@@ -3,7 +3,9 @@
 
 <h3> Group list </h3>
 <% @event.groups.each do |g| %>
-  <%= link_to g.name, event_group_path(@event) %>
+  <% if g.id != nil %>
+    <%= link_to g.name, event_group_path(@event, g.id) %> <br>
+  <%end%>
 <%end%>
 
 

@@ -19,6 +19,8 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find(params[:id])
+    @group = @event.groups.build
+
 
     if current_user
       @review = @event.reviews.build

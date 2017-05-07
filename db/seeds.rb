@@ -11,6 +11,7 @@ User.destroy_all
 Eventrinfo.destroy_all
 Hostinfo.destroy_all
 Event.destroy_all
+Group.destroy_all
 
 #Create Eventr userbase
 a = User.create(email: 'ilia@gmail.com', password: 'ilia')
