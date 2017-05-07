@@ -1,26 +1,49 @@
-<div class="carousel_container">
-  <div class="carousel">
-    <div class="carousel_item"><%= image_tag ("home-slider/dance-contemp.jpeg") %></div>
-    <div class="carousel_item" id="weeknd">
-      <div id="weeknd_text">
-        <h2>the weeknd</h2>
-        <span class="starboy">STARBOY: LEGEND OF THE FALL 2017 WORLD TOUR</span>
+<div class="index_header_container">
+
+  <div class="index_header">
+    <div class="jlegend">
+      <div class="jlegend_text">
+        <h3>JOHN LEGEND</h3>
       </div>
-      <%= image_tag ("home-slider/img-weeknd.jpg") %></div>
-    <div class="carousel_item"><%= image_tag ("home-slider/john-legend-1.jpg") %></div>
+    </div>
+    <%= image_tag "header-john-legend.jpg" %>
   </div>
+
 </div>
 
-<main class="index_main">
-  <h2>happening near you</h2>
-  <h2> <%= link_to "Add an event near you", new_event_path %></h2>
+<div class="index_search">
+  <div class="search_inputs">
+    <div class="search_search">
+      <div class="search_label">
+        <h5>SEARCH</h6>
+        </div>
+      <div class="search_field">
+        <h4>The Weeknd</h4>
+      </div>
+    </div>
 
+    <div class="search_where">
+      <div class="search_label">
+        <h5>WHERE</h6>
+        </div>
+      <div class="search_field">
+        <h4>Toronto</h4>
+      </div>
+    </div>
 
-  <ul id="events_near_you">
-    <% @events.each do |current_event| %>
-    <li class="event_container">
-      <%= render 'index_event', eve nt: current_event %>
-    </li>
-    <% end %>
-  </ul>
-</main>
+    <div class="search_category">
+      <div class="search_label">
+        <h5>CATEGORY</h6>
+        </div>
+      <div class="search_field">
+        <h4>Music</h4>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="button_search">
+    <h4>SEARCH</h4>
+  </div>
+
+</div>

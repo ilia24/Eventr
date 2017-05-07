@@ -1,4 +1,4 @@
-<div class="index_header_container">
+<!-- <div class="index_header_container">
 
   <div class="index_header">
     <div class="jlegend">
@@ -46,4 +46,32 @@
     <h4>SEARCH</h4>
   </div>
 
+</div> -->
+
+
+<div class="carousel_container">
+  <div class="carousel">
+    <div class="carousel_item"><%= image_tag ("home-slider/dance-contemp.jpeg") %></div>
+    <div class="carousel_item" id="weeknd">
+      <div id="weeknd_text">
+        <h2>the weeknd</h2>
+        <span class="starboy">STARBOY: LEGEND OF THE FALL 2017 WORLD TOUR</span>
+      </div>
+      <%= image_tag ("home-slider/img-weeknd.jpg") %></div>
+    <div class="carousel_item"><%= image_tag ("home-slider/john-legend-1.jpg") %></div>
+  </div>
 </div>
+
+<main class="index_main">
+  <h2>happening near you</h2>
+  <h2> <%= link_to "Add an event near you", new_event_path %></h2>
+
+
+  <ul id="events_near_you">
+    <% @events.each do |current_event| %>
+    <li class="event_container">
+      <%= render 'events/index_event', event: current_event %>
+    </li>
+    <% end %>
+  </ul>
+</main>
