@@ -1,3 +1,6 @@
 <h1> <%= "#{@user.eventrinfo.first_name}" %> <%= "#{@user.eventrinfo.last_name}" %></h1>
 <div class= "about">
   Bio: <%= "#{@user.eventrinfo.bio}" %>
+<p>
+<%= link_to "Edit your profile", edit_user_eventrinfo_path(@user) %>
+</p>
