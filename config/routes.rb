@@ -11,7 +11,7 @@ resources :events do
   resources :reviews, only: %i(show create destroy)
 end
 
-get '/events/:event_id/groups/:id/join', to: 'groups#join', as: 'group_join'
+get '/events/:event_id/groups/:id/join', to: 'groups#join', as: 'join_group'
 
 resources :users, only: %i(show new create) do
   resources :hostinfos, only: %i(new create edit update destroy)
