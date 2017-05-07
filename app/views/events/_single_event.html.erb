@@ -47,8 +47,61 @@
 
     </div>
 
-    <div class="review">
+    <div class="groupie">
+      <h3> Group list </h3>
+      <% @event.groups.each do |g| %>
+        <% if g.id != nil %>
+          <%= render 'groups/single_group', g: g %> <br>
+        <%end%>
+      <%end%>
 
+
+      <p> <%= link_to 'Create a new group', new_event_group_path(@event) %> </p>
+
+
+
+      <p><%= link_to 'Back to all events', events_path %></p>
+    </div>
+
+    <div class="reviews">
+      <%= link_to 'Edit', edit_event_path(@event) %>
+      <%= link_to 'Delete', event_path(@event), method: :delete, data: {confirm: "Are you sure you want to delete the event #{@event.name}? This cannot be undone!"}%>
+
+      <h3> Review list </h3>
+        <% @event.reviews.each do |review| %>
+          <p><%= review.comment %></p>
+          <p><%= review.user %></p> <br>
+        <%end%>
+
+
+
+
+      <% if current_user %>
+
+        <%= form_for([@event, @review]) do |f| %>
+          <% if @review.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(@review.errors.count, "error") %> prohibited this review from being saved:</h2>
+
+                <ul>
+                  <% @review.errors.full_messages.each do |msg| %>
+                    <li><%= msg %></li>
+                  <% end %>
+                </ul>
+            </div>
+          <% end %>
+
+          <p>
+            <%= f.label :create_review %> <br>
+            <%= f.text_area :comment %>
+          </p>
+
+          <p> <%= f.submit %> </p>
+        <% end %>
+
+        <% else %>
+        <p> Please <%= link_to 'Log In', new_session_path %> or <%= link_to 'Sign Up', new_user_path%> to add a review </p>
+      <% end %>
     </div>
 
   </div>

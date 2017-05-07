@@ -22,22 +22,10 @@ class GroupsController < ApplicationController
     end
   end
 
-<<<<<<< HEAD
-  def edit
-    @group = Group.find(params[:id])
-
-  end
-
-  def join
-    @group = Group.find(params[:id])
-    @group.users << @user
-    redirect_to event_path(@event)
-=======
-
   def edit
     @group = Group.find(params[:id])
   end
-  
+
   def join
     @group = Group.find(params[:id])
     if @group.users.include? @user
@@ -47,7 +35,6 @@ class GroupsController < ApplicationController
       @group.users << @user
       redirect_to event_path(@event)
     end
->>>>>>> f0a6bac83bc3aa55c8373d571418fa79df3b427d
   end
 
   def update
