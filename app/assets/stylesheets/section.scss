@@ -492,12 +492,13 @@ $border-color: #d4d4d4;
   width: 100%;
   height: 80vh;
   display: flex;
-  align-items: center;
   justify-content: center;
 }
 
 .user_profile_container {
   width: 600px;
+  margin-top: 80px;
+  
 }
 
 .user_profile_top {
@@ -540,9 +541,44 @@ $border-color: #d4d4d4;
   }
 }
 
-.test {
+.user_profile_activity {
   height: 200px;
-  margin-top: 24px;
+  margin-top: 12px;
+  padding: 24px;
   background-color: white;
   border: solid 1px $border-color;
+}
+
+.event_thumbnail {
+  height: 124px;
+  width: 124px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  img {
+    height: 100%;
+  }
+}
+
+.event_main_info_container {
+  display: flex;
+  align-items: center;
+}
+
+.event_main_info_min {
+  margin-left: 24px;
+  font-weight: 400;
+  h4 {
+    font-weight: bold;
+  }
+  #event_date_min{
+    padding-top: 12px;
+    font-weight: 400;
+  }
+  #event_loc_min {
+    padding-top: 8px;
+    color: #7f7f7f;
+    font-weight: 400;
+  }
 }
