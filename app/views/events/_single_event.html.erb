@@ -47,12 +47,15 @@
 
     </div>
 
+
+
     <div class="groups_wrapper">
 
       <div class="heading_btn">
         <h4>GROUPS</h4>
         <p> <%= link_to '+ Create a new group', new_event_group_path(@event) %> </p>
       </div>
+
 
       <div class="groups_container">
 
@@ -83,9 +86,17 @@
 
     </div>
 
+    <div>
+
+      <%= link_to 'Going', join_event_path(@event) %> <br>
+
+      <% count = @event.going.count %>
+
+      <%= "#{count} EVENTRS are going to the event!!" %>
+    </div>
+
     <div class="reviews">
-      <%= link_to 'Edit', edit_event_path(@event) %>
-      <%= link_to 'Delete', event_path(@event), method: :delete, data: {confirm: "Are you sure you want to delete the event #{@event.name}? This cannot be undone!"}%>
+
 
       <h3> Review list </h3>
         <% @event.reviews.each do |review| %>
