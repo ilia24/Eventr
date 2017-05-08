@@ -3,22 +3,18 @@
 </div>
 
 <div class="title_header">
-
   <div class="title_content">
 
     <div class="event_show_date">
+
       <div class="event_mon">
-        <%=
-        d = event.date
-          I18n.t("date.abbr_month_names")[d.month]
-        %>
+        <%= event.date.strftime("%^b") %>
       </div>
+
       <div class="event_show_day">
-        <%=
-        d = event.date
-        d.strftime("%d")
-        %>
+        <%= event.date.strftime("%d") %>
       </div>
+
     </div>
 
     <div class="title_info">
