@@ -17,5 +17,5 @@ $(function() {
     });
   };
 
-  initMap();
+  $('#map').onload = initMap();
 });
