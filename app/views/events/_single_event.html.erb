@@ -40,6 +40,15 @@
 
     <div class="event_description_wrapper">
 
+      <!-- UNSTYLED INFO ADDED FROM HOSTINFO WITH CHECK TO MAKE SURE IT EXISTS-->
+      <% if event.user.hostinfo != nil %>
+      <p>Host name: <%= event.user.hostinfo.name %></p>
+      <p>Host Address: <%= event.user.hostinfo.address %></p>
+      <p>Host Website: <%= event.user.hostinfo.website %></p>
+      <% end %>
+
+
+
       <h4>DESCRIPTION</h4>
       <div class="event_description">
         Description <%= event.description %>
