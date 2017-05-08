@@ -1,3 +1,21 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
+$(function() {
+
+  console.log('THINGS HAS HAPPENED');
+  function initMap() {
+    var lat = parseFloat($('#map').attr('data-parameter1'));
+    var lng = parseFloat($('#map').attr('data-parameter2'));
+    var eventlocation = {lat, lng};
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 15,
+      center: eventlocation
+    });
+    var marker = new google.maps.Marker({
+      position: eventlocation,
+      map: map,
+      title: 'Event location',
+      label: 'E'
+    });
+  };
+
+  initMap();
+});

@@ -112,12 +112,12 @@
   <div class="event_side_info">
 
     <div class="event_map_wrapper">
-
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCicAETBLou3SdGkO9emwhptyQWfSD6Sp0"></script>
       <h4>MAP</h4>
       <div id="map" data-parameter1='<%= event.latitude %>' data-parameter2='<%= event.longitude %>'>
 
 
-        <script>
+        <!-- <script>
         function initMap() {
           var lat = parseFloat($('#map').attr('data-parameter1'));
           var lng = parseFloat($('#map').attr('data-parameter2'));
@@ -133,13 +133,10 @@
             label: 'E'
           });
         }
-        </script>
+        </script> -->
 
 
 
-        <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCicAETBLou3SdGkO9emwhptyQWfSD6Sp0&callback=initMap">
-        </script>
       </div>
 
     </div>
