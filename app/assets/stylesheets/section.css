@@ -152,6 +152,9 @@
 .events {
   height: 347px;
   max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .event_gen_info {
