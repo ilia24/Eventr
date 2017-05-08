@@ -6,7 +6,6 @@
   <div class="title_content">
 
     <div class="event_show_date">
-
       <div class="event_mon">
         <%= event.date.strftime("%^b") %>
       </div>
@@ -14,13 +13,10 @@
       <div class="event_show_day">
         <%= event.date.strftime("%d") %>
       </div>
-
     </div>
 
     <div class="title_info">
-      <span class="title_date">
-        <%= event.date.strftime("%A, %B %-d at %I:%M %p") %>
-      </span>
+      <span class="title_date"><%= event.date.strftime("%A, %B %-d at %I:%M %p") %></span>
       <h2><%= event.name %></h2>
       <span class="title_location"><%= event.location %></span>
     </div>
@@ -34,91 +30,121 @@
 
     <div class="event_description_wrapper">
 
-      <!-- UNSTYLED INFO ADDED FROM HOSTINFO WITH CHECK TO MAKE SURE IT EXISTS-->
-      <% if event.user.hostinfo != nil %>
-      <p>Host name: <%= event.user.hostinfo.name %></p>
-      <p>Host Address: <%= event.user.hostinfo.address %></p>
-      <p>Host Website: <%= event.user.hostinfo.website %></p>
-      <% end %>
-
-
 
       <h4>DESCRIPTION</h4>
       <div class="event_description">
         Description <%= event.description %>
+        <!-- UNSTYLED INFO ADDED FROM HOSTINFO WITH CHECK TO MAKE SURE IT EXISTS-->
+        <% if event.user.hostinfo != nil %>
+        <p>Host name: <%= event.user.hostinfo.name %></p>
+        <p>Host Address: <%= event.user.hostinfo.address %></p>
+        <p>Host Website: <%= event.user.hostinfo.website %></p>
+        <% end %>
       </div>
 
     </div>
 
-    <div class="groupie">
-      <h3> Group list </h3>
-      <% @event.groups.each do |g| %>
-        <% if g.id != nil %>
-          <%= render 'groups/single_group', g: g %> <br>
-        <%end%>
-      <%end%>
+      <div class="groups_wrapper">
 
-
-      <p> <%= link_to 'Create a new group', new_event_group_path(@event) %> </p>
-
-
-
-      <p><%= link_to 'Back to all events', events_path %></p>
-    </div>
-
-    <div class="reviews">
-      <%= link_to 'Edit', edit_event_path(@event) %>
-      <%= link_to 'Delete', event_path(@event), method: :delete, data: {confirm: "Are you sure you want to delete the event #{@event.name}? This cannot be undone!"}%>
-
-      <h3> Review list </h3>
-        <% @event.reviews.each do |review| %>
-          <% if review.id != nil %>
-            <p><%= review.comment %></p>
-            <p><%= review.user.eventrinfo.first_name %> <%= review.user.eventrinfo.last_name %></p>
-            <p><%= review.created_at.strftime("%a %B %e, %Y ") %></p> <br>
-          <%end%>
-        <%end%>
-
-
-
-
+    <div class="heading_btn">
+      <h4>GROUPS</h4>
       <% if current_user %>
-
-        <%= form_for([@event, @review]) do |f| %>
-          <% if @review.errors.any? %>
-            <div id="error_explanation">
-              <h2><%= pluralize(@review.errors.count, "error") %> prohibited this review from being saved:</h2>
-
-                <ul>
-                  <% @review.errors.full_messages.each do |msg| %>
-                    <li><%= msg %></li>
-                  <% end %>
-                </ul>
-            </div>
-          <% end %>
-
-          <p>
-            <%= f.label :create_review %> <br>
-            <%= f.text_area :comment %>
-          </p>
-
-          <p> <%= f.submit %> </p>
-        <% end %>
-
-        <% else %>
-        <p> Please <%= link_to 'Log In', new_session_path %> or <%= link_to 'Sign Up', new_user_path%> to add a review </p>
+      <p> <%= link_to '+ Create a new group', new_event_group_path(@event) %> </p>
+      <% else %>
+      <p> <%= link_to 'Log In to create a new group', new_session_path %></p>
       <% end %>
     </div>
 
+    <div class="groups_container">
+      <% @event.groups.each do |g| %>
+
+        <% if g.id != nil %>
+
+        <li class="groups">
+          <div class="groups_content">
+            <%= render 'groups/single_group', g: g %> <br>
+          </div>
+
+          <div class="event_going">
+            <h6>
+              <strong>5</strong> EVENTRS
+            </h6>
+            <div class="button_sm">
+              <%= link_to 'Join', join_group_path(@event, g.id) %> <br>
+            </div>
+          </div>
+        </li>
+        <%end%>
+    <%end%>
+
+    </div>
+
+
   </div>
+
+  <div class="reviews">
+
+
+    <h3> Review list </h3>
+      <% @event.reviews.each do |review| %>
+        <% if review.id != nil %>
+          <p><%= review.comment %></p>
+          <p><%= review.user.eventrinfo.first_name %> <%= review.user.eventrinfo.last_name %></p>
+          <p><%= review.created_at.strftime("%a %B %e, %Y ") %></p> <br>
+        <%end%>
+      <%end%>
+
+    <% if current_user %>
+
+      <%= form_for([@event, @review]) do |f| %>
+        <% if @review.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(@review.errors.count, "error") %> prohibited this review from being saved:</h2>
+
+              <ul>
+                <% @review.errors.full_messages.each do |msg| %>
+                  <li><%= msg %></li>
+                <% end %>
+              </ul>
+          </div>
+        <% end %>
+
+        <p>
+          <%= f.label :create_review %> <br>
+          <%= f.text_area :comment %>
+        </p>
+
+        <p> <%= f.submit %> </p>
+      <% end %>
+
+      <% else %>
+      <p> Please <%= link_to 'Log In', new_session_path %> or <%= link_to 'Sign Up', new_user_path%> to add a review </p>
+    <% end %>
+  </div>
+  <% if session[:user_id] == event.user_id %>
+    <%= link_to 'Edit', edit_event_path(@event) %>
+    <%= link_to 'Delete', event_path(@event), method: :delete, data: {confirm: "Are you sure you want to delete the event #{@event.name}? This cannot be undone!"}%>
+  <% end %>
+  <p><%= link_to 'Back to all events', events_path %></p>
+  </div>
+
 
   <div class="event_side_info">
 
     <div class="event_map_wrapper">
       <h4>MAP</h4>
-      <div id="map" data-parameter1='<%= event.latitude %>' data-parameter2='<%= event.longitude %>'>
-      </div>
+      <div id="map" data-parameter1='<%= event.latitude %>' data-parameter2='<%= event.longitude %>'></div>
 
+    </div>
+
+    <h4>GOING</h4>
+    <div>
+
+      <%= link_to 'Going', join_event_path(@event) %> <br>
+
+      <% count = @event.going.count %>
+
+      <%= "#{count} EVENTRS are going to the event!!" %>
     </div>
 
   </div>
