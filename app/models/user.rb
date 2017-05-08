@@ -8,4 +8,5 @@ class User < ApplicationRecord
   has_many :events
   has_many :members
   has_many :groups, through: :members
+  has_many :going
 end
