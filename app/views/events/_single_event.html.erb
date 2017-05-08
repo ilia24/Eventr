@@ -78,49 +78,49 @@
 
     <div class="reviews">
 
-    <h3> Review list </h3>
-      <% @event.reviews.each do |review| %>
-        <% if review.id != nil %>
-          <p><%= review.comment %></p>
-          <p><%= review.user.eventrinfo.first_name %> <%= review.user.eventrinfo.last_name %></p>
-          <p><%= review.created_at.strftime("%a %B %e, %Y ") %></p> <br>
+      <h3> Review list </h3>
+        <% @event.reviews.each do |review| %>
+          <% if review.id != nil %>
+            <p><%= review.comment %></p>
+            <p><%= review.user.eventrinfo.first_name %> <%= review.user.eventrinfo.last_name %></p>
+            <p><%= review.created_at.strftime("%a %B %e, %Y ") %></p> <br>
+          <%end%>
         <%end%>
-      <%end%>
 
-    <% if current_user %>
+      <% if current_user %>
 
-      <%= form_for([@event, @review]) do |f| %>
-        <% if @review.errors.any? %>
-          <div id="error_explanation">
-            <h2><%= pluralize(@review.errors.count, "error") %> prohibited this review from being saved:</h2>
+        <%= form_for([@event, @review]) do |f| %>
+          <% if @review.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(@review.errors.count, "error") %> prohibited this review from being saved:</h2>
 
-            <ul>
-              <% @review.errors.full_messages.each do |msg| %>
-                <li><%= msg %></li>
-              <% end %>
-            </ul>
-          </div>
+              <ul>
+                <% @review.errors.full_messages.each do |msg| %>
+                  <li><%= msg %></li>
+                <% end %>
+              </ul>
+            </div>
+          <% end %>
+
+          <p>
+            <%= f.label :create_review %> <br>
+            <%= f.text_area :comment %>
+          </p>
+
+          <p> <%= f.submit %> </p>
         <% end %>
 
-        <p>
-          <%= f.label :create_review %> <br>
-          <%= f.text_area :comment %>
-        </p>
-
-        <p> <%= f.submit %> </p>
+      <% else %>
+        <p> Please <%= link_to 'Log In', new_session_path %> or <%= link_to 'Sign Up', new_user_path%> to add a review </p>
       <% end %>
-
-    <% else %>
-      <p> Please <%= link_to 'Log In', new_session_path %> or <%= link_to 'Sign Up', new_user_path%> to add a review </p>
-    <% end %>
-  </div>
+    </div>
 
     <div class="edit_delete">
-    <% if session[:user_id] == event.user_id %>
-      <%= link_to 'Edit', edit_event_path(@event) %>
-      <%= link_to 'Delete', event_path(@event), method: :delete, data: {confirm: "Are you sure you want to delete the event #{@event.name}? This cannot be undone!"}%>
-    <% end %>
-  </div>
+      <% if session[:user_id] == event.user_id %>
+        <%= link_to 'Edit', edit_event_path(@event) %>
+        <%= link_to 'Delete', event_path(@event), method: :delete, data: {confirm: "Are you sure you want to delete the event #{@event.name}? This cannot be undone!"}%>
+      <% end %>
+    </div>
 
     <p><%= link_to 'Back to all events', events_path %></p>
 
@@ -136,12 +136,9 @@
 
     <h4>GOING</h4>
     <div>
-
       <%= link_to 'Going', join_event_path(@event) %> <br>
-
       <% count = @event.going.count %>
-
-      <%= "#{count} EVENTRS are going to the event!!" %>
+      <%= "#{count} Eventrs are going to the event!" %>
     </div>
 
   </div>
