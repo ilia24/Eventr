@@ -47,56 +47,25 @@
 
     </div>
 
-
-
-    <div class="groups_wrapper">
-
-      <div class="heading_btn">
-        <h4>GROUPS</h4>
-        <p> <%= link_to '+ Create a new group', new_event_group_path(@event) %> </p>
-      </div>
-
-
-      <div class="groups_container">
-
-        <% @event.groups.each do |g| %>
-
-          <% if g.id != nil %>
-
-          <li class="groups">
-            <div class="groups_content">
-              <%= render 'groups/single_group', g: g %> <br>
-            </div>
-
-            <div class="event_going">
-              <h6>
-                <strong>5</strong> EVENTRS
-              </h6>
-              <div class="button_sm">
-                <%= link_to 'Join', join_group_path(@event, g.id) %> <br>
-              </div>
-            </div>
-          </li>
-          <%end%>
+    <div class="groupie">
+      <h3> Group list </h3>
+      <% @event.groups.each do |g| %>
+        <% if g.id != nil %>
+          <%= render 'groups/single_group', g: g %> <br>
+        <%end%>
       <%end%>
 
-      </div>
+
+      <p> <%= link_to 'Create a new group', new_event_group_path(@event) %> </p>
+
+
+
       <p><%= link_to 'Back to all events', events_path %></p>
-
-
-    </div>
-
-    <div>
-
-      <%= link_to 'Going', join_event_path(@event) %> <br>
-
-      <% count = @event.going.count %>
-
-      <%= "#{count} EVENTRS are going to the event!!" %>
     </div>
 
     <div class="reviews">
-
+      <%= link_to 'Edit', edit_event_path(@event) %>
+      <%= link_to 'Delete', event_path(@event), method: :delete, data: {confirm: "Are you sure you want to delete the event #{@event.name}? This cannot be undone!"}%>
 
       <h3> Review list </h3>
         <% @event.reviews.each do |review| %>
@@ -106,6 +75,9 @@
             <p><%= review.created_at.strftime("%a %B %e, %Y ") %></p> <br>
           <%end%>
         <%end%>
+
+
+
 
       <% if current_user %>
 
@@ -140,30 +112,8 @@
   <div class="event_side_info">
 
     <div class="event_map_wrapper">
-
       <h4>MAP</h4>
       <div id="map" data-parameter1='<%= event.latitude %>' data-parameter2='<%= event.longitude %>'>
-        <script>
-        function initMap() {
-          var lat = parseFloat($('#map').attr('data-parameter1'));
-          var lng = parseFloat($('#map').attr('data-parameter2'));
-          var eventlocation = {lat, lng};
-          var map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 15,
-            center: eventlocation
-          });
-          var marker = new google.maps.Marker({
-            position: eventlocation,
-            map: map,
-            title: 'Event location',
-            label: 'E'
-          });
-        }
-        </script>
-
-        <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCicAETBLou3SdGkO9emwhptyQWfSD6Sp0&callback=initMap">
-        </script>
       </div>
 
     </div>
