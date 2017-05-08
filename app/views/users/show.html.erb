@@ -1,9 +1,20 @@
-<h1> <%= "#{@user.eventrinfo.first_name}" %> <%= "#{@user.eventrinfo.last_name}" %></h1>
-<div class= "about">
-  Bio: <%= "#{@user.eventrinfo.bio}" %>
+<div class="acc_set_wrapper">
 
-<% if current_user == @user %>
-<p>
-<%= link_to "Edit your profile", edit_user_eventrinfo_path(@user) %>
-</p>
-<%end%>
+  <div class="acc_set_container">
+
+    <div class="acc_set_picture">
+      <%= image_tag("brian.jpg")%>
+    </div>
+
+    <%= "#{@user.eventrinfo.first_name}" %> <%= "#{@user.eventrinfo.last_name}" %>
+    Bio: <%= "#{@user.eventrinfo.bio}" %>
+
+    <% if current_user == @user %>
+      <p>
+        <%= link_to "Edit your profile", edit_user_eventrinfo_path(@user) %>
+      </p>
+    <%end%>
+
+  </div>
+
+</div>
