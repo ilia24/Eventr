@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170506223354) do
+ActiveRecord::Schema.define(version: 20170507234854) do
 
   create_table "eventrinfos", force: :cascade do |t|
     t.integer  "user_id"
@@ -35,6 +35,14 @@ ActiveRecord::Schema.define(version: 20170506223354) do
     t.integer  "user_id"
     t.float    "latitude"
     t.float    "longitude"
+  end
+
+  create_table "goings", force: :cascade do |t|
+    t.integer  "number"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "user_id"
+    t.integer  "event_id"
   end
 
   create_table "groups", force: :cascade do |t|

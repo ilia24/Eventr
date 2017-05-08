@@ -189,7 +189,7 @@ hr {
 
 .invis_temp {
   position: absolute;
-  display: none;
+  /*display: none;*/
 }
 
 #input_name {

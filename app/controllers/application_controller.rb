@@ -20,5 +20,5 @@ end
     session[:user_id] && User.find(session[:user_id])
   end
 
-  helper_method :current_user
+  helper_method :current_user, :ensure_logged_in, :ensure_hostinfo_filled_out
 end
