@@ -161,6 +161,10 @@ hr {
   text-transform: uppercase;
 }
 
+.button_sm a {
+  color: white;
+}
+
 .link {
   color: #262626;
 }
