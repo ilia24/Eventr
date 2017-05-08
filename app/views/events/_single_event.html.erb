@@ -42,7 +42,7 @@
 
       <h4>DESCRIPTION</h4>
       <div class="event_description">
-        Description <%= event.description %>
+        <%= event.description %>
       </div>
 
     </div>
@@ -55,9 +55,11 @@
         <%end%>
       <%end%>
 
-
-      <p> <%= link_to 'Create a new group', new_event_group_path(@event) %> </p>
-
+      <% if current_user %>
+        <p> <%= link_to 'Create a new group', new_event_group_path(@event) %> </p>
+        <% else %>
+        <p> Please <%= link_to 'Log In', new_session_path %> or <%= link_to 'Sign Up', new_user_path%> to join groups </p>
+      <% end %>
 
 
       <p><%= link_to 'Back to all events', events_path %></p>
