@@ -132,9 +132,9 @@ hr {
 }
 
 .nav_links {
-  display: inline-block;
+  display: flex;
   list-style-type: none;
-  float: right;
+  justify-content: flex-end;
 }
 
 .nav_links > h4 {
@@ -145,6 +145,46 @@ hr {
 .nav_links a {
   padding-left: 50px;
   color: #333333;
+}
+
+.nav_search {
+  display: flex;
+  padding-top: 2px;
+}
+
+.nav_search img {
+  height: 14px;
+  padding-right: 12px;
+}
+
+#search-form {
+  height: 20px;
+  display: flex;
+  align-items: center;
+}
+
+#search-form input[type=text] {
+  width: 250px;
+  margin: 0;
+  letter-spacing: 1px;
+  font-family: "Montserrat";
+  font-weight: 300;
+  padding-bottom: 6px;
+  border-bottom: solid 1px #d4d4d4;
+}
+
+#search-form input[type=submit]{
+  position: relative;
+  /*background-color: #262626;*/
+  /*color: white;*/
+  font-size: 16px;
+  width: 30px;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  text-transform: uppercase;
+  float: right;
+  border: solid 1px #262626;
 }
 
 .button_sm {
