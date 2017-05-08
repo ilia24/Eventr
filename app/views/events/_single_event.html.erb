@@ -76,8 +76,7 @@
       </div>
     </div>
 
-  <div class="reviews">
-
+    <div class="reviews">
 
     <h3> Review list </h3>
       <% @event.reviews.each do |review| %>
@@ -95,11 +94,11 @@
           <div id="error_explanation">
             <h2><%= pluralize(@review.errors.count, "error") %> prohibited this review from being saved:</h2>
 
-              <ul>
-                <% @review.errors.full_messages.each do |msg| %>
-                  <li><%= msg %></li>
-                <% end %>
-              </ul>
+            <ul>
+              <% @review.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+              <% end %>
+            </ul>
           </div>
         <% end %>
 
@@ -111,17 +110,20 @@
         <p> <%= f.submit %> </p>
       <% end %>
 
-      <% else %>
+    <% else %>
       <p> Please <%= link_to 'Log In', new_session_path %> or <%= link_to 'Sign Up', new_user_path%> to add a review </p>
     <% end %>
   </div>
-  <div class="edit_delete">
+
+    <div class="edit_delete">
     <% if session[:user_id] == event.user_id %>
       <%= link_to 'Edit', edit_event_path(@event) %>
       <%= link_to 'Delete', event_path(@event), method: :delete, data: {confirm: "Are you sure you want to delete the event #{@event.name}? This cannot be undone!"}%>
     <% end %>
   </div>
-  <p><%= link_to 'Back to all events', events_path %></p>
+
+    <p><%= link_to 'Back to all events', events_path %></p>
+
   </div>
 
 
@@ -130,7 +132,6 @@
     <div class="event_map_wrapper">
       <h4>MAP</h4>
       <div id="map" data-parameter1='<%= event.latitude %>' data-parameter2='<%= event.longitude %>'></div>
-
     </div>
 
     <h4>GOING</h4>
