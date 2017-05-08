@@ -1,9 +1,52 @@
-<h1> <%= "#{@user.eventrinfo.first_name}" %> <%= "#{@user.eventrinfo.last_name}" %></h1>
-<div class= "about">
-  Bio: <%= "#{@user.eventrinfo.bio}" %>
+<div class="user_profile_wrapper">
 
-<% if current_user == @user %>
-<p>
-<%= link_to "Edit your profile", edit_user_eventrinfo_path(@user) %>
-</p>
-<%end%>
+  <div class="user_profile_container">
+
+    <div class="user_profile_top">
+
+      <div class="user_profile_picture">
+        <%= image_tag("brian.jpg")%>
+      </div>
+
+      <div class="user_profile_name">
+        <h2><%= "#{@user.eventrinfo.first_name}" %> <%= "#{@user.eventrinfo.last_name}" %></h2>
+        <h5>MUSIC LOVER</h5>
+      </div>
+
+      <div class="user_profile_bio">
+
+        <% if current_user == @user %>
+        <p>
+          <%= link_to "Edit your profile", edit_user_eventrinfo_path(@user) %>
+        </p>
+        <%end%>
+
+        <h5>BIO</h5>
+        <%= "#{@user.eventrinfo.bio}" %>
+
+      </div>
+
+    </div>
+
+    <h5>ACTIVITY</h5>
+    <div class="user_profile_activity">
+
+      <div class="event_main_info_container">
+
+        <div class="event_thumbnail">
+          <%= image_tag("header-john-legend.jpg")%>
+        </div>
+
+        <div class="event_main_info_min">
+          <h4>JOHN LEGEND</h4>
+          <h5 id="event_date_min">Saturaday, 3:00 PM - 10:00 PM</h5>
+          <h5 id="event_loc_min">2 Matilda St, Toronto, ON</h5>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
