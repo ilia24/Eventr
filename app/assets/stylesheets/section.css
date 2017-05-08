@@ -465,6 +465,12 @@
 .heading_btn a {
   color: #262626;
   letter-spacing: 1px;
+  transition: transform .2s ease-out;
+  display: inline-block;
+}
+
+.heading_btn a:hover {
+  transform: translate(5px,0);
 }
 
 .heading_btn > p {
