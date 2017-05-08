@@ -19,11 +19,9 @@
 
     <div class="title_info">
       <span class="title_date">
-        <%= d = event.date
-          d.strftime("%A, %B %d at %I:%M %p")
-          %>
+        <%= event.date.strftime("%A, %B %-d at %I:%M %p") %>
       </span>
-      <h2><%= link_to "#{event.name}", event %></h2>
+      <h2><%= event.name %></h2>
       <span class="title_location"><%= event.location %></span>
     </div>
 
