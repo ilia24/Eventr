@@ -60,5 +60,8 @@ end
 #this gem is necessary for map and location functionality
 gem 'geocoder'
 
+#this gem is for pulling info from API -ilia
+gem 'httparty'
+
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
