@@ -432,6 +432,7 @@
   display: inline-block;
   flex-grow: 1;
   background-color: white;
+  width: 30%;
   list-style-type: none;
   border: solid 1px #dfdfdf;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08);
