@@ -456,3 +456,20 @@
 .groups_content ul {
   padding-left: 0;
 }
+
+.heading_btn {
+  display: flex;
+  align-items: center;
+}
+
+.heading_btn a {
+  color: #262626;
+  letter-spacing: 1px;
+}
+
+.heading_btn > p {
+  padding-left: 24px;
+  padding-bottom: 12px;
+  text-transform: uppercase;
+  margin: 0;
+}
