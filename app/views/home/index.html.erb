@@ -19,17 +19,14 @@
 </div>
 
 <main class="index_main">
-
   <h2>happening near you</h2>
-  <h2> <%= link_to "Add an event near you", new_event_path %></h2>
-  <ul id="events_near_you">
+  <h2><%= link_to "Add an event near you", new_event_path %></h2>
 
-    <% @events.each do |current_event| %>
-      <li class="event_container">
-        <%= render 'events/index_event', event: current_event %>
-      </li>
-    <% end %>
-
-  </ul>
-
+    <ul id="events_near_you">
+      <% @events.each do |current_event| %>
+        <li class="event_container">
+          <%= render 'events/index_event', event: current_event %>
+        </li>
+      <% end %>
+    </ul>
 </main>
