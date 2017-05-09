@@ -1,7 +1,52 @@
+// STYLE GUIDE
 
 $border-color: #d4d4d4;
 
-/*INDEX*/
+// HOME
+
+.carousel_container {
+  display: flex;
+  height: 543px;
+  width: 100%;
+  padding-top: 70px;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.carousel {
+  height: 100%;
+  display: inline-flex;
+}
+
+.carousel_item {
+  height: 100%;
+  width: 1048px;
+  padding-left: 25px;
+  padding-right: 25px;
+  text-align: center;
+}
+
+.carousel_item > img {
+  width: 100%;
+}
+
+#weeknd_text {
+  left: 0;
+  top: 360px;
+  position: absolute;
+  width: 100%;
+}
+
+#weeknd_text > h2{
+  color: white;
+}
+
+.starboy {
+  font-size: 36px;
+  color: white;
+}
+
+// INDEX
 
 #header_image_container {
   width: 70%;
@@ -144,8 +189,7 @@ $border-color: #d4d4d4;
   height: 50%;
 }
 
-
-/*SHOW*/
+// SHOW
 
 .events_wrapper {
   margin-left: 100px;
@@ -193,7 +237,7 @@ $border-color: #d4d4d4;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08);
 }
 
-/* EVENT INDEX */
+// EVENT INDEX
 
 .index_header_container {
   height: 300px;
@@ -292,24 +336,7 @@ $border-color: #d4d4d4;
   padding-bottom: 24px;
 }
 
-.button_search {
-  height: 90px;
-  background-color: #262626;
-  display: flex;
-  align-items: center;
-}
-
-.button_search h4{
-  color: white;
-  background-color: #262626;
-  padding-left: 50px;
-  padding-right: 50px;
-  font-weight: 300;
-  letter-spacing: 1px;
-}
-
-
-/* EVENT SHOW */
+// EVENT SHOW
 
 .event_show_header {
   position: relative;
@@ -487,7 +514,7 @@ $border-color: #d4d4d4;
   margin: 0;
 }
 
-/* USER PROFILE */
+// USER PROFILE
 
 .user_profile_wrapper {
   width: 100%;
@@ -499,7 +526,7 @@ $border-color: #d4d4d4;
 .user_profile_container {
   width: 600px;
   margin-top: 80px;
-  
+
 }
 
 .user_profile_top {
