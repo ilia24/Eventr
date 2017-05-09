@@ -140,7 +140,32 @@ hr {
     margin: 0;
   }
   a {
-    padding-left: 50px;
+    position: relative;
+    margin-left: 50px;
+    padding-bottom: 4px;
+    color: #333333;
+    text-decoration: none;
+  }
+  a:before{
+    content: "";
+ position: absolute;
+ width: 100%;
+ height: 2px;
+ bottom: 0;
+ left: 0;
+ background-color: #333333;
+ visibility: hidden;
+ -webkit-transform: scaleX(0);
+ transform: scaleX(0);
+ -webkit-transition: all 0.3s ease-in-out 0s;
+ transition: all 0.3s ease-in-out 0s;
+  }
+  a:hover:before{
+    visibility: visible;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+  }
+  a:hover{
     color: #333333;
   }
 }
@@ -152,6 +177,7 @@ hr {
     height: 14px;
     padding-right: 12px;
   }
+
 }
 
 #search-form {
@@ -212,7 +238,7 @@ hr {
   letter-spacing: 1px;
 }
 
-.button_sm, .button_search{
+.button_sm, .button_search {
   -o-transition:.5s;
   -ms-transition:.5s;
   -moz-transition:.5s;
