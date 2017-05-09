@@ -9,10 +9,13 @@ end
   end
 
   def create
-    @user = User.new(user_params)
-
-    if @user[:avatar] == nil
-      @user[:avatar] = 'app/assets/images/profile-placeholders/profile-placeholder-01.svg'
+    if user_params[:avatar] == nil
+      File.open("app/assets/images/brian.jpg") do |f|
+      updated_params = user_params.merge(:avatar => f)
+      @user= User.new(updated_params)
+      end
+    else
+      @user = User.new(user_params)
     end
 
     if @user.save
