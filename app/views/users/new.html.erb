@@ -1,38 +1,46 @@
 <h1>Sign Up</h1>
 
-<%= form_for @user do |f| %>
-<% if @user.errors.any? %>
+<div class="user_profile_wrapper">
+
+  <div class="log_sign_container">
+
+    <%= form_for @user do |f| %>
+    <% if @user.errors.any? %>
     <div class="error_messages">
       <h2>Form is invalid</h2>
       <ul>
         <% @user.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
+        <li><%= message %></li>
         <% end %>
       </ul>
     </div>
-  <% end %>
+    <% end %>
 
-<p>
-  <%= f.label :email %>
-  <%= f.email_field :email %>
-</p>
+    <div class="form_field">
+      <%= f.label :email %>
+      <%= f.email_field :email %>
+    </div>
 
-<p>
-  <%= f.label :password %>
-  <%= f.password_field :password %>
-</p>
+    <div class="form_field">
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+    </div>
 
-<p>
-  <%= f.label :password_confirmation %>
-  <%= f.password_field :password_confirmation %>
-</p>
+    <div class="form_field">
+      <%= f.label :password_confirmation %>
+      <%= f.password_field :password_confirmation %>
+    </div>
 
-<p>
-  <%= f.label :avatar %>
-  <%= f.file_field :avatar %>
-</p>
+    <p>
+      <%= f.label :avatar %>
+      <%= f.file_field :avatar %>
+    </p>
 
-<p>
-  <%= f.submit %>
-</p>
-<% end %>
+    <p>
+      <%= f.submit %>
+    </p>
+    <% end %>
+
+  </div>
+
+</div>
