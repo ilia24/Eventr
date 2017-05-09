@@ -115,6 +115,7 @@
       <% end %>
     </div>
 
+
     <div class="edit_delete">
       <% if session[:user_id] == event.user_id %>
         <%= link_to 'Edit', edit_event_path(@event) %>
@@ -123,7 +124,7 @@
     </div>
 
     <p><%= link_to 'Back to all events', events_path %></p>
-
+      
   </div>
 
 
