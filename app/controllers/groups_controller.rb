@@ -11,11 +11,11 @@ class GroupsController < ApplicationController
   end
 
   def create
-    if @user.groups.exists?
-      flash[:notice] = 'You are already in a group!'
-      redirect_to event_path(@event)
-      return
-    end
+    # if @event.groups.exists?
+    #   flash[:notice] = 'You are already in a group!'
+    #   redirect_to event_path(@event)
+    #   return
+    # end
 
     @group = @event.groups.build(group_params)
 
@@ -41,9 +41,9 @@ class GroupsController < ApplicationController
     if @group.users.include? @user
       flash[:notice] = 'You are already in this group'
       redirect_to event_path(@event)
-    elsif @user.groups.exists?
-      flash[:notice] = 'You are already in a group'
-      redirect_to event_path(@event)
+    # elsif @user.groups.exists?
+      # flash[:notice] = 'You are already in a group'
+      # redirect_to event_path(@event)
     else
       @group.users << @user
       redirect_to event_path(@event)
