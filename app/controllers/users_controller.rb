@@ -14,6 +14,11 @@ end
     if @user.save
       flash[:notice] = 'Signed up succesfully!'
       session[:user_id] = @user.id
+      if @user.avatar.file.nil? == nil
+        File.open("app/assets/images/profile-placeholders/profile-placeholder-01.svg") do |f|
+        @user.update_attributes(:avatar, f)
+      end
+      end
       redirect_to events_url
     else
       render :new
