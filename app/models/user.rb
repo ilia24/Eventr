@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   has_secure_password
   validates :email, presence: true
+  mount_uploader :avatar, AvatarUploader
 
   has_one :hostinfo
   has_one :eventrinfo
