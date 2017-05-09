@@ -1,4 +1,5 @@
 class AvatarUploader < CarrierWave::Uploader::Base
+  include CarrierWave::MiniMagick
 
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
@@ -17,6 +18,13 @@ class AvatarUploader < CarrierWave::Uploader::Base
   def extension_whitelist
     %w(jpg jpeg png)
   end
+
+  process resize_to_fit: [120, 120]
+
+    version :thumb do
+      process resize_to_fill: [44,44]
+    end
+
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
   # def default_url(*args)
