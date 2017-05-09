@@ -9,20 +9,24 @@ end
   end
 
   def create
-    @user = User.new(user_params)
+    if user_params[:avatar] == nil
+      File.open("app/assets/images/brian.jpg") do |f|
+      updated_params = user_params.merge(:avatar => f)
+      @user= User.new(updated_params)
+      end
+    else
+      @user = User.new(user_params)
+    end
 
     if @user.save
       flash[:notice] = 'Signed up succesfully!'
       session[:user_id] = @user.id
-      if @user.avatar.file.nil? == nil
-        File.open("app/assets/images/profile-placeholders/profile-placeholder-01.svg") do |f|
-        @user.update_attributes(:avatar, f)
-      end
-      end
       redirect_to events_url
     else
       render :new
     end
+
+
   end
 
   def update
@@ -38,7 +42,6 @@ end
   def delete
     @user = User.find(params[:id])
     @user.destroy
-
   end
 
 
