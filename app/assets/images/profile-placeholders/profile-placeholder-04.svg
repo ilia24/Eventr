@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 19.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 120 120" style="enable-background:new 0 0 120 120;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#B2BFC6;}
+	.st1{fill:#FFDC4F;}
+	.st2{fill:#FF915B;}
+	.st3{fill:#77DAFF;}
+	.st4{fill:#00EDA4;}
+	.st5{fill:#333333;}
+	.st6{fill:none;stroke:#333333;stroke-width:5;stroke-linecap:round;stroke-miterlimit:10;}
+	.st7{fill:#333333;stroke:#333333;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st8{fill:none;stroke:#333333;stroke-width:5;stroke-miterlimit:10;}
+	.st9{fill:none;stroke:#333333;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+</style>
+<circle class="st4" cx="60" cy="60" r="60"/>
+<rect class="st4" width="120" height="120"/>
+<g>
+	<g>
+		<circle class="st8" cx="26.5" cy="52.2" r="8.8"/>
+		<circle class="st8" cx="93.5" cy="52.2" r="8.8"/>
+	</g>
+	<polygon class="st6" points="69.2,85.5 50.8,85.5 53,64.7 66,64.7 	"/>
+	<g>
+		<line class="st6" x1="17.7" y1="68.7" x2="14.7" y2="75.1"/>
+		<line class="st6" x1="27.5" y1="71" x2="27.5" y2="78"/>
+	</g>
+	<g>
+		<line class="st6" x1="101.3" y1="68.7" x2="104.3" y2="75.1"/>
+		<line class="st6" x1="91.5" y1="71" x2="91.5" y2="78"/>
+	</g>
+</g>
+</svg>
