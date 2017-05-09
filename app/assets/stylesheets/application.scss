@@ -197,6 +197,33 @@ hr {
   }
 }
 
+.button_search {
+  height: 90px;
+  background-color: #262626;
+  display: flex;
+  align-items: center;
+}
+
+.button_search h4{
+  color: white;
+  padding-left: 50px;
+  padding-right: 50px;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+.button_sm, .button_search{
+  -o-transition:.5s;
+  -ms-transition:.5s;
+  -moz-transition:.5s;
+  -webkit-transition:.5s;
+  transition:.5s;
+}
+
+.button_sm:hover, .button_search:hover {
+  background-color: #595959;
+}
+
 .link {
   color: #262626;
 }
