@@ -14,6 +14,9 @@
  *= require_self
  */
 
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
 /*GLOBAL*/
 
 html {
@@ -266,7 +269,7 @@ hr {
   transition:.5s;
 }
 
-.button_sm:hover, .button_search:hover {
+.button_sm:hover, .button_search:hover, input[type=submit]:hover {
   background-color: #595959;
 }
 
@@ -361,18 +364,19 @@ hr {
 }
 
 input[type=submit] {
+  font-family: "Montserrat";
+  font-weight: 400;
   position: relative;
   background-color: #262626;
   color: white;
   font-size: 16px;
   width: 200px;
-  margin-top: 24px;
   padding-top: 15px;
   padding-bottom: 15px;
   text-align: center;
   text-transform: uppercase;
   float: right;
-  border: solid 1px #262626;
+  border: none;
 
   -o-transition:.5s;
   -ms-transition:.5s;
@@ -383,4 +387,27 @@ input[type=submit] {
 
 .submit {
   flex-basis: 100%;
+}
+
+.form_content {
+  background-color: white;
+  border: solid 1px #d4d4d4;
+}
+
+.new_user {
+  .form_field {
+    margin: -1px;
+  }
+}
+
+.error_messages {
+  width: 400px;
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  li {
+    padding-bottom: 6px;
+    color: #DA4F4F;
+  }
 }
