@@ -266,7 +266,7 @@ hr {
   transition:.5s;
 }
 
-.button_sm:hover, .button_search:hover {
+.button_sm:hover, .button_search:hover, input[type=submit]:hover {
   background-color: #595959;
 }
 
@@ -373,7 +373,7 @@ input[type=submit] {
   text-align: center;
   text-transform: uppercase;
   float: right;
-  border: solid 1px #262626;
+  border: none;
 
   -o-transition:.5s;
   -ms-transition:.5s;
