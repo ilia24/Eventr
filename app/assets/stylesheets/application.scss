@@ -52,7 +52,7 @@ a {
 }
 
 label {
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -94,6 +94,20 @@ input[type=number] {
   border: 0;
 }
 
+input[type=email] {
+  margin-top: 12px;
+  font-size: 16px;
+  margin-bottom: 6px;
+  border: 0;
+}
+
+input[type=password] {
+  margin-top: 12px;
+  font-size: 16px;
+  margin-bottom: 6px;
+  border: 0;
+}
+
 h2 {
   font-size: 24px;
   text-transform: uppercase;
@@ -122,6 +136,12 @@ hr {
   width: 140%;
   border-color: #ebebeb;
   margin: 0;
+}
+
+.form_field {
+  background-color: white;
+  padding: 24px;
+  border: solid 1px #d4d4d4;
 }
 
 /*NAV*/
