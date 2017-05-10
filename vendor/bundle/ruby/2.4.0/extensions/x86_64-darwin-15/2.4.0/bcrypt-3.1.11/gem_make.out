@@ -1,0 +1,51 @@
+current directory: /Users/briandu/bitmaker/projects/Eventr/eventr/vendor/bundle/ruby/2.4.0/gems/bcrypt-3.1.11/ext/mri
+/usr/local/opt/ruby/bin/ruby -r ./siteconf20170510-88269-1ydhpy.rb extconf.rb
+creating Makefile
+
+current directory: /Users/briandu/bitmaker/projects/Eventr/eventr/vendor/bundle/ruby/2.4.0/gems/bcrypt-3.1.11/ext/mri
+make "DESTDIR=" clean
+
+current directory: /Users/briandu/bitmaker/projects/Eventr/eventr/vendor/bundle/ruby/2.4.0/gems/bcrypt-3.1.11/ext/mri
+make "DESTDIR="
+compiling bcrypt_ext.c
+bcrypt_ext.c:17:25: warning: implicit conversion loses integer precision: 'long' to 'int' [-Wshorten-64-to-32]
+            NIL_P(input) ? 0 : RSTRING_LEN(input));
+                               ^~~~~~~~~~~~~~~~~~
+/usr/local/Cellar/ruby/2.4.1_1/include/ruby-2.4.0/ruby/ruby.h:980:6: note: expanded from macro 'RSTRING_LEN'
+     RSTRING_EMBED_LEN(str) : \
+     ^~~~~~~~~~~~~~~~~~~~~~
+/usr/local/Cellar/ruby/2.4.1_1/include/ruby-2.4.0/ruby/ruby.h:976:6: note: expanded from macro 'RSTRING_EMBED_LEN'
+     (long)((RBASIC(str)->flags >> RSTRING_EMBED_LEN_SHIFT) & \
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+bcrypt_ext.c:17:25: warning: implicit conversion loses integer precision: 'long' to 'int' [-Wshorten-64-to-32]
+            NIL_P(input) ? 0 : RSTRING_LEN(input));
+                               ^~~~~~~~~~~~~~~~~~
+/usr/local/Cellar/ruby/2.4.1_1/include/ruby-2.4.0/ruby/ruby.h:981:28: note: expanded from macro 'RSTRING_LEN'
+     RSTRING(str)->as.heap.len)
+     ~~~~~~~~~~~~~~~~~~~~~~^~~
+2 warnings generated.
+compiling crypt.c
+crypt.c:15:26: warning: implicit conversion loses integer precision: 'long' to 'int' [-Wshorten-64-to-32]
+      NIL_P(input) ? 0 : RSTRING_LEN(input));
+                         ^~~~~~~~~~~~~~~~~~
+/usr/local/Cellar/ruby/2.4.1_1/include/ruby-2.4.0/ruby/ruby.h:980:6: note: expanded from macro 'RSTRING_LEN'
+     RSTRING_EMBED_LEN(str) : \
+     ^~~~~~~~~~~~~~~~~~~~~~
+/usr/local/Cellar/ruby/2.4.1_1/include/ruby-2.4.0/ruby/ruby.h:976:6: note: expanded from macro 'RSTRING_EMBED_LEN'
+     (long)((RBASIC(str)->flags >> RSTRING_EMBED_LEN_SHIFT) & \
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+crypt.c:15:26: warning: implicit conversion loses integer precision: 'long' to 'int' [-Wshorten-64-to-32]
+      NIL_P(input) ? 0 : RSTRING_LEN(input));
+                         ^~~~~~~~~~~~~~~~~~
+/usr/local/Cellar/ruby/2.4.1_1/include/ruby-2.4.0/ruby/ruby.h:981:28: note: expanded from macro 'RSTRING_LEN'
+     RSTRING(str)->as.heap.len)
+     ~~~~~~~~~~~~~~~~~~~~~~^~~
+2 warnings generated.
+compiling crypt_blowfish.c
+compiling crypt_gensalt.c
+compiling wrapper.c
+linking shared-object bcrypt_ext.bundle
+
+current directory: /Users/briandu/bitmaker/projects/Eventr/eventr/vendor/bundle/ruby/2.4.0/gems/bcrypt-3.1.11/ext/mri
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 bcrypt_ext.bundle ./.gem.20170510-88269-1rxy052

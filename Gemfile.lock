@@ -58,6 +58,8 @@ GEM
     erubis (2.7.0)
     execjs (2.7.0)
     ffi (1.9.18)
+    font-awesome-sass (4.7.0)
+      sass (>= 3.2)
     geocoder (1.4.3)
     globalid (0.4.0)
       activesupport (>= 4.2.0)
@@ -84,11 +86,11 @@ GEM
     mime-types-data (3.2016.0521)
     mini_magick (4.7.0)
     mini_portile2 (2.1.0)
-    minitest (5.10.1)
+    minitest (5.10.2)
     multi_json (1.12.1)
     multi_xml (0.6.0)
     nio4r (2.0.0)
-    nokogiri (1.7.1)
+    nokogiri (1.7.2)
       mini_portile2 (~> 2.1.0)
     pg (0.20.0)
     puma (3.8.2)
@@ -166,6 +168,7 @@ DEPENDENCIES
   byebug
   carrierwave (~> 1.0)
   coffee-rails (~> 4.2)
+  font-awesome-sass (~> 4.7.0)
   geocoder
   httparty
   jbuilder (~> 2.5)

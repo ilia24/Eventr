@@ -11,7 +11,7 @@
       <div class="error_messages">
         <ul>
           <% @user.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
+          <li><i class="fa fa-flag"></i><%= message %></li>
           <% end %>
         </ul>
       </div>
