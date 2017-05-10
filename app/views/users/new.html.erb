@@ -4,18 +4,18 @@
 
     <h2>SIGN UP</h2>
 
-    <div class="form_content">
+    <%= form_for @user do |f| %>
+    <% if @user.errors.any? %>
+    <div class="error_messages">
+      <ul>
+        <% @user.errors.full_messages.each do |message| %>
+        <li><i class="fa fa-close"></i> <%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+    <% end %>
 
-      <%= form_for @user do |f| %>
-      <% if @user.errors.any? %>
-      <div class="error_messages">
-        <ul>
-          <% @user.errors.full_messages.each do |message| %>
-          <li><i class="fa fa-flag"></i><%= message %></li>
-          <% end %>
-        </ul>
-      </div>
-      <% end %>
+    <div class="form_content">
 
       <div class="form_field">
         <%= f.label :email %>
@@ -30,11 +30,6 @@
       <div class="form_field">
         <%= f.label :password_confirmation %>
         <%= f.password_field :password_confirmation %>
-      </div>
-
-      <div class="form_field">
-        <%= f.label :avatar %>
-        <%= f.file_field :avatar %>
       </div>
 
       <div class="event_going">

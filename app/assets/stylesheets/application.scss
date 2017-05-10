@@ -111,6 +111,13 @@ input[type=password] {
   border: 0;
 }
 
+input[type=file] {
+  margin-top: 12px;
+  font-size: 16px;
+  margin-bottom: 6px;
+  border: 0;
+}
+
 h2 {
   font-size: 24px;
   text-transform: uppercase;
@@ -394,14 +401,13 @@ input[type=submit] {
   border: solid 1px #d4d4d4;
 }
 
-.new_user {
-  .form_field {
-    margin: -1px;
-  }
+.form_field {
+  margin: -1px;
 }
 
 .error_messages {
   width: 400px;
+  margin: 0;
   ul {
     list-style-type: none;
     padding: 0;
@@ -409,5 +415,6 @@ input[type=submit] {
   li {
     padding-bottom: 6px;
     color: #DA4F4F;
+    word-wrap: break-word;
   }
 }
