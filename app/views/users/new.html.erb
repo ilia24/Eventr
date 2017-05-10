@@ -4,12 +4,11 @@
 
     <h2>SIGN UP</h2>
 
-    <div class="form-content">
+    <div class="form_content">
 
       <%= form_for @user do |f| %>
       <% if @user.errors.any? %>
       <div class="error_messages">
-        <h2>Form is invalid</h2>
         <ul>
           <% @user.errors.full_messages.each do |message| %>
           <li><%= message %></li>

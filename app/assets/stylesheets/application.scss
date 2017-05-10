@@ -386,7 +386,7 @@ input[type=submit] {
   flex-basis: 100%;
 }
 
-.form-content {
+.form_content {
   background-color: white;
   border: solid 1px #d4d4d4;
 }
@@ -394,5 +394,17 @@ input[type=submit] {
 .new_user {
   .form_field {
     margin: -1px;
+  }
+}
+
+.error_messages {
+  width: 400px;
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  li {
+    padding-bottom: 6px;
+    color: #DA4F4F;
   }
 }
