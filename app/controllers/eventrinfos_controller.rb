@@ -20,7 +20,7 @@ before_action :load_user
   end
 
 def edit
-  @eventrinfo = Eventrinfo.find(params[:id])
+  @eventrinfo = User.find(params[:id]).eventrinfo
 end
 
 def update

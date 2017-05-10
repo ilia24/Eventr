@@ -1,18 +1,32 @@
-<h1> Log In </h1>
+<div class="log_sign_wrapper">
 
-<%= form_tag sessions_path do %>
-<p>
-  <%= label_tag :email %><br/>
-  <%= email_field_tag :email, params[:email] %>
-</p>
+  <div class="log_sign_container">
 
-<p>
-  <%= label_tag :password %><br/>
-  <%= password_field_tag :password %>
-</p>
+    <h2>LOG IN</h2>
 
-<p>
-  <%= submit_tag "EntR" %>
-</p>
+    <div class="form_content">
 
-<%end %>  
+      <%= form_tag sessions_path do %>
+
+      <div class="form_field">
+        <%= label_tag :email %>
+        <%= email_field_tag :email, params[:email] %>
+      </div>
+
+      <div class="form_field">
+        <%= label_tag :password %>
+        <%= password_field_tag :password %>
+      </div>
+
+      <div class="event_going">
+        <h6><i class="fa fa-circle-o"></i> REMEMBER ME</h6>
+        <%= submit_tag "LOG IN" %>
+      </div>
+
+      <%end %>
+
+    </div>
+
+  </div>
+
+</div>

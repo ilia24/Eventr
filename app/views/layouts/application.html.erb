@@ -7,6 +7,8 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCicAETBLou3SdGkO9emwhptyQWfSD6Sp0"></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
   </head>
 
   <nav>
@@ -16,6 +18,13 @@
     </div>
 
     <div class="nav_links">
+
+      <div class="nav_search">
+          <%= image_tag ("ic_search_black_24px.svg") %>
+          <%= form_tag(events_path, :method => "get", id: "search-form") do %>
+            <%= text_field_tag :search, params[:search], placeholder: "SEARCH EVENTS" %>
+          <% end %>
+      </div>
 
       <a href="/">HOME</a>
       <a href="/events">BROWSE</a>
@@ -32,13 +41,6 @@
         <% else %>
         <%= link_to 'LOG IN', new_session_path %> <%= link_to 'SIGN UP', new_user_path %>
         <%end%>
-
-        <div>
-          <%= form_tag(events_path, :method => "get", id: "search-form") do %>
-            <%= text_field_tag :search, params[:search], placeholder: "Search Events" %>
-            <%= submit_tag "Search", :name => nil %>
-          <% end %>
-        </div>
 
       <div class="invis_temp">
         <p class="notice"><%= notice %></p>

@@ -22,13 +22,14 @@ gem 'coffee-rails', '~> 4.2'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
-gem 'turbolinks', '~> 5'
+# gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
+gem 'font-awesome-sass', '~> 4.7.0'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -49,7 +50,7 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-  gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
+  # gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
 end
 
 
@@ -57,8 +58,15 @@ group :production do
   gem 'pg'
 end
 
+#this gem allows for users to upload photos
+gem 'carrierwave', '~> 1.0'
+gem "mini_magick"
+
 #this gem is necessary for map and location functionality
 gem 'geocoder'
+
+#this gem is for pulling info from API -ilia
+gem 'httparty'
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

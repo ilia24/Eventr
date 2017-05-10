@@ -9,7 +9,14 @@ end
   end
 
   def create
-    @user = User.new(user_params)
+    if user_params[:avatar] == nil
+      File.open("app/assets/images/brian.jpg") do |f|
+      updated_params = user_params.merge(:avatar => f)
+      @user= User.new(updated_params)
+      end
+    else
+      @user = User.new(user_params)
+    end
 
     if @user.save
       flash[:notice] = 'Signed up succesfully!'
@@ -18,6 +25,8 @@ end
     else
       render :new
     end
+
+
   end
 
   def update
@@ -33,14 +42,13 @@ end
   def delete
     @user = User.find(params[:id])
     @user.destroy
-
   end
 
 
 
   private
   def user_params
-    params.require(:user).permit(:email, :password, :password_confirmation)
+    params.require(:user).permit(:email, :password, :password_confirmation, :avatar)
   end
 
 end
