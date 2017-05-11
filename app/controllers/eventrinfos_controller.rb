@@ -10,7 +10,7 @@ before_action :load_user
     # @eventrinfo = @user.eventrinfo.build(eventrinfo_params)
     @eventrinfo = Eventrinfo.new(:first_name => eventrinfo_params[:first_name], :last_name => eventrinfo_params[:last_name],:bio => eventrinfo_params[:bio])
     @eventrinfo.user = current_user
-    
+
       if eventrinfo_params[:avatar] != nil
         @user.avatar = eventrinfo_params[:avatar]
         @user.save
@@ -32,8 +32,10 @@ end
 def update
   @eventrinfo = Eventrinfo.find(params[:id])
   if @eventrinfo.update_attributes(:first_name => eventrinfo_params[:first_name], :last_name => eventrinfo_params[:last_name],:bio => eventrinfo_params[:bio])
-    @user.avatar = eventrinfo_params[:avatar]
-    @user.save
+    if eventrinfo_params[:avatar] != nil
+      @user.avatar = eventrinfo_params[:avatar]
+      @user.save
+    end
     redirect_to user_path(@user)
   else
     render :edit
