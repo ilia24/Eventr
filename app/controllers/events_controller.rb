@@ -2,6 +2,9 @@ class EventsController < ApplicationController
   before_action :ensure_logged_in, only: [:new, :create, :destroy, :edit, :update]
   before_action :ensure_hostinfo_filled_out, only: [:new, :create]
   before_action :load_user, only: [:create, :destroy, :edit, :update, :join]
+
+##PDDDDDD
+
   def index
     @event = Event.new
     @events = Event.all
