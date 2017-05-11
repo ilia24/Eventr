@@ -8,8 +8,10 @@ before_action :load_user
 
   def create
     # @eventrinfo = @user.eventrinfo.build(eventrinfo_params)
-    @eventrinfo = Eventrinfo.new(eventrinfo_params)
+    @eventrinfo = Eventrinfo.new(:first_name => eventrinfo_params[:first_name], :last_name => eventrinfo_params[:last_name],:bio => eventrinfo_params[:bio])
     @eventrinfo.user = current_user
+    @user.avatar = eventrinfo_params[:avatar]
+    @user.save
 
     if @eventrinfo.save
       flash[:notice] = 'Eventr profile updated succesfully!'
