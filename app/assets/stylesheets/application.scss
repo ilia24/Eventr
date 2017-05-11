@@ -177,11 +177,6 @@ hr {
     color: #333333;
     text-decoration: none;
   }
-  // a > img {
-  //   width: 44px;
-  //   height: 44px;
-  //   border-radius: 50%;
-  // }
   a:before{
     content: "";
  position: absolute;
@@ -230,11 +225,26 @@ hr {
   right: 80px;
   background-color: white;
   border: solid 1px #d4d4d4;
+  padding-top: 12px;
+  padding-bottom: 12px;
   img {
     width: 23px;
     position: absolute;
     right: 29px;
     top: -11.2px;
+  }
+  a {
+    margin: 0;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  a:hover:before{
+    visibility: hidden;
+  }
+  a:hover {
+    background-color: #f2f2f2;
   }
 }
 
