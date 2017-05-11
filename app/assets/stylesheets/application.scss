@@ -165,6 +165,7 @@ hr {
   display: flex;
   list-style-type: none;
   justify-content: flex-end;
+  align-items: center;
   h4 {
     display: inline-block;
     margin: 0;
@@ -175,6 +176,10 @@ hr {
     padding-bottom: 4px;
     color: #333333;
     text-decoration: none;
+  }
+  a > img {
+    width: 44px;
+    height: 44px;
   }
   a:before{
     content: "";
@@ -207,7 +212,6 @@ hr {
     height: 14px;
     padding-right: 12px;
   }
-
 }
 
 #search-form {

@@ -34,7 +34,7 @@
                     <h4> <%= link_to 'Complete your profile!', new_user_eventrinfo_path(session[:user_id]) %> </h4>
                     <%= link_to 'Log Out', session_path("current"), :method => :delete%>
             <%else%>
-                    <%= link_to "#{current_user.eventrinfo.first_name}", user_path(session[:user_id]) %>
+                    <%= link_to image_tag(@user.avatar), user_path(session[:user_id]) %>
                     <%= link_to 'Log Out', session_path("current"), :method => :delete%>
               <% end %>
 
