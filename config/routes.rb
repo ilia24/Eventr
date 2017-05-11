@@ -12,6 +12,8 @@ resources :events do
 end
 
 get '/events/:event_id/groups/:id/join', to: 'groups#join', as: 'join_group'
+get '/events/:event_id/groups/:id/leave', to: 'groups#leave', as: 'leave_group'
+
 
 get '/events/:event_id/join', to: 'events#join', as: 'join_event'
 

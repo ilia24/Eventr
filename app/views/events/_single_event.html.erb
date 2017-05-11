@@ -66,7 +66,11 @@
                 <h6> <strong>5</strong> EVENTRS </h6>
 
                 <div class="button_sm">
-                  <%= link_to 'Join', join_group_path(@event, g.id) %> <br>
+                  <% if g.users.include? current_user %>
+                    <%= link_to 'Leave group', leave_group_path(@event, g.id) %> <br>
+                  <% else %>
+                    <%= link_to 'Join', join_group_path(@event, g.id) %> <br>
+                  <%end%>
                 </div>
               </div>
 
