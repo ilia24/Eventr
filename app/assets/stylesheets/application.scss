@@ -206,7 +206,11 @@ hr {
   }
 }
 
-.profile_thumbnail_wrapper >img{
+.profile_thumbnail_wrapper {
+  margin-left: 50px;
+}
+
+.profile_thumbnail_wrapper > img{
   width: 44px;
   height: 44px;
   border-radius: 50%;
@@ -221,8 +225,16 @@ hr {
   z-index: 1;
 }
 
+#myDropdown {
+  top: 100px;
+  right: 80px;
+  background-color: white;
+  border: solid 1px #d4d4d4;
+}
+
 .show {
-  display: block;
+  display: flex;
+  flex-direction: column;
 }
 
 .nav_search {
