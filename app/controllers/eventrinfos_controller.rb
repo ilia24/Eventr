@@ -25,8 +25,9 @@ end
 
 def update
   @eventrinfo = Eventrinfo.find(params[:id])
-
-  if @eventrinfo.update_attributes(eventrinfo_params)
+  if @eventrinfo.update_attributes(:first_name => eventrinfo_params[:first_name], :last_name => eventrinfo_params[:last_name],:bio => eventrinfo_params[:bio])
+    @user.avatar = eventrinfo_params[:avatar]
+    @user.save
     redirect_to user_path(@user)
   else
     render :edit
@@ -40,7 +41,7 @@ end
 
   private
   def eventrinfo_params
-    params.require(:eventrinfo).permit(:first_name, :last_name, :bio)
+    params.require(:eventrinfo).permit(:first_name, :last_name, :bio, :avatar)
   end
 
   def load_user
