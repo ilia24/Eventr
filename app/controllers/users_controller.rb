@@ -10,8 +10,7 @@ end
 
   def create
     if user_params[:avatar] == nil
-      rnumb = rand(7)
-      File.open("app/assets/images/profile-placeholders/profile-placeholder-0#{rnumb}.png") do |f|
+      File.open("app/assets/images/profile-placeholders/profile-placeholder-0#{rand(5) + 1}.png") do |f|
       updated_params = user_params.merge(:avatar => f)
       @user= User.new(updated_params)
       end
