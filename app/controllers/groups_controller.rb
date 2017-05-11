@@ -51,9 +51,14 @@ class GroupsController < ApplicationController
 
   def leave
     @group = Group.find(params[:id])
-      @group.users.delete(@user)
-      flash[:notice] = 'You have left this group!'
-      redirect_to event_path(@event)
+    
+    @group.users.delete(@user)
+    flash[:notice] = 'You have left this group!'
+    redirect_to event_path(@event)
+
+    if @group.users.empty?
+      @group.delete
+    end
   end
 
 
