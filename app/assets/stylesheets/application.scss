@@ -289,6 +289,7 @@ hr {
     text-transform: uppercase;
     float: right;
     border: solid 1px #262626;
+    cursor: pointer;
   }
 }
 
@@ -442,6 +443,7 @@ input[type=submit] {
   text-transform: uppercase;
   float: right;
   border: none;
+  cursor: pointer;
 
   -o-transition:.5s;
   -ms-transition:.5s;
