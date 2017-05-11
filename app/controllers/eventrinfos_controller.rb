@@ -12,6 +12,7 @@ before_action :load_user
     @eventrinfo.user = current_user
     @user.avatar = eventrinfo_params[:avatar]
     @user.save
+    
 
     if @eventrinfo.save
       flash[:notice] = 'Eventr profile updated succesfully!'
