@@ -14,13 +14,14 @@ end
 
   def create
     if user_params[:avatar] == nil
-      File.open("app/assets/images/profile-placeholders/profile-placeholder-0#{rand(5) + 1}.png") do |f|
-      updated_params = user_params.merge(:avatar => f)
-      @user= User.new(updated_params)
-      end
+      f = File.open("app/assets/images/profile-placeholders/profile-placeholder-0#{rand(5) + 1}.png")
+      np = user_params.merge(:avatar => f)
+      @user= User.new(np)
     else
       @user = User.new(user_params)
     end
+
+
 
     if @user.save
       flash[:notice] = 'Signed up succesfully!'
