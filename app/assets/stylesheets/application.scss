@@ -165,6 +165,7 @@ hr {
   display: flex;
   list-style-type: none;
   justify-content: flex-end;
+  align-items: center;
   h4 {
     display: inline-block;
     margin: 0;
@@ -200,6 +201,58 @@ hr {
   }
 }
 
+.profile_thumbnail_wrapper {
+  margin-left: 50px;
+}
+
+.profile_thumbnail_wrapper > img{
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+#myDropdown {
+  top: 100px;
+  right: 80px;
+  background-color: white;
+  border: solid 1px #d4d4d4;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  img {
+    width: 23px;
+    position: absolute;
+    right: 29px;
+    top: -11.2px;
+  }
+  a {
+    margin: 0;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  a:hover:before{
+    visibility: hidden;
+  }
+  a:hover {
+    background-color: #f2f2f2;
+  }
+}
+
+.show {
+  display: flex;
+  flex-direction: column;
+}
+
 .nav_search {
   display: flex;
   padding-top: 2px;
@@ -207,7 +260,6 @@ hr {
     height: 14px;
     padding-right: 12px;
   }
-
 }
 
 #search-form {
@@ -307,6 +359,8 @@ hr {
 
 .invis_temp {
   position: absolute;
+  left: 0;
+  top: 60px;
   /*display: none;*/
 }
 
