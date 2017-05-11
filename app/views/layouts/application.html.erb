@@ -28,15 +28,24 @@
 
       <a href="/">HOME</a>
       <a href="/events">BROWSE</a>
+
         <% if current_user %>
 
             <% if User.find(session[:user_id]).eventrinfo ==nil  %>
                     <h4> <%= link_to 'Complete your profile!', new_user_eventrinfo_path(session[:user_id]) %> </h4>
                     <%= link_to 'Log Out', session_path("current"), :method => :delete%>
             <%else%>
-                    <%= link_to "#{current_user.eventrinfo.first_name}", user_path(session[:user_id]) %>
-                    <%= link_to 'Message', users_path %>
-                    <%= link_to 'Log Out', session_path("current"), :method => :delete%>
+
+                    <div class="profile_thumbnail_wrapper">
+                      <%= image_tag(current_user.avatar, :class=>"dropbtn", :onclick=>"myFunction()") %>
+                    </div>
+                    <div id="myDropdown" class="dropdown-content">
+                      <%= image_tag("dropdown-arrow-01.svg") %>
+                      <%= link_to 'Message', users_path %>
+                      <%= link_to "#{current_user.eventrinfo.first_name}", (user_path(session[:user_id])), :id=> "dropdown_profile_link" %>
+                      <%= link_to 'Log Out', session_path("current"), :method => :delete%>
+                    </div>
+
               <% end %>
 
         <% else %>
