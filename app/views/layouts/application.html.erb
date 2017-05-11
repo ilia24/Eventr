@@ -35,6 +35,7 @@
                     <%= link_to 'Log Out', session_path("current"), :method => :delete%>
             <%else%>
                     <%= link_to "#{current_user.eventrinfo.first_name}", user_path(session[:user_id]) %>
+                    <%= link_to 'Message', users_path %>
                     <%= link_to 'Log Out', session_path("current"), :method => :delete%>
               <% end %>
 
