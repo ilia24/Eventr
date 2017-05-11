@@ -266,6 +266,15 @@ hr {
   }
 }
 
+.button_to {
+  input[type=submit] {
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    width: 150px;
+  }
+}
+
 #search-form {
   height: 20px;
   display: flex;

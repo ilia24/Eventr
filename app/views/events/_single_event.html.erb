@@ -65,9 +65,8 @@
               <div class="event_going">
                 <h6> <strong>5</strong> EVENTRS </h6>
 
-                <div class="button_sm">
-                  <%= link_to 'Join', join_group_path(@event, g.id) %> <br>
-                </div>
+                <%= button_to "Join", join_group_path(@event, g.id), :method => "get", :class => "button_sm" %>
+
               </div>
 
             </li>
