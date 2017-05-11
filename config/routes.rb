@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
 
-# root 'conversations#index'
+
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 root 'home#index'
@@ -15,13 +15,10 @@ get '/events/:event_id/groups/:id/join', to: 'groups#join', as: 'join_group'
 
 get '/events/:event_id/join', to: 'events#join', as: 'join_event'
 
-resources :users, only: %i(index show new create) do
+resources :users, only: %i(show new create) do
   resources :hostinfos, only: %i(new create edit update destroy)
   resources :eventrinfos, only: %i(new create edit update destroy)
 end
 resources :sessions, only: %i(new create destroy)
-
-resources :personal_messages, only: [:create, :new]
-resources :conversations, only: [:index, :new, :show, :create]
 
 end
