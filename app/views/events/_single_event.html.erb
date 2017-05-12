@@ -50,11 +50,12 @@
 
         <% if current_user %>
           <p id="single_group"> <%= link_to '+ Create a new group', new_event_group_path(@event) %> </p>
-          <%= render 'groups/group_form' %>
         <% else %>
           <p> <%= link_to 'Log In to create a new group', new_session_path %></p>
         <% end %>
       </div>
+
+      <%= render 'groups/group_form' %>
 
       <div class="groups_container">
         <% @event.groups.each do |g| %>

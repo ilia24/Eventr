@@ -22,7 +22,7 @@ $('#single_group').on('click', function(e){
   console.log('lmao');
   e.preventDefault();
 
-  $('#new_group').toggleClass( "display" );
+  $('#new_group').toggleClass( "formdisp" );
 
 });
 
