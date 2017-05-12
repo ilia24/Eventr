@@ -17,4 +17,14 @@ if($('#map').length) {
       label: 'E'
     });
 };
+
+$('#single_group').on('click', function(e){
+  console.log('lmao');
+  e.preventDefault();
+
+  $('#new_group').toggleClass( "display" );
+
+});
+
+
 });
