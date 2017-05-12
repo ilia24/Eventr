@@ -34,8 +34,8 @@ body {
 nav {
   font-size: 16px;
   background-color: white;
-  padding-top: 39px;
-  padding-bottom: 39px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   padding-left: 100px;
   padding-right: 100px;
   box-shadow: 0 3px 30px rgba(0, 0, 0, 0.05);
@@ -248,6 +248,10 @@ hr {
   }
 }
 
+#dropdown_profile_link {
+  border-bottom: solid 1px #d4d4d4;
+}
+
 .show {
   display: flex;
   flex-direction: column;
@@ -259,6 +263,15 @@ hr {
   img {
     height: 14px;
     padding-right: 12px;
+  }
+}
+
+.button_to {
+  input[type=submit] {
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    width: 150px;
   }
 }
 
@@ -285,6 +298,7 @@ hr {
     text-transform: uppercase;
     float: right;
     border: solid 1px #262626;
+    cursor: pointer;
   }
 }
 
@@ -438,6 +452,7 @@ input[type=submit] {
   text-transform: uppercase;
   float: right;
   border: none;
+  cursor: pointer;
 
   -o-transition:.5s;
   -ms-transition:.5s;
