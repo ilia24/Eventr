@@ -42,11 +42,16 @@
     </div>
 
   </div>
-  
+
   <div class="event_going">
-    <h6>
-      <strong>100</strong> EVENTRS GOING
-    </h6>
+    <strong><%=event.users.count%> </strong>
+
+    <% if event.users.count == 1 %>
+        <h6>EVENTR GOING</h6>
+    <% else %>
+        <h6>EVENTRS GOING</h6>
+    <% end %>
+    
     <div class="button_sm">
       interested
     </div>
