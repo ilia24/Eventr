@@ -36,6 +36,28 @@ $('#closegroupform').on('click', function(e) {
   $('#single_group').toggleClass('hidegrouplink')
 });
 
+$('#new_group').on('submit', function(e) {
+  e.preventDefault();
+  console.log('stuff n things');
 
+  $.ajax({
+    method: $(this).attr('method'),
+    url: $(this).attr('action'),
+    data: $(this).serialize(),
+    dataType: 'html'
+
+  }).done(function(data){
+    console.log('ajax submission succeeded')
+    console.log(data)
+    // $('.groups_content').append(data)
+  }).fail(function(data){
+    console.log('ajax submission failed')
+    console.log(data)
+
+  }).always(function(){
+    console.log('ajax ran')
+  });
+
+});
 
 });

@@ -12,26 +12,49 @@ class GroupsController < ApplicationController
 
   def create
     @event.groups.each do |g|
-      g.users.include? @user
+      if g.users.include? @user
         flash[:notice] = 'You are already in a group!'
         redirect_to event_path(@event)
         return
       end
-
-    @group = @event.groups.build(group_params)
-
-
-    if @group.save
-      flash[:notice] = 'group created succesfully!'
-      redirect_to event_path(@event)
-      @group.users << @user
-
-      if @event.users.exclude? @user
-        @event.users << @user
       end
-    else
-      render :new
+
+      @group = @event.groups.build(group_params)
+
+    respond_to do |format|
+
+
+
+      format.html do
+        if request.xhr?
+          if  @group.save
+
+            @group.users << @user
+            if @event.users.exclude? @user
+              @event.users << @user
+            end
+
+            render :partial => "/groups/single_group"
+          end
+
+        else
+
+          if @group.save
+            flash[:notice] = 'group created succesfully!'
+            redirect_to event_path(@event)
+            @group.users << @user
+
+            if @event.users.exclude? @user
+              @event.users << @user
+            end
+          else
+            render :new
+          end
+        end
+      end
     end
+
+
   end
 
   def edit
