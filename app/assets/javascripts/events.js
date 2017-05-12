@@ -48,8 +48,8 @@ $('#new_group').on('submit', function(e) {
 
   }).done(function(data){
     console.log('ajax submission succeeded')
-    console.log(data)
-    // $('.groups_content').append(data)
+    var group = $('<li>').html(data).attr('class', 'groups')
+    $('.groups_container').append(group)
   }).fail(function(data){
     console.log('ajax submission failed')
     console.log(data)

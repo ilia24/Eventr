@@ -1,3 +1,4 @@
+<div class="groups_content">
 <h1><%= link_to g.name, event_group_path(@event, g.id) %></h1> <br>
 
 <p> <%= g.description %> </p>
@@ -7,3 +8,16 @@
     <li> <%= image_tag(u.avatar.thumb) %> </li>
     <% end %>
 </ul>
+</div>
+
+<div class="event_going">
+  <h6> <strong><%= g.users.count %></strong> EVENTRS </h6>
+
+  <div class="button_sm">
+    <% if g.users.include? current_user %>
+      <%= button_to "Leave group", leave_group_path(@event, g.id), :method => "get", :class => "button_sm" %>
+    <% else %>
+      <%= button_to "Join", join_group_path(@event, g.id), :method => "get", :class => "button_sm" %>
+    <%end%>
+  </div>
+</div>
