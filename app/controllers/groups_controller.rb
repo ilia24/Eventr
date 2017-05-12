@@ -21,12 +21,10 @@ class GroupsController < ApplicationController
     @group = @event.groups.build(group_params)
 
     if  @group.save
-
       @group.users << @user
       if @event.users.exclude? @user
         @event.users << @user
       end
-
       render :partial => '/groups/single_group', locals: {g: @group}
     else
       render :new
