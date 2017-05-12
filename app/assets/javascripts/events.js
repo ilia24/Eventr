@@ -17,4 +17,45 @@ if($('#map').length) {
       label: 'E'
     });
 };
+
+
+// These two secitons of code are responsible for opening and closing the group create form
+$('#single_group').on('click', function(e){
+  e.preventDefault();
+
+  $('#new_group').toggleClass( "formdisp" );
+  $('#single_group').toggleClass('hidegrouplink')
+});
+
+
+
+$('#closegroupform').on('click', function(e) {
+  e.preventDefault();
+
+  $('#new_group').toggleClass( "formdisp" );
+  $('#single_group').toggleClass('hidegrouplink')
+});
+
+$('#new_group').on('submit', function(e) {
+  e.preventDefault();
+
+  $.ajax({
+    method: $(this).attr('method'),
+    url: $(this).attr('action'),
+    data: $(this).serialize(),
+    dataType: 'html'
+
+  }).done(function(data){
+    console.log('ajax submission succeeded')
+    var group = $('<li>').html(data).attr('class', 'groups')
+    $('.groups_container').append(group)
+    $('#new_group').toggleClass( "formdisp" );
+  }).fail(function(data){
+    console.log('ajax submission failed')
+  }).always(function(){
+    console.log('ajax ran')
+  });
+
+});
+
 });

@@ -49,31 +49,19 @@
         <h4>GROUPS</h4>
 
         <% if current_user %>
-          <p> <%= link_to '+ Create a new group', new_event_group_path(@event) %> </p>
+          <p id="single_group"> <%= link_to '+ Create a new group', new_event_group_path(@event) %> </p>
         <% else %>
           <p> <%= link_to 'Log In to create a new group', new_session_path %></p>
         <% end %>
       </div>
 
+      <%= render 'groups/group_form' %>
+
       <div class="groups_container">
         <% @event.groups.each do |g| %>
           <% if g.id != nil %>
             <li class="groups">
-              <div class="groups_content">
                 <%= render 'groups/single_group', g: g %> <br>
-              </div>
-
-              <div class="event_going">
-                <h6><strong>5</strong> EVENTRS</h6>
-
-                <% if g.users.include? current_user %>
-                  <%= button_to "Leave group", leave_group_path(@event, g.id), :method => "get", :class => "button_sm" %>
-                <% else %>
-                  <%= button_to "Join", join_group_path(@event, g.id), :method => "get", :class => "button_sm" %>
-                <%end%>
-
-              </div>
-
             </li>
           <%end%>
         <%end%>
@@ -146,8 +134,14 @@
         <%= link_to 'Going', join_event_path(@event) %> <br>
       <%end%>
 
-      <% count = @event.going.count %>
+      <% count = @event.goings.count %>
       <%= "#{count} Eventrs are going to the event!" %>
+
+      <ul>
+      <% @event.users.each do |u| %>
+      <li><%= image_tag(u.avatar.thumb) %> </li>
+      <%end%>
+      </ul>
     </div>
 
   </div>

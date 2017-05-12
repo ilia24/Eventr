@@ -497,3 +497,20 @@ input[type=submit] {
     word-wrap: break-word;
   }
 }
+
+
+
+//FORM DISPLAY PROPERTIES
+.new_group {
+  display: none;
+}
+
+.formdisp {
+  display: inline-block;
+}
+
+
+// this hides the create new group button
+.hidegrouplink {
+  display: none;
+}
