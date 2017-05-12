@@ -58,6 +58,17 @@ overflow: hidden;
   text-align: center;
 }
 
+.owl-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.owl-prev, .owl-next {
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
 // INDEX
 
 #header_image_container {

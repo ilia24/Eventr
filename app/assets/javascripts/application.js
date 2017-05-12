@@ -37,11 +37,13 @@ $(document).ready(function(){
     stagePadding: 100,
     loop:true,
     margin:0,
-    nav:false,
+    nav:true,
     center:true,
-    pagination:true,
     autoWidth:true,
     autoHeight:true,
+    autoplay:true,
+    autoplayTimeout:4000,
+    autoplayHoverPause:true,
     responsive:{
         0:{
             items:1
