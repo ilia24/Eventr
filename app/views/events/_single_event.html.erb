@@ -46,7 +46,7 @@
     <div class="groups_wrapper">
 
       <div class="heading_btn">
-        <h4 id="event_show_heading">GROUPS</h4>
+        <h4>GROUPS</h4>
 
         <% if current_user %>
           <p> <%= link_to '+ Create a new group', new_event_group_path(@event) %> </p>
@@ -66,14 +66,11 @@
               <div class="event_going">
                 <h6> <strong>5</strong> EVENTRS </h6>
 
-
-                <div class="button_sm">
-                  <% if g.users.include? current_user %>
-                    <%= button_to "Leave group", leave_group_path(@event, g.id), :method => "get", :class => "button_sm" %>
-                  <% else %>
-                    <%= button_to "Join", join_group_path(@event, g.id), :method => "get", :class => "button_sm" %>
-                  <%end%>
-                </div>
+                <% if g.users.include? current_user %>
+                  <%= button_to "Leave group", leave_group_path(@event, g.id), :method => "get", :class => "button_sm" %>
+                <% else %>
+                  <%= button_to "Join", join_group_path(@event, g.id), :method => "get", :class => "button_sm" %>
+                <%end%>
 
               </div>
 
