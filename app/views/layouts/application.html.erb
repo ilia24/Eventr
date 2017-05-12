@@ -37,7 +37,7 @@
             <%else%>
 
                     <div class="profile_thumbnail_wrapper">
-                      <%= image_tag(current_user.avatar, :class=>"dropbtn", :onclick=>"myFunction()") %>
+                      <%= image_tag(current_user.avatar, :class=>"dropbtn") %>
                     </div>
                     <div id="myDropdown" class="dropdown-content">
                       <%= image_tag("dropdown-arrow-01.svg") %>
@@ -45,7 +45,7 @@
                       <%= link_to "#{current_user.eventrinfo.first_name}", (user_path(session[:user_id])), :id=> "dropdown_profile_link" %>
                       <%= link_to 'Log Out', session_path("current"), :method => :delete%>
                     </div>
-                    
+
               <% end %>
 
         <% else %>
