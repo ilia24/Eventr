@@ -1,6 +1,9 @@
-<%= link_to g.name, event_group_path(@event, g.id) %> <br>
+<h1><%= link_to g.name, event_group_path(@event, g.id) %></h1> <br>
+
+<p> <%= g.description %> </p>
+
 <ul>
   <% g.users.each do |u| %>
-    <li> <%= u.email %> </li>
+    <li> <%= image_tag(u.avatar.thumb) %> </li>
     <% end %>
 </ul>

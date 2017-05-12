@@ -175,10 +175,6 @@ $border-color: #d4d4d4;
   bottom: 0;
 }
 
-.event_going .button_sm{
-  right: -24px;
-}
-
 .event_going > h6 {
   margin-left: 24px;
 }
@@ -337,6 +333,12 @@ $border-color: #d4d4d4;
   padding-bottom: 24px;
 }
 
+.events_all {
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+
 // EVENT SHOW
 
 .event_show_header {
@@ -418,6 +420,10 @@ $border-color: #d4d4d4;
 #map {
   height: 300px;
   width: 100%;
+}
+
+#event_show_heading {
+  padding-top: 24px;
 }
 
 .event_show_date {
