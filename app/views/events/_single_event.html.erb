@@ -141,7 +141,12 @@
 
     <h4>GOING</h4>
     <div>
-      <%= link_to 'Going', join_event_path(@event) %> <br>
+      <% if @event.users.include? current_user %>
+        <%= link_to 'Leave event', leave_event_path(@event) %> <br>
+      <% else %>
+        <%= link_to 'Going', join_event_path(@event) %> <br>
+      <%end%>
+
       <% count = @event.going.count %>
       <%= "#{count} Eventrs are going to the event!" %>
     </div>
