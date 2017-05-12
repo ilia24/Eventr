@@ -35,7 +35,6 @@
                     <h4> <%= link_to 'Complete your profile!', new_user_eventrinfo_path(session[:user_id]) %> </h4>
                     <%= link_to 'Log Out', session_path("current"), :method => :delete%>
             <%else%>
-
                     <div class="profile_thumbnail_wrapper">
                       <%= image_tag(current_user.avatar, :class=>"dropbtn", :onclick=>"myFunction()") %>
                     </div>
@@ -45,7 +44,7 @@
                       <%= link_to "#{current_user.eventrinfo.first_name}", (user_path(session[:user_id])), :id=> "dropdown_profile_link" %>
                       <%= link_to 'Log Out', session_path("current"), :method => :delete%>
                     </div>
-                    
+
               <% end %>
 
         <% else %>
