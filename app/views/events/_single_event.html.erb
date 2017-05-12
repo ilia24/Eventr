@@ -134,7 +134,7 @@
         <%= link_to 'Going', join_event_path(@event) %> <br>
       <%end%>
 
-      <% count = @event.going.count %>
+      <% count = @event.goings.count %>
       <%= "#{count} Eventrs are going to the event!" %>
     </div>
 

@@ -84,9 +84,9 @@ class EventsController < ApplicationController
         if g.users.empty?
           g.delete
         end
-        redirect_to event_path(@event)
       end
     end
+    redirect_to event_path(@event)
   end
 
   def destroy
