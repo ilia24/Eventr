@@ -498,3 +498,9 @@ input[type=submit] {
 .formdisp {
   display: block;
 }
+
+
+// this hides the create new group button
+.hidegrouplink {
+  display: none;
+}

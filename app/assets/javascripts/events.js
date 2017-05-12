@@ -18,13 +18,24 @@ if($('#map').length) {
     });
 };
 
+
+// These two secitons of code are responsible for opening and closing the group create form
 $('#single_group').on('click', function(e){
-  console.log('lmao');
   e.preventDefault();
 
   $('#new_group').toggleClass( "formdisp" );
-
+  $('#single_group').toggleClass('hidegrouplink')
 });
+
+
+
+$('#closegroupform').on('click', function(e) {
+  e.preventDefault();
+
+  $('#new_group').toggleClass( "formdisp" );
+  $('#single_group').toggleClass('hidegrouplink')
+});
+
 
 
 });
