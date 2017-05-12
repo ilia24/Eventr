@@ -1,49 +1,72 @@
 // STYLE GUIDE
 
 $border-color: #d4d4d4;
+$grey-1: #262626;
+$grey-2: #333333;
+$grey-3: #595959;
+$grey-4: #7f7f7f;
+$grey-5: #f2f2f2;
 
 // HOME
 
-.carousel_container {
-  display: flex;
-  height: 543px;
-  width: 100%;
-  padding-top: 70px;
-  justify-content: center;
-  overflow: hidden;
-}
+// .carousel_container {
+//   display: flex;
+//   height: 543px;
+//   width: 100%;
+//   padding-top: 70px;
+//   justify-content: center;
+//   overflow: hidden;
+// }
+//
+// .carousel {
+//   height: 100%;
+//   display: inline-flex;
+// }
+//
 
-.carousel {
-  height: 100%;
-  display: inline-flex;
+.carousel_item_container{
+height: 543px;
+overflow: hidden;
 }
 
 .carousel_item {
+  width: 80vw;
   height: 100%;
-  width: 1048px;
-  padding-left: 25px;
-  padding-right: 25px;
-  text-align: center;
-}
-
-.carousel_item > img {
-  width: 100%;
+  padding-left: 24px;
+  padding-right: 24px;
+  // text-align: center;
 }
 
 #weeknd_text {
-  left: 0;
-  top: 360px;
   position: absolute;
   width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 #weeknd_text > h2{
   color: white;
+  text-align: center;
 }
 
 .starboy {
   font-size: 36px;
   color: white;
+  width: 100%;
+  text-align: center;
+}
+
+.owl-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.owl-prev, .owl-next {
+  padding-left: 12px;
+  padding-right: 12px;
 }
 
 // INDEX
@@ -482,6 +505,7 @@ $border-color: #d4d4d4;
 }
 
 .groups_content {
+  height: 255px;
   padding: 24px;
 }
 
@@ -498,13 +522,20 @@ $border-color: #d4d4d4;
   padding-left: 0;
 }
 
+#group_name{
+  text-transform: uppercase;
+  a {
+    color: $grey-1;
+  }
+}
+
 .heading_btn {
   display: flex;
   align-items: center;
 }
 
 .heading_btn a {
-  color: #262626;
+  color: $grey-1;
   letter-spacing: 1px;
   transition: transform .2s ease-out;
   display: inline-block;
