@@ -12,8 +12,11 @@ resources :events do
 end
 
 get '/events/:event_id/groups/:id/join', to: 'groups#join', as: 'join_group'
+get '/events/:event_id/groups/:id/leave', to: 'groups#leave', as: 'leave_group'
+
 
 get '/events/:event_id/join', to: 'events#join', as: 'join_event'
+get '/events/:event_id/leave', to: 'events#leave', as: 'leave_event'
 
 resources :users, only: %i(index show new create) do
   resources :hostinfos, only: %i(new create edit update destroy)

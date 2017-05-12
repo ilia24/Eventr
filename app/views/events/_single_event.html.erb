@@ -66,7 +66,14 @@
               <div class="event_going">
                 <h6> <strong>5</strong> EVENTRS </h6>
 
-                <%= button_to "Join", join_group_path(@event, g.id), :method => "get", :class => "button_sm" %>
+
+                <div class="button_sm">
+                  <% if g.users.include? current_user %>
+                    <%= button_to "Leave group", leave_group_path(@event, g.id), :method => "get", :class => "button_sm" %>
+                  <% else %>
+                    <%= button_to "Join", join_group_path(@event, g.id), :method => "get", :class => "button_sm" %>
+                  <%end%>
+                </div>
 
               </div>
 
@@ -136,7 +143,12 @@
 
     <h4 id="event_show_heading">GOING</h4>
     <div>
-      <%= link_to 'Going', join_event_path(@event) %> <br>
+      <% if @event.users.include? current_user %>
+        <%= link_to 'Leave event', leave_event_path(@event) %> <br>
+      <% else %>
+        <%= link_to 'Going', join_event_path(@event) %> <br>
+      <%end%>
+
       <% count = @event.going.count %>
       <%= "#{count} Eventrs are going to the event!" %>
     </div>
