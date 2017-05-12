@@ -1,0 +1,17 @@
+<div>
+<% if conversation.with(current_user).eventrinfo != nil %>
+  Chatting with <%= conversation.with(current_user).eventrinfo.first_name %>
+  <br>
+  <em><%= conversation.personal_messages.last.body.truncate(50) %></em>
+  <br>
+  <%= link_to 'View conversation', conversation_path(conversation) %>
+  <hr>
+ <% else %>
+ Chatting with <%= conversation.with(current_user).email %>
+ <br>
+ <em><%= conversation.personal_messages.last.body.truncate(50) %></em>
+ <br>
+ <%= link_to 'View conversation', conversation_path(conversation) %>
+ <hr>
+<%end %>
+</div>
