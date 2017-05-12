@@ -9,31 +9,27 @@ $grey-5: #f2f2f2;
 
 // HOME
 
-.carousel_container {
-  display: flex;
-  height: 543px;
-  width: 100%;
-  padding-top: 70px;
-  justify-content: center;
-  overflow: hidden;
-}
-
-.carousel {
-  height: 100%;
-  display: inline-flex;
-}
-
+// .carousel_container {
+//   display: flex;
+//   height: 543px;
+//   width: 100%;
+//   padding-top: 70px;
+//   justify-content: center;
+//   overflow: hidden;
+// }
+//
+// .carousel {
+//   height: 100%;
+//   display: inline-flex;
+// }
+//
 .carousel_item {
-  height: 100%;
-  width: 1048px;
-  padding-left: 25px;
-  padding-right: 25px;
-  text-align: center;
+  height: 543px;
+  // padding-left: 25px;
+  // padding-right: 25px;
+  // text-align: center;
 }
 
-.carousel_item > img {
-  width: 100%;
-}
 
 #weeknd_text {
   left: 0;
