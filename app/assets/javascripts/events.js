@@ -52,8 +52,6 @@ $('#new_group').on('submit', function(e) {
     $('#new_group').toggleClass( "formdisp" );
   }).fail(function(data){
     console.log('ajax submission failed')
-    $('#new_group').toggleClass( "formdisp" );
-    $('#single_group').toggleClass('hidegrouplink')
   }).always(function(){
     console.log('ajax ran')
   });
