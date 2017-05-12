@@ -8,6 +8,7 @@ class ApplicationController < ActionController::Base
   end
 end
 
+
   def ensure_hostinfo_filled_out
     @user = User.find(session[:user_id])
     unless @user.hostinfo != nil
