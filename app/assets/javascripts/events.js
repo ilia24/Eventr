@@ -50,10 +50,10 @@ $('#new_group').on('submit', function(e) {
     console.log('ajax submission succeeded')
     var group = $('<li>').html(data).attr('class', 'groups')
     $('.groups_container').append(group)
+    $('#new_group').toggleClass( "formdisp" );
   }).fail(function(data){
     console.log('ajax submission failed')
     console.log(data)
-
   }).always(function(){
     console.log('ajax ran')
   });
