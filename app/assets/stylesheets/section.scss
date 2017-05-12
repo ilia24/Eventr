@@ -487,6 +487,7 @@ $grey-5: #f2f2f2;
 }
 
 .groups_content {
+  height: 255px;
   padding: 24px;
 }
 
@@ -505,7 +506,9 @@ $grey-5: #f2f2f2;
 
 #group_name{
   text-transform: uppercase;
-  color: $grey-1;
+  a {
+    color: $grey-1;
+  }
 }
 
 .heading_btn {
@@ -514,7 +517,7 @@ $grey-5: #f2f2f2;
 }
 
 .heading_btn a {
-  color: #262626;
+  color: $grey-1;
   letter-spacing: 1px;
   transition: transform .2s ease-out;
   display: inline-block;

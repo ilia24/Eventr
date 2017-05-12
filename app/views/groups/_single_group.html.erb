@@ -1,9 +1,9 @@
-<h4 id="group_name"><%= link_to g.name, event_group_path(@event, g.id) %></h4> <br>
+<h4 id="group_name"><%= link_to g.name, event_group_path(@event, g.id) %></h4>
 
 <p> <%= g.description %> </p>
 
 <ul>
   <% g.users.each do |u| %>
-    <li> <%= image_tag(u.avatar.thumb) %> </li>
+    <li class="profile_member"> <%= image_tag(u.avatar.thumb) %> </li>
     <% end %>
 </ul>
