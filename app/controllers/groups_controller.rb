@@ -14,7 +14,7 @@ class GroupsController < ApplicationController
     @event.groups.each do |g|
       if g.users.include? @user
         flash[:notice] = 'You are already in a group!'
-        return
+        render :status => 400
       end
     end
 
@@ -27,7 +27,7 @@ class GroupsController < ApplicationController
       end
       render :partial => '/groups/single_group', locals: {g: @group}
     else
-      render :new
+      render :status => 200
     end
   end
 

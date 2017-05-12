@@ -38,7 +38,6 @@ $('#closegroupform').on('click', function(e) {
 
 $('#new_group').on('submit', function(e) {
   e.preventDefault();
-  console.log('stuff n things');
 
   $.ajax({
     method: $(this).attr('method'),
@@ -53,7 +52,8 @@ $('#new_group').on('submit', function(e) {
     $('#new_group').toggleClass( "formdisp" );
   }).fail(function(data){
     console.log('ajax submission failed')
-    console.log(data)
+    $('#new_group').toggleClass( "formdisp" );
+    $('#single_group').toggleClass('hidegrouplink')
   }).always(function(){
     console.log('ajax ran')
   });
