@@ -23,10 +23,17 @@ $grey-5: #f2f2f2;
 //   display: inline-flex;
 // }
 //
+
+.carousel_item_container{
+height: 543px;
+overflow: hidden;
+}
+
 .carousel_item {
-  height: 543px;
-  // padding-left: 25px;
-  // padding-right: 25px;
+  width: 80vw;
+  height: 100%;
+  padding-left: 24px;
+  padding-right: 24px;
   // text-align: center;
 }
 

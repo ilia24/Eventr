@@ -34,11 +34,12 @@ window.onclick = function(event) {
 
 $(document).ready(function(){
   $('.owl-carousel').owlCarousel({
-    stagePadding: 0,
+    stagePadding: 100,
     loop:true,
     margin:0,
-    nav:true,
+    nav:false,
     center:true,
+    pagination:true,
     autoWidth:true,
     autoHeight:true,
     responsive:{

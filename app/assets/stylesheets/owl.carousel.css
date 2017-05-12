@@ -7,6 +7,7 @@
  *  Owl Carousel - Core
  */
 .owl-carousel {
+  margin-top: 50px;
   display: none;
   width: 100%;
   -webkit-tap-highlight-color: transparent;
@@ -39,8 +40,6 @@
     -moz-transform: translate3d(0, 0, 0);
     -ms-transform: translate3d(0, 0, 0); }
   .owl-carousel .owl-item {
-    /*height: 100%;*/
-    /*width: 20%;*/
     position: relative;
     min-height: 1px;
     float: left;
@@ -49,8 +48,7 @@
     -webkit-touch-callout: none; }
   .owl-carousel .owl-item img {
     display: block;
-    height: 100%;
-    /*width: 100%;*/
+    width: 100%;
   }
   .owl-carousel .owl-nav.disabled,
   .owl-carousel .owl-dots.disabled {
