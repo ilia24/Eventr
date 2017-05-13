@@ -56,7 +56,6 @@
   .owl-carousel .owl-nav .owl-prev,
   .owl-carousel .owl-nav .owl-next,
   .owl-carousel .owl-dot {
-    position: relative;
     cursor: pointer;
     cursor: hand;
     -webkit-user-select: none;
