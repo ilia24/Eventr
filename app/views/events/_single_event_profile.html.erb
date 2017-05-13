@@ -10,16 +10,10 @@
 
       <div class="event_date">
         <div class="event_mon">
-          <%=
-          d = event.date
-          I18n.t("date.abbr_month_names")[d.month]
-          %>
+          <%= event.date.strftime("%^b") %>
         </div>
         <div class="event_day">
-          <%=
-          d = event.date
-          d.strftime("%d")
-          %>
+          <%= event.date.strftime("%d") %>
         </div>
       </div>
 
@@ -28,19 +22,14 @@
           <%= link_to "#{event.name}", event, :class => "link" %>
         </div>
         <div class="event_time">
-          <h5>
-            <%=
-            d = event.time
-            d.strftime('%-I:%M %p')
-            %>
-          </h5>
+          <h5> <%= event.time.strftime('%-I:%M %p')%></h5>
         </div>
         <div class="event_location">
           <%= event.location %>
         </div>
       </div>
     </div>
-    
+
     <div class="event_going">
 
       <% if event.users.count == 1 %>
