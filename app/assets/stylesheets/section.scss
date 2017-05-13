@@ -484,6 +484,12 @@ overflow: hidden;
   flex-wrap: wrap;
   margin-left: -12px;
   margin-right: -12px;
+  transform: translateY(-180px);
+  transition: transform 0.3s ease;
+}
+
+.shift {
+  transform: translateY(24px);
 }
 
 .groups_wrapper {
@@ -530,6 +536,7 @@ overflow: hidden;
 }
 
 .heading_btn {
+  margin-top: 24px;
   display: flex;
   align-items: center;
 }

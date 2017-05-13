@@ -24,6 +24,7 @@ $('#single_group').on('click', function(e){
   e.preventDefault();
 
   $('#new_group').toggleClass( "formdisp" );
+  $('.groups_container').toggleClass("shift");
   $('#single_group').toggleClass('hidegrouplink')
 });
 
