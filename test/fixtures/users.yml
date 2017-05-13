@@ -1,16 +1,6 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  email: 'ilia'
-  password: 'ilia'
-  avatar: nil
-
-two:
-  email: 'brian'
-  password: 'brian'
-  avatar: nil
-
-three:
-  email: 'pritam'
-  password: 'pritam'
+  email: ilia
+  password_digest: ilia
   avatar: nil
