@@ -36,6 +36,7 @@ $('#closegroupform').on('click', function(e) {
   $('#single_group').toggleClass('hidegrouplink')
 });
 
+// This is an ajax call to create a new group within the event page
 $('#new_group').on('submit', function(e) {
   e.preventDefault();
 

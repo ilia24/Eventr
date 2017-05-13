@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(function() {
   $('.owl-carousel').owlCarousel({
     stagePadding: 100,
     loop:true,
