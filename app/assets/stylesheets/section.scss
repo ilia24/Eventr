@@ -560,6 +560,15 @@ overflow: hidden;
   margin: 0;
 }
 
+.new_group_form_container {
+  background-color: white;
+  border: solid 1px #d4d4d4;
+  display: inline-block;
+  width: 100%;
+  transform: translateY(-300px);
+  transition: transform 0.3s ease;
+}
+
 // USER PROFILE
 
 .user_profile_wrapper {

@@ -499,22 +499,11 @@ input[type=submit] {
   }
 }
 
-
-
 //FORM DISPLAY PROPERTIES
-
-.new_group {
-  display: inline-block;
-  width: 100%;
-  transform: translateY(-300px);
-  transition: transform 0.3s ease;
-}
 
 .formdisp {
   transform: translateY(0);
 }
-
-
 
 // this hides the create new group button
 .hidegrouplink {
