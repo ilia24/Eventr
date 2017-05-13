@@ -1,19 +1,26 @@
 <div class="new_group_form_container">
 
   <%= form_for ([@event, @group]) do |f| %>
-  <a id="closegroupform" href="">Close</a> <br>
+  
+  <div class="close_container">
+    <i class="fa fa-close fa-2x" id="closegroupform" href=""></i>
+  </div>
 
   <div class="form_content">
 
     <div class="form_field">
-      <%= f.text_field :name, placeholder: "DESCRIPTION" %>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
     </div>
 
     <div class="form_field">
-      <%= f.text_field :description, placeholder: "DESCRIPTION"%>
+      <%= f.label :description %>
+      <%= f.text_field :description %>
     </div>
 
-    <%= f.submit 'create group' %>
+    <div class="event_going">
+      <%= f.submit 'create group' %>
+    </div>
 
     <%end%>
 

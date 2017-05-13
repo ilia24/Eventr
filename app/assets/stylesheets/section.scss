@@ -561,13 +561,30 @@ overflow: hidden;
 }
 
 .new_group_form_container {
-  background-color: white;
-  border: solid 1px #d4d4d4;
   display: inline-block;
   width: 100%;
   transform: translateY(-300px);
   transition: transform 0.3s ease;
+  .form_content {
+    background-color: white;
+    border: solid 1px #d4d4d4;
+    .event_going {
+      justify-content: flex-end;
+    }
+  }
 }
+
+.close_container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 12px;
+}
+
+#closegroupform {
+  cursor: pointer;
+}
+
 
 // USER PROFILE
 
