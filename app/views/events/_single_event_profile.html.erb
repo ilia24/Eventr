@@ -22,7 +22,7 @@
           <%= link_to "#{event.name}", event, :class => "link" %>
         </div>
         <div class="event_time">
-          <h5> <%= event.time.strftime('%-I:%M %p')%> </h5>
+          <h5> <%= event.time.strftime('%-I:%M %p')%></h5>
         </div>
         <div class="event_location">
           <%= event.location %>
@@ -30,19 +30,16 @@
       </div>
     </div>
 
-  </div>
+    <div class="event_going">
 
-  <div class="event_going">
-
-    <% if event.users.count == 1 %>
-        <h6><strong><%=event.users.count%> </strong>EVENTR GOING</h6>
-    <% else %>
-        <h6><strong><%=event.users.count%> </strong>EVENTRS GOING</h6>
-    <% end %>
-
-    <div class="button_sm">
-      interested
+      <% if event.users.count == 1 %>
+          <h6><strong><%=event.users.count%> </strong>EVENTR GOING</h6>
+      <% else %>
+          <h6><strong><%=event.users.count%> </strong>EVENTRS GOING</h6>
+      <% end %>
     </div>
+
   </div>
+
 
 </div>

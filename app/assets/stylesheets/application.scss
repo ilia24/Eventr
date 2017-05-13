@@ -237,7 +237,7 @@ hr {
   border: solid 1px #d4d4d4;
   padding-top: 12px;
   padding-bottom: 12px;
-  z-index: 2;
+  z-index: 5;
   img {
     width: 23px;
     position: absolute;
@@ -497,4 +497,21 @@ input[type=submit] {
     color: #DA4F4F;
     word-wrap: break-word;
   }
+}
+
+
+
+//FORM DISPLAY PROPERTIES
+.new_group {
+  display: none;
+}
+
+.formdisp {
+  display: inline-block;
+}
+
+
+// this hides the create new group button
+.hidegrouplink {
+  display: none;
 }
