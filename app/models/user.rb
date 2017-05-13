@@ -6,7 +6,7 @@ class User < ApplicationRecord
   has_one :hostinfo
   has_one :eventrinfo
   has_many :reviews
-  has_many :events
+  has_many :events, through: :goings
   has_many :members
   has_many :groups, through: :members
   has_many :goings
