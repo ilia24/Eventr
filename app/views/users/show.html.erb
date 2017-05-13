@@ -28,8 +28,17 @@
 
     </div>
 
-    <h5>ACTIVITY</h5>
-    <div class="user_profile_activity">
+    <h3>Going-to</h3>
+    <% @user.events.each do |e| %>
+      <%= render 'events/single_event_profile', event: e %> <br>
+      <%end%>
+
+
+
+
+
+
+    <!-- <div class="user_profile_activity">
 
       <div class="event_main_info_container">
 
@@ -52,7 +61,7 @@
 
       </div>
 
-    </div>
+    </div> -->
 
   </div>
 
