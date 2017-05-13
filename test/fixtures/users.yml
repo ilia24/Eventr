@@ -1,9 +1,16 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
-  password_digest: MyString
+  email: 'ilia'
+  password: 'ilia'
+  avatar: nil
 
 two:
-  name: MyString
-  password_digest: MyString
+  email: 'brian'
+  password: 'brian'
+  avatar: nil
+
+three:
+  email: 'pritam'
+  password: 'pritam'
+  avatar: nil
