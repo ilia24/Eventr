@@ -14,54 +14,21 @@
       </div>
 
       <div class="user_profile_bio">
-
-        <% if current_user == @user %>
-        <p>
-          <%= link_to "Edit your profile", edit_user_eventrinfo_path(@user) %>
-        </p>
-        <%end%>
-
         <h5>BIO</h5>
         <%= "#{@user.eventrinfo.bio}" %>
+
+        <% if current_user == @user %>
+          <p> <%= link_to "Edit your profile", edit_user_eventrinfo_path(@user) %> </p>
+        <%end%>
 
       </div>
 
     </div>
 
-    <h3>Going-to</h3>
+    <h3>Going to</h3>
     <% @user.events.each do |e| %>
       <%= render 'events/single_event_profile', event: e %> <br>
       <%end%>
-
-
-
-
-
-
-    <!-- <div class="user_profile_activity">
-
-      <div class="event_main_info_container">
-
-        <div class="event_thumbnail">
-          <%= image_tag("header-john-legend.jpg")%>
-        </div>
-
-        <div class="event_main_info_min">
-          <h4>JOHN LEGEND</h4>
-          <h5 id="event_date_min">Saturaday, 3:00 PM - 10:00 PM</h5>
-          <h5 id="event_loc_min">2 Matilda St, Toronto, ON</h5>
-        </div>
-
-      </div>
-
-
-      <div>
-
-
-
-      </div>
-
-    </div> -->
 
   </div>
 
