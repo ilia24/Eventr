@@ -501,6 +501,9 @@ overflow: hidden;
 .groups {
   display: inline-block;
   flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   background-color: white;
   width: 30%;
   list-style-type: none;
