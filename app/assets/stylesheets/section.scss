@@ -517,6 +517,7 @@ overflow: hidden;
   margin-bottom: 24px;
 }
 
+// Hacky fix for adding 2 ghost groups to fill space
 .groups:nth-last-child(-n+2){
   background: rgba(116, 240, 32, 0);
   box-shadow: 0 0 0 rgba(29, 31, 230, 0);
@@ -613,6 +614,26 @@ overflow: hidden;
   overflow: hidden;
 }
 
+// EVENT SHOW - Eventrs Going
+
+.event_show_eventrs_going {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  margin-left: -6px;
+  margin-right: -6px;
+}
+
+.event_show_eventrs_going_thumbnail {
+  list-style-type: none;
+  height: 44px;
+  margin-left: 6px;
+  margin-right: 6px;
+  margin-bottom: 12px;
+  img {
+    border-radius: 50%;
+  }
+}
 
 // USER PROFILE
 
