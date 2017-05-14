@@ -502,16 +502,25 @@ overflow: hidden;
   display: inline-block;
   flex-grow: 1;
   display: flex;
+  flex: 1 0 280px;
+  // flex-basis: 30%;
   flex-direction: column;
   justify-content: space-between;
   background-color: white;
-  width: 30%;
+  // width: 30%;
+  // min-width: 270px;
   list-style-type: none;
   border: solid 1px #dfdfdf;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08);
   margin-left: 12px;
   margin-right: 12px;
   margin-bottom: 24px;
+}
+
+.groups:nth-last-child(-n+2){
+  background: rgba(116, 240, 32, 0);
+  box-shadow: 0 0 0 rgba(29, 31, 230, 0);
+  border: 0;
 }
 
 .groups_content {
