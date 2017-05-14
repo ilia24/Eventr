@@ -23,7 +23,8 @@ if($('#map').length) {
 $('#single_group').on('click', function(e){
   e.preventDefault();
 
-  $('#new_group').toggleClass( "formdisp" );
+  $('.new_group_form_container').toggleClass( "formdisp" );
+  $('.groups_container').toggleClass("shift");
   $('#single_group').toggleClass('hidegrouplink')
 });
 
@@ -32,7 +33,8 @@ $('#single_group').on('click', function(e){
 $('#closegroupform').on('click', function(e) {
   e.preventDefault();
 
-  $('#new_group').toggleClass( "formdisp" );
+  $('.new_group_form_container').toggleClass( "formdisp" );
+  $('.groups_container').toggleClass("shift");
   $('#single_group').toggleClass('hidegrouplink')
 });
 

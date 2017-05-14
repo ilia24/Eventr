@@ -43,17 +43,18 @@
       </div>
     </div>
 
-    <div class="groups_wrapper">
-
-      <div class="heading_btn">
-        <h4>GROUPS</h4>
-
+    <div class="heading_btn">
+      <h4>GROUPS</h4>
+      <div id="create_group_btn_container">
         <% if current_user %>
-          <p id="single_group"> <%= link_to '+ Create a new group', new_event_group_path(@event) %> </p>
+        <p id="single_group"> <%= link_to '+ Create a new group', new_event_group_path(@event) %> </p>
         <% else %>
-          <p> <%= link_to 'Log In to create a new group', new_session_path %></p>
+        <p> <%= link_to 'Log In to create a new group', new_session_path %></p>
         <% end %>
       </div>
+    </div>
+
+    <div class="groups_wrapper">
 
       <%= render 'groups/group_form' %>
 
@@ -61,11 +62,15 @@
         <% @event.groups.each do |g| %>
           <% if g.id != nil %>
             <li class="groups">
-                <%= render 'groups/single_group', g: g %> <br>
+                <%= render 'groups/single_group', g: g %>
             </li>
           <%end%>
         <%end%>
+        <!-- Hacky fix for adding 2 ghost groups to fill space -->
+        <li class="groups"></li>
+        <li class="groups"></li>
       </div>
+
     </div>
 
     <div class="reviews">
