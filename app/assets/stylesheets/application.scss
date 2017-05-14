@@ -536,5 +536,14 @@ input[type=submit] {
 .side_menu_top_bar {
   padding-left: 24px;
   padding-bottom: 24px;
-  border-bottom: solid 1px #d4d4d4;
+}
+
+.side_menu_group_photo {
+  height: 140px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  img {
+    width: 100%;
+  }
 }
