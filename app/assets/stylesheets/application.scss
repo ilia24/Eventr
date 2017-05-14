@@ -547,3 +547,23 @@ input[type=submit] {
     width: 100%;
   }
 }
+
+.side_menu_group_info {
+  padding: 24px;
+  border-bottom: solid 1px #d4d4d4;
+}
+
+.side_menu_group_members {
+  padding-top: 12px;
+}
+
+.side_menu_group_members_list {
+  display: flex;
+  padding-top: 12px;
+  .profile_thumbnail {
+    padding-left: 12px;
+  }
+  .profile_thumbnail:first-child {
+    padding-left: 0;
+  }
+}
