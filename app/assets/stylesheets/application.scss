@@ -42,6 +42,7 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  z-index: 3;
 }
 
 main {
@@ -508,5 +509,18 @@ input[type=submit] {
 // this hides the create new group button
 
 .hidegrouplink {
-  transform: translateX(-188px) !important; 
+  transform: translateX(-188px) !important;
+}
+
+// SIDE MENU
+
+.side_menu_wrapper {
+  position: fixed;
+  width: 400px;
+  height: 90%;
+  margin-top: 1px;
+  right: 0;
+  background-color: white;
+  z-index: 1;
+  box-shadow: -10px 14px 40px 1px rgba(0, 0, 0, 0.1);
 }
