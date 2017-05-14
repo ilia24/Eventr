@@ -42,13 +42,36 @@ end
 
 
 task :get_fb_events => :environment do
+  token = 'EAACEdEose0cBAH8wPVEeReXi0zfwGrk6qZATSZAzmsEAhI3kT2vbyk8ScDuz6aZBNiHJG2ySxO5Ak8yMyZBHZC3rHod7oYovEjVkHdhpEMh49zKHCHkYoDZC3yBi7ZBSLBcc3i83F1nRgQmSZAgZBxMKgKfWyq0isfSZAkwLcIhZBSdoUtZCZAHeqH4h5e044zoyTayMZD'
+   event_ids = HTTParty.get("https://graph.facebook.com/v2.9/search?pretty=0&q=toronto&type=event&limit=1&fields=id&access_token=#{token}")
+   parsed_response = JSON.parse(event_ids.body)
 
-   event_ids = HTTParty.get("https://graph.facebook.com/v2.9/search?pretty=0&q=toronto&type=event&limit=50&fields=id&access_token=EAACEdEose0cBAHYZCBZBhUZAH05MTa9pxbJA2SoDjbZBGFdSipjyaHT0UviFdr0gNMblmAETCrKgUQ0bSOMdHamxOkZCYKFl3ZAGxIUkeLZAeGZAnq8zxuM8ml1HuC6thYbuYFyrHsrfUiZBAVn1d0Avg1pjQo2tyHwQyPZA56n2suJ8chXw2ZBZBWE6BE57INtr9lwZD")
-
-
-
-   resp = HTTParty.get("https://graph.facebook.com/v2.7/570741246443984?fields=photos%7Bwebp_images%7D&access_token=EAACEdEose0cBAHYZCBZBhUZAH05MTa9pxbJA2SoDjbZBGFdSipjyaHT0UviFdr0gNMblmAETCrKgUQ0bSOMdHamxOkZCYKFl3ZAGxIUkeLZAeGZAnq8zxuM8ml1HuC6thYbuYFyrHsrfUiZBAVn1d0Avg1pjQo2tyHwQyPZA56n2suJ8chXw2ZBZBWE6BE57INtr9lwZD")
-   puts resp
+   parsed_response['data'].each do |e|
+     event = e['id']
+     resp = HTTParty.get("https://graph.facebook.com/v2.7/#{event}?fields=photos%7Bwebp_images%7D%2Cname%2Cdescription%2Cplace%2Cticket_uri%2Cstart_time&access_token=#{token}")
+     pictures = []
+     resp['photos']['data'].each do |i|
+       i['webp_images'].each do |picture|
+         pic = []
+         pic << picture['source']
+         pic << picture['height']
+         pic << picture['width']
+         pictures << pic
+       end
+     end
+     final = []
+     pictures.each do |pic|
+       if (800..1300).include?(pic[1]) && (1500..2200).include?(pic[2])
+         final << pic
+       end
+     end
+     puts final.first[0]
+     puts resp['name']
+     puts resp['description']
+     puts resp['place']['location']['street']
+     puts resp['place']['location']['latitude']
+     puts resp['place']['location']['longitude']
+    end
 
 
 end
