@@ -515,6 +515,9 @@ input[type=submit] {
 // SIDE MENU
 
 .side_menu_wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
   position: fixed;
   width: 400px;
   height: 90%;
@@ -523,4 +526,15 @@ input[type=submit] {
   background-color: white;
   z-index: 1;
   box-shadow: -10px 14px 40px 1px rgba(0, 0, 0, 0.1);
+}
+
+.side_menu_container {
+  padding: 24px;
+  width: 100%;
+}
+
+.side_menu_top_bar {
+  padding-left: 24px;
+  padding-bottom: 24px;
+  border-bottom: solid 1px #d4d4d4;
 }
