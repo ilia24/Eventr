@@ -44,7 +44,7 @@
     </div>
 
     <!-- GROUPS SECTION -->
-    
+
     <div class="heading_btn">
       <h4>GROUPS</h4>
       <div id="create_group_btn_container">
@@ -58,8 +58,10 @@
 
     <div class="groups_wrapper">
 
+      <!-- Creat a new group form -->
       <%= render 'groups/group_form' %>
 
+      <!-- Individual group containers -->
       <div class="groups_container">
         <% @event.groups.each do |g| %>
           <% if g.id != nil %>
@@ -148,7 +150,7 @@
 
       <ul>
       <% @event.users.each do |u| %>
-      <li><%= image_tag(u.avatar.thumb) %> </li>
+      <li class="eventrs_going_thumbnail"><%= image_tag(u.avatar.thumb) %> </li>
       <%end%>
       </ul>
     </div>
