@@ -1,1 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+# one:
+#   user: nil
+#   picurl: 'http://rebeltoronto.com/wp-content/uploads/2017/05/carlc-rz.jpg'
+#   location: '11 Polson St #1, Toronto'
+#   price: 25
+#   name: 'Carl Cox live at Rebel'
+#   description: "House legend Carl Cox launch"
+#   date: Time.now
+#   time: Time.now
