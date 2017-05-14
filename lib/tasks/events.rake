@@ -38,3 +38,17 @@ placeholderuser = User.create(email: 'ilia@gmail.com', password: 'ilia')
   # For each record from API map to your fields and save
 
 end
+
+
+
+task :get_fb_events => :environment do
+
+   event_ids = HTTParty.get("https://graph.facebook.com/v2.9/search?pretty=0&q=toronto&type=event&limit=50&fields=id&access_token=EAACEdEose0cBAHYZCBZBhUZAH05MTa9pxbJA2SoDjbZBGFdSipjyaHT0UviFdr0gNMblmAETCrKgUQ0bSOMdHamxOkZCYKFl3ZAGxIUkeLZAeGZAnq8zxuM8ml1HuC6thYbuYFyrHsrfUiZBAVn1d0Avg1pjQo2tyHwQyPZA56n2suJ8chXw2ZBZBWE6BE57INtr9lwZD")
+
+
+
+   resp = HTTParty.get("https://graph.facebook.com/v2.7/570741246443984?fields=photos%7Bwebp_images%7D&access_token=EAACEdEose0cBAHYZCBZBhUZAH05MTa9pxbJA2SoDjbZBGFdSipjyaHT0UviFdr0gNMblmAETCrKgUQ0bSOMdHamxOkZCYKFl3ZAGxIUkeLZAeGZAnq8zxuM8ml1HuC6thYbuYFyrHsrfUiZBAVn1d0Avg1pjQo2tyHwQyPZA56n2suJ8chXw2ZBZBWE6BE57INtr9lwZD")
+   puts resp
+
+
+end
