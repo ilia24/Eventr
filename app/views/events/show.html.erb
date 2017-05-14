@@ -45,12 +45,13 @@
 
     <div class="heading_btn">
       <h4>GROUPS</h4>
-
-      <% if current_user %>
-      <p id="single_group"> <%= link_to '+ Create a new group', new_event_group_path(@event) %> </p>
-      <% else %>
-      <p> <%= link_to 'Log In to create a new group', new_session_path %></p>
-      <% end %>
+      <div id="create_group_btn_container">
+        <% if current_user %>
+        <p id="single_group"> <%= link_to '+ Create a new group', new_event_group_path(@event) %> </p>
+        <% else %>
+        <p> <%= link_to 'Log In to create a new group', new_session_path %></p>
+        <% end %>
+      </div>
     </div>
 
     <div class="groups_wrapper">

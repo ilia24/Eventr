@@ -484,7 +484,7 @@ overflow: hidden;
   flex-wrap: wrap;
   margin-left: -12px;
   margin-right: -12px;
-  transform: translateY(-180px);
+  transform: translateY(-280px);
   transition: transform 0.3s ease;
 }
 
@@ -494,7 +494,7 @@ overflow: hidden;
 
 .groups_wrapper {
   margin-right: 24px;
-  margin-top: 24px;
+  margin-top: 12px;
   overflow: hidden;
 }
 
@@ -540,6 +540,9 @@ overflow: hidden;
   margin-top: 24px;
   display: flex;
   align-items: center;
+  h4 {
+    margin-bottom: 0;
+  }
 }
 
 .heading_btn a {
@@ -583,6 +586,19 @@ overflow: hidden;
 
 #closegroupform {
   cursor: pointer;
+}
+
+#single_group {
+  transform: translateY(0);
+  transition: transform 0.3s ease;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 12px;
+}
+
+#create_group_btn_container {
+  width: 110%;
+  overflow: hidden;
 }
 
 

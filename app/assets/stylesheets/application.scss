@@ -506,6 +506,7 @@ input[type=submit] {
 }
 
 // this hides the create new group button
+
 .hidegrouplink {
-  display: none;
+  transform: translateX(-188px) !important; 
 }
