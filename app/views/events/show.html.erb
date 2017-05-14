@@ -148,9 +148,9 @@
       <% count = @event.goings.count %>
       <%= "#{count} Eventrs are going to the event!" %>
 
-      <ul>
+      <ul class="event_show_eventrs_going">
       <% @event.users.each do |u| %>
-      <li class="eventrs_going_thumbnail"><%= image_tag(u.avatar.thumb) %> </li>
+      <li class="event_show_eventrs_going_thumbnail"><%= image_tag(u.avatar.thumb) %> </li>
       <%end%>
       </ul>
     </div>

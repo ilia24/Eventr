@@ -616,8 +616,20 @@ overflow: hidden;
 
 // EVENT SHOW - Eventrs Going
 
-.eventrs_going_thumbnail {
+.event_show_eventrs_going {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  margin-left: -6px;
+  margin-right: -6px;
+}
+
+.event_show_eventrs_going_thumbnail {
   list-style-type: none;
+  height: 44px;
+  margin-left: 6px;
+  margin-right: 6px;
+  margin-bottom: 12px;
   img {
     border-radius: 50%;
   }
