@@ -567,3 +567,36 @@ input[type=submit] {
     padding-left: 0;
   }
 }
+
+.side_menu_chat {
+  padding-left: 24px;
+  padding-top: 24px;
+}
+
+.chat_user {
+  display: flex;
+}
+
+.side_menu_chat_name_msg {
+  padding-left: 8px;
+  flex-grow: 1;
+  padding-right: 24px;
+  p {
+    margin-top: 6px;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+  }
+}
+
+.name_time {
+  display: flex;
+  justify-content: space-between;
+  h5{
+    font-weight: 700;
+  }
+  h5:last-child {
+    font-weight: 400;
+    color: #7f7f7f;
+  }
+}
