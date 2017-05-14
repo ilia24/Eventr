@@ -56,6 +56,7 @@ end
 
 group :production do
   gem 'pg'
+  gem "minitest-rails"
 end
 
 #this gem allows for users to upload photos

@@ -1,7 +1,14 @@
 require 'test_helper'
 
 class EventsControllerTest < ActionDispatch::IntegrationTest
-  # test "the truth" do
-  #   assert true
+  # setup do
+  #   @event = events(:one)
   # end
+
+  test "home page loads" do
+    get root_url
+    assert_response :success
+  end
+
+
 end
