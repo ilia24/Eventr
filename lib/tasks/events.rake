@@ -1,53 +1,82 @@
 require 'json'
 
 task :get_fb_events => :environment do
-  limit = 2
+  limit = 200
   token = 'EAAJvMHABPa8BALK8v2LDZA3YgbSZCpPQ3ZCsFGljZC6qmzEq75EordnB9qcYZBr4jZCHelTNdvycYneQGDV2AuiZBkGwBCEZC6H3bQqjssfToNlF1FLn8qHbiGJ4UOw4PDYdiHeNlLZCmuSHlHaF6amovA7daXAxwSSc37GiXOR9bzAZDZD'
    event_ids = HTTParty.get("https://graph.facebook.com/v2.9/search?pretty=0&q=toronto&type=event&limit=#{limit}&fields=id&access_token=#{token}")
    parsed_response = JSON.parse(event_ids.body)
-   puts parsed_response
 
    placeholderuser = User.create(email: 'ilia@gmail.com', password: 'ilia')
    counter = 0
    parsed_response['data'].each do |e|
      event = e['id']
+    #  event = 1854878061399352
      puts e['id']
      puts counter
      resp = HTTParty.get("https://graph.facebook.com/v2.7/#{event}?fields=photos%7Bfrom%2Ccreated_time%2Cwebp_images%7D%2Cname%2C%20description%2C%20place%2C%20ticket_uri%2C%20start_time%2Cadmins%7Bname%7D%2Ccover&access_token=#{token}")
-
-
-
      pictures = []
-     resp['photos']['data'].each do |i|
-       i['webp_images'].each do |picture|
-         pic = []
-         pic << picture['source']
-         pic << picture['height']
-         pic << picture['width']
-         pictures << pic
+     admin_id_list = []
+     whitelist = ["Electro Swing Toronto", "Live Nation Ontario", "Live Nation","Budweiser Stage","TicketBeast Canada", "TicketMaster"]
+     resp['admins']['data'].each do |dat|
+       admin_id_list << dat['id']
+     end
+
+     resp['photos']['data'].each do |photo_data|
+       if (admin_id_list.each.include? photo_data['from']['id']) || (whitelist.include? photo_data['from']['name'])
+         photo_data['webp_images'].each do |picture|
+           pic = []
+           pic << picture['source']
+           pic << picture['height']
+           pic << picture['width']
+           pictures << pic
+         end
        end
      end
+
      bigpic = []
-    #  mediumpic = []
-    #  smallpic = []
+     mediumpic = []
+     smallpic = []
      pictures.each do |pic|
        if (800..1400).include?(pic[1]) && (1400..2000).include?(pic[2])
          bigpic << pic
+       elsif (500..800).include?(pic[1]) && (1000..1300).include?(pic[2])
+         mediumpic << pic
+       elsif (300..500).include?(pic[1]) && (400..800).include?(pic[2])
+         smallpic << pic
        end
-      #  if (500..800).include?(pic[1]) && (1000..1300).include?(pic[2])
-      #    mediumpic << pic
-      #  end
-      #  if (300..500).include?(pic[1]) && (400..800).include?(pic[2])
-      #    smallpic << pic
-      #  end
+     end
+
+     if smallpic.empty?
+       pic = resp.dig('cover','source')
+       smallpic << pic
+     end
+
+     if mediumpic.empty?
+       mediumpic = nil
      end
 
      if bigpic.empty?
-       puts "#{resp.dig('name')} has no valid pictures, event not saved"
+       bigpic = nil
+     end
+
+     if bigpic.nil? && mediumpic.nil?
+       puts "#{resp.dig('name')} has zero valid pictures, event not saved"
        next
      end
 
-     picurl =  bigpic.first[0]
+     if bigpic != nil
+       picurl =  bigpic.first[0]
+     else
+       picurl = mediumpic.first[0]
+     end
+
+     if mediumpic != nil
+       picurl =  mediumpic.first[0]
+     else
+       picurl = bigpic.first[0]
+     end
+
+     picurl3 =  smallpic.first[0]
      name =  resp['name']
      description = resp['description']
      location =  resp.dig('place', 'location', 'street')
@@ -56,7 +85,7 @@ task :get_fb_events => :environment do
      time = resp['start_time']
      date = resp['start_time']
 
-     if (latitude == nil && longitude == nil) && (location == nil)
+     if (latitude.nil? && longitude.nil?) && (location.nil?)
        puts "#{name} has invalid address, event not saved"
        next
      end
