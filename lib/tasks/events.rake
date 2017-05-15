@@ -1,7 +1,7 @@
 require 'json'
 
 task :get_fb_events => :environment do
-  limit = 500
+  limit = 2
   token = 'EAAJvMHABPa8BALK8v2LDZA3YgbSZCpPQ3ZCsFGljZC6qmzEq75EordnB9qcYZBr4jZCHelTNdvycYneQGDV2AuiZBkGwBCEZC6H3bQqjssfToNlF1FLn8qHbiGJ4UOw4PDYdiHeNlLZCmuSHlHaF6amovA7daXAxwSSc37GiXOR9bzAZDZD'
    event_ids = HTTParty.get("https://graph.facebook.com/v2.9/search?pretty=0&q=toronto&type=event&limit=#{limit}&fields=id&access_token=#{token}")
    parsed_response = JSON.parse(event_ids.body)
@@ -13,7 +13,10 @@ task :get_fb_events => :environment do
      event = e['id']
      puts e['id']
      puts counter
-     resp = HTTParty.get("https://graph.facebook.com/v2.7/#{event}?fields=photos%7Bwebp_images%7D%2Cname%2Cdescription%2Cplace%2Cticket_uri%2Cstart_time&access_token=#{token}")
+     resp = HTTParty.get("https://graph.facebook.com/v2.7/#{event}?fields=photos%7Bfrom%2Ccreated_time%2Cwebp_images%7D%2Cname%2C%20description%2C%20place%2C%20ticket_uri%2C%20start_time%2Cadmins%7Bname%7D%2Ccover&access_token=#{token}")
+
+
+
      pictures = []
      resp['photos']['data'].each do |i|
        i['webp_images'].each do |picture|
@@ -24,19 +27,27 @@ task :get_fb_events => :environment do
          pictures << pic
        end
      end
-     final = []
+     bigpic = []
+    #  mediumpic = []
+    #  smallpic = []
      pictures.each do |pic|
-       if (800..1300).include?(pic[1]) && (1500..2200).include?(pic[2])
-         final << pic
+       if (800..1400).include?(pic[1]) && (1400..2000).include?(pic[2])
+         bigpic << pic
        end
+      #  if (500..800).include?(pic[1]) && (1000..1300).include?(pic[2])
+      #    mediumpic << pic
+      #  end
+      #  if (300..500).include?(pic[1]) && (400..800).include?(pic[2])
+      #    smallpic << pic
+      #  end
      end
 
-     if final.empty?
+     if bigpic.empty?
        puts "#{resp.dig('name')} has no valid pictures, event not saved"
        next
      end
 
-     picurl =  final.first[0]
+     picurl =  bigpic.first[0]
      name =  resp['name']
      description = resp['description']
      location =  resp.dig('place', 'location', 'street')
