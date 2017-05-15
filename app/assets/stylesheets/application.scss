@@ -526,7 +526,7 @@ input[type=submit] {
   background-color: white;
   z-index: 2;
   box-shadow: -10px 14px 40px 1px rgba(0, 0, 0, 0.1);
-  // overflow: hidden;
+  overflow: hidden;
 
   transform: translateX(400px);
   transition: transform 0.3s ease;
@@ -670,14 +670,20 @@ input[type=submit] {
 
 i.fa.fa-comment {
   position: fixed;
-  top: 102px;
-  right: 12px;
+  bottom: 24px;
+  right: 24px;
   color: #262626;
   background-color: white;
   padding: 12px;
   border-radius: 50%;
   z-index: 2;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  transform: translateX(0);
+  transition: transform 0.3s ease;
+}
+
+i.fa.fa-comment:hover {
+  transform: translateX(-6px);
 }
 
 .side_menu_main_groups {
