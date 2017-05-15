@@ -42,12 +42,16 @@ end
 
 
 task :get_fb_events => :environment do
-  token = 'EAACEdEose0cBAH8wPVEeReXi0zfwGrk6qZATSZAzmsEAhI3kT2vbyk8ScDuz6aZBNiHJG2ySxO5Ak8yMyZBHZC3rHod7oYovEjVkHdhpEMh49zKHCHkYoDZC3yBi7ZBSLBcc3i83F1nRgQmSZAgZBxMKgKfWyq0isfSZAkwLcIhZBSdoUtZCZAHeqH4h5e044zoyTayMZD'
-   event_ids = HTTParty.get("https://graph.facebook.com/v2.9/search?pretty=0&q=toronto&type=event&limit=1&fields=id&access_token=#{token}")
+  token = 'EAAJvMHABPa8BALK8v2LDZA3YgbSZCpPQ3ZCsFGljZC6qmzEq75EordnB9qcYZBr4jZCHelTNdvycYneQGDV2AuiZBkGwBCEZC6H3bQqjssfToNlF1FLn8qHbiGJ4UOw4PDYdiHeNlLZCmuSHlHaF6amovA7daXAxwSSc37GiXOR9bzAZDZD'
+   event_ids = HTTParty.get("https://graph.facebook.com/v2.9/search?pretty=0&q=toronto&type=event&limit=5&fields=id&access_token=#{token}")
    parsed_response = JSON.parse(event_ids.body)
+   puts parsed_response['data']
+
+   placeholderuser = User.create(email: 'ilia@gmail.com', password: 'ilia')
 
    parsed_response['data'].each do |e|
      event = e['id']
+     byebug
      resp = HTTParty.get("https://graph.facebook.com/v2.7/#{event}?fields=photos%7Bwebp_images%7D%2Cname%2Cdescription%2Cplace%2Cticket_uri%2Cstart_time&access_token=#{token}")
      pictures = []
      resp['photos']['data'].each do |i|
@@ -65,12 +69,18 @@ task :get_fb_events => :environment do
          final << pic
        end
      end
-     puts final.first[0]
-     puts resp['name']
-     puts resp['description']
-     puts resp['place']['location']['street']
-     puts resp['place']['location']['latitude']
-     puts resp['place']['location']['longitude']
+
+     picurl =  final.first[0]
+     name =  resp['name']
+     description = resp['description']
+     location =  resp['place']['location']['street']
+     latitude = resp['place']['location']['latitude']
+     longitude = resp['place']['location']['longitude']
+     time = resp['start_time']
+     date = resp['start_time']
+     a = Event.new(description: description, user: User.find(placeholderuser), price: 20,  latitude: latitude, longitude: longitude, name: name, location: location, time: time, date: date, picurl: picurl)
+     a.save
+     sleep 1
     end
 
 
