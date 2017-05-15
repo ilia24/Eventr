@@ -579,6 +579,10 @@ input[type=submit] {
   margin-bottom: 24px;
 }
 
+.event_details_btn {
+  cursor: pointer;
+}
+
 .side_menu_group_event_photo {
   height: 140px;
   overflow: hidden;
@@ -759,6 +763,13 @@ i.fa.fa-comment:hover {
   bottom: 0;
   width: 100%;
   height: 67px;
+
+  transform: translateY(0);
+  transition: transform 0.3s ease;
+}
+
+.hide_chat {
+  transform: translateY(100%);
 }
 
 .map_icon_container {
