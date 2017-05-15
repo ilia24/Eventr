@@ -526,7 +526,7 @@ input[type=submit] {
   background-color: white;
   z-index: 2;
   box-shadow: -10px 14px 40px 1px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
+  // overflow: hidden;
 
   transform: translateX(400px);
   transition: transform 0.3s ease;
@@ -658,6 +658,7 @@ input[type=submit] {
     letter-spacing: 1px;
   }
   #groups, #eventrs {
+    padding-left: 24px;
     padding-bottom: 24px;
     color: #7f7f7f;
   }
@@ -668,15 +669,17 @@ input[type=submit] {
 }
 
 .side_menu_main_groups {
-  padding-left: 24px;
-  padding-right: 24px;
   border-bottom: solid 1px #d4d4d4;
 }
 
 .side_menu_main_groups_list {
   display: flex;
   align-items: center;
-  padding-bottom: 24px;
+  padding: 12px 24px 12px 24px;
+}
+
+.side_menu_main_groups_list:hover {
+  background-color: #f2f2f2;
 }
 
 .side_menu_main_eventrs {
