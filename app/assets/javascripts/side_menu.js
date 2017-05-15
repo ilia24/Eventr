@@ -30,4 +30,12 @@ $(function() {
 
   });
 
+  $('#eventrs').on('click', function(e){
+
+    $(this).next('.side_menu_main_eventrs_list').slideToggle('fast');
+    $(this).toggleClass('active');
+    e.preventDefault();
+
+  });
+
 });
