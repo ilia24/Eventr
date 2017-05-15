@@ -141,7 +141,7 @@ h5 {
 
 h6 {
   font-size: 10px;
-  font-weight: 300;
+  font-weight: 400;
   margin: 0;
 }
 
@@ -626,7 +626,7 @@ input[type=submit] {
 
 .side_menu_group_content {
   transform: translateX(0);
-  transition: transform 0.3s ease;
+  transition: transform 0.2s ease;
 }
 
 .group_slide_out {
@@ -647,16 +647,61 @@ input[type=submit] {
 
 .side_menu_main_content {
   position: absolute;
+  background-color: white;
   margin-top: 43px;
-  background-color: red;
+  padding-top: 24px;
   width: 100%;
   height: 100%;
   transform: translateX(-100%);
-  transition: transform 0.3s ease;
+  transition: transform 0.2s ease;
+  h5 {
+    letter-spacing: 1px;
+  }
+  #groups, #eventrs {
+    padding-bottom: 24px;
+    color: #7f7f7f;
+  }
 }
 
 .main_slide_in{
   transform: translateX(0);
+}
+
+.side_menu_main_groups {
+  padding-left: 24px;
+  padding-right: 24px;
+  border-bottom: solid 1px #d4d4d4;
+}
+
+.side_menu_main_groups_list {
+  display: flex;
+  align-items: center;
+  padding-bottom: 24px;
+}
+
+.side_menu_main_eventrs {
+  padding-top: 24px;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.side_menu_main_eventrs_list {
+  display: flex;
+  align-items: center;
+  h5 {
+    letter-spacing: 0;
+  }
+}
+
+.main_menu_group_content {
+  padding-left: 12px;
+  h4 {
+    letter-spacing: 0;
+    font-weight: 400;
+  }
+  h6{
+    padding-top: 6px;
+  }
 }
 
 .side_menu_chat_input {
