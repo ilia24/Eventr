@@ -532,7 +532,7 @@ input[type=submit] {
 }
 
 .open_side_menu {
-  position: absolute;
+  position: fixed;
   right: 0;
   background-color: white;
   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.14);
@@ -540,10 +540,6 @@ input[type=submit] {
 
 .slide_open {
   transform: translateX(0);
-}
-
-#side_menu_close{
-  
 }
 
 .side_menu_container {
@@ -597,6 +593,20 @@ input[type=submit] {
   padding-top: 24px;
 }
 
+.side_menu_back_chat {
+  cursor: pointer;
+  i {
+    transform: translateX(0);
+    transition: transform 0.3s ease;
+  }
+}
+
+.side_menu_back_chat:hover {
+  i {
+    transform: translateX(-6px);
+  }
+}
+
 .chat_user {
   display: flex;
 }
@@ -608,7 +618,7 @@ input[type=submit] {
   p {
     margin-top: 6px;
     font-size: 12px;
-    font-weight: 400;
+    font-weight: 300;
     line-height: 18px;
   }
 }
