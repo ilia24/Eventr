@@ -17,3 +17,7 @@
 //= require events.js
 //= require dropdown.js
 //= require carousel.js
+//= require turbolinks
+//= require channels
+//= require_tree
+//= require cable

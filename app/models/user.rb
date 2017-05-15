@@ -1,4 +1,7 @@
 class User < ApplicationRecord
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable and :omniauthable
+
   has_secure_password
   validates :email, presence: true
   mount_uploader :avatar, AvatarUploader
@@ -15,4 +18,11 @@ class User < ApplicationRecord
   has_many :received_conversations, class_name: 'Conversation', foreign_key: 'receiver_id'
 
   has_many :personal_messages, dependent: :destroy
+
+  has_many :messages
+  has_many :comments
+
+  def online?
+    !Redis.new.get("user_#{self.id}_online").nil?
+  end
 end
