@@ -17,6 +17,8 @@ $(function() {
     e.preventDefault();
 
     $('.side_menu_main_content').toggleClass( "main_slide_in" );
+    $('.side_menu_group_content').toggleClass( "group_slide_out" );
+
   });
 
 });
