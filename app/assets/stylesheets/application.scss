@@ -659,7 +659,7 @@ input[type=submit] {
   }
   #groups, #eventrs {
     padding-left: 24px;
-    padding-bottom: 24px;
+    padding-bottom: 12px;
     color: #7f7f7f;
   }
 }
@@ -683,17 +683,20 @@ input[type=submit] {
 }
 
 .side_menu_main_eventrs {
-  padding-top: 24px;
-  padding-left: 24px;
-  padding-right: 24px;
+  padding: 24px 0 24px 0;
 }
 
 .side_menu_main_eventrs_list {
   display: flex;
   align-items: center;
+  padding: 12px 24px 12px 24px;
   h5 {
     letter-spacing: 0;
   }
+}
+
+.side_menu_main_eventrs_list:hover {
+  background-color: #f2f2f2;
 }
 
 .main_menu_group_content {
