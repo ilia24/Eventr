@@ -81,7 +81,7 @@
           <i class="fa fa-chevron-left"></i> Chat
         </div>
         <div class="close_container">
-          <%= image_tag('eventr-logo-short.svg') %>
+          <%= image_tag('eventr-logo-short.svg', :class=>"event_details_btn") %>
           <i class="fa fa-close fa-lg" id="side_menu_close"></i>
         </div>
       </div>
@@ -89,8 +89,10 @@
       <!-- GROUP CONTENT CONTAINER -->
       <div class="side_menu_group_content">
 
-        <div class="side_menu_group_photo">
-          <%= image_tag("home-slider/img-weeknd.jpg") %>
+        <div class="side_menu_group_event_details">
+          <div class="side_menu_group_event_photo">
+            <%= image_tag("home-slider/img-weeknd.jpg") %>
+          </div>
         </div>
 
         <div class="side_menu_group_info">

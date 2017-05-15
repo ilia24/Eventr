@@ -543,7 +543,8 @@ input[type=submit] {
   margin: 0;
   img {
     height: 18px;
-    margin-right: 12px;
+    padding: 12px;
+    margin-right: 6px;
   }
 }
 
@@ -574,7 +575,7 @@ input[type=submit] {
   justify-content: space-between;
 }
 
-.side_menu_group_photo {
+.side_menu_group_event_photo{
   height: 140px;
   overflow: hidden;
   display: flex;
