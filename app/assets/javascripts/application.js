@@ -17,3 +17,4 @@
 //= require events.js
 //= require dropdown.js
 //= require carousel.js
+//= require side_menu.js
