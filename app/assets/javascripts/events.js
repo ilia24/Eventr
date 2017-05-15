@@ -51,8 +51,10 @@ $('#new_group').on('submit', function(e) {
   }).done(function(data){
     console.log('ajax submission succeeded')
     var group = $('<li>').html(data).attr('class', 'groups')
-    $('.groups_container').append(group)
-    $('#new_group').toggleClass( "formdisp" );
+    $('.groups_container').prepend(group)
+    $('.new_group_form_container').toggleClass( "formdisp" );
+    $('.groups_container').toggleClass("shift");
+    $('#single_group').toggleClass('hidegrouplink')
   }).fail(function(data){
     console.log('ajax submission failed')
   }).always(function(){
