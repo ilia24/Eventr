@@ -668,6 +668,18 @@ input[type=submit] {
   transform: translateX(0);
 }
 
+i.fa.fa-comment {
+  position: fixed;
+  top: 102px;
+  right: 12px;
+  color: #262626;
+  background-color: white;
+  padding: 12px;
+  border-radius: 50%;
+  z-index: 2;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+}
+
 .side_menu_main_groups {
   border-bottom: solid 1px #d4d4d4;
 }
