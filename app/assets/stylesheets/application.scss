@@ -526,10 +526,15 @@ input[type=submit] {
   background-color: white;
   z-index: 2;
   box-shadow: -10px 14px 40px 1px rgba(0, 0, 0, 0.1);
-  // overflow: hidden;
+  overflow: hidden;
 
   transform: translateX(400px);
   transition: transform 0.3s ease;
+}
+
+#side_menu_close {
+  padding: 6px;
+  cursor: pointer;
 }
 
 .open_side_menu {
@@ -702,7 +707,7 @@ i.fa.fa-comment:hover {
 }
 
 .side_menu_main_eventrs {
-  padding: 24px 0 24px 0;
+  padding: 12px 0 24px 0;
 }
 
 .side_menu_main_eventrs_item {
