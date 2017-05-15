@@ -141,7 +141,7 @@ h5 {
 
 h6 {
   font-size: 10px;
-  font-weight: 300;
+  font-weight: 400;
   margin: 0;
 }
 
@@ -526,7 +526,7 @@ input[type=submit] {
   background-color: white;
   z-index: 2;
   box-shadow: -10px 14px 40px 1px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
+  // overflow: hidden;
 
   transform: translateX(400px);
   transition: transform 0.3s ease;
@@ -647,16 +647,46 @@ input[type=submit] {
 
 .side_menu_main_content {
   position: absolute;
+  background-color: white;
   margin-top: 43px;
-  background-color: red;
+  padding-top: 24px;
   width: 100%;
   height: 100%;
   transform: translateX(-100%);
   transition: transform 0.3s ease;
+  h5 {
+    letter-spacing: 1px;
+  }
+  #groups {
+    padding-left: 24px;
+    padding-bottom: 12px;
+  }
 }
 
 .main_slide_in{
   transform: translateX(0);
+}
+
+.side_menu_main_groups {
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.side_menu_main_groups_list {
+  display: flex;
+  align-items: center;
+  padding-bottom: 12px;
+}
+
+.main_menu_group_content {
+  padding-left: 12px;
+  h4 {
+    letter-spacing: 0;
+    font-weight: 400;
+  }
+  h6{
+    padding-top: 6px;
+  }
 }
 
 .side_menu_chat_input {
