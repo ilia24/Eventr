@@ -61,7 +61,8 @@ $(function() {
         $(this).attr("src", "/assets/eventr-logo-short.svg");
     }
   );
-  // 
+
+  //
   // function Scroll(ev){
   //   if(window.pageYOffset>94){
   //

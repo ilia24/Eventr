@@ -549,15 +549,9 @@ input[type=submit] {
   transition: transform 0.3s ease;
 }
 
-.expand {
-  transform: translate(-94px);
-  transform: scaleY(0);
-}
-
 .slide_open {
   transform: translate(0,0);
 }
-
 
 #side_menu_close {
   padding: 6px;
