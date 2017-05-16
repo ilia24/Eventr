@@ -8,6 +8,9 @@ class GroupsController < ApplicationController
 
   def show
     @group = Group.find(params[:id])
+    @message = Message.new
+    @messages = Message.all
+    # @group = Group.includes(:messages).find_by(id: params[:id])
   end
 
   def create
@@ -22,10 +25,7 @@ class GroupsController < ApplicationController
 
 
     if  @group.save
-      @group.build_chat_room(:title => "#{@group.name} chat")
-      @group.chat_room.save
       @group.users << @user
-      @group.chat_room.users << @user
 
       if @event.users.exclude? @user
         @event.users << @user

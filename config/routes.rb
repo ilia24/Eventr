@@ -7,14 +7,10 @@ mount ActionCable.server => '/cable'
 root 'home#index'
 
 resources :events do
-  resources :groups, only: %i(new show create destroy) do
-    resources :chat_rooms, only: [:index, :new, :create, :show]
-  end
+  resources :groups, only: %i(new show create destroy)
   resources :reviews, only: %i(show create destroy)
 end
 
-get '/events/:event_id/groups/:id/chat_room', to: 'chat_rooms#display', as: 'chat'
-post '/events/:event_id/groups/:id/chat_room', to: 'chat_rooms#display', as: 'sendchat'
 
 
 

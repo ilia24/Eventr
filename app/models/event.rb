@@ -9,7 +9,6 @@ class Event < ApplicationRecord
   # validates :price, numericality: {only_integer: true}
 
   has_many :reviews
-  has_many :chat_rooms, through: :groups
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable

@@ -10,7 +10,9 @@
 </ul>
 </div>
 
-<h1><%= link_to g.chat_room.title, chat_path(@event, g.id) %></h1>
+<div class="messages">
+  <%= render @group.messages %>
+</div>
 
 
 <div class="event_going">
