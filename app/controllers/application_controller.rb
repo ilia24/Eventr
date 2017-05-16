@@ -12,7 +12,7 @@ end
 def cookie_set
     @user = current_user
     return unless current_user
-    cookies[:user_name] = @user.id
+    cookies[:user_email] = @user.id
 end
 
 
