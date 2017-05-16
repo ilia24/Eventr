@@ -10,25 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170516075634) do
-
-  create_table "chat_rooms", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer  "group_id"
-    t.string   "title"
-    t.index ["group_id"], name: "index_chat_rooms_on_group_id"
-  end
-
-  create_table "chatlinkages", force: :cascade do |t|
-    t.integer  "chat_room_id"
-    t.integer  "user_id"
-    t.boolean  "owner"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-    t.index ["chat_room_id"], name: "index_chatlinkages_on_chat_room_id"
-    t.index ["user_id"], name: "index_chatlinkages_on_user_id"
-  end
+ActiveRecord::Schema.define(version: 20170516190829) do
 
   create_table "comments", force: :cascade do |t|
     t.text    "content"
@@ -109,18 +91,6 @@ ActiveRecord::Schema.define(version: 20170516075634) do
     t.datetime "updated_at", null: false
     t.index ["group_id"], name: "index_members_on_group_id"
     t.index ["user_id"], name: "index_members_on_user_id"
-  end
-
-  create_table "messages", force: :cascade do |t|
-    t.string   "title"
-    t.text     "content"
-    t.text     "body"
-    t.integer  "chat_room_id"
-    t.integer  "user_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-    t.index ["chat_room_id"], name: "index_messages_on_chat_room_id"
-    t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "personal_messages", force: :cascade do |t|
