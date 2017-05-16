@@ -545,13 +545,19 @@ input[type=submit] {
   box-shadow: -10px 14px 40px 1px rgba(0, 0, 0, 0.1);
   overflow: hidden;
 
-  transform: translateX(400px);
+  transform: translate(400px,0);
   transition: transform 0.3s ease;
 }
 
 .expand {
-  top: 0;
+  transform: translate(-94px);
+  transform: scaleY(0);
 }
+
+.slide_open {
+  transform: translate(0,0);
+}
+
 
 #side_menu_close {
   padding: 6px;
@@ -574,10 +580,6 @@ input[type=submit] {
   right: 0;
   background-color: white;
   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.14);
-}
-
-.slide_open {
-  transform: translateX(0);
 }
 
 .side_menu_container {
