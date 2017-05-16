@@ -1,6 +1,10 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-  before_action :cookie_set
+  before_action :cookie_set, :load_chatfunc
+
+def load_chatfunc
+  @message = Message.new
+end
 
   def ensure_logged_in
     unless current_user

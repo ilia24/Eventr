@@ -87,6 +87,7 @@
       </div>
 
       <!-- GROUP CONTENT CONTAINER -->
+      <% if (@user != nil) && (@user.groups.empty? != true) %>
       <div class="side_menu_group_content">
 
         <div class="side_menu_group_event_details">
@@ -97,39 +98,27 @@
 
         <div class="side_menu_group_info">
 
-          <h4>THE COOLEST GROUP</h4>
+          <h4><%= @user.groups.first.name %> </h4>
 
           <div class="side_menu_group_members">
-            <h5>12 EVENTRS GOING</h5>
+            <h5><%= @user.groups.first.users.count %> EVENTRS GOING</h5>
           </div>
 
           <div class="side_menu_group_members_list">
-            <div class="profile_thumbnail">
-              <%= image_tag("home-slider/john-legend-1.jpg") %>
-            </div>
-            <div class="profile_thumbnail">
-              <%= image_tag("home-slider/john-legend-1.jpg") %>
-            </div>
-            <div class="profile_thumbnail">
-              <%= image_tag("home-slider/john-legend-1.jpg") %>
-            </div>
+            <% @user.groups.first.users.all.each do |u| %>
+              <div class="profile_thumbnail">
+                <%= image_tag(u.avatar.thumb) %>
+              </div>
+            <% end %>
           </div>
-
         </div>
 
         <div class="side_menu_chat">
-          <div class="chat_user">
-            <div class="profile_thumbnail">
-              <%= image_tag("home-slider/john-legend-1.jpg") %>
-            </div>
-            <div class="side_menu_chat_name_msg">
-              <div class="name_time">
-                <h5>John Legend</h5>
-                <h5>1:40 PM</h5>
-              </div>
-              <p>Hey! let's meet at Union Station tonight</p>
-            </div>
+
           </div>
+
+          <%= render "groups/sidebar_chat", g: @user.groups.first %>
+
         </div>
 
       </div>
@@ -140,46 +129,25 @@
         <!-- GROUPS SECTION -->
         <div class="side_menu_main_groups">
           <h5 id="groups">GROUPS <i class="fa fa-chevron-down"></i></h5>
+
           <div class="side_menu_main_groups_list">
-            <div class="side_menu_main_groups_item">
+                <% @user.groups.each do |g| %>
+                  <div class="side_menu_main_groups_item">
+                    <div class="profile_thumbnail">
+                      <%= image_tag(g.event.picurl3) %>
+                    </div>
+                    <div class="main_menu_group_content">
+                      <h4><%= g.name %></h4>
+                      <h6><%= g.users.count %> EVENTRS</h6>
+                    </div>
+                  </div>
+              <% end %>
 
-              <div class="profile_thumbnail">
-                <%= image_tag("home-slider/john-legend-1.jpg") %>
-              </div>
-
-              <div class="main_menu_group_content">
-                <h4>The Coolest Group</h4>
-                <h6>12 EVENTRS</h6>
-              </div>
-
-            </div>
-            <div class="side_menu_main_groups_item">
-
-              <div class="profile_thumbnail">
-                <%= image_tag("home-slider/john-legend-1.jpg") %>
-              </div>
-
-              <div class="main_menu_group_content">
-                <h4>Turnt Up!</h4>
-                <h6>12 EVENTRS</h6>
-              </div>
-
-            </div>
-            <div class="side_menu_main_groups_item">
-
-              <div class="profile_thumbnail">
-                <%= image_tag("home-slider/john-legend-1.jpg") %>
-              </div>
-
-              <div class="main_menu_group_content">
-                <h4>Music lover</h4>
-                <h6>12 EVENTRS</h6>
-              </div>
-
-            </div>
           </div>
         </div>
 
+
+        <% end %>
         <!-- EVENTRS SECTION -->
         <div class="side_menu_main_eventrs">
           <h5 id="eventrs">EVENTRS <i class="fa fa-chevron-down"></i></h5>
@@ -206,7 +174,17 @@
         <div class="map_icon_container">
           <i class="fa fa-map-marker fa-lg"></i>
         </div>
+        <%= render "groups/sidebar_form", g: @user.groups.first %>
       </div>
+
+
+
+
+
+
+
+
+
 
     </div>
 
