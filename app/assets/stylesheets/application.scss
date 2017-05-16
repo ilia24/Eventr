@@ -164,6 +164,9 @@ hr {
 .logo {
   width: 153px;
   display: inline-block;
+  img {
+    height: 24px;
+  }
 }
 
 .nav_links {
@@ -545,6 +548,10 @@ input[type=submit] {
 
   transform: translateX(400px);
   transition: transform 0.3s ease;
+}
+
+.expand {
+  top: 0;
 }
 
 #side_menu_close {
