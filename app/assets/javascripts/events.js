@@ -39,28 +39,28 @@ $('#closegroupform').on('click', function(e) {
 });
 
 // This is an ajax call to create a new group within the event page
-$('#new_group').on('submit', function(e) {
-  e.preventDefault();
-
-  $.ajax({
-    method: $(this).attr('method'),
-    url: $(this).attr('action'),
-    data: $(this).serialize(),
-    dataType: 'html'
-
-  }).done(function(data){
-    console.log('ajax submission succeeded')
-    var group = $('<li>').html(data).attr('class', 'groups')
-    $('.groups_container').prepend(group)
-    $('.new_group_form_container').toggleClass( "formdisp" );
-    $('.groups_container').toggleClass("shift");
-    $('#single_group').toggleClass('hidegrouplink')
-  }).fail(function(data){
-    console.log('ajax submission failed')
-  }).always(function(){
-    console.log('ajax ran')
-  });
-
-});
+// $('#new_group').on('submit', function(e) {
+//   e.preventDefault();
+//
+//   $.ajax({
+//     method: $(this).attr('method'),
+//     url: $(this).attr('action'),
+//     data: $(this).serialize(),
+//     dataType: 'html'
+//
+//   }).done(function(data){
+//     console.log('ajax submission succeeded')
+//     var group = $('<li>').html(data).attr('class', 'groups')
+//     $('.groups_container').prepend(group)
+//     $('.new_group_form_container').toggleClass( "formdisp" );
+//     $('.groups_container').toggleClass("shift");
+//     $('#single_group').toggleClass('hidegrouplink')
+//   }).fail(function(data){
+//     console.log('ajax submission failed')
+//   }).always(function(){
+//     console.log('ajax ran')
+//   });
+//
+// });
 
 });
