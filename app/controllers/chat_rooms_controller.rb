@@ -14,6 +14,7 @@ end
 def show
   @chat_room = ChatRoom.includes(:messages).find_by(id: params[:id])
   @message = Message.new
+  @messages = Message.all
 end
 
 def create
@@ -29,7 +30,7 @@ end
 private
 
 def chat_room_params
-  params.require(:chat_room).permit(:group_id, :title, :event_id, :user_id)
+  params.require(:chat_room).permit(:title, :group_id,  :event_id, :user_id)
 end
 
 def load_group
