@@ -18,3 +18,15 @@
 //= require dropdown.js
 //= require carousel.js
 //= require side_menu.js
+
+$(function() {
+  
+  $(".eventr_home_btn").hover(
+    function() {
+        $(this).attr("src", "/assets/eventr-logo.gif");
+    },
+    function() {
+        $(this).attr("src", "/assets/eventr-logo.svg");
+    });
+
+});

@@ -164,6 +164,9 @@ hr {
 .logo {
   width: 153px;
   display: inline-block;
+  img {
+    height: 24px;
+  }
 }
 
 .nav_links {
@@ -210,16 +213,31 @@ hr {
   margin-left: 50px;
 }
 
-.profile_thumbnail > img{
-  width: 44px;
+.profile_thumbnail {
+  background-color: black;
   height: 44px;
   border-radius: 50%;
+  img {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    opacity: 1.0;
+  }
+  img:hover {
+    opacity: 0.7;
+  }
 }
 
-.profile_member > img {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
+.profile_member {
+  img {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    opacity: 1.0;
+  }
+  img:hover {
+    opacity: 0.5;
+  }
 }
 
 .dropdown-content {
@@ -519,9 +537,9 @@ input[type=submit] {
   align-items: center;
   flex-direction: column;
   position: fixed;
-  width: 400px;
-  height: 90%;
   margin-top: 1px;
+  width: 400px;
+  height: calc(100% - 93px);
   right: 0;
   background-color: white;
   z-index: 2;
@@ -530,6 +548,10 @@ input[type=submit] {
 
   transform: translateX(400px);
   transition: transform 0.3s ease;
+}
+
+.expand {
+  top: 0;
 }
 
 #side_menu_close {
@@ -606,10 +628,11 @@ input[type=submit] {
   display: flex;
   padding-top: 12px;
   .profile_thumbnail {
-    padding-left: 12px;
+    margin-left: 12px;
   }
   .profile_thumbnail:first-child {
     padding-left: 0;
+    margin-left: 0;
   }
 }
 
