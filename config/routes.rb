@@ -14,6 +14,12 @@ resources :events do
 end
 
 get '/events/:event_id/groups/:id/chat_room', to: 'chat_rooms#display', as: 'chat'
+post '/events/:event_id/groups/:id/chat_room', to: 'chat_rooms#display', as: 'sendchat'
+
+
+
+
+
 get '/events/:event_id/groups/:id/join', to: 'groups#join', as: 'join_group'
 get '/events/:event_id/groups/:id/leave', to: 'groups#leave', as: 'leave_group'
 
