@@ -140,43 +140,20 @@
         <!-- GROUPS SECTION -->
         <div class="side_menu_main_groups">
           <h5 id="groups">GROUPS <i class="fa fa-chevron-down"></i></h5>
+          
           <div class="side_menu_main_groups_list">
-            <div class="side_menu_main_groups_item">
+                <% @user.groups.each do |g| %>
+                  <div class="side_menu_main_groups_item">
+                    <div class="profile_thumbnail">
+                      <%= image_tag(g.event.picurl3) %>
+                    </div>
+                    <div class="main_menu_group_content">
+                      <h4><%= g.name %></h4>
+                      <h6><%= g.users.count %> EVENTRS</h6>
+                    </div>
+                  </div>
+              <% end %>
 
-              <div class="profile_thumbnail">
-                <%= image_tag("home-slider/john-legend-1.jpg") %>
-              </div>
-
-              <div class="main_menu_group_content">
-                <h4>The Coolest Group</h4>
-                <h6>12 EVENTRS</h6>
-              </div>
-
-            </div>
-            <div class="side_menu_main_groups_item">
-
-              <div class="profile_thumbnail">
-                <%= image_tag("home-slider/john-legend-1.jpg") %>
-              </div>
-
-              <div class="main_menu_group_content">
-                <h4>Turnt Up!</h4>
-                <h6>12 EVENTRS</h6>
-              </div>
-
-            </div>
-            <div class="side_menu_main_groups_item">
-
-              <div class="profile_thumbnail">
-                <%= image_tag("home-slider/john-legend-1.jpg") %>
-              </div>
-
-              <div class="main_menu_group_content">
-                <h4>Music lover</h4>
-                <h6>12 EVENTRS</h6>
-              </div>
-
-            </div>
           </div>
         </div>
 
