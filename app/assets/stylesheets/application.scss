@@ -213,14 +213,21 @@ hr {
 }
 
 .profile_thumbnail {
+  position: relative;
   background-color: black;
   height: 44px;
+  width: 44px;
   border-radius: 50%;
+  overflow: hidden;
   img {
-    width: 44px;
+    opacity: 1;
+    position: absolute;
     height: 44px;
-    border-radius: 50%;
-    opacity: 1.0;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
   }
   img:hover {
     opacity: 0.7;
