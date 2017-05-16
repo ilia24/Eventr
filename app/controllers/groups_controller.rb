@@ -22,8 +22,7 @@ class GroupsController < ApplicationController
 
 
     if  @group.save
-      # chatroom = ChatRoom.new(:title => "#{@event.name} chat", :event_id => @event.id)
-      @group.build_chat_room(:title => "#{@event.name} chat")
+      @group.build_chat_room(:title => "#{@group.name} chat")
       @group.chat_room.save
       @group.users << @user
       @group.chat_room.users << @user

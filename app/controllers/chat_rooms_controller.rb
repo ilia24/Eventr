@@ -22,15 +22,6 @@ def show
   @messages = Message.all
 end
 
-def create
-  @chat_room = @group.chat_room.build(chat_room_params)
-  if @chat_room.save
-    flash[:success] = 'Chat room added!'
-    redirect_to event_group_chat_room_path(@event, @group, @chat_room)
-  else
-    render 'new'
-  end
-end
 
 private
 
