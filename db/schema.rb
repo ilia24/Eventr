@@ -10,15 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170516040053) do
+ActiveRecord::Schema.define(version: 20170516052733) do
 
   create_table "chat_rooms", force: :cascade do |t|
-    t.integer  "group_id"
-    t.integer  "event_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "group_id"
     t.string   "title"
-    t.index ["event_id"], name: "index_chat_rooms_on_event_id"
     t.index ["group_id"], name: "index_chat_rooms_on_group_id"
   end
 
@@ -97,8 +95,10 @@ ActiveRecord::Schema.define(version: 20170516040053) do
     t.integer  "group_id"
     t.integer  "user_id"
     t.boolean  "owner"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.integer  "chat_room_id"
+    t.index ["chat_room_id"], name: "index_members_on_chat_room_id"
     t.index ["group_id"], name: "index_members_on_group_id"
     t.index ["user_id"], name: "index_members_on_user_id"
   end
