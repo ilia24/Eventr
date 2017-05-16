@@ -20,7 +20,9 @@ class GroupsController < ApplicationController
 
     @group = @event.groups.build(group_params)
 
+
     if  @group.save
+      # @chat_room = ChatRoom.create(group_id: @group.id)
       @group.users << @user
       if @event.users.exclude? @user
         @event.users << @user

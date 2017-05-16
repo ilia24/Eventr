@@ -1,13 +1,15 @@
 Rails.application.routes.draw do
 
-
+mount ActionCable.server => '/cable'
 # root 'conversations#index'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 root 'home#index'
 
 resources :events do
-  resources :groups, only: %i(new show create destroy)
+  resources :groups, only: %i(new show create destroy) do
+    resources :chat_rooms, only: [:index, :new, :create, :show]
+  end
   resources :reviews, only: %i(show create destroy)
 end
 

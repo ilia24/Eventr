@@ -722,3 +722,8 @@ input[type=submit] {
   padding-bottom: 12px;
   width: 67px;
 }
+
+#messages {
+  max-height: 450px;
+  overflow-y: auto;
+}

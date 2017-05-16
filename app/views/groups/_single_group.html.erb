@@ -1,5 +1,5 @@
 <div class="groups_content">
-<h1><%= link_to g.name, event_group_path(@event, g.id) %></h1> 
+<h1><%= link_to g.name, event_group_path(@event, g.id) %></h1>
 
 <p> <%= g.description %> </p>
 
@@ -9,6 +9,10 @@
     <% end %>
 </ul>
 </div>
+
+<%= link_to 'New chat room', new_event_group_chat_room_path(group_id: @group.id), class: 'btn btn-primary' %>
+
+
 
 <div class="event_going">
   <h6> <strong><%= g.users.count %></strong> EVENTRS </h6>

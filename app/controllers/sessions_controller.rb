@@ -8,6 +8,7 @@ class SessionsController < ApplicationController
     #if the login details belong to a user
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
+      cookies.signed[:user_id] = user.id
       flash[:notice] = "Logged in succesfully as #{user.email} !"
       redirect_to events_url
 
@@ -21,6 +22,7 @@ class SessionsController < ApplicationController
     # if user is logged in, log out
 
       session[:user_id] = nil
+      cookies.delete(:user_id)
       flash[:notice] = 'User has been logged out succesfully!'
       redirect_to events_url
       #if host is logged in, log out
