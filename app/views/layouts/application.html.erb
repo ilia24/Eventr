@@ -114,17 +114,7 @@
         </div>
 
         <div class="side_menu_chat">
-          <div class="chat_user">
-            <div class="profile_thumbnail">
-              <%= image_tag("home-slider/john-legend-1.jpg") %>
-            </div>
-            <div class="side_menu_chat_name_msg">
-              <div class="name_time">
-                <h5>John Legend</h5>
-                <h5>1:40 PM</h5>
-              </div>
-              <p>Hey! let's meet at Union Station tonight</p>
-            </div>
+
           </div>
 
           <%= render "groups/sidebar_chat", g: @user.groups.first %>
@@ -184,7 +174,17 @@
         <div class="map_icon_container">
           <i class="fa fa-map-marker fa-lg"></i>
         </div>
+        <%= render "groups/sidebar_form", g: @user.groups.first %>
       </div>
+
+
+
+
+
+
+
+
+
 
     </div>
 

@@ -4,8 +4,8 @@ class ApplicationController < ActionController::Base
 
 def load_chatfunc
   @message = Message.new
-
 end
+
   def ensure_logged_in
     unless current_user
       flash[:alert] = "Please log in"
