@@ -22,8 +22,10 @@ class GroupsController < ApplicationController
 
 
     if  @group.save
-      chat_room = ChatRoom.new(:title => 'placeholder', :user_id => @user.id, :event_id => @event.id)
-      @group.chat_room = chat_room
+      # chatroom = ChatRoom.new(:title => "#{@event.name} chat", :event_id => @event.id)
+      @group.build_chat_room(:title => "#{@event.name} chat", :event_id => @event.id)
+      @group.chat_room.save
+
       @group.users << @user
       if @event.users.exclude? @user
         @event.users << @user
