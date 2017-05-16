@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-
+mount ActionCable.server => '/cable'
 # root 'conversations#index'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
@@ -10,6 +10,11 @@ resources :events do
   resources :groups, only: %i(new show create destroy)
   resources :reviews, only: %i(show create destroy)
 end
+
+
+
+
+
 
 get '/events/:event_id/groups/:id/join', to: 'groups#join', as: 'join_group'
 get '/events/:event_id/groups/:id/leave', to: 'groups#leave', as: 'leave_group'
