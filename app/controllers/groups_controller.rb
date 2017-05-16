@@ -7,7 +7,7 @@ class GroupsController < ApplicationController
   end
 
   def show
-    @group = Group.find(Event.find(params[:event_id]).groups.find(params[:id]))
+    @group = @event.groups.find(params[:id])
     @message = Message.new
     @messages = Message.all
     # @group = Group.includes(:messages).find_by(id: params[:id])
