@@ -17,10 +17,10 @@ def show
 end
 
 def create
-  @chat_room = @group.chat_rooms.build(chat_room_params)
+  @chat_room = @group.chat_room.build(chat_room_params)
   if @chat_room.save
     flash[:success] = 'Chat room added!'
-    redirect_to event_group_chat_rooms_path(@event, @group, @chat_room)
+    redirect_to event_group_chat_room_path(@event, @group, @chat_room)
   else
     render 'new'
   end

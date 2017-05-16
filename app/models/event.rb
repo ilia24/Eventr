@@ -1,8 +1,8 @@
 class Event < ApplicationRecord
-  belongs_to :user
-  has_many :groups
   geocoded_by :location
   after_validation :geocode
+  belongs_to :user
+  has_many :groups
   has_many :goings
   has_many :users, through: :goings
   # validates :name, :description, :date, :location, presence: true
