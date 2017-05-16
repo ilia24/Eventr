@@ -52,4 +52,13 @@ $(function() {
 
   });
 
+  $(".event_details_btn").hover(
+    function() {
+        $(this).attr("src", "/assets/eventr-logo-short.gif");
+    },
+    function() {
+        $(this).attr("src", "/assets/eventr-logo-short.svg");
+    }
+  );
+
 });
