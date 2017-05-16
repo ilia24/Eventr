@@ -662,8 +662,17 @@ overflow: hidden;
   position: relative;
   top: -24px;
   left: 24px;
+  overflow: hidden;
+  // display: flex;
+  // justify-content: center;
   img {
     height: 100%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translateY(-50%) translateX(-50%);
+    -ms-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
   }
 }
 

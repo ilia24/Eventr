@@ -44,7 +44,7 @@
               </div>
               <div id="myDropdown" class="dropdown-content">
                 <%= image_tag("dropdown-arrow-01.svg") %>
-                <%= link_to 'Complete your profile!', new_user_eventrinfo_path(session[:user_id]),:id=> "dropdown_profile_link" %>
+                <%= link_to 'Complete your profile', new_user_eventrinfo_path(session[:user_id]),:id=> "dropdown_profile_link" %>
                 <%= link_to 'Message', users_path %>
                 <%= link_to 'Log Out', session_path("current"), :method => :delete%>
               </div>
