@@ -5,7 +5,8 @@
       </div>
       <div class="col-md-11">
         <p class="card-text">
-          <span class="text-muted"><%= message.user.email %> at <%= message.timestamp %> says</span><br>
+          <i><%= image_tag(message.user.avatar.thumb) %> </i>
+          <span class="text-muted"> <%= message.user.eventrinfo.first_name %> <%= message.user.eventrinfo.last_name %> at <%= message.timestamp %> says</span><br>
           <%= message.body %>
         </p>
       </div>
