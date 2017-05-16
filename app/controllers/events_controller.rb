@@ -98,7 +98,7 @@ class EventsController < ApplicationController
 
 private
   def event_params
-    params.require(:event).permit(:name, :price, :picurl, :location, :date, :event_style, :time, :description)
+    params.require(:event).permit(:name, :price, :picurl, :picurl2, :picurl3, :location, :date, :event_style, :time, :description)
   end
 
   def load_user

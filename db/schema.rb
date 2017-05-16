@@ -10,6 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 20170516012212) do
 
   create_table "chat_rooms", force: :cascade do |t|
@@ -65,6 +66,8 @@ ActiveRecord::Schema.define(version: 20170516012212) do
     t.integer  "user_id"
     t.float    "latitude"
     t.float    "longitude"
+    t.string   "picurl2"
+    t.string   "picurl3"
   end
 
   create_table "goings", force: :cascade do |t|

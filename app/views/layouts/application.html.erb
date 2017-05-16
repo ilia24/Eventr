@@ -68,9 +68,9 @@
 
   <!-- SIDE MENU -->
 
-  <div class="open_side_menu">
-    OPEN
-  </div>
+
+  <i class="fa fa-comment fa-2x"></i>
+
 
   <div class="side_menu_wrapper">
 
@@ -80,14 +80,19 @@
         <div class="side_menu_back_chat">
           <i class="fa fa-chevron-left"></i> Chat
         </div>
-        <i class="fa fa-close fa-lg" id="side_menu_close"></i>
+        <div class="close_container">
+          <%= image_tag('eventr-logo-short.svg', :class=>"event_details_btn") %>
+          <i class="fa fa-close fa-lg" id="side_menu_close"></i>
+        </div>
       </div>
 
       <!-- GROUP CONTENT CONTAINER -->
       <div class="side_menu_group_content">
 
-        <div class="side_menu_group_photo">
-          <%= image_tag("home-slider/img-weeknd.jpg") %>
+        <div class="side_menu_group_event_details">
+          <div class="side_menu_group_event_photo">
+            <%= image_tag("home-slider/img-weeknd.jpg") %>
+          </div>
         </div>
 
         <div class="side_menu_group_info">
@@ -134,49 +139,52 @@
 
         <!-- GROUPS SECTION -->
         <div class="side_menu_main_groups">
-          <h5 id="groups">GROUPS</h5>
+          <h5 id="groups">GROUPS <i class="fa fa-chevron-down"></i></h5>
           <div class="side_menu_main_groups_list">
+            <div class="side_menu_main_groups_item">
 
-            <div class="profile_thumbnail">
-              <%= image_tag("home-slider/john-legend-1.jpg") %>
+              <div class="profile_thumbnail">
+                <%= image_tag("home-slider/john-legend-1.jpg") %>
+              </div>
+
+              <div class="main_menu_group_content">
+                <h4>The Coolest Group</h4>
+                <h6>12 EVENTRS</h6>
+              </div>
+
             </div>
+            <div class="side_menu_main_groups_item">
 
-            <div class="main_menu_group_content">
-              <h4>The Coolest Group</h4>
-              <h6>12 EVENTRS</h6>
+              <div class="profile_thumbnail">
+                <%= image_tag("home-slider/john-legend-1.jpg") %>
+              </div>
+
+              <div class="main_menu_group_content">
+                <h4>Turnt Up!</h4>
+                <h6>12 EVENTRS</h6>
+              </div>
+
             </div>
+            <div class="side_menu_main_groups_item">
 
-          </div>
-          <div class="side_menu_main_groups_list">
+              <div class="profile_thumbnail">
+                <%= image_tag("home-slider/john-legend-1.jpg") %>
+              </div>
 
-            <div class="profile_thumbnail">
-              <%= image_tag("home-slider/john-legend-1.jpg") %>
+              <div class="main_menu_group_content">
+                <h4>Music lover</h4>
+                <h6>12 EVENTRS</h6>
+              </div>
+
             </div>
-
-            <div class="main_menu_group_content">
-              <h4>Turnt Up!</h4>
-              <h6>12 EVENTRS</h6>
-            </div>
-
-          </div>
-          <div class="side_menu_main_groups_list">
-
-            <div class="profile_thumbnail">
-              <%= image_tag("home-slider/john-legend-1.jpg") %>
-            </div>
-
-            <div class="main_menu_group_content">
-              <h4>Music lover</h4>
-              <h6>12 EVENTRS</h6>
-            </div>
-
           </div>
         </div>
 
-
+        <!-- EVENTRS SECTION -->
         <div class="side_menu_main_eventrs">
-          <h5 id="eventrs">EVENTRS</h5>
+          <h5 id="eventrs">EVENTRS <i class="fa fa-chevron-down"></i></h5>
           <div class="side_menu_main_eventrs_list">
+            <div class="side_menu_main_eventrs_item">
             <div class="profile_thumbnail">
               <%= image_tag("home-slider/john-legend-1.jpg") %>
             </div>
@@ -187,6 +195,7 @@
                 <%end %>
               </div>
             </div>
+          </div>
           </div>
         </div>
 
