@@ -11,6 +11,11 @@ def index
   @chat_rooms = ChatRoom.all
 end
 
+def display
+  @chat_room = @group.chat_room
+  @message = Message.new
+end
+
 def show
   @chat_room = ChatRoom.includes(:messages).find_by(id: params[:id])
   @message = Message.new
@@ -33,7 +38,7 @@ def chat_room_params
 end
 
 def load_group
-  @group = Group.find(params[:group_id])
+  @group = Group.find(params[:id])
 end
 
 def load_event

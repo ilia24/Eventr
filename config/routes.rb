@@ -13,6 +13,7 @@ resources :events do
   resources :reviews, only: %i(show create destroy)
 end
 
+get '/events/:event_id/groups/:id/chat_room', to: 'chat_rooms#display', as: 'chat'
 get '/events/:event_id/groups/:id/join', to: 'groups#join', as: 'join_group'
 get '/events/:event_id/groups/:id/leave', to: 'groups#leave', as: 'leave_group'
 
