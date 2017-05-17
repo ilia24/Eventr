@@ -547,7 +547,7 @@ input[type=submit] {
   background-color: white;
   z-index: 2;
   box-shadow: -10px 14px 40px 1px rgba(0, 0, 0, 0.1);
-  // overflow: hidden;
+  overflow: hidden;
 
   transform: translate(400px,0);
   transition: transform 0.3s ease;
@@ -643,6 +643,8 @@ input[type=submit] {
 .side_menu_back_chat {
   display: flex;
   cursor: pointer;
+  transform: translateX(400px);
+  transition: transform 0.5s ease;
   i {
     padding-right: 12px;
     transform: translateX(0);
@@ -654,6 +656,10 @@ input[type=submit] {
   i {
     transform: translateX(-6px);
   }
+}
+
+.back_chat_slide_in {
+  transform: translateX(0);
 }
 
 .chat_user {
