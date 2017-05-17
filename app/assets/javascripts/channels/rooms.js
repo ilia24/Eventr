@@ -49,8 +49,7 @@ function LoadChat() {
   }
 };
 LoadChat();
-$("#eventdata").remove()
-var groupclicked = false
+$("#eventdata").remove();
 
 //note about eventdata: i added the top info in a field called eventdata then deleted it, to allow me to send
 //extra data in 1 ajax call, as opposed to making 2 ajax calls on 1 click
@@ -75,26 +74,41 @@ function SetChatGroup() {
   LoadChat();
 };
 
+
 function ToggleChatView() {
   $('.side_menu_main_content').toggleClass( "main_slide_in" );
   $('.side_menu_group_content').toggleClass( "group_slide_out" );
   $('.side_menu_chat_input').toggleClass( "hide_chat" );
 };
 
-function OpenIfClosed() {
+function OpenMenuIfClosed() {
   if ($('.side_menu_wrapper').hasClass("slide_open")) {
-    return
+    return;
 } else {
    $('.side_menu_wrapper').toggleClass( "slide_open" );
 };
+};
 
-// if (condition) {
-//    statements1
-// } else {
-//    statements2
-// }
+function OpenChatIfClosed() {
+  if ($('.side_menu_chat_input').hasClass("hide_chat")) {
+    ToggleChatView();
+} else {
+  return;
+};
+};
 
-}
+function MenuLogic(){
+  if ($('.side_menu_wrapper').hasClass("slide_open") && !$('.side_menu_chat_input').hasClass("hide_chat")) {
+    $('.side_menu_wrapper').toggleClass( "slide_open" );
+    ToggleChatView();
+} else if ($('.side_menu_wrapper').hasClass("slide_open") && $('.side_menu_chat_input').hasClass("hide_chat")) {
+    OpenChatIfClosed();
+} else {
+    OpenChatIfClosed();
+    OpenMenuIfClosed();
+};
+};
+
 
 //this is when a user clicks on an event in the sidebar
 $('.grouplink').on('click', function(e) {
@@ -111,11 +125,9 @@ $('.grouplink').on('click', function(e) {
     AppendData(data);
     ToggleChatView();
     SetChatGroup();
-
   }).fail(function(data){
     console.log('ajax submission failed');
   });
-
 });
 
 //this code is for when the user clicks a group link on the event page
@@ -131,18 +143,11 @@ $('.eventgrouplink').on('click', function(e) {
   }).done(function(data){
     console.log('ajax submission succeeded');
     AppendData(data);
-    $('.side_menu_wrapper').toggleClass( "slide_open" );
     SetChatGroup();
-    if (groupclicked === false) {
-      OpenIfClosed();
-    } else {
-       $('.side_menu_wrapper').toggleClass( "slide_open" );
-    };
-
+    MenuLogic();
   }).fail(function(data){
     console.log('ajax submission failed');
   });
-
 });
 
 $('.intrudergrouplink').on('click', function(e) {
