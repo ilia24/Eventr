@@ -13,6 +13,9 @@ $(function() {
     $('.side_menu_wrapper').toggleClass( "slide_open" );
   });
 
+
+
+
   // Goes back to main chat menu
   $('.side_menu_back_chat').on('click', function(e){
     e.preventDefault();
@@ -71,9 +74,5 @@ $(function() {
         $(this).attr("src", "/assets/eventr-logo-short.svg");
     }
   );
-
-
-
-// GROUPS CHAT FUNCTIONALITY
 
 });
