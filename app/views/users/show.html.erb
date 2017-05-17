@@ -26,9 +26,12 @@
     </div>
 
     <h4 class="activity">ACTIVITY</h4>
-    <% @user.events.each do |e| %>
-      <%= render 'events/single_event_profile', event: e %> <br>
+
+    <div class="user_profile_activity">
+      <% @user.events.each do |e| %>
+      <%= render 'events/single_event_profile', event: e %>
       <%end%>
+    </div>
 
   </div>
 
