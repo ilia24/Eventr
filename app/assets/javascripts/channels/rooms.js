@@ -38,8 +38,10 @@ function LoadChat() {
       var $this, textarea;
       $this = $(this);
       textarea = $this.find('#message_body');
+      messages = $('#messages');
       if ($.trim(textarea.val()).length > 1) {
         App.global_chat.send_message(textarea.val(), messages.data('group-id'));
+        debugger
         textarea.val('');
       }
       e.preventDefault();
@@ -62,16 +64,21 @@ $('.grouplink').on('click', function(e) {
 
   }).done(function(data){
     console.log('ajax submission succeeded');
+    App.global_chat = App.cable.subscriptions.remove({
+      channel: "GroupsChannel",
+      group_id: $('#messages').data('group-id')
+    });
     $( "#messages" ).remove();
-    $(".side_menu_chat").append(data)
-    var newgroup = $('#messages').data('group-id')
-    $('#messages').data('group-id', newgroup)
+    $(".side_menu_chat").append(data);
+    var newgroup = $('#messages').data('group-id');
+    $('#messages').data('group-id', newgroup);
+    $('#group_id').attr('value', newgroup)
     LoadChat();
 
   }).fail(function(data){
     console.log('ajax submission failed');
   }).always(function(){
-    console.log('ajax ran')
+    console.log('ajax ran');
   });
 
 });
