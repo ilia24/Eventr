@@ -582,8 +582,10 @@ input[type=submit] {
 
 .side_menu_container {
   display: flex;
+  justify-content: space-between;
   flex-direction: column;
   padding-top: 24px;
+  height: 100%;
   width: 100%;
 }
 
@@ -634,6 +636,8 @@ input[type=submit] {
 }
 
 .side_menu_chat {
+  flex-grow: 1;
+  overflow: auto;
   padding-left: 24px;
   padding-top: 24px;
 }
@@ -683,6 +687,9 @@ input[type=submit] {
 }
 
 .side_menu_group_content {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
   transform: translateX(100%);
   transition: transform 0.2s ease;
 }
@@ -791,7 +798,7 @@ i.fa.fa-comment:hover {
 
 .side_menu_chat_input {
   background-color: #f8f8f8;
-  position: fixed;
+  // position: fixed;
   display: flex;
   align-items: center;
   bottom: 0;
@@ -824,6 +831,5 @@ i.fa.fa-comment:hover {
 }
 
 #messages {
-  max-height: 450px;
   overflow-y: auto;
 }

@@ -126,6 +126,14 @@
         <div class="side_menu_chat">
           <%= render "groups/sidebar_chat", g: @user.groups.first %>
         </div>
+        <% if (@user != nil) && (@user.groups.empty? != true) %>
+        <div class="side_menu_chat_input">
+          <div class="map_icon_container">
+            <i class="fa fa-map-marker fa-lg"></i>
+          </div>
+          <%= render "groups/sidebar_form", g: @user.groups.first %>
+        </div>
+        <% end %>
 
       </div>
 
@@ -182,14 +190,14 @@
 
 
       <!-- CHAT INPUT BOX -->
-      <% if (@user != nil) && (@user.groups.empty? != true) %>
+      <!-- <% if (@user != nil) && (@user.groups.empty? != true) %>
       <div class="side_menu_chat_input">
         <div class="map_icon_container">
           <i class="fa fa-map-marker fa-lg"></i>
         </div>
         <%= render "groups/sidebar_form", g: @user.groups.first %>
       </div>
-      <% end %>
+      <% end %> -->
 
 
 
