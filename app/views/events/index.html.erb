@@ -33,7 +33,7 @@
         </div>
       <div class="search_field">
         <h4><%= form_tag(events_path, :method => "get") do %>
-        <%= text_field_tag :search, params[:search], placeholder: "Toronto" %>
+        <%= text_field_tag :search, params[:where_search], placeholder: "Toronto" %>
         <% end %> </h4>
       </div>
     </div>
@@ -44,7 +44,7 @@
         </div>
       <div class="search_field">
         <h4><%= form_tag(events_path, :method => "get") do %>
-        <%= text_field_tag :search, params[:search], placeholder: "Music" %>
+        <%= text_field_tag :search, params[:category_search], placeholder: "Music" %>
         <% end %> </h4>
       </div>
     </div>
