@@ -52,6 +52,9 @@ function LoadChat() {
 LoadChat();
 $("#eventdata").remove()
 
+//note about eventdata: i added the top info in a field called eventdata then deleted it, to allow me to send
+//extra data in 1 ajax call, as opposed to making 2 ajax calls on 1 click
+
 
 
 
@@ -68,6 +71,7 @@ $('.grouplink').on('click', function(e) {
     console.log('ajax submission succeeded');
     console.log(this)
     App.cable.subscriptions.remove(App.global_chat);
+    //this removes the old data, and creates the top part & messages
     $( "#messages" ).remove();
     $(".side_menu_chat").append(data);
     $(".side_menu_group_info").empty()
