@@ -61,6 +61,7 @@ $(function() {
 
   });
 
+
   // Triggers event detail icon animation when hover over
   $(".event_details_btn").hover(
     function() {
