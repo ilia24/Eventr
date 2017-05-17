@@ -7,7 +7,19 @@ class GroupsController < ApplicationController
   end
 
   def show
-    @group = Group.find(params[:id])
+    @group = @event.groups.find(params[:id])
+    @message = Message.new
+    @messages = Message.all
+    respond_to do |format|
+       format.html do
+
+         if request.xhr?
+           render :partial => '/groups/sidebar_chat', locals: {g: @group}
+         end
+       end
+     end
+
+
   end
 
   def create
@@ -20,8 +32,10 @@ class GroupsController < ApplicationController
 
     @group = @event.groups.build(group_params)
 
+
     if  @group.save
       @group.users << @user
+
       if @event.users.exclude? @user
         @event.users << @user
       end

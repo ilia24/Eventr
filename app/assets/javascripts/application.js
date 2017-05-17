@@ -13,14 +13,15 @@
 //= require jquery
 //= require jquery_ujs
 //= require owl.carousel.min.js
-//= require cable.js
+//= require cable
 //= require events.js
 //= require dropdown.js
 //= require carousel.js
 //= require side_menu.js
+//= require sidebargroups.js
 
 $(function() {
-  
+
   $(".eventr_home_btn").hover(
     function() {
         $(this).attr("src", "/assets/eventr-logo.gif");

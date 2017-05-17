@@ -8,6 +8,7 @@ class EventsController < ApplicationController
   def index
     @event = Event.new
     @events = Event.all
+    
 
     if params[:search]
         @events = Event.search(params[:search]).order("created_at DESC")

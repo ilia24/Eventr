@@ -70,4 +70,8 @@ $(function() {
   // }
   // window.onscroll=Scroll
 
+
+
+// GROUPS CHAT FUNCTIONALITY
+
 });
