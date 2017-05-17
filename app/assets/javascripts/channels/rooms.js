@@ -49,9 +49,11 @@ function LoadChat() {
     });
   }
 };
-
-
 LoadChat();
+$("#eventdata").remove()
+
+
+
 
 $('.grouplink').on('click', function(e) {
   e.preventDefault();
@@ -64,13 +66,18 @@ $('.grouplink').on('click', function(e) {
 
   }).done(function(data){
     console.log('ajax submission succeeded');
-    // App.global_chat = App.cable.subscriptions.remove({
-    //   channel: "GroupsChannel",
-    //   group_id: $('#messages').data('group-id')
-    // });
+    console.log(this)
     App.cable.subscriptions.remove(App.global_chat);
     $( "#messages" ).remove();
     $(".side_menu_chat").append(data);
+    $(".side_menu_group_info").empty()
+    $(".side_menu_group_info").append($("#eventdata").children());
+    $("#eventdata").remove()
+    //this slides back to the new chat
+    $('.side_menu_main_content').toggleClass( "main_slide_in" );
+    $('.side_menu_group_content').toggleClass( "group_slide_out" );
+    $('.side_menu_chat_input').toggleClass( "hide_chat" );
+    //this sets the HTML data points to the proper ID's before calling loadchat
     var newgroup = $('#messages').data('group-id');
     $('#messages').data('group-id', newgroup);
     $('#group_id').attr('value', newgroup)

@@ -1,3 +1,23 @@
 <div id="messages" data-group-id="<%= g.id %>">
   <%= render g.messages %>
 </div>
+
+
+<div id="eventdata">
+
+
+  <h4><%= g.name %> </h4>
+
+  <div class="side_menu_group_members">
+    <h5><%= g.users.count %> EVENTRS GOING</h5>
+  </div>
+
+  <div class="side_menu_group_members_list">
+    <% g.users.all.each do |u| %>
+      <div class="profile_thumbnail">
+        <%= image_tag(u.avatar.thumb) %>
+      </div>
+    <% end %>
+  </div>
+
+</div>
