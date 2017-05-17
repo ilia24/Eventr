@@ -26,9 +26,12 @@ Eventrinfo.create(first_name: 'Brian', last_name: 'Du', bio: "My shoes are cool 
 #create Hostr userbase
 d = User.create(email: 'rebelnightclub@gmail.com', password: 'club')
 Hostinfo.create(name: 'Rebel nightclub', address: '11 Polson St #1, Toronto', capacity: '4000', website: 'rebeltoronto.com', user: User.find(d))
+Eventrinfo.create(first_name: 'Pritam', last_name: 'Das',bio: "i like music and stuff", user: User.find(d))
 
 e = User.create(email: 'uniunnightclub@gmail.com', password: 'club')
 Hostinfo.create(name: 'Uniun Nightclub', address: '473 Adelaide St W, Toronto', capacity: '500', website: 'uniun.com', user: User.find(e))
+Eventrinfo.create(first_name: 'Pritam', last_name: 'Das',bio: "i like music and stuff", user: User.find(e))
 
 f = User.create(email: 'aircanadacenter@gmail.com', password: 'club')
 Hostinfo.create(name: 'Air Canada Center', address: '40 Bay St, Toronto', capacity: '8000', website: 'www.theaircanadacentre.com', user: User.find(f))
+Eventrinfo.create(first_name: 'Pritam', last_name: 'Das',bio: "i like music and stuff", user: User.find(f))
