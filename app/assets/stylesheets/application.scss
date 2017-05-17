@@ -588,9 +588,7 @@ input[type=submit] {
 }
 
 .side_menu_top_bar {
-  padding-left: 24px;
-  padding-right: 24px;
-  padding-bottom: 24px;
+  padding: 0 24px 24px 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -638,6 +636,12 @@ input[type=submit] {
 .side_menu_chat {
   padding-left: 24px;
   padding-top: 24px;
+}
+
+.side_menu_back_chat_container {
+  padding: 0 24px 0 24px;
+  width: 80px;
+  overflow: hidden;
 }
 
 .side_menu_back_chat {
