@@ -77,7 +77,7 @@ class EventsController < ApplicationController
   def leave
     @event = Event.find(params[:event_id])
     @event.users.delete(current_user)
-    @event.dropuser(current_user)
+    @event.dropusergroups(current_user)
     flash[:alert] = 'You have left the event and associated groups!'
     redirect_to event_path(@event)
   end

@@ -14,7 +14,7 @@ def self.search(search)
 end
 
 
-def dropuser(user)
+def dropusergroups(user)
   self.groups.each do |g|
     if g.users.include? user
       g.users.delete(user)
@@ -24,5 +24,8 @@ def dropuser(user)
     end
   end
 end
+
+
+
 
 end
