@@ -34,8 +34,7 @@ body {
 nav {
   font-size: 16px;
   background-color: white;
-  padding-top: 24px;
-  padding-bottom: 24px;
+  height: 94px;
   padding-left: 100px;
   padding-right: 100px;
   box-shadow: 0 3px 30px rgba(0, 0, 0, 0.05);
@@ -214,17 +213,21 @@ hr {
 }
 
 .profile_thumbnail {
-  background-color: black;
+  position: relative;
   height: 44px;
+  width: 44px;
   border-radius: 50%;
+  overflow: hidden;
   img {
-    width: 44px;
+    position: absolute;
     height: 44px;
-    border-radius: 50%;
-    opacity: 1.0;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
   }
   img:hover {
-    opacity: 0.7;
   }
 }
 
@@ -546,12 +549,12 @@ input[type=submit] {
   box-shadow: -10px 14px 40px 1px rgba(0, 0, 0, 0.1);
   overflow: hidden;
 
-  transform: translateX(400px);
+  transform: translate(400px,0);
   transition: transform 0.3s ease;
 }
 
-.expand {
-  top: 0;
+.slide_open {
+  transform: translate(0,0);
 }
 
 #side_menu_close {
@@ -575,10 +578,6 @@ input[type=submit] {
   right: 0;
   background-color: white;
   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.14);
-}
-
-.slide_open {
-  transform: translateX(0);
 }
 
 .side_menu_container {

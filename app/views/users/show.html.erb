@@ -5,7 +5,7 @@
     <div class="user_profile_top">
 
       <div class="user_profile_picture">
-        <%= image_tag(@user.avatar)%>
+          <%= image_tag(@user.avatar)%>
       </div>
 
       <div class="user_profile_name">
@@ -25,10 +25,13 @@
 
     </div>
 
-    <h3>Going to</h3>
-    <% @user.events.each do |e| %>
-      <%= render 'events/single_event_profile', event: e %> <br>
+    <h4 class="activity">ACTIVITY</h4>
+
+    <div class="user_profile_activity">
+      <% @user.events.each do |e| %>
+      <%= render 'events/single_event_profile', event: e %>
       <%end%>
+    </div>
 
   </div>
 
