@@ -50,6 +50,7 @@ function LoadChat() {
 };
 LoadChat();
 $("#eventdata").remove()
+var groupclicked = false
 
 //note about eventdata: i added the top info in a field called eventdata then deleted it, to allow me to send
 //extra data in 1 ajax call, as opposed to making 2 ajax calls on 1 click
@@ -80,6 +81,21 @@ function ToggleChatView() {
   $('.side_menu_chat_input').toggleClass( "hide_chat" );
 };
 
+function OpenIfClosed() {
+  if ($('.side_menu_wrapper').hasClass("slide_open")) {
+    return
+} else {
+   $('.side_menu_wrapper').toggleClass( "slide_open" );
+};
+
+// if (condition) {
+//    statements1
+// } else {
+//    statements2
+// }
+
+}
+
 //this is when a user clicks on an event in the sidebar
 $('.grouplink').on('click', function(e) {
   e.preventDefault();
@@ -102,7 +118,6 @@ $('.grouplink').on('click', function(e) {
 
 });
 
-
 //this code is for when the user clicks a group link on the event page
 $('.eventgrouplink').on('click', function(e) {
   e.preventDefault();
@@ -118,6 +133,11 @@ $('.eventgrouplink').on('click', function(e) {
     AppendData(data);
     $('.side_menu_wrapper').toggleClass( "slide_open" );
     SetChatGroup();
+    if (groupclicked === false) {
+      OpenIfClosed();
+    } else {
+       $('.side_menu_wrapper').toggleClass( "slide_open" );
+    };
 
   }).fail(function(data){
     console.log('ajax submission failed');
