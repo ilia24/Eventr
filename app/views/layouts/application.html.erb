@@ -168,22 +168,42 @@
 
         <% end %>
         <!-- EVENTRS SECTION -->
+
         <div class="side_menu_main_eventrs">
           <h5 id="eventrs">EVENTRS <i class="fa fa-chevron-down"></i></h5>
+          <% if (@user != nil) && (@user.authored_conversations != nil) %>
+          <% @user.authored_conversations.all.each do |c| %>
           <div class="side_menu_main_eventrs_list">
             <div class="side_menu_main_eventrs_item">
             <div class="profile_thumbnail">
-              <%= image_tag("home-slider/john-legend-1.jpg") %>
+              <%= image_tag(c.with(current_user).avatar.thumb) %>
             </div>
             <div class="side_menu_chat_name_msg">
               <div class="name_time">
-                <% if current_user %>
-                <h5><%= render current_user.authored_conversations %></h5>
-                <%end %>
+
+                <% if c.with(current_user).eventrinfo != nil %>
+
+                <%=link_to link_to conversation_path(c.id) do %>
+                <h5><%= c.with(current_user).eventrinfo.first_name %> <%= c.with(current_user).eventrinfo.last_name %></h5>
+                <em><%= c.personal_messages.last.body.truncate(50) %></em>
+                <br>
+                <em><%= c.personal_messages.last.created_at.strftime("%I: %M %p") %></em>
+                <%end%>
+
+                <% else %>
+                <%=link_to conversation_path(c.id)do %>
+                <%= c.with(current_user).email %>
+                <em><%= c.personal_messages.last.body.truncate(50) %></em>
+                <br>
+                <em><%= c.personal_messages.last.created_at.strftime("%I: %M %p") %></em>
+                <%end%>
+                <%end%>
               </div>
             </div>
           </div>
           </div>
+          <%end %>
+          <%end%>
         </div>
 
       </div>
@@ -191,7 +211,7 @@
 
       <!-- CHAT INPUT BOX -->
       <% if (@user != nil) && (@user.groups.empty? != true) %>
-      
+
       <div class="side_menu_chat_input">
         <div class="map_icon_container">
           <i class="fa fa-map-marker fa-lg"></i>

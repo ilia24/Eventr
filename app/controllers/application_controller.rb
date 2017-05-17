@@ -7,6 +7,8 @@ def load_chatfunc
   @events = Event.all
   @event = Event.new
   @group = Group.new
+  @conversation = Conversation.find_by(id: params[:id])
+  @conversations = Conversation.participating(current_user)
 
 end
 
