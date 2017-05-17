@@ -23,7 +23,7 @@ $(function() {
     $('.side_menu_back_chat').toggleClass( "back_chat_slide_in" );
   });
 
-  // Reveals back to chat function
+  // Reveals back to chat link
   $('.grouplink').on('click', function(e){
     e.preventDefault();
 
