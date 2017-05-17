@@ -190,14 +190,15 @@
 
 
       <!-- CHAT INPUT BOX -->
-      <!-- <% if (@user != nil) && (@user.groups.empty? != true) %>
+      <% if (@user != nil) && (@user.groups.empty? != true) %>
+      
       <div class="side_menu_chat_input">
         <div class="map_icon_container">
           <i class="fa fa-map-marker fa-lg"></i>
         </div>
         <%= render "groups/sidebar_form", g: @user.groups.first %>
       </div>
-      <% end %> -->
+      <% end %>
 
 
 
@@ -214,7 +215,5 @@
   <body>
     <%= yield %>
   </body>
-
-  <%= javascript_include_tag "owl.carousel.min"%>
 
 </html>

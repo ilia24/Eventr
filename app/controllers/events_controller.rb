@@ -8,10 +8,16 @@ class EventsController < ApplicationController
   def index
     @event = Event.new
     @events = Event.all
-    
+
 
     if params[:search]
         @events = Event.search(params[:search]).order("created_at DESC")
+        flash[:notice] = "There are #{@events.count} results matching your search"
+    elsif params[:where_search]
+        @events = Event.where_search(params[:where_search]).order("created_at DESC")
+        flash[:notice] = "There are #{@events.count} results matching your search"
+    elsif params[:category_search]
+        @events = Event.category_search(params[:category_search]).order("created_at DESC")
         flash[:notice] = "There are #{@events.count} results matching your search"
     else
       @events = Event.all.order("created_at DESC")
@@ -77,16 +83,8 @@ class EventsController < ApplicationController
   def leave
     @event = Event.find(params[:event_id])
     @event.users.delete(current_user)
-
-    @event.groups.each do |g|
-      if g.users.include? current_user
-        g.users.delete(current_user)
-        flash[:alert] = 'You have left the event and associated groups!'
-        if g.users.empty?
-          g.delete
-        end
-      end
-    end
+    @event.dropusergroups(current_user)
+    flash[:alert] = 'You have left the event and associated groups!'
     redirect_to event_path(@event)
   end
 
