@@ -114,12 +114,8 @@
         </div>
 
         <div class="side_menu_chat">
-
-          </div>
-
           <%= render "groups/sidebar_chat", g: @user.groups.first %>
-
-        </div>
+          </div>
 
       </div>
 
@@ -137,7 +133,7 @@
                       <%= image_tag(g.event.picurl3) %>
                     </div>
                     <div class="main_menu_group_content">
-                      <h4><%= g.name %></h4>
+                      <h4><%=link_to g.name, event_group_url(g.event.id, g.id), class: 'grouplink' %></h4>
                       <h6><%= g.users.count %> EVENTRS</h6>
                     </div>
                   </div>
@@ -194,7 +190,6 @@
     <%= yield %>
   </body>
 
-  <%= javascript_include_tag "jquery.min"%>
   <%= javascript_include_tag "owl.carousel.min"%>
 
 </html>

@@ -18,9 +18,10 @@
 //= require dropdown.js
 //= require carousel.js
 //= require side_menu.js
+//= require sidebargroups.js
 
 $(function() {
-  
+
   $(".eventr_home_btn").hover(
     function() {
         $(this).attr("src", "/assets/eventr-logo.gif");
