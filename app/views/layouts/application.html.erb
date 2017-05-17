@@ -85,8 +85,10 @@
     <div class="side_menu_container">
 
       <div class="side_menu_top_bar">
-        <div class="side_menu_back_chat">
-          <i class="fa fa-chevron-left"></i> Chat
+        <div class="side_menu_back_chat_container">
+          <div class="side_menu_back_chat">
+            <i class="fa fa-chevron-left"></i> Chat
+          </div>
         </div>
         <div class="close_container">
           <%= image_tag('eventr-logo-short.svg', :class=>"event_details_btn") %>
@@ -123,7 +125,15 @@
 
         <div class="side_menu_chat">
           <%= render "groups/sidebar_chat", g: @user.groups.first %>
+        </div>
+        <% if (@user != nil) && (@user.groups.empty? != true) %>
+        <div class="side_menu_chat_input">
+          <div class="map_icon_container">
+            <i class="fa fa-map-marker fa-lg"></i>
           </div>
+          <%= render "groups/sidebar_form", g: @user.groups.first %>
+        </div>
+        <% end %>
 
       </div>
 
@@ -132,22 +142,27 @@
 
         <!-- GROUPS SECTION -->
         <div class="side_menu_main_groups">
+
           <h5 id="groups">GROUPS <i class="fa fa-chevron-down"></i></h5>
 
           <div class="side_menu_main_groups_list">
-                <% @user.groups.each do |g| %>
-                  <div class="side_menu_main_groups_item">
-                    <div class="profile_thumbnail">
-                      <%= image_tag(g.event.picurl3) %>
-                    </div>
-                    <div class="main_menu_group_content">
-                      <h4><%=link_to g.name, event_group_url(g.event.id, g.id), class: 'grouplink' %></h4>
-                      <h6><%= g.users.count %> EVENTRS</h6>
-                    </div>
+            <% @user.groups.each do |g| %>
+
+              <%=link_to event_group_url(g.event.id, g.id), class: 'grouplink' do %>
+                <div class="side_menu_main_groups_item">
+                  <div class="profile_thumbnail">
+                    <%= image_tag(g.event.picurl3) %>
                   </div>
+                  <div class="main_menu_group_content">
+                    <h4><%= g.name %></h4>
+                    <h6><%= g.users.count %> EVENTRS</h6>
+                  </div>
+                </div>
               <% end %>
 
+            <% end %>
           </div>
+
         </div>
 
 
@@ -173,8 +188,10 @@
 
       </div>
 
+
       <!-- CHAT INPUT BOX -->
       <% if (@user != nil) && (@user.groups.empty? != true) %>
+      
       <div class="side_menu_chat_input">
         <div class="map_icon_container">
           <i class="fa fa-map-marker fa-lg"></i>

@@ -92,6 +92,7 @@ $('.grouplink').on('click', function(e) {
 
   }).done(function(data){
     console.log('ajax submission succeeded');
+
     AppendData(data);
     ToggleChatView();
     SetChatGroup();

@@ -582,15 +582,15 @@ input[type=submit] {
 
 .side_menu_container {
   display: flex;
+  justify-content: space-between;
   flex-direction: column;
   padding-top: 24px;
+  height: 100%;
   width: 100%;
 }
 
 .side_menu_top_bar {
-  padding-left: 24px;
-  padding-right: 24px;
-  padding-bottom: 24px;
+  padding: 0 24px 24px 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -636,13 +636,23 @@ input[type=submit] {
 }
 
 .side_menu_chat {
+  flex-grow: 1;
+  overflow: auto;
   padding-left: 24px;
   padding-top: 24px;
+}
+
+.side_menu_back_chat_container {
+  padding: 0 24px 0 24px;
+  width: 80px;
+  overflow: hidden;
 }
 
 .side_menu_back_chat {
   display: flex;
   cursor: pointer;
+  transform: translateX(400px);
+  transition: transform 0.5s ease;
   i {
     padding-right: 12px;
     transform: translateX(0);
@@ -654,6 +664,10 @@ input[type=submit] {
   i {
     transform: translateX(-6px);
   }
+}
+
+.back_chat_slide_in {
+  transform: translateX(0);
 }
 
 .chat_user {
@@ -673,12 +687,15 @@ input[type=submit] {
 }
 
 .side_menu_group_content {
-  transform: translateX(0);
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  transform: translateX(100%);
   transition: transform 0.2s ease;
 }
 
 .group_slide_out {
-  transform: translateX(100%);
+  transform: translateX(0);
 }
 
 .name_time {
@@ -700,7 +717,7 @@ input[type=submit] {
   padding-top: 12px;
   width: 100%;
   height: 100%;
-  transform: translateX(-100%);
+  transform: translateX(0);
   transition: transform 0.2s ease;
   h5 {
     letter-spacing: 1px;
@@ -713,7 +730,7 @@ input[type=submit] {
 }
 
 .main_slide_in{
-  transform: translateX(0);
+  transform: translateX(-400px);
 }
 
 i.fa.fa-comment {
@@ -769,29 +786,39 @@ i.fa.fa-comment:hover {
 .main_menu_group_content {
   padding-left: 12px;
   h4 {
+    color: #262626;
     letter-spacing: 0;
     font-weight: 400;
   }
   h6{
+    color: #262626;
     padding-top: 6px;
   }
 }
 
 .side_menu_chat_input {
   background-color: #f8f8f8;
-  position: fixed;
+  // position: fixed;
   display: flex;
   align-items: center;
   bottom: 0;
   width: 100%;
   height: 67px;
 
-  transform: translateY(0);
+  transform: translateY(100%);
   transition: transform 0.3s ease;
 }
 
-.hide_chat {
-  transform: translateY(100%);
+.show_chat {
+  transform: translateY(0);
+}
+
+.new_message {
+  flex-grow: 1;
+  margin: 0 24px 0 24px;
+  .form-control{
+    background-color: #f8f8f8;
+  }
 }
 
 .map_icon_container {
@@ -804,6 +831,5 @@ i.fa.fa-comment:hover {
 }
 
 #messages {
-  max-height: 450px;
   overflow-y: auto;
 }

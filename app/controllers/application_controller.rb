@@ -4,6 +4,10 @@ class ApplicationController < ActionController::Base
 
 def load_chatfunc
   @message = Message.new
+  @events = Event.all
+  @event = Event.new
+  @group = Group.new
+
 end
 
   def ensure_logged_in

@@ -1,7 +1,6 @@
 <%= form_for @message, url: '#' do |f| %>
   <%= hidden_field_tag 'group_id', g.id %>
-    <%= f.text_area :body, class: 'form-control' %>
+    <%= f.text_field :body, placeholder: 'Write Message', class: 'form-control', :autocomplete=> :off %>
     <small class="text-muted"></small>
 
- <%= f.submit "Post", class: 'btn btn-primary btn-lg' %>
 <% end %>
