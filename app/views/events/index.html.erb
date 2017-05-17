@@ -19,12 +19,14 @@
       <div class="search_label">
         <h5>SEARCH</h6>
         </div>
+      <form id="my_search_form">
       <div class="search_field">
         <h4><%= form_tag(events_path, :method => "get") do %>
         <%= text_field_tag :search, params[:search], placeholder: "The Weeknd" %>
         <% end %> </h4>
       </div>
     </div>
+    </form>
 
 
     <div class="search_where">
@@ -52,7 +54,7 @@
   </div>
 
   <div class="button_search">
-    <h4>SEARCH</h4>
+    <h4><input type="submit" value="SEARCH" form="my_search_form"></h4>
   </div>
 
 </div>
