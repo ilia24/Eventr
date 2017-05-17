@@ -13,6 +13,12 @@ class EventsController < ApplicationController
     if params[:search]
         @events = Event.search(params[:search]).order("created_at DESC")
         flash[:notice] = "There are #{@events.count} results matching your search"
+    elsif params[:where_search]
+        @events = Event.where_search(params[:where_search]).order("created_at DESC")
+        flash[:notice] = "There are #{@events.count} results matching your search"
+    elsif params[:category_search]
+        @events = Event.category_search(params[:category_search]).order("created_at DESC")
+        flash[:notice] = "There are #{@events.count} results matching your search"
     else
       @events = Event.all.order("created_at DESC")
     end

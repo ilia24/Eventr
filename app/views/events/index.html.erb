@@ -20,16 +20,21 @@
         <h5>SEARCH</h6>
         </div>
       <div class="search_field">
-        <h4>The Weeknd</h4>
+        <h4><%= form_tag(events_path, :method => "get") do %>
+        <%= text_field_tag :search, params[:search], placeholder: "The Weeknd" %>
+        <% end %> </h4>
       </div>
     </div>
+
 
     <div class="search_where">
       <div class="search_label">
         <h5>WHERE</h6>
         </div>
       <div class="search_field">
-        <h4>Toronto</h4>
+        <h4><%= form_tag(events_path, :method => "get") do %>
+        <%= text_field_tag :search, params[:where_search], placeholder: "Toronto" %>
+        <% end %> </h4>
       </div>
     </div>
 
@@ -38,7 +43,9 @@
         <h5>CATEGORY</h6>
         </div>
       <div class="search_field">
-        <h4>Music</h4>
+        <h4><%= form_tag(events_path, :method => "get") do %>
+        <%= text_field_tag :search, params[:category_search], placeholder: "Music" %>
+        <% end %> </h4>
       </div>
     </div>
 

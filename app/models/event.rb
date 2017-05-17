@@ -13,6 +13,13 @@ def self.search(search)
   where("name LIKE ? OR price LIKE ? OR description LIKE ? OR location LIKE ? OR event_style LIKE ?", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%" )
 end
 
+def self.where_search(search)
+  where("name LIKE ? OR description LIKE ? OR location LIKE ? OR event_style LIKE ?", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%" )
+end
+
+def self.category_search(search)
+  where("name LIKE ? OR description LIKE ? OR location LIKE ? OR event_style LIKE ?", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%" )
+end
 
 def dropusergroups(user)
   self.groups.each do |g|
@@ -24,8 +31,5 @@ def dropusergroups(user)
     end
   end
 end
-
-
-
 
 end
