@@ -64,6 +64,7 @@ function AppendData(d) {
   $(".side_menu_group_info").append($("#eventdata").children());
   $("#eventdata").remove();
 };
+
 //this function adds the new groupdata into the DOM before reinitializing the chat
 function SetChatGroup() {
   App.cable.subscriptions.remove(App.global_chat);
@@ -71,10 +72,15 @@ function SetChatGroup() {
   $('#messages').data('group-id', newgroup);
   $('#group_id').attr('value', newgroup)
   LoadChat();
-
 };
 
+function ToggleChatView() {
+  $('.side_menu_main_content').toggleClass( "main_slide_in" );
+  $('.side_menu_group_content').toggleClass( "group_slide_out" );
+  $('.side_menu_chat_input').toggleClass( "hide_chat" );
+};
 
+//this is when a user clicks on an event in the sidebar
 $('.grouplink').on('click', function(e) {
   e.preventDefault();
 
@@ -87,11 +93,7 @@ $('.grouplink').on('click', function(e) {
   }).done(function(data){
     console.log('ajax submission succeeded');
     AppendData(data);
-    //this slides back to the new chat
-    $('.side_menu_main_content').toggleClass( "main_slide_in" );
-    $('.side_menu_group_content').toggleClass( "group_slide_out" );
-    $('.side_menu_chat_input').toggleClass( "hide_chat" );
-    //this sets the HTML data points to the proper ID's before calling loadchat
+    ToggleChatView();
     SetChatGroup();
 
   }).fail(function(data){
@@ -99,6 +101,7 @@ $('.grouplink').on('click', function(e) {
   });
 
 });
+
 
 //this code is for when the user clicks a group link on the event page
 $('.eventgrouplink').on('click', function(e) {
@@ -114,11 +117,6 @@ $('.eventgrouplink').on('click', function(e) {
     console.log('ajax submission succeeded');
     AppendData(data);
     $('.side_menu_wrapper').toggleClass( "slide_open" );
-    // //this slides back to the new chat
-    // $('.side_menu_main_content').toggleClass( "main_slide_in" );
-    // $('.side_menu_group_content').toggleClass( "group_slide_out" );
-    // $('.side_menu_chat_input').toggleClass( "hide_chat" );
-    // //this sets the HTML data points to the proper ID's before calling loadchat
     SetChatGroup();
 
   }).fail(function(data){
