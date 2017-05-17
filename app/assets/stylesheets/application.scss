@@ -806,6 +806,14 @@ i.fa.fa-comment:hover {
   transform: translateY(0);
 }
 
+.new_message {
+  flex-grow: 1;
+  margin: 0 24px 0 24px;
+  .form-control{
+    background-color: #f8f8f8;
+  }
+}
+
 .map_icon_container {
   display: flex;
   justify-content: center;

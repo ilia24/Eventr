@@ -1,6 +1,6 @@
 <%= form_for @message, url: '#' do |f| %>
   <%= hidden_field_tag 'group_id', g.id %>
-    <%= text_field_tag :body, class: 'form-control' %>
+    <%= f.text_field :body, placeholder: 'Write Message', class: 'form-control' %>
     <small class="text-muted"></small>
 
 <% end %>
