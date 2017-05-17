@@ -173,6 +173,8 @@
 
       </div>
 
+
+      <% if (@user != nil) && (@user.groups.empty? != true) %>
       <!-- CHAT INPUT BOX -->
       <div class="side_menu_chat_input">
         <div class="map_icon_container">
@@ -180,7 +182,7 @@
         </div>
         <%= render "groups/sidebar_form", g: @user.groups.first %>
       </div>
-
+      <% end %>
 
 
 

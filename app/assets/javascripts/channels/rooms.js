@@ -1,4 +1,7 @@
-$(document).on('ready page:load', function() {
+$(function() {
+function LoadChat() {
+
+  // this code scrolls the chatbox to the bottom
   var messages, messages_to_bottom;
   messages = $('#messages');
   if ($('#messages').length > 0) {
@@ -6,6 +9,8 @@ $(document).on('ready page:load', function() {
       return messages.scrollTop(messages.prop("scrollHeight"));
     };
     messages_to_bottom();
+
+//This code creates an AC subscription to the specific group channel, and establishes base functions
     App.global_chat = App.cable.subscriptions.create({
       channel: "GroupsChannel",
       group_id: messages.data('group-id')
@@ -23,6 +28,8 @@ $(document).on('ready page:load', function() {
         });
       }
     });
+
+    // this is responsible for actually sending a message
     return $('#new_message').submit(function(e) {
       var $this, textarea;
       $this = $(this);
@@ -35,4 +42,8 @@ $(document).on('ready page:load', function() {
       return false;
     });
   }
+};
+
+
+LoadChat();
 });
