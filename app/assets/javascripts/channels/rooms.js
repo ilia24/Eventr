@@ -68,7 +68,6 @@ $('.grouplink').on('click', function(e) {
 
   }).done(function(data){
     console.log('ajax submission succeeded');
-    console.log(this)
     App.cable.subscriptions.remove(App.global_chat);
     //this removes the old data, and creates the top part & messages
     $( "#messages" ).remove();
@@ -81,6 +80,47 @@ $('.grouplink').on('click', function(e) {
     $('.side_menu_group_content').toggleClass( "group_slide_out" );
     $('.side_menu_chat_input').toggleClass( "hide_chat" );
     //this sets the HTML data points to the proper ID's before calling loadchat
+    var newgroup = $('#messages').data('group-id');
+    $('#messages').data('group-id', newgroup);
+    $('#group_id').attr('value', newgroup)
+    LoadChat();
+
+  }).fail(function(data){
+    console.log('ajax submission failed');
+  }).always(function(){
+    console.log('ajax ran');
+  });
+
+});
+
+//this code is for when the user clicks a group link on the event page
+
+
+$('.eventgrouplink').on('click', function(e) {
+  e.preventDefault();
+
+  $.ajax({
+    method: 'GET',
+    url: $(this).attr('href'),
+    data: $(this).serialize(),
+    dataType: 'html'
+
+  }).done(function(data){
+    console.log('ajax submission succeeded');
+    console.log(data);
+    App.cable.subscriptions.remove(App.global_chat);
+    //this removes the old data, and creates the top part & messages
+    $( "#messages" ).remove();
+    $(".side_menu_chat").append(data);
+    $(".side_menu_group_info").empty()
+    $(".side_menu_group_info").append($("#eventdata").children());
+    $("#eventdata").remove()
+    $('.side_menu_wrapper').toggleClass( "slide_open" );
+    // //this slides back to the new chat
+    // $('.side_menu_main_content').toggleClass( "main_slide_in" );
+    // $('.side_menu_group_content').toggleClass( "group_slide_out" );
+    // $('.side_menu_chat_input').toggleClass( "hide_chat" );
+    // //this sets the HTML data points to the proper ID's before calling loadchat
     var newgroup = $('#messages').data('group-id');
     $('#messages').data('group-id', newgroup);
     $('#group_id').attr('value', newgroup)
