@@ -64,10 +64,11 @@ $('.grouplink').on('click', function(e) {
 
   }).done(function(data){
     console.log('ajax submission succeeded');
-    App.global_chat = App.cable.subscriptions.remove({
-      channel: "GroupsChannel",
-      group_id: $('#messages').data('group-id')
-    });
+    // App.global_chat = App.cable.subscriptions.remove({
+    //   channel: "GroupsChannel",
+    //   group_id: $('#messages').data('group-id')
+    // });
+    App.cable.subscriptions.remove(App.global_chat);
     $( "#messages" ).remove();
     $(".side_menu_chat").append(data);
     var newgroup = $('#messages').data('group-id');
