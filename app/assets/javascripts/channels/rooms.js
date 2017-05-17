@@ -133,4 +133,9 @@ $('.eventgrouplink').on('click', function(e) {
   });
 
 });
+
+$('.intrudergrouplink').on('click', function(e) {
+  e.preventDefault();
+});
+
 });

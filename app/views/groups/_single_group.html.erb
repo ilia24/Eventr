@@ -1,5 +1,9 @@
 <div class="groups_content">
-<h1><%= link_to g.name, event_group_path(@event, g), class: "eventgrouplink" %></h1>
+  <% if g.users.ids.include? current_user.id %>
+    <h1><%= link_to g.name, event_group_path(@event, g), class: "eventgrouplink" %></h1>
+  <% else %>
+    <h1><%= link_to g.name, event_group_path(@event, g), class: "intrudergrouplink" %></h1>
+  <% end %>
 
 <p> <%= g.description %> </p>
 
