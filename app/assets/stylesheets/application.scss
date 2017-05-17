@@ -798,12 +798,12 @@ i.fa.fa-comment:hover {
   width: 100%;
   height: 67px;
 
-  transform: translateY(0);
+  transform: translateY(100%);
   transition: transform 0.3s ease;
 }
 
-.hide_chat {
-  transform: translateY(100%);
+.show_chat {
+  transform: translateY(0);
 }
 
 .map_icon_container {

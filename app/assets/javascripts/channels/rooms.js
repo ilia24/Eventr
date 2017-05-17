@@ -76,7 +76,7 @@ $('.grouplink').on('click', function(e) {
     //this slides back to the new chat
     $('.side_menu_main_content').toggleClass( "main_slide_in" );
     $('.side_menu_group_content').toggleClass( "group_slide_out" );
-    $('.side_menu_chat_input').toggleClass( "hide_chat" );
+    $('.side_menu_chat_input').toggleClass( "show_chat" );
     //this sets the HTML data points to the proper ID's before calling loadchat
     var newgroup = $('#messages').data('group-id');
     $('#messages').data('group-id', newgroup);

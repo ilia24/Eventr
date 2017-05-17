@@ -19,7 +19,7 @@ $(function() {
 
     $('.side_menu_main_content').toggleClass( "main_slide_in" );
     $('.side_menu_group_content').toggleClass( "group_slide_out" );
-    $('.side_menu_chat_input').toggleClass( "hide_chat" );
+    $('.side_menu_chat_input').toggleClass( "show_chat" );
     $('.side_menu_back_chat').toggleClass( "back_chat_slide_in" );
   });
 
@@ -29,6 +29,7 @@ $(function() {
 
     $('.side_menu_back_chat').toggleClass( "back_chat_slide_in" );
   });
+
 
   // Collapses and reveals groups section
   $('#groups').on('click', function(e){
