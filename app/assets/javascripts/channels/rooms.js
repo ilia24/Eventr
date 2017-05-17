@@ -15,8 +15,12 @@ function LoadChat() {
       channel: "GroupsChannel",
       group_id: messages.data('group-id')
     }, {
-      connected: function() {},
-      disconnected: function() {},
+      connected: function() {
+        console.log('connected to ' + messages.data('group-id'))
+      },
+      disconnected: function() {
+        console.log('disconnected from ' + messages.data('group-id'))
+      },
       received: function(data) {
         messages.append(data['message']);
         return messages_to_bottom();
@@ -46,4 +50,29 @@ function LoadChat() {
 
 
 LoadChat();
+
+$('.grouplink').on('click', function(e) {
+  e.preventDefault();
+
+  $.ajax({
+    method: 'GET',
+    url: $(this).attr('href'),
+    data: $(this).serialize(),
+    dataType: 'html'
+
+  }).done(function(data){
+    console.log('ajax submission succeeded');
+    $( "#messages" ).remove();
+    $(".side_menu_chat").append(data)
+    var newgroup = $('#messages').data('group-id')
+    $('#messages').data('group-id', newgroup)
+    LoadChat();
+
+  }).fail(function(data){
+    console.log('ajax submission failed');
+  }).always(function(){
+    console.log('ajax ran')
+  });
+
+});
 });
