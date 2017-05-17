@@ -41,7 +41,6 @@ function LoadChat() {
       messages = $('#messages');
       if ($.trim(textarea.val()).length > 1) {
         App.global_chat.send_message(textarea.val(), messages.data('group-id'));
-        debugger
         textarea.val('');
       }
       e.preventDefault();
