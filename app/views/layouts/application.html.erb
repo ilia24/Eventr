@@ -208,7 +208,6 @@
 
       </div>
 
-
       <!-- CHAT INPUT BOX -->
       <% if (@user != nil) && (@user.groups.empty? != true) %>
 
@@ -219,6 +218,7 @@
         <%= render "groups/sidebar_form", g: @user.groups.first %>
       </div>
       <% end %>
+
 
 
 
