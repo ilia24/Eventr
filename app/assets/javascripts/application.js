@@ -38,7 +38,8 @@ $(function() {
 
     $('.dropdown_mobile').slideToggle('fast');
     $('.dropdown_mobile').toggleClass('active');
-    $('.logo_sm').find('i').toggleClass('fa-angle-up fa-angle-down')
+    $('.logo_sm').find('i').toggleClass('fa-angle-up fa-angle-down');
+    $('html').toggleClass('stop_scroll')
     e.preventDefault();
 
   });

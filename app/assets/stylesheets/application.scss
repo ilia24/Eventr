@@ -310,7 +310,6 @@ hr {
 
 .dropdown_mobile {
   display: none;
-  padding: 0 24px 0 24px;
   background-color: white;
   height: 100vh;
   position: absolute;
@@ -324,7 +323,9 @@ hr {
 .dropdown_menu_user {
   display: flex;
   align-items: center;
-  padding: 12px 0 24px 0;
+  margin: 0 24px 0 24px;
+  padding-top: 24px;
+  padding-bottom: 24px;
   border-bottom: solid 1px #d4d4d4;
   .profile_thumbnail {
     margin-right: 24px;
@@ -334,10 +335,16 @@ hr {
 .dropdown_menu_links {
   display: flex;
   flex-direction: column;
-  padding-top: 12px;
+  padding: 0 24px 0 24px;
   a {
     padding: 15px 0 15px 0;
   }
+}
+
+.stop_scroll {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
 }
 
 .nav_search {
