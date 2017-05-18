@@ -26,6 +26,7 @@
 
     <div class="logo_sm">
       <%= image_tag ("eventr-logo-sm.svg"), :class=>"eventr_home_btn"%>
+      <i class="fa fa-angle-up"></i>
     </div>
 
     <div class="nav_search_links">
@@ -77,7 +78,7 @@
       </div>
 
     </div>
-    
+
     </div>
 
 
@@ -164,7 +165,7 @@
 
         <!-- PENDING REQUEST -->
 
-        <h5 id="pending">PENDING REQUESTS <i class="fa fa-chevron-down"></i></h5>
+        <h5 id="pending">PENDING REQUESTS <i class="fa fa-chevron-up"></i></h5>
 
         <div class="side_menu_main_pending">
           <!-- Put render code here -->
@@ -173,7 +174,7 @@
         <!-- GROUPS SECTION -->
         <div class="side_menu_main_groups">
 
-          <h5 id="groups">GROUPS <i class="fa fa-chevron-down"></i></h5>
+          <h5 id="groups">GROUPS <i class="fa fa-chevron-up"></i></h5>
 
           <div class="side_menu_main_groups_list">
             <% @user.groups.each do |g| %>
@@ -200,7 +201,7 @@
         <!-- EVENTRS SECTION -->
 
         <div class="side_menu_main_eventrs">
-          <h5 id="eventrs">EVENTRS <i class="fa fa-chevron-down"></i></h5>
+          <h5 id="eventrs">EVENTRS <i class="fa fa-chevron-up"></i></h5>
           <% if (@user != nil) && (@user.authored_conversations != nil) %>
           <% @user.authored_conversations.all.each do |c| %>
           <div class="side_menu_main_eventrs_list">
