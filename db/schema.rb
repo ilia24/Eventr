@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170516191932) do
+ActiveRecord::Schema.define(version: 20170518204449) do
 
   create_table "comments", force: :cascade do |t|
     t.text    "content"
@@ -111,6 +111,16 @@ ActiveRecord::Schema.define(version: 20170516191932) do
     t.datetime "updated_at",      null: false
     t.index ["conversation_id"], name: "index_personal_messages_on_conversation_id"
     t.index ["user_id"], name: "index_personal_messages_on_user_id"
+  end
+
+  create_table "requests", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "group_id"
+    t.boolean  "invite"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["group_id"], name: "index_requests_on_group_id"
+    t.index ["user_id"], name: "index_requests_on_user_id"
   end
 
   create_table "reviews", force: :cascade do |t|
