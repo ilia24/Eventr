@@ -1,5 +1,6 @@
 class GroupsController < ApplicationController
   before_action :ensure_logged_in, only: [:join, :create]
+  before_action :ensure_eventrinfo_filled_out, only: [:create, :join]
   before_action :load_event, :load_user
 
   def new
