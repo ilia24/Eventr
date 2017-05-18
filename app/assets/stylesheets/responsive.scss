@@ -28,6 +28,12 @@
   }
 }
 
+@media screen and (max-width:307px){
+  .nav_search {
+    margin-left: 12px;
+  }
+}
+
 @media screen and (max-width:822px){
   nav {
     padding: 0 24px 0 24px;

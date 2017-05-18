@@ -323,6 +323,7 @@ hr {
 .dropdown_menu_user {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   margin: 0 24px 0 24px;
   padding-top: 24px;
   padding-bottom: 24px;
@@ -330,12 +331,15 @@ hr {
   .profile_thumbnail {
     margin-right: 24px;
   }
+  i {
+    color: #7f7f7f;
+  }
 }
 
 .dropdown_menu_links {
   display: flex;
   flex-direction: column;
-  padding: 0 24px 0 24px;
+  padding: 12px 24px 0 24px;
   a {
     padding: 15px 0 15px 0;
   }
