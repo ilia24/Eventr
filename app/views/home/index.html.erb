@@ -10,23 +10,23 @@
 
       <div class="carousel_item" id="weeknd">
 
-        <%= image_tag ("home-slider/img-weeknd.jpg") %></div>
+        <%= link_to "#{image_tag ("home-slider/img-weeknd.jpg")}".html_safe, "http://localhost:3000/events/54" %></div>
 
       </div>
     <div class="carousel_item_container">
-      <div class="carousel_item"><%= image_tag ("home-slider/kevin-hart.jpg") %></div>
+      <div class="carousel_item"><%= link_to "#{image_tag ("home-slider/kevin-hart.jpg")}".html_safe, "http://localhost:3000/events/43" %></div>
     </div>
 
     <div class="carousel_item_container">
-      <div class="carousel_item"><%= image_tag ("home-slider/dance-contemp.jpg") %></div>
+      <div class="carousel_item"><%= link_to "#{image_tag ("home-slider/dance-contemp.jpg")}".html_safe, "http://localhost:3000/events/65" %></div>
     </div>
 
     <div class="carousel_item_container">
-      <div class="carousel_item"><%= image_tag ("home-slider/gorillaz.jpg") %></div>
+      <div class="carousel_item"><%=link_to "#{image_tag("home-slider/gorillaz.jpg")}".html_safe, "http://localhost:3000/events/48" %></div>
     </div>
 
     <div class="carousel_item_container">
-      <div class="carousel_item"><%= image_tag ("home-slider/john-legend-1.jpg") %></div>
+      <div class="carousel_item"><%= link_to "#{image_tag ("home-slider/john-legend-1.jpg")}".html_safe, "http://localhost:3000/events/52" %></div>
     </div>
 
   </section>
