@@ -19,7 +19,9 @@ class User < ApplicationRecord
   has_many :goings
   has_many :events, through: :goings
   has_many :members
+  has_many :requests
   has_many :groups, through: :members
+  has_many :groups, through: :requests
   has_many :messages, dependent: :destroy
 
 

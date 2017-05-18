@@ -1,7 +1,9 @@
 class Group < ApplicationRecord
   belongs_to :event
   has_many :members
+  has_many :requests
   has_many :users, through: :members
+  has_many :users, through: :requests
   has_many :messages, dependent: :destroy
 
 
