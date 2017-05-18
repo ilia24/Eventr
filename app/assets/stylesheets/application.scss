@@ -305,6 +305,16 @@ hr {
   flex-direction: column;
 }
 
+.dropdown_mobile {
+  display: block;
+  
+}
+
+.dropdown_menu_mobile {
+  background-color: white;
+  width: 100%;
+}
+
 .nav_search {
   margin-left: 36px;
   width: 400px;
@@ -780,6 +790,10 @@ i.fa.fa-comment {
 i.fa.fa-circle {
   color: #F04848;
   position: absolute;
+}
+
+i.fa.fa-angle-up {
+  padding-left: 12px;
 }
 
 .notification_count {
