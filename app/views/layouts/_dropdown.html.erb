@@ -24,5 +24,10 @@
     </div>
     <% end %>
   <% else %>
-  <%= link_to 'Log In', new_session_path %> <%= link_to 'Sign Up', new_user_path %>
+  <div class="dropdown_menu_links">
+    <a href="/">Home</a>
+    <a href="/events">Browse</a>
+    <%= link_to 'Log In', new_session_path %>
+    <%= link_to 'Sign Up', new_user_path %>
+  </div>
   <%end%>
