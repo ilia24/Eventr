@@ -24,14 +24,20 @@
       <a href="/"><%= image_tag ("eventr-logo.svg"), :class=>"eventr_home_btn"%></a>
     </div>
 
-    <div class="nav_links">
+    <div class="logo_sm">
+      <%= image_tag ("eventr-logo-sm.svg"), :class=>"eventr_home_btn"%>
+    </div>
+
+    <div class="nav_search_links">
 
       <div class="nav_search">
-          <%= image_tag ("ic_search_black_24px.svg") %>
-          <%= form_tag(events_path, :method => "get", id: "search-form") do %>
-            <%= text_field_tag :search, params[:search], placeholder: "SEARCH EVENTS" %>
-          <% end %>
+        <%= form_tag(events_path, :method => "get", id: "search-form") do %>
+        <%= text_field_tag :search, params[:search], placeholder: "SEARCH EVENTS" %>
+        <%= image_tag ("ic_search_black_24px.svg") %>
+        <% end %>
       </div>
+
+      <div class="nav_links">
 
       <a href="/">HOME</a>
       <a href="/events">BROWSE</a>
@@ -71,6 +77,9 @@
       </div>
 
     </div>
+    
+    </div>
+
 
   </nav>
 

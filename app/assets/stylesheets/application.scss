@@ -33,11 +33,11 @@ body {
 }
 
 nav {
+  display: flex;
   font-size: 16px;
   background-color: white;
   height: 94px;
-  padding-left: 100px;
-  padding-right: 100px;
+  padding: 0 100px 0 100px;
   box-shadow: 0 3px 30px rgba(0, 0, 0, 0.05);
   display: flex;
   align-items: center;
@@ -169,6 +169,13 @@ hr {
   }
 }
 
+.logo_sm {
+  display: none;
+  img {
+    height: 24px;
+  }
+}
+
 .nav_links {
   display: flex;
   list-style-type: none;
@@ -207,6 +214,13 @@ hr {
   a:hover{
     color: #333333;
   }
+}
+
+.nav_search_links {
+  flex-grow: 1;
+  justify-content: flex-end;
+  display: flex;
+  align-items: center;
 }
 
 .profile_thumbnail_wrapper {
@@ -292,6 +306,8 @@ hr {
 }
 
 .nav_search {
+  margin-left: 36px;
+  width: 400px;
   display: flex;
   padding-top: 2px;
   img {
@@ -310,11 +326,13 @@ hr {
 }
 
 #search-form {
+  flex: 1;
   height: 20px;
   display: flex;
   align-items: center;
   input[type=text] {
-    width: 250px;
+    flex-grow: 1;
+    flex-shrink: 1;
     margin: 0;
     letter-spacing: 1px;
     font-family: "Montserrat";

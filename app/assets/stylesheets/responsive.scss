@@ -1,5 +1,42 @@
+// NAV BAR
+
 @media screen and (max-width:966px){
-  .nav_search {
+  .nav_links {
     display: none;
+  }
+}
+
+@media screen and (max-width:1125px){
+  .nav_links {
+    display: none;
+  }
+  .nav_search {
+    flex-grow: 1;
+    width: auto;
+  }
+}
+
+@media screen and (max-width:589px){
+  .logo {
+    display: none;
+  }
+  .logo_sm {
+    display: inline-block;
+  }
+}
+
+
+// @media screen and (max-width:689px){
+//   .logo {
+//     display: none;
+//   }
+//   .logo_sm {
+//     display: inline-block;
+//   }
+// }
+
+@media screen and (max-width:822px){
+  nav {
+    padding: 0 24px 0 24px;
   }
 }
