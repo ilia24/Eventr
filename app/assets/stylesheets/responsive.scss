@@ -14,6 +14,9 @@
     flex-grow: 1;
     width: auto;
   }
+  .dropdown_mobile {
+    display: block;
+  }
 }
 
 @media screen and (max-width:589px){
@@ -43,7 +46,7 @@
 
 // HOME PAGE
 
-@media screen and (min-width:416) and (max-width:801px){
+@media screen and (min-width:416px) and (max-width:801px){
   .event_container {
     min-width: inherit;
     max-width: none;
