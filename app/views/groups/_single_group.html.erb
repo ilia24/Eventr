@@ -22,8 +22,11 @@
 <div class="event_going">
   <h6> <strong><%= g.users.count %></strong> EVENTRS </h6>
 
+
   <% if g.users.include? current_user %>
     <%= button_to "Leave group", leave_group_path(@event, g.id), :method => "get", :class => "button_sm" %>
+  <% elsif g.private == true %>
+    <%= button_to "Request to join group", request_to_join_group_path(@event, g.id), :method => "get", :class => "button_sm" %>
   <% else %>
     <%= button_to "Join", join_group_path(@event, g.id), :method => "get", :class => "button_sm" %>
   <%end%>
