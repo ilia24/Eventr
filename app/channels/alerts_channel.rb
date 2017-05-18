@@ -3,8 +3,4 @@ class AlertsChannel < ApplicationCable::Channel
     stream_from "alerts_channel"
   end
 
-  def unsubscribed
-    # Any cleanup needed when channel is unsubscribed
-  end
-
 end
