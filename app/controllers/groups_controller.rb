@@ -35,9 +35,7 @@ class GroupsController < ApplicationController
 
 
     if  @group.save
-      @group.users << @user
-      @group.users.first
-
+      @group.setowner(current_user)
       @event.adduser(current_user)
 
       render :partial => '/groups/single_group', locals: {g: @group}
