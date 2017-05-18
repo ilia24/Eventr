@@ -738,17 +738,17 @@ input[type=submit] {
   bottom: 24px;
   right: 24px;
   z-index: 2;
+  transform: translateX(0);
+  transition: transform 0.3s ease;
 }
 
 .trigger_chat_btn {
   overflow: hidden;
-  transform: translateX(0);
-  transition: transform 0.3s ease;
   border-radius: 50%;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 }
 
-.trigger_chat_btn:hover {
+.trigger_chat_btn_container:hover {
   transform: translateX(-6px);
 }
 
@@ -761,8 +761,21 @@ i.fa.fa-comment {
 i.fa.fa-circle {
   color: #F04848;
   position: absolute;
-  right: 0;
-  z-index: 2;
+}
+
+.notification_count {
+  display: flex;
+  position: absolute;
+  right: 6px;;
+  top: 6px;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+  h6 {
+    font-size: 8px;
+    position: absolute;
+    color: white;
+  }
 }
 
 .side_menu_main_groups {
