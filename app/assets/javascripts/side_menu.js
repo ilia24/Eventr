@@ -26,6 +26,15 @@ $(function() {
     $('.side_menu_back_chat').toggleClass( "back_chat_slide_in" );
   });
 
+  // Collapses and reveals pending requests section
+  $('#pending').on('click', function(e){
+
+    $(this).next('.side_menu_main_pending').slideToggle('fast');
+    $(this).toggleClass('active');
+    $(this).find('i').toggleClass('fa-chevron-down fa-chevron-up')
+    e.preventDefault();
+
+  });
 
   // Collapses and reveals groups section
   $('#groups').on('click', function(e){

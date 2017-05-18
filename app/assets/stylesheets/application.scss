@@ -722,7 +722,7 @@ input[type=submit] {
   h5 {
     letter-spacing: 1px;
   }
-  #groups, #eventrs {
+  #pending ,#groups, #eventrs {
     padding: 12px 0px 12px 24px;
     color: #7f7f7f;
     cursor: pointer;
@@ -733,22 +733,49 @@ input[type=submit] {
   transform: translateX(-400px);
 }
 
-i.fa.fa-comment {
+.trigger_chat_btn_container {
   position: fixed;
   bottom: 24px;
   right: 24px;
-  color: #262626;
-  background-color: white;
-  padding: 12px;
-  border-radius: 50%;
   z-index: 2;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
   transform: translateX(0);
   transition: transform 0.3s ease;
 }
 
-i.fa.fa-comment:hover {
+.trigger_chat_btn {
+  overflow: hidden;
+  border-radius: 50%;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.trigger_chat_btn_container:hover {
   transform: translateX(-6px);
+}
+
+i.fa.fa-comment {
+  color: #262626;
+  background-color: white;
+  padding: 12px;
+}
+
+i.fa.fa-circle {
+  color: #F04848;
+  position: absolute;
+}
+
+.notification_count {
+  display: flex;
+  position: absolute;
+  right: 6px;;
+  top: 6px;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+  h6 {
+    font-size: 8px;
+    position: absolute;
+    color: white;
+  }
 }
 
 .side_menu_main_groups {
