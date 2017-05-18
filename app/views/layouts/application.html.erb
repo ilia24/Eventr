@@ -24,14 +24,21 @@
       <a href="/"><%= image_tag ("eventr-logo.svg"), :class=>"eventr_home_btn"%></a>
     </div>
 
-    <div class="nav_links">
+    <div class="logo_sm">
+      <%= image_tag ("eventr-logo-sm.svg"), :class=>"eventr_home_btn"%>
+      <i class="fa fa-angle-up"></i>
+    </div>
+
+    <div class="nav_search_links">
 
       <div class="nav_search">
-          <%= image_tag ("ic_search_black_24px.svg") %>
-          <%= form_tag(events_path, :method => "get", id: "search-form") do %>
-            <%= text_field_tag :search, params[:search], placeholder: "SEARCH EVENTS" %>
-          <% end %>
+        <%= form_tag(events_path, :method => "get", id: "search-form") do %>
+        <%= text_field_tag :search, params[:search], placeholder: "SEARCH EVENTS" %>
+        <%= image_tag ("ic_search_black_24px.svg") %>
+        <% end %>
       </div>
+
+      <div class="nav_links">
 
       <a href="/">HOME</a>
       <a href="/events">BROWSE</a>
@@ -72,7 +79,13 @@
 
     </div>
 
+    </div>
+
   </nav>
+
+  <div class="dropdown_mobile">
+    <%= render 'layouts/dropdown' %>
+  </div>
 
   <!-- SIDE MENU -->
 
@@ -155,7 +168,7 @@
 
         <!-- PENDING REQUEST -->
 
-        <h5 id="pending">PENDING REQUESTS <i class="fa fa-chevron-down"></i></h5>
+        <h5 id="pending">PENDING REQUESTS <i class="fa fa-chevron-up"></i></h5>
 
         <div class="side_menu_main_pending">
           <!-- Put render code here -->
@@ -164,7 +177,7 @@
         <!-- GROUPS SECTION -->
         <div class="side_menu_main_groups">
 
-          <h5 id="groups">GROUPS <i class="fa fa-chevron-down"></i></h5>
+          <h5 id="groups">GROUPS <i class="fa fa-chevron-up"></i></h5>
 
           <div class="side_menu_main_groups_list">
             <% @user.groups.each do |g| %>
@@ -191,7 +204,7 @@
         <!-- EVENTRS SECTION -->
 
         <div class="side_menu_main_eventrs">
-          <h5 id="eventrs">EVENTRS <i class="fa fa-chevron-down"></i></h5>
+          <h5 id="eventrs">EVENTRS <i class="fa fa-chevron-up"></i></h5>
           <% if (@user != nil) && (@user.authored_conversations != nil) %>
           <% @user.authored_conversations.all.each do |c| %>
           <div class="side_menu_main_eventrs_list">
