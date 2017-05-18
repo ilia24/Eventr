@@ -2,14 +2,12 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :cookie_set, :load_chatfunc
 
+
 def load_chatfunc
   @message = Message.new
   @events = Event.all
   @event = Event.new
   @group = Group.new
-  @conversation = Conversation.find_by(id: params[:id])
-  @conversations = Conversation.participating(current_user)
-
 end
 
   def ensure_logged_in
