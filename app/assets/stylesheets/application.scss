@@ -12,6 +12,7 @@
  *
  *= require section
  *= require_self
+ *= require responsive
  */
 
 @import "font-awesome-sprockets";
@@ -32,11 +33,11 @@ body {
 }
 
 nav {
+  display: flex;
   font-size: 16px;
   background-color: white;
   height: 94px;
-  padding-left: 100px;
-  padding-right: 100px;
+  padding: 0 100px 0 100px;
   box-shadow: 0 3px 30px rgba(0, 0, 0, 0.05);
   display: flex;
   align-items: center;
@@ -168,6 +169,14 @@ hr {
   }
 }
 
+.logo_sm {
+  display: none;
+  img {
+    height: 24px;
+    padding-right: 12px;
+  }
+}
+
 .nav_links {
   display: flex;
   list-style-type: none;
@@ -206,6 +215,13 @@ hr {
   a:hover{
     color: #333333;
   }
+}
+
+.nav_search_links {
+  flex-grow: 1;
+  justify-content: flex-end;
+  display: flex;
+  align-items: center;
 }
 
 .profile_thumbnail_wrapper {
@@ -290,7 +306,57 @@ hr {
   flex-direction: column;
 }
 
+// DROPDOWN MENU MOBILE
+
+.dropdown_mobile {
+  display: none;
+  background-color: white;
+  height: 100vh;
+  position: absolute;
+  width: 100vw;
+  z-index: 4;
+  a {
+    color: #262626;
+  }
+}
+
+.dropdown_menu_user {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 24px 0 24px;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  border-bottom: solid 1px #d4d4d4;
+  .profile_thumbnail {
+    margin-right: 24px;
+  }
+  i {
+    color: #7f7f7f;
+  }
+  #dropdown_profile_link {
+    border-bottom: 0;
+  }
+}
+
+.dropdown_menu_links {
+  display: flex;
+  flex-direction: column;
+  padding: 12px 24px 0 24px;
+  a {
+    padding: 15px 0 15px 0;
+  }
+}
+
+.stop_scroll {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
 .nav_search {
+  margin-left: 36px;
+  width: 400px;
   display: flex;
   padding-top: 2px;
   img {
@@ -309,11 +375,13 @@ hr {
 }
 
 #search-form {
+  flex: 1;
   height: 20px;
   display: flex;
   align-items: center;
   input[type=text] {
-    width: 250px;
+    flex-grow: 1;
+    flex-shrink: 1;
     margin: 0;
     letter-spacing: 1px;
     font-family: "Montserrat";

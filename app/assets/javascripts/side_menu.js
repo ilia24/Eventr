@@ -31,7 +31,7 @@ $(function() {
 
     $(this).next('.side_menu_main_pending').slideToggle('fast');
     $(this).toggleClass('active');
-    $(this).find('i').toggleClass('fa-chevron-down fa-chevron-up')
+    $(this).find('i').toggleClass('fa-chevron-up fa-chevron-down')
     e.preventDefault();
 
   });
@@ -41,7 +41,7 @@ $(function() {
 
     $(this).next('.side_menu_main_groups_list').slideToggle('fast');
     $(this).toggleClass('active');
-    $(this).find('i').toggleClass('fa-chevron-down fa-chevron-up')
+    $(this).find('i').toggleClass('fa-chevron-up fa-chevron-down')
     e.preventDefault();
 
   });
@@ -51,7 +51,7 @@ $(function() {
 
     $(this).next('.side_menu_main_eventrs_list').slideToggle('fast');
     $(this).toggleClass('active');
-    $(this).find('i').toggleClass('fa-chevron-down fa-chevron-up')
+    $(this).find('i').toggleClass('fa-chevron-up fa-chevron-down')
     e.preventDefault();
 
   });

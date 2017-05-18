@@ -21,12 +21,28 @@
 
 $(function() {
 
-  $(".eventr_home_btn").hover(
-    function() {
+  // if screen width is less than 590px remove event logo animation
+  if ($(window).width() > 590) {
+    $(".eventr_home_btn").hover(
+      function() {
         $(this).attr("src", "/assets/eventr-logo.gif");
-    },
-    function() {
+      },
+      function() {
         $(this).attr("src", "/assets/eventr-logo.svg");
-    });
+      });
+  }
+
+  // Reveal mobile dropdown menu
+  $('.dropdown_mobile').hide();
+  $('.logo_sm').on('click', function(e){
+
+    $('.dropdown_mobile').slideToggle('fast');
+    $('.dropdown_mobile').toggleClass('active');
+    $('.logo_sm').find('i').toggleClass('fa-angle-up fa-angle-down');
+    $('html').toggleClass('stop_scroll')
+    e.preventDefault();
+
+  });
+
 
 });
