@@ -173,6 +173,7 @@ hr {
   display: none;
   img {
     height: 24px;
+    padding-right: 12px;
   }
 }
 
@@ -308,10 +309,13 @@ hr {
 // DROPDOWN MENU MOBILE
 
 .dropdown_mobile {
-  display: block;
+  display: none;
   padding: 0 24px 0 24px;
   background-color: white;
   height: 100vh;
+  position: absolute;
+  width: 100vw;
+  z-index: 4;
   a {
     color: #262626;
   }
@@ -811,10 +815,6 @@ i.fa.fa-comment {
 i.fa.fa-circle {
   color: #F04848;
   position: absolute;
-}
-
-i.fa.fa-angle-up {
-  padding-left: 12px;
 }
 
 .notification_count {
