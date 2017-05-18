@@ -798,12 +798,12 @@ i.fa.fa-comment:hover {
 
 .side_menu_chat_input {
   background-color: #f8f8f8;
-  // position: fixed;
   display: flex;
   align-items: center;
   bottom: 0;
   width: 100%;
   height: 67px;
+  flex-shrink: 0;
 
   transform: translateY(100%);
   transition: transform 0.3s ease;
