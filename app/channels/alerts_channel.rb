@@ -4,7 +4,6 @@ class AlertsChannel < ApplicationCable::Channel
   end
 
   def receive(data)
-    binding.pry
   end
 
 end
