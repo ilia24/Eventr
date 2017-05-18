@@ -79,6 +79,7 @@ function ToggleChatView() {
   $('.side_menu_main_content').toggleClass( "main_slide_in" );
   $('.side_menu_group_content').toggleClass( "group_slide_out" );
   $('.side_menu_chat_input').toggleClass( "show_chat" );
+  $('.side_menu_back_chat').toggleClass( "back_chat_slide_in" );
 };
 
 function OpenMenuIfClosed() {
@@ -90,18 +91,18 @@ function OpenMenuIfClosed() {
 };
 
 function OpenChatIfClosed() {
-  if ($('.side_menu_chat_input').hasClass("hide_chat")) {
-    ToggleChatView();
+  if ($('.side_menu_chat_input').hasClass("show_chat")) {
+    return;
 } else {
-  return;
+  ToggleChatView();
 };
 };
 
 function MenuLogic(){
-  if ($('.side_menu_wrapper').hasClass("slide_open") && !$('.side_menu_chat_input').hasClass("hide_chat")) {
+  if ($('.side_menu_wrapper').hasClass("slide_open") && $('.side_menu_chat_input').hasClass("show_chat")) {
     $('.side_menu_wrapper').toggleClass( "slide_open" );
     ToggleChatView();
-} else if ($('.side_menu_wrapper').hasClass("slide_open") && $('.side_menu_chat_input').hasClass("hide_chat")) {
+} else if ($('.side_menu_wrapper').hasClass("slide_open") && !$('.side_menu_chat_input').hasClass("show_chat")) {
     OpenChatIfClosed();
 } else {
     OpenChatIfClosed();
@@ -122,7 +123,6 @@ $('.grouplink').on('click', function(e) {
 
   }).done(function(data){
     console.log('ajax submission succeeded');
-
     AppendData(data);
     ToggleChatView();
     SetChatGroup();

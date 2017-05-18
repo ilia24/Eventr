@@ -26,13 +26,6 @@ $(function() {
     $('.side_menu_back_chat').toggleClass( "back_chat_slide_in" );
   });
 
-  // Reveals back to chat link
-  $('.grouplink').on('click', function(e){
-    e.preventDefault();
-
-    $('.side_menu_back_chat').toggleClass( "back_chat_slide_in" );
-  });
-
 
   // Collapses and reveals groups section
   $('#groups').on('click', function(e){
