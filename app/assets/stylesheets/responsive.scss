@@ -39,3 +39,30 @@
     padding: 0 24px 0 24px;
   }
 }
+
+
+// HOME PAGE
+
+@media screen and (min-width:416) and (max-width:801px){
+  .event_container {
+    min-width: inherit;
+    max-width: none;
+  }
+  .event_img {
+    img {
+      height: auto;
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (max-width:415px){
+  .index_main {
+    margin-left: 24px;
+    margin-right: 24px;
+  }
+  .event_container {
+    min-width: inherit;
+    max-width: none;
+  }
+}
