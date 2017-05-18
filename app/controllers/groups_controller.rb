@@ -33,11 +33,9 @@ class GroupsController < ApplicationController
 
     @group = @event.groups.build(group_params)
 
-
     if  @group.save
       @group.setowner(current_user)
       @event.adduser(current_user)
-
       render :partial => '/groups/single_group', locals: {g: @group}
     else
       render :status => 200
@@ -89,7 +87,7 @@ class GroupsController < ApplicationController
 
   private
   def group_params
-    params.require(:group).permit(:name, :event_id, :description)
+    params.require(:group).permit(:name, :event_id, :description, :private)
   end
 
   def load_event

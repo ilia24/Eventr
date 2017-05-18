@@ -3,7 +3,7 @@ class Group < ApplicationRecord
   has_many :members
   has_many :requests
   has_many :users, through: :members
-  has_many :users, through: :requests
+  has_many :invited_users, through: :requests, class_name: 'User'
   has_many :messages, dependent: :destroy
 
 
@@ -11,6 +11,5 @@ class Group < ApplicationRecord
     self.users << user
     usergroup = user.members.find_by(group_id: self.id)
     usergroup.update(owner: true)
-
   end
 end
