@@ -4,11 +4,5 @@ class Group < ApplicationRecord
   has_many :users, through: :members
   has_many :messages, dependent: :destroy
 
-  # def adduser(user)
-  #   if self.users.exclude? user
-  #     self.users << user
-  #   end
-  # end
-
 
 end

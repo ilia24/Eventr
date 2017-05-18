@@ -36,10 +36,10 @@ class GroupsController < ApplicationController
 
     if  @group.save
       @group.users << @user
+      @group.users.first
 
-      if @event.users.exclude? @user
-        @event.users << @user
-      end
+      @event.adduser(current_user)
+
       render :partial => '/groups/single_group', locals: {g: @group}
     else
       render :status => 200
