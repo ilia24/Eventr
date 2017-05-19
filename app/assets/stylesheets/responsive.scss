@@ -88,6 +88,9 @@
   .index_main {
     margin-left: 24px;
     margin-right: 24px;
+    #events_near_you {
+      flex-wrap: wrap;
+    }
   }
 }
 

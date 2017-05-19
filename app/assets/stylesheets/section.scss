@@ -99,6 +99,14 @@ overflow: hidden;
   h3 {
     padding: 0 6px 0 6px;
   }
+  #events_near_you {
+    flex-wrap: nowrap;
+    overflow: auto;
+    justify-content: space-between;
+    .event_container {
+      min-width: 292px;
+    }
+  }
 }
 
 .header_slider {
