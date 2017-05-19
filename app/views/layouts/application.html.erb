@@ -179,6 +179,7 @@
             <%  if (m.owner == true) && (m.group.invited_users.empty? != true) %>
 
                 <% m.group.invited_users.each do |i| %>
+
                     <div class="request_pending_container">
 
                       <div class="profile_thumbnail">
@@ -191,16 +192,16 @@
                         <p>wants to join <strong><%= m.group.name %></strong></p>
                         <div class="accept_reject">
                           <div class="button_sm">
-                            <%= link_to 'Accept', events_path %>
+                            <%= link_to 'Accept', accept_request_path(@event.id, id: m.group.id, request_id: i.request_ids) %>
                           </div>
                           <div class="button_sm_outline_black">
-                            <%= link_to 'Reject', events_path %>
+                            <%= link_to 'Reject', reject_request_path(@event.id, id: m.group.id, request_id: i.request_ids) %>
                           </div>
                         </div>
                       </div>
 
                     </div>
-
+        
                 <% end %>
             <% end %>
           <% end %>

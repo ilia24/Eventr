@@ -16,6 +16,10 @@ end
 get '/events/:event_id/groups/:id/request', to: 'groups#grouprequest', as: 'request_to_join_group'
 delete '/events/:event_id/groups/:id/request', to: 'groups#deleterequest', as: 'delete_request_to_join_group'
 
+get '/events/:event_id/groups/:id/request/:request_id', to: 'groups#acceptrequest', as: 'accept_request'
+delete '/events/:event_id/groups/:id/request/:request_id', to: 'groups#rejectrequest', as: 'reject_request'
+
+
 
 get '/events/:event_id/groups/:id/join', to: 'groups#join', as: 'join_group'
 get '/events/:event_id/groups/:id/leave', to: 'groups#leave', as: 'leave_group'
