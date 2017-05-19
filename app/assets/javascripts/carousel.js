@@ -8,7 +8,7 @@ $(function() {
     center:true,
     autoWidth:true,
     autoHeight:true,
-    autoplay:true,
+    // autoplay:true,
     autoplayTimeout:4000,
     autoplayHoverPause:true,
     responsive:{
