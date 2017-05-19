@@ -182,8 +182,8 @@
                       <%= image_tag(i.avatar.thumb) %>
                   <p> <%= i.eventrinfo.first_name %> </p>
                   <p> <%= i.eventrinfo.last_name %> </p>
-                  <%= link_to 'Accept', accept_request_path(@event.id, request_id: i.request_ids) %>
-                  <%= link_to 'Reject', reject_request_path(@event.id, request_id: i.request_ids) %>
+                  <%= link_to 'Accept', accept_request_path(@event.id, id: m.group.id, request_id: i.request_ids) %>
+                  <%= link_to 'Reject', reject_request_path(@event.id, id: m.group.id, request_id: i.request_ids) %>
                 <% end %>
             <% end %>
           <% end %>
