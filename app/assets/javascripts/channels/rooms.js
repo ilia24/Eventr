@@ -115,6 +115,8 @@ function MenuLogic(){
 $('.grouplink').on('click', function(e) {
   e.preventDefault();
 
+  $('.event_details_btn').toggleClass('event_details_btn_slide_in');
+
   $.ajax({
     method: 'GET',
     url: $(this).attr('href'),
@@ -129,6 +131,8 @@ $('.grouplink').on('click', function(e) {
   }).fail(function(data){
     console.log('ajax submission failed');
   });
+
+
 });
 
 //this code is for when the user clicks a group link on the event page
