@@ -171,7 +171,20 @@
         <h5 id="pending">PENDING REQUESTS <i class="fa fa-chevron-up"></i></h5>
 
         <div class="side_menu_main_pending">
-          <!-- Put render code here -->
+          <% if @user.members.empty? != true %>
+          <% @user.members.each do |m| %>
+            <%  if (m.owner == true) && (m.group.invited_users.empty? != true) %>
+              <p><%= m.group.name %></p>
+                <% m.group.invited_users.each do |i| %>
+                      <%= image_tag(i.avatar.thumb) %>
+                  <p> <%= i.eventrinfo.first_name %> </p>
+                  <p> <%= i.eventrinfo.last_name %> </p>
+                  <%= link_to 'Accept', events_path %>
+                  <%= link_to 'Reject', events_path %>
+                <% end %>
+            <% end %>
+          <% end %>
+          <% end %>
         </div>
 
         <!-- GROUPS SECTION -->
