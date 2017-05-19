@@ -8,7 +8,6 @@ task :get_fb_events => :environment do
 
   #  this establishs the base loop which iterates over all the accumulated ID's above
   #  and it also makes a base counter to be able to see things happenining in the console
-   placeholderuser = User.create(email: 'ilia@gmail.com', password: 'ilia')
    counter = 0
    parsed_response['data'].each do |e|
      event = e['id']
@@ -85,6 +84,12 @@ task :get_fb_events => :environment do
        picurl2 = bigpic.first[0]
      end
 
+     if resp.dig('cover', 'source') == nil
+       cover = mediumpic
+     else
+       cover = resp.dig('cover', 'source')
+     end
+
 # this establishes the rest of the creation variables
      picurl3 =  smallpic.first[0]
      name =  resp['name']
@@ -102,7 +107,7 @@ task :get_fb_events => :environment do
      end
 
 # then this creates an event instance, double checks that there are no duplicates, then saves the event!
-     a = Event.new(description: description, user: User.find(placeholderuser), price: 20,  latitude: latitude, longitude: longitude, name: name, location: location, time: time, date: date, picurl: picurl, picurl2: picurl2, picurl3: picurl3)
+     a = Event.new(description: description, user: User.first, price: 20,  latitude: latitude, longitude: longitude, name: name, location: location, time: time, date: date, picurl: picurl, picurl2: picurl2, cover: cover, picurl3: picurl3)
      valid = 1
 
       Event.all.each do |e|

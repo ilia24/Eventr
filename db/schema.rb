@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170518211329) do
+ActiveRecord::Schema.define(version: 20170519022306) do
 
   create_table "comments", force: :cascade do |t|
     t.text    "content"
@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(version: 20170518211329) do
     t.float    "longitude"
     t.string   "picurl2"
     t.string   "picurl3"
+    t.string   "cover"
   end
 
   create_table "goings", force: :cascade do |t|
