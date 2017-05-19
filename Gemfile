@@ -45,7 +45,7 @@ gem 'bcrypt', '~> 3.1', '>= 3.1.11'
 group :development do
   # Use sqlite3 as the database for Active Record
   # gem 'sqlite3'
-  gem 'pg'
+  # gem 'pg'
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '~> 3.0.5'
@@ -56,9 +56,8 @@ group :development do
   # gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
 end
 
-
-group :production do
   gem 'pg'
+group :production do
   gem "minitest-rails"
 end
 
