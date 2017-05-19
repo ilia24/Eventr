@@ -179,6 +179,8 @@
                       <%= image_tag(i.avatar.thumb) %>
                   <p> <%= i.eventrinfo.first_name %> </p>
                   <p> <%= i.eventrinfo.last_name %> </p>
+                  <%= link_to 'Accept', events_path %>
+                  <%= link_to 'Reject', events_path %>
                 <% end %>
             <% end %>
           <% end %>
