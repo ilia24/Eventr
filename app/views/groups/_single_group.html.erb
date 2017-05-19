@@ -1,17 +1,17 @@
 <div class="groups_content">
   <% if g.users.ids.include? current_user.id %>
-    <h1><%= link_to g.name, event_group_path(@event, g), class: "eventgrouplink" %></h1>
+    <h4><%= link_to g.name, event_group_path(@event, g), class: "eventgrouplink" %></h4>
   <% else %>
-    <h1><%= link_to g.name, event_group_path(@event, g), class: "intrudergrouplink" %></h1>
+    <h4><%= link_to g.name, event_group_path(@event, g), class: "intrudergrouplink" %></h4>
   <% end %>
-
-<p> <%= g.description %> </p>
 
 <ul>
   <% g.users.each do |u| %>
     <li class="profile_member"> <%= image_tag(u.avatar.thumb) %> </li>
     <% end %>
 </ul>
+
+<p> <%= g.description %> </p>
 </div>
 
 <div class="messages">
