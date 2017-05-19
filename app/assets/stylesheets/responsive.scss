@@ -60,9 +60,15 @@
 }
 
 @media screen and (max-width:415px){
+  .owl-carousel{
+    margin-top: 24px !important;
+  }
   .event_container {
     min-width: inherit;
     max-width: none;
+  }
+  .index_main {
+    margin-top: 36px !important;
   }
 }
 

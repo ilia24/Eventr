@@ -20,6 +20,10 @@
       <div class="carousel_item"><%= link_to "#{image_tag ("home-slider/john-legend-1.jpg")}".html_safe, "http://localhost:3000/events/52" %></div>
     </div>
 
+    <div class="carousel_item_container">
+      <div class="carousel_item"><%=link_to "#{image_tag("home-slider/gorillaz.jpg")}".html_safe, "http://localhost:3000/events/48" %></div>
+    </div>
+
   </section>
 
 <main class="index_main">
@@ -31,6 +35,6 @@
         </li>
       <% end %>
     </ul>
-    <h2><%= link_to "Add an event near you", new_event_path %></h2>
+    <!-- <h2><%= link_to "Add an event near you", new_event_path %></h2> -->
 
 </main>
