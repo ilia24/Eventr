@@ -1,6 +1,6 @@
 class GroupsController < ApplicationController
-  before_action :ensure_logged_in, only: [:join, :create]
-  before_action :ensure_eventrinfo_filled_out, only: [:create, :join]
+  before_action :ensure_logged_in, only: [:join, :create, :grouprequest]
+  before_action :ensure_eventrinfo_filled_out, only: [:create, :join, :grouprequest]
   before_action :load_event, :load_user
 
   def new
@@ -19,8 +19,13 @@ class GroupsController < ApplicationController
          end
        end
      end
+  end
 
-
+  def grouprequest
+    @group = @event.groups.find(params[:id])
+    @group.invited_users << @user
+    flash[:notice] = 'Sent Group Join request'
+    redirect_to event_path(@event)
   end
 
   def create
