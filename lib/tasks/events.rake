@@ -138,3 +138,9 @@ task :get_fb_events => :environment do
 
 
 end
+
+
+# create validations on event model scoped in date (name uniq within date), instead of 124-135
+# 66-103 no sense changing empty array to nil, just check if the array is nil!
+# 32-62 replace array with hash, so i can use key-val pairs to denote source/width/height
+# use figaro gem, to keep secrets off of git
