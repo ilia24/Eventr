@@ -474,6 +474,12 @@ overflow: hidden;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08);
 }
 
+.form_field {
+  input[type=checkbox] {
+    width: 20px;
+  }
+}
+
 .event_main_wrapper h4 {
   letter-spacing: 1px;
   margin-bottom: 12px;
@@ -523,7 +529,7 @@ overflow: hidden;
   flex-wrap: wrap;
   margin-left: -12px;
   margin-right: -12px;
-  transform: translateY(-280px);
+  transform: translateY(-379px);
   transition: transform 0.3s ease;
 }
 
@@ -566,7 +572,20 @@ overflow: hidden;
 .groups_content {
   height: 255px;
   padding: 24px;
+  h4 {
+    text-transform: uppercase;;
+    letter-spacing: 0;
+    a {
+      color: #262626;
+    }
+  }
+  p {
+    margin-top: 24px;
+    line-height: 24px;
+    font-size: 12px;
+  }
 }
+
 
 .groups_content:nth-child(3n-1){
   margin-left: 24px;
@@ -579,6 +598,13 @@ overflow: hidden;
 
 .groups_content ul {
   padding-left: 0;
+  display: flex;
+  li {
+    padding-left: 12px;
+  }
+  li:first-child {
+    padding-left: 0;
+  }
 }
 
 #group_name{
@@ -617,7 +643,7 @@ overflow: hidden;
 .new_group_form_container {
   display: inline-block;
   width: 100%;
-  transform: translateY(-300px);
+  transform: translateY(-379px);
   transition: transform 0.3s ease;
   .form_content {
     background-color: white;
@@ -727,6 +753,10 @@ overflow: hidden;
     padding-top: 8px;
     letter-spacing: 1px;
   }
+}
+
+.privacy {
+  padding-top: 24px;
 }
 
 .activity {

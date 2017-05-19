@@ -24,6 +24,8 @@ $(function() {
     $('.side_menu_group_content').toggleClass( "group_slide_out" );
     $('.side_menu_chat_input').toggleClass( "show_chat" );
     $('.side_menu_back_chat').toggleClass( "back_chat_slide_in" );
+    $('.event_details_btn').toggleClass('event_details_btn_slide_in');
+
   });
 
   // Collapses and reveals pending requests section

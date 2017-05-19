@@ -370,7 +370,7 @@ hr {
     font-size: 10px;
     font-weight: 400;
     letter-spacing: 1px;
-    width: 150px;
+    width: 160px;
   }
 }
 
@@ -476,7 +476,7 @@ hr {
   position: absolute;
   left: 0;
   top: 60px;
-  /*display: none;*/
+  display: none;
 }
 
 #input_name, #input_location, #input_description,
@@ -668,8 +668,19 @@ input[type=submit] {
   margin-bottom: 24px;
 }
 
+.event_details_btn_container {
+  overflow: hidden;
+  display: flex;
+}
+
 .event_details_btn {
   cursor: pointer;
+  transform: translateX(400px);
+  transition: transform 0.3s ease;
+}
+
+.event_details_btn_slide_in {
+  transform: translateX(0px);
 }
 
 .side_menu_group_event_photo {
