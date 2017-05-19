@@ -4,6 +4,7 @@ $(function() {
     loop:true,
     margin:0,
     nav:true,
+    navText: ['<i class="fa fa-angle-left fa-2x" aria-hidden="true"></i>','<i class="fa fa-angle-right fa-2x" aria-hidden="true"></i>'],
     center:true,
     autoWidth:true,
     autoHeight:true,
