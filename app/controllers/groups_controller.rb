@@ -41,6 +41,21 @@ class GroupsController < ApplicationController
       redirect_to event_path(@event)
   end
 
+  def acceptrequest
+    @group = @event.groups.find(params[:id])
+    @accepteduser = User.find(Request.find(params[:request_id]).user_id)
+    @group.users << @accepteduser
+    Request.delete(params[:request_id])
+    flash[:notice] = 'Request accepted!'
+    redirect_to event_path(@event)
+  end
+
+  def rejectrequest
+    Request.delete(params[:request_id])
+    flash[:notice] = 'Request reject!'
+    redirect_to event_path(@event)
+  end
+
   def create
     @event.groups.each do |g|
       if g.users.include? @user
