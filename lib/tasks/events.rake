@@ -1,7 +1,7 @@
 require 'json'
 
 task :get_fb_events => :environment do
-  limit = 75
+  limit = 350
   token = 'EAAJvMHABPa8BALK8v2LDZA3YgbSZCpPQ3ZCsFGljZC6qmzEq75EordnB9qcYZBr4jZCHelTNdvycYneQGDV2AuiZBkGwBCEZC6H3bQqjssfToNlF1FLn8qHbiGJ4UOw4PDYdiHeNlLZCmuSHlHaF6amovA7daXAxwSSc37GiXOR9bzAZDZD'
    event_ids = HTTParty.get("https://graph.facebook.com/v2.9/search?pretty=0&q=toronto&type=event&limit=#{limit}&fields=id&access_token=#{token}")
    parsed_response = JSON.parse(event_ids.body)
@@ -15,16 +15,25 @@ task :get_fb_events => :environment do
      puts "#{counter} Events grabbed & saved"
      resp = HTTParty.get("https://graph.facebook.com/v2.7/#{event}?fields=photos%7Bfrom%2Ccreated_time%2Cwebp_images%7D%2Cname%2C%20description%2C%20place%2C%20ticket_uri%2C%20start_time%2Cadmins%7Bname%7D%2Ccover&access_token=#{token}")
 
-
     #  this makes the first series of authentication, it makes sure the pictures are uploaded from an admin account
      pictures = []
      admin_id_list = []
      whitelist = ["Electro Swing Toronto", "Live Nation Ontario", "Live Nation","Budweiser Stage","TicketBeast Canada", "TicketMaster"]
-     resp['admins']['data'].each do |dat|
-       admin_id_list << dat['id']
+
+     if resp.dig('admins', 'data') == nil
+       puts "Event has no admins, not saved"
+       next
+     else
+       resp['admins']['data'].each do |dat|
+         admin_id_list << dat['id']
+       end
      end
 
     #  this takes each picture and puts them into one big array(as they are split up into weird hashes initially)
+    if resp.dig('photos', 'data') == nil
+      puts "Event has nil photos, not saved."
+      next
+    else
      resp['photos']['data'].each do |photo_data|
        if (admin_id_list.each.include? photo_data['from']['id']) || (whitelist.include? photo_data['from']['name'])
          photo_data['webp_images'].each do |picture|
@@ -36,6 +45,7 @@ task :get_fb_events => :environment do
          end
        end
      end
+   end
 
     #  this iterates through the array and picks out big, medium, and small pics
      bigpic = []
@@ -50,6 +60,7 @@ task :get_fb_events => :environment do
          smallpic << pic
        end
      end
+
 
 # some final checks to make sure a nil array doesnt crash the final create function
      if smallpic.empty?
@@ -84,6 +95,7 @@ task :get_fb_events => :environment do
        picurl2 = bigpic.first[0]
      end
 
+
      if resp.dig('cover', 'source') == nil
        cover = mediumpic
      else
@@ -99,7 +111,6 @@ task :get_fb_events => :environment do
      longitude = resp.dig('place', 'location', 'longitude')
      time = resp['start_time']
      date = resp['start_time']
-
 # this makes sure that the adress is workable within our system
      if (latitude.nil? && longitude.nil?) && (location.nil?)
        puts "#{name} has invalid address, event not saved"

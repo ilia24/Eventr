@@ -41,6 +41,14 @@ class GroupsController < ApplicationController
       redirect_to event_path(@event)
   end
 
+  def acceptrequest
+
+  end
+
+  def rejectrequest
+
+  end
+
   def create
     @event.groups.each do |g|
       if g.users.include? @user
