@@ -21,7 +21,7 @@ class User < ApplicationRecord
   has_many :members
   has_many :requests
   has_many :groups, through: :members
-  has_many :groups, through: :requests
+  has_many :requested_groups, through: :requests, class_name: 'Group'
   has_many :messages, dependent: :destroy
 
 
