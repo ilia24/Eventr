@@ -29,6 +29,33 @@ height: 543px;
 overflow: hidden;
 }
 
+.carousel_item_text {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 80%;
+  text-align: center;
+  color: white;
+  letter-spacing: 4px;
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  .button_container {
+    display: flex;
+    justify-content: center;
+    margin-top: 36px;
+  }
+  .button_sm_outline {
+    text-align: center;
+    border: solid 2px white;
+    width: 200px;
+    padding: 15px 0 15px 0;
+    h4{
+      font-size: 12px;
+    }
+  }
+}
+
 .carousel_item {
   width: 80vw;
   height: 100%;
