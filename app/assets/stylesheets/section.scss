@@ -286,6 +286,22 @@ overflow: hidden;
   width: 100%;
 }
 
+.event_index_search_mobile {
+  display: none;
+  background-color: white;
+  position: relative;
+  top: -45px;
+  margin: 0 100px 0 100px;
+  .event_going {
+    border: solid 1px #d4d4d4;
+    justify-content: flex-end;
+  }
+}
+
+.event_index_search_filter {
+  flex-grow: 1;
+}
+
 .jlegend {
   left: 0;
   position: absolute;

@@ -6,7 +6,7 @@
   }
 }
 
-@media screen and (max-width:1125px){
+@media screen and (max-width:1240px){
   .nav_links {
     display: none;
   }
@@ -110,5 +110,25 @@
   .owl-next {
     position: relative;
     right: 24px;
+  }
+}
+
+
+// EVENT INDEX
+
+@media screen and (max-width:1140px){
+  .index_search {
+    display: none;
+  }
+  .event_index_search_mobile {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width:501px){
+  .event_index_search_mobile, .events_all {
+    margin-left: 24px;
+    margin-right: 24px;
   }
 }
