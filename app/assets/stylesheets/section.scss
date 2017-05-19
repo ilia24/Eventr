@@ -37,6 +37,19 @@ overflow: hidden;
   // text-align: center;
 }
 
+.owl-carousel {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+}
+
+.owl-nav {
+  justify-content: space-between !important;
+  width: 100vw;
+  color: white;
+  position: absolute;
+}
+
 #weeknd_text {
   position: absolute;
   width: 100%;
