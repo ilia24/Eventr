@@ -3,7 +3,7 @@ $(function() {
 if($('#map').length) {
     var lat = parseFloat($('#map').attr('data-parameter1'));
     var lng = parseFloat($('#map').attr('data-parameter2'));
-    var eventlocation = {lat, lng};
+    var eventlocation = {lat: lat, lng: lng};
 
     var map = new google.maps.Map(document.getElementById('map'), {
       zoom: 15,
@@ -25,7 +25,7 @@ $('#single_group').on('click', function(e){
 
   $('.new_group_form_container').toggleClass( "formdisp" );
   $('.groups_container').toggleClass("shift");
-  $('#single_group').toggleClass('hidegrouplink')
+  $('#single_group').toggleClass('hidegrouplink');
 });
 
 
@@ -35,7 +35,7 @@ $('#closegroupform').on('click', function(e) {
 
   $('.new_group_form_container').toggleClass( "formdisp" );
   $('.groups_container').toggleClass("shift");
-  $('#single_group').toggleClass('hidegrouplink')
+  $('#single_group').toggleClass('hidegrouplink');
 });
 
 // This is an ajax call to create a new group within the event page
@@ -50,15 +50,15 @@ $('#new_group').on('submit', function(e) {
 
   }).done(function(data){
     console.log('ajax submission succeeded')
-    var group = $('<li>').html(data).attr('class', 'groups')
-    $('.groups_container').prepend(group)
+    var group = $('<li>').html(data).attr('class', 'groups');
+    $('.groups_container').prepend(group);
     $('.new_group_form_container').toggleClass( "formdisp" );
     $('.groups_container').toggleClass("shift");
-    $('#single_group').toggleClass('hidegrouplink')
+    $('#single_group').toggleClass('hidegrouplink');
   }).fail(function(data){
-    console.log('ajax submission failed')
+    console.log('ajax submission failed');
   }).always(function(){
-    console.log('ajax ran')
+    console.log('ajax ran');
   });
 
 });

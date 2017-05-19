@@ -75,6 +75,9 @@ Rails.application.configure do
   # require 'syslog/logger'
   # config.logger = ActiveSupport::TaggedLogging.new(Syslog::Logger.new 'app-name')
 
+  config.action_cable.allowed_request_origins = ['https://eventr-toronto.herokuapp.com', 'http://eventr-toronto.herokuapp.com']
+  config.action_cable.url = "wss://eventr-toronto.herokuapp.com/cable"
+
   if ENV["RAILS_LOG_TO_STDOUT"].present?
     logger           = ActiveSupport::Logger.new(STDOUT)
     logger.formatter = config.log_formatter

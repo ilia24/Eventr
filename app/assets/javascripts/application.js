@@ -26,10 +26,10 @@ $(function() {
   if ($(window).width() > 590) {
     $(".eventr_home_btn").hover(
       function() {
-        $(this).attr("src", "/assets/eventr-logo.gif");
+        $(this).attr("src", "/assets/images/eventr-logo.gif");
       },
       function() {
-        $(this).attr("src", "/assets/eventr-logo.svg");
+        $(this).attr("src", "/assets/images/eventr-logo.svg");
       });
   }
 
