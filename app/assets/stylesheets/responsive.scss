@@ -6,13 +6,16 @@
   }
 }
 
-@media screen and (max-width:1125px){
+@media screen and (max-width:1240px){
   .nav_links {
     display: none;
   }
   .nav_search {
     flex-grow: 1;
     width: auto;
+  }
+  .dropdown_mobile {
+    display: block;
   }
 }
 
@@ -37,5 +40,95 @@
 @media screen and (max-width:822px){
   nav {
     padding: 0 24px 0 24px;
+  }
+}
+
+
+// HOME PAGE
+
+@media screen and (min-width:416px) and (max-width:801px){
+  .event_container {
+    min-width: inherit;
+    max-width: none;
+  }
+  .event_img {
+    img {
+      height: auto;
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (max-width:415px){
+  .owl-carousel{
+    margin-top: 24px !important;
+  }
+  .event_container {
+    min-width: inherit;
+    max-width: none;
+  }
+  .index_main {
+    margin-top: 36px !important;
+  }
+}
+
+@media screen and (max-width:1210px){
+  .carousel_item_container {
+    height: 100%;
+  }
+}
+
+@media screen and (max-width:587px){
+  .carousel_item {
+    width: 100vw;
+  }
+}
+
+@media screen and (max-width:501px){
+  .index_main {
+    margin-left: 24px;
+    margin-right: 24px;
+  }
+}
+
+@media screen and (min-width:589px) and (max-width:931px){
+  .owl-prev {
+    position: relative;
+    left: 100px;
+  }
+  .owl-next {
+    position: relative;
+    right: 100px;
+  }
+}
+
+@media screen and (min-width:1086px) {
+  .owl-prev {
+    position: relative;
+    left: 24px;
+  }
+  .owl-next {
+    position: relative;
+    right: 24px;
+  }
+}
+
+
+// EVENT INDEX
+
+@media screen and (max-width:1140px){
+  .index_search {
+    display: none;
+  }
+  .event_index_search_mobile {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width:501px){
+  .event_index_search_mobile, .events_all {
+    margin-left: 24px;
+    margin-right: 24px;
   }
 }

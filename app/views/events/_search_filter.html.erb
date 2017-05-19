@@ -1,0 +1,46 @@
+<div class="event_index_search_mobile">
+
+  <div class="event_index_search_filter">
+
+    <div class="form_field" id="search">
+      <div class="search_label" >
+        <h5>SEARCH</h5>
+      </div>
+      <h4><%= form_tag(events_path, :method => "get") do %>
+        <%= text_field_tag :search, params[:search], placeholder: "The Weeknd" %>
+        <% end %> </h4>
+      </div>
+
+      <div class="search_collapse">
+
+        <div class="form_field">
+          <div class="search_label">
+            <h5>WHERE</h6>
+            </div>
+            <div class="search_field">
+              <h4><%= form_tag(events_path, :method => "get") do %>
+                <%= text_field_tag :search, params[:where_search], placeholder: "Toronto" %>
+                <% end %> </h4>
+              </div>
+            </div>
+
+            <div class="form_field">
+              <div class="search_label">
+                <h5>CATEGORY</h6>
+                </div>
+                <div class="search_field">
+                  <h4><%= form_tag(events_path, :method => "get") do %>
+                    <%= text_field_tag :search, params[:category_search], placeholder: "Music" %>
+                    <% end %> </h4>
+                  </div>
+                </div>
+
+                <div class="event_going">
+                  <input type="submit" value="SEARCH" form="my_search_form">
+                </div>
+      </div>
+  </div>
+
+
+
+</div>

@@ -4,6 +4,7 @@ $(function() {
     loop:true,
     margin:0,
     nav:true,
+    navText: ['<i class="fa fa-angle-left fa-3x" aria-hidden="true"></i>','<i class="fa fa-angle-right fa-3x" aria-hidden="true"></i>'],
     center:true,
     autoWidth:true,
     autoHeight:true,
@@ -18,7 +19,7 @@ $(function() {
             items:1
         },
         1000:{
-            items:3
+            items:1
         }
     }
   })

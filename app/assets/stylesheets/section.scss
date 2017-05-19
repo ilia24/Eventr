@@ -37,6 +37,19 @@ overflow: hidden;
   // text-align: center;
 }
 
+.owl-carousel {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+}
+
+.owl-nav {
+  justify-content: space-between !important;
+  width: 100vw;
+  color: white;
+  position: absolute;
+}
+
 #weeknd_text {
   position: absolute;
   width: 100%;
@@ -83,6 +96,9 @@ overflow: hidden;
 
 .index_main {
   margin-top: 70px;
+  h3 {
+    padding: 0 6px 0 6px;
+  }
 }
 
 .header_slider {
@@ -91,13 +107,11 @@ overflow: hidden;
 
 #events_near_you {
   display: flex;
-  /*margin: auto;*/
   justify-content: space-around;
   flex-shrink: 1;
   flex-wrap: wrap;
   padding-left: 0;
   list-style-type: none;
-
 }
 
 .event_container {
@@ -216,7 +230,7 @@ overflow: hidden;
 }
 
 .events {
-  height: 347px;
+  height: 366px;
   max-width: 900px;
   display: flex;
   flex-direction: column;
@@ -272,6 +286,22 @@ overflow: hidden;
   width: 100%;
 }
 
+.event_index_search_mobile {
+  display: none;
+  background-color: white;
+  position: relative;
+  top: -45px;
+  margin: 0 100px 0 100px;
+  .event_going {
+    border: solid 1px #d4d4d4;
+    justify-content: flex-end;
+  }
+}
+
+.event_index_search_filter {
+  flex-grow: 1;
+}
+
 .jlegend {
   left: 0;
   position: absolute;
@@ -307,12 +337,21 @@ overflow: hidden;
   justify-content: space-between;
   /*border: solid 1px #d4d4d4;*/
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  input {
+    height: 99px;
+    padding: 0;
+  }
 }
 
 .search_inputs {
   display: flex;
   align-items: center;
   width: 80%;
+  h4 {
+    input{
+      height: 20px;
+    }
+  }
 }
 
 .search_label {
