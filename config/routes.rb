@@ -14,6 +14,7 @@ end
 
 
 get '/events/:event_id/groups/:id/request', to: 'groups#grouprequest', as: 'request_to_join_group'
+delete '/events/:event_id/groups/:id/request', to: 'groups#deleterequest', as: 'delete_request_to_join_group'
 
 
 get '/events/:event_id/groups/:id/join', to: 'groups#join', as: 'join_group'

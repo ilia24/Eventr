@@ -14,8 +14,16 @@ class Group < ApplicationRecord
 
 
   def setowner(user)
-    self.users << user
     usergroup = user.members.find_by(group_id: self.id)
     usergroup.update(owner: true)
+  end
+
+  def removeempty
+    if self.users.empty?
+      self.delete
+      true
+    else
+      false
+    end
   end
 end

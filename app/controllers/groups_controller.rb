@@ -23,9 +23,22 @@ class GroupsController < ApplicationController
 
   def grouprequest
     @group = @event.groups.find(params[:id])
-    @group.invited_users << @user
-    flash[:notice] = 'Sent Group Join request'
-    redirect_to event_path(@event)
+    if @group.invited_users.include? @user
+      flash[:notice] = 'Invite already pending!'
+      redirect_to event_path(@event)
+    else
+      @group.invited_users << @user
+      flash[:notice] = 'Sent Group Join request'
+      redirect_to event_path(@event)
+    end
+  end
+
+  def deleterequest
+    @group = @event.groups.find(params[:id])
+
+      @group.invited_users.destroy(@user)
+      flash[:notice] = 'Group request removed!'
+      redirect_to event_path(@event)
   end
 
   def create
@@ -39,8 +52,9 @@ class GroupsController < ApplicationController
     @group = @event.groups.build(group_params)
 
     if  @group.save
-      @group.setowner(current_user)
-      @event.adduser(current_user)
+      @group.users << @user
+      @group.setowner(@user)
+      @event.adduser(@user)
       render :partial => '/groups/single_group', locals: {g: @group}
     else
       render :status => 200
@@ -53,6 +67,19 @@ class GroupsController < ApplicationController
 
   def join
     @group = Group.find(params[:id])
+
+    @event.groups.all.each do |g|
+      if g.users.include? @user
+        flash[:notice] = 'You are already in a group'
+        redirect_to event_path(@event)
+        return
+      elsif g.invited_users.include? @user
+        flash[:notice] = 'You have a group invite pending!'
+        redirect_to event_path(@event)
+        return
+      end
+    end
+
     if @group.users.include? @user
       flash[:notice] = 'You are already in this group'
       redirect_to event_path(@event)
@@ -68,9 +95,9 @@ class GroupsController < ApplicationController
     @group.users.delete(@user)
     flash[:notice] = 'You have left this group!'
     redirect_to event_path(@event)
-
-    if @group.users.empty?
-      @group.delete
+    a = @group.removeempty
+    if a == false
+      @group.setowner(@group.users.first)
     end
   end
 

@@ -32,6 +32,7 @@ def dropusergroups(user)
   end
 end
 
+
 def adduser(user)
   if self.users.exclude? user
     self.users << user
