@@ -1,0 +1,16 @@
+current directory: /Users/briandu/bitmaker/projects/Eventr/eventr/vendor/bundle/ruby/2.4.0/gems/binding_of_caller-0.7.2/ext/binding_of_caller
+/usr/local/opt/ruby/bin/ruby -r ./siteconf20170521-2849-1uu3h8v.rb extconf.rb
+
+current directory: /Users/briandu/bitmaker/projects/Eventr/eventr/vendor/bundle/ruby/2.4.0/gems/binding_of_caller-0.7.2/ext/binding_of_caller
+make "DESTDIR=" clean
+make: *** No rule to make target `clean'.  Stop.
+
+current directory: /Users/briandu/bitmaker/projects/Eventr/eventr/vendor/bundle/ruby/2.4.0/gems/binding_of_caller-0.7.2/ext/binding_of_caller
+make "DESTDIR="
+echo "Nada."
+Nada.
+
+current directory: /Users/briandu/bitmaker/projects/Eventr/eventr/vendor/bundle/ruby/2.4.0/gems/binding_of_caller-0.7.2/ext/binding_of_caller
+make "DESTDIR=" install
+echo "Nada."
+Nada.
