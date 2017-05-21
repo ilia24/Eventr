@@ -989,7 +989,11 @@ i.fa.fa-circle {
 // FOOTER
 
 footer {
-  margin-top: 80px;
-  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 100px 0 100px 0;
   padding: 0 100px 0 100px;
+  .footer_company {
+
+  }
 }
