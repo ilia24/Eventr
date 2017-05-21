@@ -993,7 +993,22 @@ footer {
   justify-content: space-between;
   margin: 100px 0 100px 0;
   padding: 0 100px 0 100px;
-  .footer_company {
-
+  div {
+    display: flex;
+    flex-direction: column;
+    h4 {
+      font-weight: 400;
+      letter-spacing: 1px;
+    }
+    a {
+      font-size: 12px;
+      color: #7f7f7f;
+    }
+  }
+  .footer_main{
+    margin-right: 3em;
+  }
+  .footer_company, .footer_eventrs, .footer_hostrs {
+    flex-grow: 2;
   }
 }
