@@ -423,10 +423,11 @@ hr {
 }
 
 .button_sm_outline_black {
-  color: #262626;
-  border: 1px solid #262626;
+  background-color: transparent;
+  border: 1px solid #595959;
   font-size: 10px;
   font-weight: 400;
+  padding: 10px 15px 10px 15px;
   letter-spacing: 1px;
   text-transform: uppercase;
   text-align: center;;
@@ -983,4 +984,35 @@ i.fa.fa-circle {
 
 #messages {
   overflow-y: auto;
+}
+
+
+// FOOTER
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  margin: 100px 0 100px 0;
+  padding: 0 100px 0 100px;
+  div {
+    display: flex;
+    flex-direction: column;
+    h4 {
+      font-weight: 400;
+      letter-spacing: 1px;
+    }
+    a {
+      font-size: 12px;
+      color: #7f7f7f;
+    }
+  }
+  .footer_main{
+    margin-right: 3em;
+    .button_sm_outline_black {
+      margin-top: 24px;
+    }
+  }
+  .footer_company, .footer_eventrs, .footer_hostrs {
+    flex-grow: 2;
+  }
 }
