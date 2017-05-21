@@ -65,7 +65,7 @@ end
 
 #this gem allows for users to upload photos
 gem 'carrierwave', '~> 1.0'
-gem "mini_magick"
+# gem "mini_magick"
 gem 'cloudinary'
 
 #this gem is necessary for map and location functionality
