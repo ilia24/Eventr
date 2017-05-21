@@ -1,4 +1,5 @@
 $(function() {
+function loadAlert() {
   App.user_alert = App.cable.subscriptions.create({
     channel: "AlertsChannel",
   }, {
@@ -12,4 +13,14 @@ $(function() {
 
     }
   });
+};
+
+if (document.cookie === "") {
+  console.log('user not logged in, not launching alerts cable')
+  return
+} else {
+  loadAlert();
+  $("#eventdata").remove();
+};
+
 });
