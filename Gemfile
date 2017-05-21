@@ -66,6 +66,7 @@ end
 #this gem allows for users to upload photos
 gem 'carrierwave', '~> 1.0'
 gem "mini_magick"
+gem "fog-aws"
 
 #this gem is necessary for map and location functionality
 gem 'geocoder'
