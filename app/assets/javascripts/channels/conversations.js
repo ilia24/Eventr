@@ -1,19 +1,26 @@
-$(document).ready( function() {
+$(document).ready(function(){
 
-  var messages_to_bottom = () => messages.scrollTop(messages.prop("scrollHeight"));
+  var messages_to_bottom = function() {
+    return messages.scrollTop(messages.prop("scrollHeight"));
+  };
+  messages_to_bottom();
   var messages = $('#conversation-body');
 
   if ($('#current-user').size() > 0) {
     App.personal_chat = App.cable.subscriptions.create({
       channel: "NotificationsChannel"
     }, {
-    connected() {},
+    connected: function() {
+      console.log('Connected')
+    },
       // Called when the subscription is ready for use on the server
 
-    disconnected() {},
+    disconnected: function() {
+      console.log('disconnected')
+    },
       // Called when the subscription has been terminated by the server
 
-    received(data) {
+    received: function(data) {
       console.log(data);
       if ((messages.size() > 0) && (messages.data('conversation-id') === data['conversation_id'])) {
         console.log('if is true');
@@ -22,7 +29,10 @@ $(document).ready( function() {
       }
       else {
         console.log('else is true');
-        if ($('#conversations').size() > 0) { $.getScript('/conversations'); }
+        if ($('#conversations').size() > 0) {
+          $.getScript('/conversations');
+
+        }
 
         if (data['notification']) {
           console.log("notified");
@@ -31,12 +41,14 @@ $(document).ready( function() {
       }
     },
 
-    send_message(message, conversation_id, message_receiver_id) {
-      return this.perform('send_message', {message, conversation_id, message_receiver_id});
+    send_message: function(message, conversation_id, message_receiver_id) {
+      return this.perform('send_message', {
+      message: message,
+      conversation_id: conversation_id,
+      message_receiver_id: message_receiver_id
+      });
     }
-  }
-    );
-  }
+    });
 
   $(document).on('click', '#notification .close', function() {
     return $(this).parents('#notification').fadeOut(1000);
@@ -55,4 +67,4 @@ $(document).ready( function() {
       return false;
     });
   }
-});
+}});
