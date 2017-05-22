@@ -21,8 +21,9 @@ Review.destroy_all
 #Create Eventr userbase
 a = User.create(email: 'ilia@gmail.com', password: 'iliaisdnfioj')
 Eventrinfo.create(first_name: 'Ilia', last_name: 'Demertchian',bio: "i like food", user: User.find(a))
-#
-# b = User.create(email: 'pritam@gmail.com', password: 'pritam')
+
+
+#b = User.create(email: 'pritam@gmail.com', password: 'pritam')
 # Eventrinfo.create(first_name: 'Pritam', last_name: 'Das',bio: "i like music and stuff", user: User.find(b))
 #
 # c = User.create(email: 'brian@gmail.com', password: 'brian')
