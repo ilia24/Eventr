@@ -1,6 +1,6 @@
 $(document).ready( function() {
 
-  let messages_to_bottom = () => messages.scrollTop(messages.prop("scrollHeight"));
+  var messages_to_bottom = () => messages.scrollTop(messages.prop("scrollHeight"));
   var messages = $('#conversation-body');
 
   if ($('#current-user').size() > 0) {
