@@ -61,3 +61,36 @@ $(function() {
   }
 
 });
+
+
+$(document).ready(function(){
+
+  $('.sendmessage').on('click', function(){
+    location.reload();
+  })
+
+  var messager = $('<div>').addClass('messager').css('display', 'none');
+  $('body').append(messager);
+
+  $('.pledge-convo').click(function(e){
+    e.preventDefault();
+    $.ajax({
+      url:'/personal_messages/new',
+      method: 'GET',
+      data: {
+        receiver_id: $(this).attr('data-receiver-id')
+      }
+    }).done(function(data){
+      $('.messager').html(data);
+
+      var hidden = $('.messager');
+    if (hidden.hasClass('visible')){
+      console.log('if');
+        hidden.animate({left:"-1000px"}).removeClass('visible');
+    } else {
+      console.log('else');
+        hidden.show().animate({left:"0px"}).addClass('visible');
+    }
+    })
+  })
+});
