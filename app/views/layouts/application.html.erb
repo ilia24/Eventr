@@ -300,40 +300,13 @@
 
   <body>
     <%= yield %>
+
+    <footer>
+      <%= render 'layouts/footer' %>
+    </footer>
+
   </body>
 
-  <footer>
 
-    <div class="footer_main">
-      <%= image_tag('eventr-logo.svg') %>
-      <div class="button_sm_outline_black"><%= link_to "Contact"%></div>
-    </div>
-
-    <div class="footer_company">
-      <h4>COMPANY</h4><br>
-      <%= link_to "About" %><br>
-      <%= link_to "Privacy" %><br>
-      <%= link_to "Terms & Conditions" %><br>
-      <%= link_to "Press & Media" %><br>
-      <%= link_to "Contact Us" %>
-    </div>
-
-    <div class="footer_eventrs">
-      <h4>FOR EVENTRS</h4><br>
-      <%= link_to "How to Register" %><br>
-      <%= link_to "Help Center" %><br>
-      <%= link_to "User List" %><br>
-      <%= link_to "Forum" %>
-    </div>
-
-    <div class="footer_hostrs">
-      <h4>FOR HOSTRS</h4><br>
-      <%= link_to "How to Become a Partner" %><br>
-      <%= link_to "Help Center" %><br>
-      <%= link_to "Partner List" %>
-    </div>
-
-
-  </footer>
 
 </html>

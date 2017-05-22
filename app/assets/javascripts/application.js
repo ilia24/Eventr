@@ -19,6 +19,9 @@
 //= require carousel.js
 //= require side_menu.js
 //= require search_filter.js
+//= require home.js
+
+
 
 $(function() {
 

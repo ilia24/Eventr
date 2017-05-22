@@ -61,7 +61,30 @@ overflow: hidden;
   height: 100%;
   padding-left: 24px;
   padding-right: 24px;
-  // text-align: center;
+  transform: translateY(30px);
+  transition: transform 1.0s ease;
+}
+
+.home_event_name {
+  transform: translateY(30px);
+  transition: transform 1.0s ease;
+}
+
+#home_event_buy_btn {
+  transform: translateY(30px);
+  transition: transform 1.0s ease;
+}
+
+.home_event_name_slide {
+  transform: translateY(0);
+}
+
+.home_event_buy_slide {
+  transform: translateY(0);
+}
+
+.carousel_item_slide_up {
+  transform: translateY(0);
 }
 
 .owl-carousel {
@@ -460,7 +483,8 @@ overflow: hidden;
   background-color: white;
   width: 100%;
   display: flex;
-  border: solid 1px #dfdfdf;
+  border-top: solid 1px #dfdfdf;
+  border-bottom: solid 1px #dfdfdf;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08);
 }
 
