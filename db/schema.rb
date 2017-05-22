@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170522230555) do
+ActiveRecord::Schema.define(version: 20170522233024) do
 
   create_table "comments", force: :cascade do |t|
     t.text    "content"
@@ -25,9 +25,8 @@ ActiveRecord::Schema.define(version: 20170522230555) do
     t.integer  "receiver_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.index ["author_id", "receiver_id"], name: "index_conversations_on_author_id_and_receiver_id", unique: true
-    t.index ["author_id"], name: "index_conversations_on_author_id"
-    t.index ["receiver_id"], name: "index_conversations_on_receiver_id"
+    t.index ["author_id"], name: "index_conversations_on_author_id", unique: true
+    t.index ["receiver_id"], name: "index_conversations_on_receiver_id", unique: true
   end
 
   create_table "eventrinfos", force: :cascade do |t|
