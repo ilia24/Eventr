@@ -112,11 +112,10 @@
   <div class="trigger_chat_btn_container">
 
     <div class="notification_count">
-      <i class="fa fa-circle fa-lg"></i>
-      <h6>
-        <!-- Notification count code here (remove the '1')-->
-        1
-      </h6>
+      <% if @user && @user.ownedrequests.empty? == false %>
+        <i class="fa fa-circle fa-lg"></i>
+        <h6> <%= @user.ownedrequests.count %> </h6>
+      <% end %>
     </div>
 
     <div class="trigger_chat_btn">
@@ -214,7 +213,7 @@
                             <%= link_to 'Accept', accept_request_path(event_id: m.group.event_id, id: m.group.id, request_id: i.request_ids) %>
                           </div>
                           <div class="button_sm_outline_black">
-                            <%= link_to 'Reject', reject_request_path(event_id: m.group.event_id, request_id: i.request_ids) %>
+                            <%= link_to 'Reject', reject_request_path(event_id: m.group.event_id, id: m.group.id, request_id: i.request_ids) %>
                           </div>
                         </div>
                       </div>

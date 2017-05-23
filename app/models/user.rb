@@ -30,6 +30,18 @@ class User < ApplicationRecord
 
   has_many :personal_messages, dependent: :destroy
 
+  def ownedrequests
+    requests = []
+    self.members.all.each do |m|
+      if (m.owner == true) && (m.group.invited_users.empty? != true)
+        m.group.invited_users.each do |i|
+          requests << i
+        end
+      end
+    end
+    return requests
+  end
+
 
   def channel
     "alerts_#{id}_channel"
