@@ -41,6 +41,10 @@
   nav {
     padding: 0 24px 0 24px;
   }
+  // footer {
+  //   margin: 0 24px 0 24px;
+  //   padding: 0;
+  // }
 }
 
 // HOME PAGE
@@ -132,5 +136,24 @@
   .event_index_search_mobile, .events_all {
     margin-left: 24px;
     margin-right: 24px;
+  }
+}
+
+// FOOTER
+
+@media screen and (max-width:960px) {
+  footer {
+    flex-wrap: wrap;
+    // flex-direction: column;
+    .footer_main {
+      width: 100%;
+      margin-bottom: 24px;
+      img {
+        width: 140px;
+      }
+      .button_sm_outline_black {
+        width: 120px;
+      }
+    }
   }
 }
