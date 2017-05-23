@@ -26,15 +26,15 @@
 $(function() {
 
   // if screen width is less than 590px remove event logo animation
-  if ($(window).width() > 590) {
+  // if ($(window).width() > 590) {
     $(".eventr_home_btn").hover(
       function() {
-        $(this).attr("src", image_url("/assets/images/eventr-logo.gif"));
+        $(this).attr("src", "/assets/images/eventr-logo.gif");
       },
       function() {
-        $(this).attr("src", image_url("/assets/images/eventr-logo.svg"));
+        $(this).attr("src", "/assets/images/eventr-logo.svg");
       });
-  }
+  // }
 
   // Reveal mobile dropdown menu
   $('.dropdown_mobile').hide();

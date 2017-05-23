@@ -1,21 +1,32 @@
+
 <div class="complete_profile_wrapper">
 
   <div class="complete_profile_container">
 
-
-
     <div class="form_content">
+
 
       <%= form_for ([@user, @eventrinfo]) do |f| %>
 
+      <%= f.file_field :avatar, :id=>"upload_avatar_btn" %>
+
       <div class="form_field" id="profile_first_name">
+
         <div class="user_profile_image_wrapper">
+
           <div class="user_profile_image">
+
+            <div class="upload_avatar_btn">
+              <i class="fa fa-camera-retro fa-lg"></i>
+            </div>
             <%= image_tag(current_user.avatar) %>
           </div>
+
         </div>
+
         <%= f.label :first_name %>
         <%= f.text_field :first_name %>
+
       </div>
 
       <div class="form_field">
@@ -26,11 +37,6 @@
       <div class="form_field">
         <%= f.label :about_you %>
         <%= f.text_field :bio %>
-      </div>
-
-      <div class="form_field">
-        <%= f.label :avatar %>
-        <%= f.file_field :avatar %>
       </div>
 
       <div class="event_going">
