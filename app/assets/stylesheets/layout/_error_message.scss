@@ -1,0 +1,15 @@
+.error {
+  display: none;
+  align-items: center;
+  position: absolute;
+  color: white;
+  background-color: #DA4F4F;
+  padding: 12px;
+  margin-left: 12px;
+  border-radius: 20%;
+  .fa:first-child {
+    position: absolute;
+    left: -7px;
+    color: #DA4F4F;
+  }
+}
