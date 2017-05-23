@@ -211,10 +211,10 @@
                         <p>wants to join <strong><%= m.group.name %></strong></p>
                         <div class="accept_reject">
                           <div class="button_sm">
-                            <%= link_to 'Accept', accept_request_path(@event.id, id: m.group.id, request_id: i.request_ids) %>
+                            <%= link_to 'Accept', accept_request_path(event_id: m.group.event_id, id: m.group.id, request_id: i.request_ids) %>
                           </div>
                           <div class="button_sm_outline_black">
-                            <%= link_to 'Reject', reject_request_path(@event.id, id: m.group.id, request_id: i.request_ids) %>
+                            <%= link_to 'Reject', reject_request_path(event_id: m.group.event_id, request_id: i.request_ids) %>
                           </div>
                         </div>
                       </div>
