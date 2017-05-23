@@ -112,11 +112,10 @@
   <div class="trigger_chat_btn_container">
 
     <div class="notification_count">
-      <i class="fa fa-circle fa-lg"></i>
-      <h6>
-        <!-- Notification count code here (remove the '1')-->
-        1
-      </h6>
+      <% if @user && @user.ownedrequests.empty? == false %>
+        <i class="fa fa-circle fa-lg"></i>
+        <h6> <%= @user.ownedrequests.count %> </h6>
+      <% end %>
     </div>
 
     <div class="trigger_chat_btn">
@@ -193,28 +192,24 @@
         <h5 id="pending">PENDING REQUESTS <i class="fa fa-chevron-up"></i></h5>
 
         <div class="side_menu_main_pending">
-          <% if @user.members.empty? != true %>
-          <% @user.members.each do |m| %>
-            <%  if (m.owner == true) && (m.group.invited_users.empty? != true) %>
-
-                <% m.group.invited_users.each do |i| %>
-
+          <% if @user.ownedrequests.empty? != true %>
+          <% @user.ownedrequests.each do |request| %>
                     <div class="request_pending_container">
 
                       <div class="profile_thumbnail">
-                        <%= image_tag(i.avatar.thumb) %>
+                        <%= image_tag(request.invited_user.avatar.thumb) %>
                       </div>
 
                       <div class="request_pending_info">
 
-                        <%= i.eventrinfo.first_name %> <%= i.eventrinfo.last_name %>
-                        <p>wants to join <strong><%= m.group.name %></strong></p>
+                        <%= request.invited_user.eventrinfo.first_name %> <%= request.invited_user.eventrinfo.last_name %>
+                        <p>wants to join <strong><%= request.requested_group.name %></strong></p>
                         <div class="accept_reject">
                           <div class="button_sm">
-                            <%= link_to 'Accept', accept_request_path(@event.id, id: m.group.id, request_id: i.request_ids) %>
+                            <%= link_to 'Accept', accept_request_path(event_id: request.requested_group.event_id, id: request.group_id, request_id: request.id) %>
                           </div>
                           <div class="button_sm_outline_black">
-                            <%= link_to 'Reject', reject_request_path(@event.id, id: m.group.id, request_id: i.request_ids) %>
+                            <%= link_to 'Reject', reject_request_path(event_id: request.requested_group.event_id, id: request.group_id, request_id: request.id) %>
                           </div>
                         </div>
                       </div>
@@ -222,8 +217,6 @@
                     </div>
 
                 <% end %>
-            <% end %>
-          <% end %>
           <% end %>
         </div>
 
