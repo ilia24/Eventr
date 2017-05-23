@@ -76,3 +76,16 @@ nav {
     height: 24px;
   }
 }
+
+.eventr_home_btn_off {
+  display: none;
+}
+
+#eventr_logo_btn:hover {
+  .eventr_home_btn_on {
+    display: none;
+  }
+  .eventr_home_btn_off {
+    display: inline-block;
+  }
+}
