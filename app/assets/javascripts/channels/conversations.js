@@ -43,9 +43,9 @@ $(document).ready(function(){
 
     send_message: function(message, conversation_id, message_receiver_id) {
       return this.perform('send_message', {
-      message: message,
+      body: message,
       conversation_id: conversation_id,
-      message_receiver_id: message_receiver_id
+      receiver_id: message_receiver_id
       });
     }
     });
