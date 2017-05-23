@@ -285,7 +285,7 @@
 .new_group_form_container {
   display: inline-block;
   width: 100%;
-  transform: translateY(-379px);
+  transform: translateY(-392px);
   transition: transform 0.3s ease;
   .form_content {
     background-color: white;
@@ -294,6 +294,12 @@
       justify-content: flex-end;
     }
   }
+}
+
+//FORM DISPLAY PROPERTIES
+
+.formdisp {
+  transform: translateY(0);
 }
 
 .close_container {

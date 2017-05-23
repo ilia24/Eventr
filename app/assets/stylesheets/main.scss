@@ -1,11 +1,6 @@
 
 @import "messages";
 
-// Sass utilities
-@import "helpers/variables.scss";
-// @import "helpers/functions.scss";
-@import "helpers/mixins.scss";
-// @import "helpers/placeholders.scss";
 
 // Vendors and external stylesheets
 @import "font-awesome-sprockets";
@@ -14,10 +9,10 @@
 // @import "vendors/jquery-ui.scss";
 
 // Base stuff
-@import "base/reset.scss";
-@import "base/typography.scss";
 @import "base/general.scss";
 @import "base/miscellaneous.scss";
+@import "base/reset.scss";
+@import "base/typography.scss";
 
 // Components and modules
 @import "components/buttons.scss";
@@ -26,24 +21,26 @@
 @import "components/event_list.scss";
 @import "components/form.scss";
 @import "components/navigation.scss";
-// @import "components/cover.scss";
 @import "components/profile_thumbnail.scss";
 
+// Sass utilities
+@import "helpers/variables.scss";
+@import "helpers/mixins.scss";
+
 // Layout related stylesheets
-@import "layout/header.scss";
 @import "layout/footer.scss";
+@import "layout/header.scss";
 @import "layout/sidebar.scss";
 
 
 // Page-specific stylesheets
-@import "pages/home.scss";
-// @import "pages/contact.scss";
 @import "pages/event_index.scss";
 @import "pages/event_show.scss";
-@import "pages/user_profile.scss";
-@import "pages/signup.scss";
+@import "pages/home.scss";
 @import "pages/login.scss";
+@import "pages/signup.scss";
 @import "pages/user_profile.scss";
+// @import "pages/contact.scss";
 
 // Themes
 @import "themes/theme.scss";
