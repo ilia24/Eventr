@@ -40,7 +40,11 @@
   <nav>
 
     <div class="logo">
-      <a href="/"><%= image_tag ("eventr-logo.svg"), :class=>"eventr_home_btn"%></a>
+      <a href="/" id="eventr_logo_btn">
+        <%= image_tag ("eventr-logo.svg"), :class=>"eventr_home_btn_on"%>
+        <%= image_tag ("eventr-logo.gif"), :class=>"eventr_home_btn_off"%>
+      </a>
+
     </div>
 
     <div class="logo_sm">
