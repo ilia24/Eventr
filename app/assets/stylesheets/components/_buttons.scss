@@ -1,0 +1,68 @@
+.button_to {
+  input[type=submit] {
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    width: 160px;
+  }
+}
+
+.button_sm {
+  background-color: #262626;
+  color: white;
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 15px;
+  padding-left: 25px;
+  padding-right: 25px;
+  text-align: center;
+  text-transform: uppercase;
+  a {
+    color: white;
+  }
+}
+
+.button_sm_outline_black {
+  background-color: transparent;
+  border: 1px solid #595959;
+  font-size: 10px;
+  font-weight: 400;
+  padding: 10px 15px 10px 15px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-align: center;;
+}
+
+.button_search {
+  height: 90px;
+  background-color: #262626;
+  display: flex;
+  align-items: center;
+}
+
+.button_search h4{
+  color: white;
+  padding-left: 50px;
+  padding-right: 50px;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+.button_sm, .button_search {
+  -o-transition:.5s;
+  -ms-transition:.5s;
+  -moz-transition:.5s;
+  -webkit-transition:.5s;
+  transition:.5s;
+}
+
+.button_sm:hover, .button_search:hover, input[type=submit]:hover {
+  background-color: #595959;
+}
+
+// this hides the create new group button
+.hidegrouplink {
+  transform: translateX(-188px) !important;
+}

@@ -1,0 +1,133 @@
+.user_profile_wrapper {
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+}
+
+.user_profile_container {
+  width: 600px;
+  margin-top: 80px;
+
+}
+
+.user_profile_top {
+  background-color: white;
+  border: solid 1px #d4d4d4;
+}
+
+.user_profile_picture {
+  display: inline-block;
+  width: 120px;
+  height: 120px;
+  position: relative;
+  top: -24px;
+  left: 24px;
+  overflow: hidden;
+  // display: flex;
+  // justify-content: center;
+  img {
+    height: 100%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translateY(-50%) translateX(-50%);
+    -ms-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+  }
+}
+
+.user_profile_name {
+  display: inline-block;
+  position: relative;
+  left: 48px;
+  bottom: 36px;
+  h2{
+    margin: 0;
+  }
+  h5 {
+    color: #7f7f7f;
+    padding-top: 8px;
+    letter-spacing: 1px;
+  }
+}
+
+.privacy {
+  padding-top: 24px;
+}
+
+.activity {
+  font-weight: 400;
+  margin-top: 24px;
+  letter-spacing: 1px;
+}
+
+.user_profile_bio {
+  padding: 24px;
+  h5 {
+    color: #7f7f7f;
+    letter-spacing: 1px;
+  }
+}
+
+.event_thumbnail {
+  height: 124px;
+  width: 124px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  img {
+    height: 100%;
+  }
+}
+
+// USER ACTIVITY
+
+.user_activity_content {
+  display: flex;
+  .event_content {
+    padding: 0;
+    margin-left: 24px;
+    border-bottom: solid 1px #d4d4d4;
+  }
+}
+
+.user_profile_activity {
+  margin-top: 12px;
+  background-color: white;
+  border: solid 1px #d4d4d4;
+}
+
+.user_activity_events {
+  padding: 24px 24px 24px 24px;
+  border-bottom: solid 1px #d4d4d4;
+  display: flex;
+}
+
+.activity_event_img {
+  position: relative;
+  display: table;
+  height: 114px;
+  width: 114px;
+  overflow: hidden;
+  img {
+    height: 100%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translateY(-50%) translateX(-50%);
+    -ms-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+  }
+}
+
+.activity_event_name_time_loc_container {
+  height: 114px;
+  display: flex;
+  align-items: center;
+}
+
+.activity_event_name_time_loc {
+
+}
