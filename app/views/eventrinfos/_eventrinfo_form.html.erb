@@ -1,20 +1,43 @@
-<%= form_for ([@user, @eventrinfo]) do |f| %>
+<div class="log_sign_wrapper">
 
-<%= f.label :first_name %>
-<%= f.text_field :first_name %>
+  <div class="log_sign_container">
 
-<%= f.label :last_name %>
-<%= f.text_field :last_name %>
+    <h2>COMPLETE YOUR PROFILE</h2>
 
-<%= f.label :about_you %>
-<%= f.text_field :bio %>
+    <div class="form_content">
 
-<p>
-  <%= f.label :avatar %>
-  <%= f.file_field :avatar %>
-</p>
+      <%= form_for ([@user, @eventrinfo]) do |f| %>
 
+      <div class="form_field">
+        <%= f.label :first_name %>
+        <%= f.text_field :first_name %>
+      </div>
 
-<%= f.submit 'Update profile' %>
+      <div class="form_field">
+        <%= f.label :last_name %>
+        <%= f.text_field :last_name %>
+      </div>
 
-<%end%>
+      <div class="form_field">
+        <%= f.label :about_you %>
+        <%= f.text_field :bio %>
+      </div>
+
+      <div class="form_field">
+        <p>
+          <%= f.label :avatar %>
+          <%= f.file_field :avatar %>
+        </p>
+      </div>
+
+      <div class="event_going">
+        <%= f.submit 'UPDATE PROFILE' %>
+      </div>
+
+      <%end %>
+
+    </div>
+
+  </div>
+
+</div>
