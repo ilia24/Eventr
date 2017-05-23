@@ -63,7 +63,6 @@ $(function() {
 
   }
 
-$(document).ready(function(){
 
   $('.sendmessage').on('click', function(){
     location.reload();
@@ -92,7 +91,6 @@ $(document).ready(function(){
         hidden.show().animate({left:"0px"}).addClass('visible');
     }
     })
-  })
-});
+  });
 
 });
