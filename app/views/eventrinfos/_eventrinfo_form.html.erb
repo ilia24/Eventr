@@ -1,14 +1,19 @@
-<div class="log_sign_wrapper">
+<div class="complete_profile_wrapper">
 
-  <div class="log_sign_container">
+  <div class="complete_profile_container">
 
-    <h2>COMPLETE YOUR PROFILE</h2>
+
 
     <div class="form_content">
 
       <%= form_for ([@user, @eventrinfo]) do |f| %>
 
-      <div class="form_field">
+      <div class="form_field" id="profile_first_name">
+        <div class="user_profile_image_wrapper">
+          <div class="user_profile_image">
+            <%= image_tag(current_user.avatar) %>
+          </div>
+        </div>
         <%= f.label :first_name %>
         <%= f.text_field :first_name %>
       </div>
@@ -24,10 +29,8 @@
       </div>
 
       <div class="form_field">
-        <p>
-          <%= f.label :avatar %>
-          <%= f.file_field :avatar %>
-        </p>
+        <%= f.label :avatar %>
+        <%= f.file_field :avatar %>
       </div>
 
       <div class="event_going">

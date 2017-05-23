@@ -1,12 +1,12 @@
-.log_sign_wrapper {
+.complete_profile_wrapper {
   width: 100%;
-  height: 90vh;
+  height: 80vh;
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 
-.log_sign_container {
+.complete_profile_container {
+  margin-top: 120px;
   height: 516px;
   width: 400px;
   h2{
@@ -14,4 +14,33 @@
     margin-top: 0;
     font-weight: bold;
   }
+  .event_going {
+    justify-content: flex-end;
+  }
+  .user_profile_image_wrapper {
+    position: relative;
+    top: -45px;
+    overflow: hidden;
+    .user_profile_image {
+      position: relative;
+      height: 90px;
+      width: 90px;
+      border-radius: 50%;
+      overflow: hidden;
+      img {
+        position: absolute;
+        height: 90px;
+        width: 90px;
+        left: 50%;
+        top: 50%;
+        -webkit-transform: translate(-50%,-50%);
+        -ms-transform: translate(-50%,-50%);
+        transform: translate(-50%,-50%);
+      }
+    }
+  }
+}
+
+#profile_first_name {
+  padding-top: 0;
 }
