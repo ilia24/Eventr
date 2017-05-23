@@ -81,10 +81,9 @@ function leaveGroup(g) {
 
   }).done(function(data){
     console.log('ajax submission succeeded');
-    var groupbox = g.parentElement.parentElement.parentElement;
-    while (groupbox.firstChild) {
-    groupbox.removeChild(groupbox.firstChild);
-    };
+    var groupbox = g.parentElement.parentElement;
+    groupbox.remove();
+    $('#submitgroupbutton').removeAttr("disabled")
   }).fail(function(data){
     console.log('ajax submission failed');
   }).always(function(){
@@ -94,9 +93,9 @@ function leaveGroup(g) {
 };
 
 // this is the JS code to bind the leavegroup function to the leavegroup button
-$('#leavebutton').on('click', function(e) {
-  e.preventDefault();
-  var group = e.parent
+$('#leavebutton').on('click', function(lbut) {
+  lbut.preventDefault();
+  var group = lbut.currentTarget.parentElement;
   leaveGroup(group);
 });
 });
