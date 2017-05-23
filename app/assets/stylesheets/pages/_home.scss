@@ -6,8 +6,9 @@
   #events_near_you {
     flex-wrap: wrap;
     overflow: hidden;
-    justify-content: space-between;
+    justify-content: space-around;
     height: 807px;
+    margin: 0 -12px 0 -12px;
     .event_container {
       min-width: 292px;
     }
