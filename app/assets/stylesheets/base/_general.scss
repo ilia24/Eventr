@@ -1,0 +1,58 @@
+html {
+  font-family: "Montserrat", "Gotham", "Helvetica", sans-serif;
+  color: #262626;
+  background-color: #f8f8f8;
+  margin: 0;
+}
+
+body {
+  margin: 0;
+  margin-bottom: 100px;
+}
+
+main {
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+a {
+  text-decoration: none;
+}
+
+label {
+  font-size: 12px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #7f7f7f;
+}
+
+h2 {
+  font-size: 24px;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+h4 {
+  font-size: 16px;
+  margin: 0;
+}
+
+h5 {
+  font-size: 12px;
+  margin: 0;
+}
+
+h6 {
+  font-size: 10px;
+  font-weight: 400;
+  margin: 0;
+}
+
+hr {
+  position: relative;
+  left: -15%;
+  width: 140%;
+  border-color: #ebebeb;
+  margin: 0;
+}

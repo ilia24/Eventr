@@ -1,0 +1,36 @@
+.profile_thumbnail_wrapper {
+  border-radius: 50%;
+  overflow: hidden;
+  margin-left: 50px;
+}
+
+.profile_thumbnail {
+  position: relative;
+  height: 44px;
+  width: 44px;
+  border-radius: 50%;
+  overflow: hidden;
+  img {
+    position: absolute;
+    height: 44px;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+  }
+  img:hover {
+  }
+}
+
+.profile_member {
+  img {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    opacity: 1.0;
+  }
+  img:hover {
+    opacity: 0.5;
+  }
+}

@@ -1,0 +1,218 @@
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+}
+
+input {
+  width: 100%;
+}
+
+input:focus {
+  outline-width: 0;
+}
+
+input[type=text] {
+  margin-top: 8px;
+  font-size: 16px;
+  border: 0;
+}
+
+input[type=date] {
+  margin-top: 12px;
+  font-size: 16px;
+  margin-bottom: 6px;
+  border: 0;
+}
+
+input[type=time] {
+  margin-top: 12px;
+  font-size: 16px;
+  margin-bottom: 6px;
+  border: 0;
+}
+
+input[type=number] {
+  margin-top: 12px;
+  font-size: 16px;
+  margin-bottom: 6px;
+  border: 0;
+}
+
+input[type=email] {
+  margin-top: 12px;
+  font-size: 16px;
+  margin-bottom: 6px;
+  border: 0;
+}
+
+input[type=password] {
+  margin-top: 12px;
+  font-size: 16px;
+  margin-bottom: 6px;
+  border: 0;
+}
+
+input[type=file] {
+  margin-top: 12px;
+  font-size: 16px;
+  margin-bottom: 6px;
+  border: 0;
+}
+
+#search-form {
+  flex: 1;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  input[type=text] {
+    flex-grow: 1;
+    flex-shrink: 1;
+    margin: 0;
+    letter-spacing: 1px;
+    font-family: "Montserrat";
+    font-weight: 300;
+    padding-bottom: 6px;
+    border-bottom: solid 1px #d4d4d4;
+  }
+  input[type=submit]{
+    position: relative;
+    font-size: 16px;
+    width: 30px;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    text-transform: uppercase;
+    float: right;
+    border: solid 1px #262626;
+    cursor: pointer;
+  }
+}
+
+.form_field {
+  background-color: white;
+  padding: 24px;
+  border: solid 1px #d4d4d4;
+}
+
+.form_container {
+  margin: auto;
+  margin-top: 80px;
+  padding-left: 100px;
+  padding-right: 100px;
+  max-width: 900px;
+}
+
+#input_name, #input_location, #input_description,
+#input_date, #input_image, #input_price, #input_time,
+#input_eventstyle, #input_eventstyle {
+  padding: 24px;
+  border: solid 1px #e0e0e0;
+  background-color: white;
+  margin-left: -1px;
+  margin-bottom: -1px;
+}
+
+#input_name {
+  flex-basis: 50%;
+  flex-grow: 1;
+}
+
+#input_location {
+  flex-grow: 1;
+}
+
+#input_description {
+  flex-basis: 50%;
+  flex-grow: 1;
+}
+
+#input_date {
+  flex-basis: 21.7%;
+  flex-grow: 1;
+}
+
+#input_image {
+  flex-basis: max-content;
+}
+
+#input_price {
+  flex-basis: max-content;
+  flex-grow: 1;
+}
+
+#input_time {
+  flex-grow: 1;
+}
+
+#input_eventstyle {
+  flex-grow: 1;
+  flex-basis: 1;
+}
+
+#input_musicstyle {
+  flex-grow: 1;
+  flex-basis: 1;
+}
+
+#input_image_location {
+  flex-grow: 1;
+}
+
+.input_field p {
+  margin: 0;
+}
+
+input[type=submit] {
+  font-family: "Montserrat";
+  font-weight: 400;
+  position: relative;
+  background-color: #262626;
+  color: white;
+  font-size: 16px;
+  width: 200px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  text-align: center;
+  text-transform: uppercase;
+  float: right;
+  border: none;
+  cursor: pointer;
+
+  -o-transition:.5s;
+  -ms-transition:.5s;
+  -moz-transition:.5s;
+  -webkit-transition:.5s;
+  transition:.5s;
+}
+
+.submit {
+  flex-basis: 100%;
+}
+
+.form_content {
+  background-color: white;
+  border: solid 1px #d4d4d4;
+}
+
+.form_field {
+  margin: -1px;
+}
+
+.error_messages {
+  width: 400px;
+  margin: 0;
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  li {
+    padding-bottom: 6px;
+    color: #DA4F4F;
+    word-wrap: break-word;
+  }
+}
+
+//FORM DISPLAY PROPERTIES
+
+.formdisp {
+  transform: translateY(0);
+}

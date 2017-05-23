@@ -1,0 +1,23 @@
+.link {
+  color: #262626;
+}
+
+.link:hover {
+  color: #7f7f7f;
+}
+
+.invis_temp {
+  position: absolute;
+  left: 0;
+  top: 60px;
+  display: none;
+}
+
+.new_event {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 36px;
+  p{
+    margin: 0;
+  }
+}
