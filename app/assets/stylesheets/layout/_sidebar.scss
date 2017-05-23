@@ -375,3 +375,16 @@ i.fa.fa-circle {
 #messages {
   overflow-y: auto;
 }
+
+.event_details_btn_off {
+  display: none;
+}
+
+#event_details_btn_sm:hover {
+  .event_details_btn_on {
+    display: none;
+  }
+  .event_details_btn_off {
+    display: inline-block;
+  }
+}
