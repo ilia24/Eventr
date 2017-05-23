@@ -272,17 +272,17 @@
 
                 <%=link_to link_to conversation_path(c.id) do %>
                 <h5><%= c.with(current_user).eventrinfo.first_name %> <%= c.with(current_user).eventrinfo.last_name %></h5>
-                <em><%= c.personal_messages.last.body.truncate(50) %></em>
-                <br>
-                <em><%= c.personal_messages.last.created_at.strftime("%I: %M %p") %></em>
+                                <em><%= c.personal_messages.last.body.truncate(50) %></em>
+                                <br>
+                                <em><%= c.personal_messages.last.created_at.strftime("%I: %M %p") %></em>
                 <%end%>
 
                 <% else %>
                 <%=link_to conversation_path(c.id)do %>
                 <%= c.with(current_user).email %>
-                <em><%= c.personal_messages.last.body.truncate(50) %></em>
+                <em><%= c.personal_messages %></em>
                 <br>
-                <em><%= c.personal_messages.last.created_at.strftime("%I: %M %p") %></em>
+                <em><%= c.personal_messages %></em>
                 <%end%>
                 <%end%>
               </div>

@@ -4,31 +4,23 @@ class ConversationsController < ApplicationController
   before_action :check_participating!, except: [:index]
 
   def index
-      @conversations = Conversation.participating(current_user).order('updated_at DESC')
+     @conversations = Conversation.participating(current_user).order('updated_at DESC')
+     respond_to do |format|
+       format.html
+       format.js
+     end
   end
 
   def show
-      @conversation = Conversation.find_by(id: params[:id])
+      # @conversation = Conversation.find_by(id: params[:id])
       @personal_message = PersonalMessage.new
-  end
 
-  def new
-      redirect_to conversation_path(@conversation) and return if @conversation
-      @personal_message = current_user.personal_messages.build
+      respond_to do |format|
+        format.html { render :layout => false if request.xhr? }
+      end
   end
 
 private
-
-  def find_conversation!
-    if params[:receiver_id]
-      @receiver = User.find_by(id: params[:receiver_id])
-      redirect_to(conversation_path(@conversation)) and return unless @receiver
-      @conversation = Conversation.between(current_user.id, @receiver.id)[0]
-    else
-      @conversation = Conversation.find_by(id: params[:conversation_id])
-      redirect_to(conversation_path(@conversation)) and return unless @conversation && @conversation.participates?(current_user)
-    end
-  end
 
     def set_conversation
       @conversation = Conversation.find_by(id: params[:id])
