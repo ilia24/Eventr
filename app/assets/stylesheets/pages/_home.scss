@@ -1,0 +1,15 @@
+.index_main {
+  margin-top: 70px;
+  h3 {
+    padding: 0 6px 0 6px;
+  }
+  #events_near_you {
+    flex-wrap: wrap;
+    overflow: hidden;
+    justify-content: space-between;
+    height: 807px;
+    .event_container {
+      min-width: 292px;
+    }
+  }
+}
