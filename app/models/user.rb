@@ -32,13 +32,20 @@ class User < ApplicationRecord
 
   def ownedrequests
     requests = []
+    groups = []
+
     self.members.all.each do |m|
       if (m.owner == true) && (m.group.invited_users.empty? != true)
-        m.group.invited_users.each do |i|
-          requests << i
-        end
+        groups << m.group
       end
     end
+
+    groups.each do |g|
+      g.requests.each do |r|
+        requests << r
+      end
+    end
+    
     return requests
   end
 
