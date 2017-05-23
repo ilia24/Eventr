@@ -11,8 +11,9 @@ class PersonalMessagesController < ApplicationController
   end
 
   def create
+    
     @conversation ||= Conversation.create(author_id: current_user.id, receiver_id: @receiver.id)
-    @personal_message = current_user.sent_personal_messages.build(body: params['personal_message']['body'], receiver_id: @receiver.id)
+    @personal_message = current_user.sent_personal_messages.build(body: params['personal_message']['body'], receiver_id: params['message_receiver_id'])
     @personal_message.conversation_id = @conversation.id
     @personal_message.save!
 
@@ -27,7 +28,7 @@ class PersonalMessagesController < ApplicationController
   end
 
   def find_conversation!
-    byebug
+
     if params[:receiver_id]
       @receiver = User.find(params[:receiver_id])
       redirect_to(root_path) and return unless @receiver
