@@ -1,41 +1,42 @@
 class AvatarUploader < CarrierWave::Uploader::Base
-  include Cloudinary::CarrierWave
 
-  # Include RMagick or MiniMagick support:
-  # include CarrierWave::RMagick
-  # include CarrierWave::MiniMagick
+  if Rails.env.test? or Rails.env.development?
 
-  # Choose what kind of storage to use for this uploader:
-  # storage :file
-  # storage :fog
+    include CarrierWave::MiniMagick
+    storage :file
 
-  process :convert => 'png'
-  process :tags => ['post_picture']
+    process resize_to_fit: [120, 120]
 
-  version :standard do
-    process :resize_to_fill => [120, 120, :north]
-  end
+    version :thumb do
+      process resize_to_fill: [44,44]
+    end
 
-  version :thumb do
-    resize_to_fit(44, 44)
-  end
+    def store_dir
+      "avatar/uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
+    end
+
+  else
+
+    include Cloudinary::CarrierWave
+    process :convert => 'png'
+    process :tags => ['post_picture']
+
+    version :standard do
+      process :resize_to_fill => [120, 120, :north]
+    end
+
+    version :thumb do
+      resize_to_fit(44, 44)
+    end
+
+    def extension_whitelist
+      %w(jpg jpeg png)
+    end
+end
+
 
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
-  # def store_dir
-  #   "avatar/uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
-  # end
-  #
-  def extension_whitelist
-    %w(jpg jpeg png)
-  end
-  #
-  # process resize_to_fit: [120, 120]
-  #
-  #   version :thumb do
-  #     process resize_to_fill: [44,44]
-  #   end
-
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
   # def default_url(*args)
