@@ -12,8 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require owl.carousel.min.js
 //= require cable
+//= require owl.carousel.min.js
 //= require events.js
 //= require dropdown.js
 //= require carousel.js
