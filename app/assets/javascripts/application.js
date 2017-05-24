@@ -22,37 +22,4 @@
 //= require home.js
 //= require avatar_upload.js
 //= require footer_remove.js
-
-
-
-$(function() {
-
-  // Reveal mobile dropdown menu
-  $('.dropdown_mobile').hide();
-
-  $('.logo_sm').on('click', function(e){
-
-    $('.dropdown_mobile').slideToggle('fast');
-    $('.dropdown_mobile').toggleClass('active');
-    $('.logo_sm').find('i').toggleClass('fa-angle-up fa-angle-down');
-    $('html').toggleClass('stop_scroll')
-    e.preventDefault();
-
-  });
-
-  if ($(window).width() < 1125) {
-
-    $('.logo').on('click', function(e){
-
-      $('.dropdown_mobile').slideToggle('fast');
-      $('.dropdown_mobile').toggleClass('active');
-      $('.logo_sm').find('i').toggleClass('fa-angle-up fa-angle-down');
-      $('html').toggleClass('stop_scroll')
-      e.preventDefault();
-
-    });
-
-  }
-
-
-});
+//= require scroll.js
