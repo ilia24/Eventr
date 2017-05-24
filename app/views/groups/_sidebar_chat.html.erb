@@ -15,7 +15,9 @@
   <div class="side_menu_group_members_list">
     <% g.users.all.each do |u| %>
       <div class="profile_thumbnail">
+        <a href="<%=user_path(u.id)%>">
         <%= image_tag(u.avatar.thumb) %>
+        </a>
       </div>
     <% end %>
   </div>

@@ -1,6 +1,8 @@
 <div class="chat_user">
   <div class="profile_thumbnail">
+    <a href="<%=user_path(message.user.id)%>">
     <%= image_tag(message.user.avatar.thumb) %>
+    </a>
   </div>
   <div class="side_menu_chat_name_msg">
     <div class="name_time">
