@@ -23,10 +23,6 @@
 @import "components/navigation.scss";
 @import "components/profile_thumbnail.scss";
 
-// Sass utilities
-@import "helpers/variables.scss";
-@import "helpers/mixins.scss";
-
 // Layout related stylesheets
 @import "layout/error_message.scss";
 @import "layout/footer.scss";
@@ -47,3 +43,7 @@
 // Themes
 @import "themes/theme.scss";
 @import "themes/admin.scss";
+
+// Sass utilities
+@import "helpers/variables.scss";
+@import "helpers/mixins.scss";
