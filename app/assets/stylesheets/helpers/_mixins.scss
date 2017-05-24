@@ -135,6 +135,27 @@
   }
 }
 
+@media screen and (max-width:812px){
+  .event_container {
+    width: 100%;
+    .event_img img{
+      height: auto;
+    }
+  }
+}
+
+@media screen and (max-width:836px){
+  .events_all {
+    .event_container {
+      width: 100%;
+      .event_img img{
+        height: auto;
+      }
+    }
+  }
+}
+
+
 // FOOTER
 
 @media screen and (max-width:1013px) {
