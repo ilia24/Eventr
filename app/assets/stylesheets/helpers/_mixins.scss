@@ -29,6 +29,7 @@
   .dropdown_mobile {
     display: block;
   }
+
 }
 
 @media screen and (max-width:307px){
@@ -85,22 +86,26 @@
 
 @media screen and (max-width:501px){
   .index_main {
-    margin-left: 24px;
-    margin-right: 24px;
+    margin: 36px 24px 0 24px;
+    #events_near_you {
+      flex-wrap: wrap;
+    }
+  }
+}
+@media screen and (max-width:501px){
+  .index_main {
+    margin: 36px 24px 0 24px;
     #events_near_you {
       flex-wrap: wrap;
     }
   }
 }
 
-@media screen and (min-width:589px) and (max-width:931px){
-  .owl-prev {
-    position: relative;
-    left: 100px;
-  }
-  .owl-next {
-    position: relative;
-    right: 100px;
+@media screen and (max-width:1129px){
+  .index_main {
+    #events_near_you {
+      height: 1221px;
+    }
   }
 }
 
