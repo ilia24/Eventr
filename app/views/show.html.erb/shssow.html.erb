@@ -1,0 +1,23 @@
+<% if @conversation.with(current_user).eventrinfo != nil %>
+<h1>Chatting with <%= @conversation.with(current_user).eventrinfo.first_name %></h1>
+<% else %>
+<h1>Chatting with <%= @conversation.with(current_user).email %></h1>
+<%end%>
+
+<div id="conversation-main">
+  <div id="conversation-body" data-conversation-id="<%= @conversation.id %>">
+    <%= render @conversation.personal_messages %>
+  </div>
+
+
+  <%= form_for @personal_message do |f| %>
+    <%= hidden_field_tag 'conversation_id', @conversation.id %>
+    <%= hidden_field_tag 'receiver_id', @conversation.with(current_user).id %>
+    <%= hidden_field_tag 'message_receiver_id', @conversation.with(current_user).id %>
+
+    <%= f.label :body %>
+    <%= f.text_area :body %>
+
+    <%= f.submit %>
+  <% end %>
+</div>

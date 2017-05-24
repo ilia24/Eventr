@@ -23,7 +23,8 @@ class User < ApplicationRecord
   has_many :requests
   has_many :requested_groups, through: :requests
   has_many :messages, dependent: :destroy
-  
+  has_many :personal_messages
+
   has_many :participants
   has_many :conversations, through: :participants
 

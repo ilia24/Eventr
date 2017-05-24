@@ -1,35 +1,30 @@
 class ConversationsController < ApplicationController
 
-  before_action :set_conversation, except: [:index]
-  before_action :check_participating!, except: [:index]
 
-  def index
-     @conversations = Conversation.participating(current_user).order('updated_at DESC')
-     respond_to do |format|
-       format.html
-       format.js
-     end
+  def new
+    convo = Conversation.create(name: 'placeholder')
+    convo.users <<  current_user
+    convo.users << User.find(params[:user_id])
   end
 
   def show
-      # @conversation = Conversation.find_by(id: params[:id])
-      @personal_message = PersonalMessage.new
-
-      respond_to do |format|
-        format.html { render :layout => false if request.xhr? }
+    @conversations = Conversation.all
+    @personal_message = PersonalMessage.new
+    @personal_messages = PersonalMessage.all
+    @otheruser = User.find(params[:user_id])
+    parsedconvos = []
+    @conversations.all.each do |c|
+      if c.users.include? current_user
+        parsedconvos << c
       end
+    end
+
+    parsedconvos.each do |pc|
+      if pc.users.include? @otheruser
+        @conversation = pc
+        @conversation
+      end
+    end
   end
-
-private
-
-    def set_conversation
-      @conversation = Conversation.find_by(id: params[:id])
-    end
-
-    def check_participating!
-      redirect_to root_path unless @conversation && @conversation.participates?(current_user)
-    end
-
-
 
 end

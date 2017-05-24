@@ -31,10 +31,12 @@ get '/events/:event_id/leave', to: 'events#leave', as: 'leave_event'
 resources :users, only: %i(index show new create) do
   resources :hostinfos, only: %i(new create edit update destroy)
   resources :eventrinfos, only: %i(new create edit update destroy)
+  get '/conversations/new', to: 'conversations#new', as: 'new_conversation'
+  get '/conversation', to: 'conversations#show', as: 'show_conversation'
 end
 resources :sessions, only: %i(new create destroy)
 
-resources :personal_messages, only: [:create, :new]
-resources :conversations, only: [:index, :new, :show, :create]
+
+
 
 end
