@@ -9,7 +9,10 @@
 
 <ul>
   <% g.users.each do |u| %>
-    <li class="profile_member"> <%= image_tag(u.avatar.thumb) %> </li>
+    <li class="profile_member">
+    <a href="<%=user_path(u.id)%>">
+    <%= image_tag(u.avatar.thumb) %>
+    </a></li>
     <% end %>
 </ul>
 
