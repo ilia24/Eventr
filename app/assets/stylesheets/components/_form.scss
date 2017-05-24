@@ -180,7 +180,8 @@ input[type=submit] {
   float: right;
   border: none;
   cursor: pointer;
-  -webkit-appearance: square;
+  -webkit-border-radius: 0;
+  -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
 
