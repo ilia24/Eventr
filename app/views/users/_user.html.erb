@@ -1,3 +1,12 @@
+
 <li>
-  <%= user.email %> | <%= link_to 'send a message', new_personal_message_path(receiver_id: user) %>
+  <%if user != current_user%>
+        <% if user.eventrinfo != nil %>
+        <%= image_tag(user.avatar.thumb)%>
+        <%= user.eventrinfo.first_name %> <%= user.eventrinfo.last_name %>  | <%= link_to 'send a message', new_personal_message_path(receiver_id: user) %>
+        <% else %>
+        <%= image_tag(user.avatar.thumb)%>
+        <%= user.email %> | <%= link_to 'send a message', new_personal_message_path(receiver_id: user) %>
+        <%end%>
+  <%end%>
 </li>
