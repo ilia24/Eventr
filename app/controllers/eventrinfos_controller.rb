@@ -1,6 +1,7 @@
 class EventrinfosController < ApplicationController
 
 before_action :load_user
+before_action :ensure_proper_user, only: [:create, :edit, :update, :destroy]
 
   def new
     @eventrinfo = Eventrinfo.new
@@ -54,6 +55,14 @@ end
 
   def load_user
     @user = User.find(params[:user_id])
+  end
+
+  def ensure_proper_user
+    @user = User.find(params[:user_id])
+    if @user != current_user
+      flash[:alert] = "you do not have permission to access that page"
+      redirect_to root_path
+    end
   end
 
 end
