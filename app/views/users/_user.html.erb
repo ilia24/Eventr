@@ -2,14 +2,19 @@
 <li>
   <%if user != current_user%>
         <% if user.eventrinfo != nil %>
-        <a href="<%=user_path(user.id)%>">
-        <%= image_tag(user.avatar.thumb)%>
-        <%= user.eventrinfo.first_name %> <%= user.eventrinfo.last_name %></a>  | <%= link_to 'send a message', new_personal_message_path(receiver_id: user) %>
-
+          <a href="<%=user_path(user.id)%>">
+          <%= image_tag(user.avatar.thumb)%>
+          <%= user.eventrinfo.first_name %> <%= user.eventrinfo.last_name %></a>
         <% else %>
-        <a href="<%=user_path(user.id)%>">
-        <%= image_tag(user.avatar.thumb)%>
-        <%= user.email %></a> | <%= link_to 'send a message', new_personal_message_path(receiver_id: user) %>
+          <a href="<%=user_path(user.id)%>">
+          <%= image_tag(user.avatar.thumb)%>
+          <%= user.email %></a> |
         <%end%>
+
+        <% if Conversation.findconvo(current_user, user) != false %>
+          <%= link_to 'see chat', user_show_conversation_path(user_id: user) %>
+        <% else %>
+          <%= link_to 'send a message', user_new_conversation_path(user_id: user) %>
+        <%end %>
   <%end%>
 </li>
