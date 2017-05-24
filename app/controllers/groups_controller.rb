@@ -100,6 +100,7 @@ class GroupsController < ApplicationController
       redirect_to event_path(@event)
     else
       @group.users << @user
+      @event.adduser(@user)
       redirect_to event_path(@event)
     end
   end
