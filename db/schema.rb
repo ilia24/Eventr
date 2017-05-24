@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170523191915) do
+ActiveRecord::Schema.define(version: 20170524185213) do
 
   create_table "comments", force: :cascade do |t|
     t.text    "content"
@@ -21,13 +21,9 @@ ActiveRecord::Schema.define(version: 20170523191915) do
   end
 
   create_table "conversations", force: :cascade do |t|
-    t.integer  "author_id"
-    t.integer  "receiver_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.index ["author_id", "receiver_id"], name: "index_conversations_on_author_id_and_receiver_id", unique: true
-    t.index ["author_id"], name: "index_conversations_on_author_id", unique: true
-    t.index ["receiver_id"], name: "index_conversations_on_receiver_id", unique: true
+    t.integer  "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "eventrinfos", force: :cascade do |t|
@@ -103,6 +99,15 @@ ActiveRecord::Schema.define(version: 20170523191915) do
     t.datetime "updated_at", null: false
     t.index ["group_id"], name: "index_messages_on_group_id"
     t.index ["user_id"], name: "index_messages_on_user_id"
+  end
+
+  create_table "participants", force: :cascade do |t|
+    t.integer  "conversation_id"
+    t.integer  "user_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.index ["conversation_id"], name: "index_participants_on_conversation_id"
+    t.index ["user_id"], name: "index_participants_on_user_id"
   end
 
   create_table "personal_messages", force: :cascade do |t|

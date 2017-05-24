@@ -6,8 +6,6 @@ class CreateHostinfos < ActiveRecord::Migration[5.0]
       t.string :address
       t.integer :capacity
       t.string :website
-
-      t.timestamps
     end
   end
 end
