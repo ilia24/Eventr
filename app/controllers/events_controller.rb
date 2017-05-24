@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  before_action :ensure_logged_in, only: [:new, :create, :destroy, :edit, :update]
+  before_action :ensure_logged_in, only: [:new, :create, :destroy, :edit, :update, :join]
   before_action :ensure_hostinfo_filled_out, only: [:new, :create]
   before_action :ensure_eventrinfo_filled_out, only: [:join]
   before_action :load_user, only: [:create, :destroy, :edit, :update, :join]
