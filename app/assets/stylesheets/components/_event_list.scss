@@ -1,22 +1,20 @@
 .event_container {
   border: solid 1px #ababab;
   box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
-  min-width: 230px;
-  max-width: 292px;
+  width: 292px;
   overflow: hidden;
-  margin-left: 6px;
-  margin-right: 6px;
+  margin-left: 12px;
+  margin-right: 12px;
   margin-bottom: 50px;
-  flex-grow: 1;
 }
-
-.event_container:first-child{
-  margin-left: 0;
-}
-
-.event_container:last-child{
-  margin-right: 0;
-}
+//
+// .event_container:first-child{
+//   margin-left: 0;
+// }
+//
+// .event_container:last-child{
+//   margin-right: 0;
+// }
 
 .event_img {
   position: relative;

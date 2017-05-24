@@ -77,6 +77,14 @@ nav {
   }
 }
 
+.logo_sm {
+  display: none;
+  img {
+    height: 24px;
+    padding-right: 12px;
+  }
+}
+
 .eventr_home_btn_off {
   display: none;
 }

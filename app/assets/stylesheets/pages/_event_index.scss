@@ -81,28 +81,13 @@
   background-repeat: no-repeat;
 }
 
-.index_main {
-  margin-top: 70px;
-  h3 {
-    padding: 0 6px 0 6px;
-  }
-  #events_near_you {
-    flex-wrap: nowrap;
-    overflow: auto;
-    justify-content: space-between;
-    .event_container {
-      min-width: 292px;
-    }
-  }
-}
-
 .header_slider {
   overflow: hidden;
 }
 
 #events_near_you {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   flex-shrink: 1;
   flex-wrap: wrap;
   padding-left: 0;
@@ -164,4 +149,7 @@
 .events_all {
   margin-left: 100px;
   margin-right: 100px;
+  #events_near_you {
+    margin: 0 -12px 0 -12px;
+  }
 }

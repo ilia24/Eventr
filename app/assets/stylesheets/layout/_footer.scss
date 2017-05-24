@@ -1,6 +1,7 @@
 footer {
-  width: 80%;
+  box-sizing: border-box;
   display: inline-flex;
+  width: 100%;
   justify-content: space-between;
   margin: 100px 0 100px 0;
   padding: 0 100px 0 100px;
@@ -20,6 +21,7 @@ footer {
 
 // Column with logo and contact button
 .footer_main{
+  display: flex;
   margin-right: 3em;
   .button_sm_outline_black {
     margin-top: 24px;
