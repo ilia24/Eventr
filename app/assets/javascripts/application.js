@@ -21,6 +21,7 @@
 //= require search_filter.js
 //= require home.js
 //= require avatar_upload.js
+//= require footer_remove.js
 
 
 
