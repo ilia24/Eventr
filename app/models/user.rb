@@ -45,7 +45,7 @@ class User < ApplicationRecord
         requests << r
       end
     end
-    
+
     return requests
   end
 
@@ -53,4 +53,5 @@ class User < ApplicationRecord
   def channel
     "alerts_#{id}_channel"
   end
+
 end
