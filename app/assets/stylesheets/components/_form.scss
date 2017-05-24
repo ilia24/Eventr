@@ -85,6 +85,8 @@ input[type=file] {
     border: solid 1px #262626;
     cursor: pointer;
     -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
   }
 }
 
@@ -178,6 +180,9 @@ input[type=submit] {
   float: right;
   border: none;
   cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 
   -o-transition:.5s;
   -ms-transition:.5s;
