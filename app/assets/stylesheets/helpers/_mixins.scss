@@ -162,6 +162,22 @@
   }
 }
 
+// EVENT SHOW
+
+@media screen and (max-width:823px){
+  .title_content {
+    margin: 0 24px 0 24px;
+  }
+}
+
+@media screen and (max-width:1140px){
+  .event_main_info {
+    width: 100%;
+  }
+  .event_side_info {
+    float: none;
+  }
+}
 
 // FOOTER
 
