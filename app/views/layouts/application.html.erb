@@ -260,26 +260,25 @@
           <% if (current_user != nil) && (current_user.conversations.empty? != true) %>
             <% current_user.conversations.all.each do |c| %>
               <div class="side_menu_main_eventrs_list">
+                <%=link_to user_show_conversation_path(c.opposite_convo_user(current_user).id), class: 'chatlink' do %>
                 <div class="side_menu_main_eventrs_item">
-
                   <div class="profile_thumbnail">
                     <%= image_tag(c.opposite_convo_user(current_user).avatar.thumb) %>
                   </div>
-
                   <div class="side_menu_chat_name_msg">
                     <div class="name_time">
                       <% if c.opposite_convo_user(current_user).eventrinfo != nil %>
-                        <%=link_to user_show_conversation_path(c.opposite_convo_user(current_user).id) do %>
                           <h5><%= c.opposite_convo_user(current_user).eventrinfo.first_name %> <%= c.opposite_convo_user(current_user).eventrinfo.last_name %></h5>
-                        <%end%>
                       <% else %>
-                        <%=link_to user_show_conversation_path(c.opposite_convo_user(current_user).id) do %>
                           <h5><%= c.opposite_convo_user(current_user).email %></h5>
-                        <%end%>
                       <%end%>
+                      <% if c.personal_messages.exists? %>
+                        <P><%= c.personal_messages.last.body %></p>
+                      <% end %>
                     </div>
                   </div>
                 </div>
+                <% end %>
               </div>
             <%end %>
           <%end%>
