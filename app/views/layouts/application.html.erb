@@ -148,7 +148,7 @@
       </div>
 
       <!-- GROUP CONTENT CONTAINER -->
-      <% if (current_user != nil) && (current_user.groups.empty? != true) %>
+      <% if (current_user != nil)%>
       <div class="side_menu_group_content">
 
         <div class="side_menu_group_event_details">
@@ -159,32 +159,47 @@
 
         <div class="side_menu_group_info">
 
-          <h4><%= current_user.groups.first.name %> </h4>
+          <h4></h4>
 
           <div class="side_menu_group_members">
-            <h5><%= current_user.groups.first.users.count %> EVENTRS GOING</h5>
+            <h5>EVENTRS GOING</h5>
           </div>
 
           <div class="side_menu_group_members_list">
-            <% current_user.groups.first.users.all.each do |u| %>
               <div class="profile_thumbnail">
-              <a href="<%=user_path(u.id)%>">
-              <%= image_tag(u.avatar.thumb) %>
+              <a href="">
               </a>
               </div>
-            <% end %>
           </div>
         </div>
 
         <div class="side_menu_chat">
-          <%= render "groups/sidebar_chat", g: current_user.groups.first %>
+          <div id="messages" data-group-id="">
+          </div>
+
+
+          <div id="eventdata">
+            <h4></h4>
+
+            <div class="side_menu_group_members">
+              <h5> EVENTRS GOING</h5>
+            </div>
+
+            <div class="side_menu_group_members_list">
+                <div class="profile_thumbnail">
+                  <a href="">
+                  </a>
+                </div>
+            </div>
+
+          </div>
         </div>
-        <% if (current_user != nil) && (current_user.groups.empty? != true) %>
+        <% if (current_user != nil)%>
         <div class="side_menu_chat_input">
           <div class="map_icon_container">
             <i class="fa fa-map-marker fa-lg"></i>
           </div>
-          <%= render "groups/sidebar_form", g: current_user.groups.first %>
+          <%= render "groups/sidebar_form" %>
         </div>
         <% end %>
 
