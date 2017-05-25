@@ -19,8 +19,6 @@ if (document.cookie === "") {
   console.log('user not logged in, not launching alerts cable')
   return
 } else {
-  loadAlert();
-  $("#eventdata").remove();
 };
 
 });
