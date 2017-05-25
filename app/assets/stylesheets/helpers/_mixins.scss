@@ -174,8 +174,22 @@
   .event_main_info {
     width: 100%;
   }
+  .event_map_wrapper {
+    flex-basis: 75%;
+    padding-right: 24px;
+    box-sizing: border-box;
+  }
   .event_side_info {
+    display: flex;
     float: none;
+    width: 100%;
+    margin: 24px 0 24px 0;
+  }
+  #event_show_heading {
+    padding-top: 0;
+  }
+  .event_show_eventrs_going_container {
+    flex-basis: 25%;
   }
 }
 
