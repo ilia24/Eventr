@@ -112,24 +112,32 @@ if (document.cookie === "") {
 //note about eventdata: i added the top info in a field called eventdata then deleted it, to allow me to send
 //extra data in 1 ajax call, as opposed to making 2 ajax calls on 1 click
 
-//General functions to use through sidemenu ajax
+//GENERAL SIDEBAR FUNCTIONS
 
 //this function removes the old sidebar data, and creates the top part & messages
 function AppendData(d) {
   $( "#messages" ).remove();
   $(".side_menu_chat").append(d);
   $(".side_menu_group_info").empty();
-  $(".side_menu_group_info").append($("#eventdata").children());
-  $("#eventdata").remove();
+  if ($("#eventdata").length) {
+    $(".side_menu_group_info").append($("#eventdata").children());
+    $("#eventdata").remove();
+  };
 };
 
 //this function adds the new groupdata into the DOM before reinitializing the chat
 function SetChatGroup() {
-  App.cable.subscriptions.remove(App.global_chat);
-  var newgroup = $('#messages').data('group-id');
-  $('#messages').data('group-id', newgroup);
-  $('#group_id').attr('value', newgroup)
-  LoadChat();
+  if ($('.side_menu_chat').is(':empty')) {
+    App.cable.subscriptions.remove(App.global_chat);
+    App.cable.subscriptions.remove(App.private_chat);
+  } else {
+    App.cable.subscriptions.remove(App.global_chat);
+    App.cable.subscriptions.remove(App.private_chat);
+    var newgroup = $('#messages').data('group-id');
+    $('#messages').data('group-id', newgroup);
+    $('#group_id').attr('value', newgroup)
+    LoadChat();
+  };
 };
 
 
@@ -169,8 +177,8 @@ function MenuLogic(){
 };
 
 
-//this is when a user clicks on an event in the sidebar
-$('.grouplink').on('click', function(e) {
+//this is when a user clicks on an eventchat/privatechat in the sidebar
+$('.grouplink, .chatlink').on('click', function(e) {
   e.preventDefault();
 
   $('.event_details_btn').toggleClass('event_details_btn_slide_in');
@@ -189,8 +197,6 @@ $('.grouplink').on('click', function(e) {
   }).fail(function(data){
     console.log('ajax submission failed');
   });
-
-
 });
 
 //this code is for when the user clicks a group link on the event page

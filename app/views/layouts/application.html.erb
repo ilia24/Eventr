@@ -258,9 +258,9 @@
         <div class="side_menu_main_eventrs">
           <h5 id="eventrs">EVENTRS <i class="fa fa-chevron-up"></i></h5>
           <% if (current_user != nil) && (current_user.conversations.empty? != true) %>
+            <div class="side_menu_main_eventrs_list">
             <% current_user.conversations.all.each do |c| %>
-              <div class="side_menu_main_eventrs_list">
-                <%=link_to user_show_conversation_path(c.opposite_convo_user(current_user).id), class: 'chatlink' do %>
+                <%=link_to user_show_conversation_url(c.opposite_convo_user(current_user).id), class: 'chatlink' do %>
                 <div class="side_menu_main_eventrs_item">
                   <div class="profile_thumbnail">
                     <%= image_tag(c.opposite_convo_user(current_user).avatar.thumb) %>
@@ -279,8 +279,8 @@
                   </div>
                 </div>
                 <% end %>
-              </div>
             <%end %>
+          </div>
           <%end%>
         </div>
 

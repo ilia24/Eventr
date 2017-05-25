@@ -19,6 +19,14 @@ class ConversationsController < ApplicationController
     @personal_messages = PersonalMessage.all
     @otheruser = User.find(params[:user_id])
     @conversation = Conversation.findconvo(current_user, @otheruser)
+    respond_to do |format|
+       format.html do
+
+         if request.xhr?
+           render :partial => '/conversations/sidebar_chat', locals: {c: @conversation}
+         end
+       end
+     end
   end
 
 end
