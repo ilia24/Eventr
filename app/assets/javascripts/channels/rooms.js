@@ -127,7 +127,8 @@ function AppendData(d) {
 function DeleteChats(){
   if (App.global_chat !== undefined) {
     App.cable.subscriptions.remove(App.global_chat);
-  } else if (App.private_chat !== undefined) {
+  };
+  if (App.private_chat !== undefined) {
     App.cable.subscriptions.remove(App.private_chat);
   };
 };
@@ -202,7 +203,27 @@ function MenuLogic(){
 };
 };
 
+//this code is for when the user clicks a group link on the event page
+$('.eventgrouplink').on('click', function(e) {
+  e.preventDefault();
 
+  $.ajax({
+    method: 'GET',
+    url: $(this).attr('href'),
+    data: $(this).serialize(),
+    dataType: 'html'
+
+  }).done(function(data){
+    console.log('ajax submission succeeded');
+    AppendData(data);
+    SetChatGroup();
+    MenuLogic();
+  }).fail(function(data){
+    console.log('ajax submission failed');
+  });
+});
+
+//PRIV CHAT ajax
 //this is when a user clicks on an eventchat/privatechat in the sidebar
 $('.grouplink, .chatlink').on('click', function(e) {
   e.preventDefault();
@@ -225,8 +246,8 @@ $('.grouplink, .chatlink').on('click', function(e) {
   });
 });
 
-//this code is for when the user clicks a group link on the event page
-$('.eventgrouplink').on('click', function(e) {
+//this code is for when a user clicks on "see message" on a user page
+$('.see_chat_button').on('click', function(e) {
   e.preventDefault();
 
   $.ajax({
@@ -244,6 +265,7 @@ $('.eventgrouplink').on('click', function(e) {
     console.log('ajax submission failed');
   });
 });
+
 
 $('.intrudergrouplink').on('click', function(e) {
   e.preventDefault();
