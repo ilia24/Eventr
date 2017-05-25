@@ -54,8 +54,8 @@ function LoadChat() {
 function LoadPrivateChat() {
   // this code scrolls the chatbox to the bottom
   var messages, messages_to_bottom;
-  messages = $('#convo');
-  if ($('#convo').length > 0) {
+  messages = $('#messages');
+  if ($('#messages').length > 0) {
     messages_to_bottom = function() {
       return messages.scrollTop(messages.prop("scrollHeight"));
     };
@@ -64,13 +64,13 @@ function LoadPrivateChat() {
 //This code creates an AC subscription to the specific group channel, and establishes base functions
     App.private_chat = App.cable.subscriptions.create({
       channel: "ConvoChannel",
-      conversation_id: convo.dataset.conversationId
+      conversation_id: messages.data('conversation-id')
     }, {
       connected: function() {
-        console.log('PCHAT: connected to ' + convo.dataset.conversationId)
+        console.log('PCHAT: connected to ' +  messages.data('conversation-id'))
       },
       disconnected: function() {
-        console.log('PCHAT: disconnected from ' + convo.dataset.conversationId)
+        console.log('PCHAT: disconnected from ' +  messages.data('conversation-id'))
       },
       received: function(data) {
         messages.append(data['chat']);
@@ -89,9 +89,9 @@ function LoadPrivateChat() {
       var $this, textarea;
       $this = $(this);
       textarea = $this.find('#personal_message_body');
-      messages = $('#convo');
+      messages = $('#messages');
       if ($.trim(textarea.val()).length > 1) {
-        App.private_chat.send_chat(textarea.val(), convo.dataset.conversationId);
+        App.private_chat.send_chat(textarea.val(), messages.data('conversation-id'));
         textarea.val('');
       }
       e.preventDefault();
@@ -105,7 +105,6 @@ if (document.cookie === "") {
   return
 } else {
   LoadChat();
-  LoadPrivateChat();
   $("#eventdata").remove();
 };
 
@@ -141,8 +140,9 @@ function SetChatGroup() {
 
     var newchat = $('#messages').data('conversation-id');
 
-    $('#messages').data('group-id', newgroup);
-    $('#group_id').attr('value', newgroup)
+    $('#messages').data('conversation-id', newchat);
+    $('#group_id').attr('value', newchat)
+    LoadPrivateChat();
   } else {
     DeleteChats();
 
