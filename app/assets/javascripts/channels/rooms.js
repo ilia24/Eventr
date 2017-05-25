@@ -125,20 +125,35 @@ function AppendData(d) {
   };
 };
 
+function DeleteChats(){
+  if (App.global_chat !== undefined) {
+    App.cable.subscriptions.remove(App.global_chat);
+  };
+  if (App.private_chat !== undefined) {
+    App.cable.subscriptions.remove(App.private_chat);
+  };
+};
+
 //this function adds the new groupdata into the DOM before reinitializing the chat
 function SetChatGroup() {
-  if ($('.side_menu_chat').is(':empty')) {
-    App.cable.subscriptions.remove(App.global_chat);
-    App.cable.subscriptions.remove(App.private_chat);
+  if ($('.side_menu_group_info').is(':empty')) {
+    DeleteChats();
+
+    var newchat = $('#messages').data('conversation-id');
+
+    $('#messages').data('group-id', newgroup);
+    $('#group_id').attr('value', newgroup)
   } else {
-    App.cable.subscriptions.remove(App.global_chat);
-    App.cable.subscriptions.remove(App.private_chat);
+    DeleteChats();
+
     var newgroup = $('#messages').data('group-id');
+
     $('#messages').data('group-id', newgroup);
     $('#group_id').attr('value', newgroup)
     LoadChat();
   };
 };
+
 
 
 function ToggleChatView() {
