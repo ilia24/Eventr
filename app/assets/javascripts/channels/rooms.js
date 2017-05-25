@@ -127,8 +127,7 @@ function AppendData(d) {
 function DeleteChats(){
   if (App.global_chat !== undefined) {
     App.cable.subscriptions.remove(App.global_chat);
-  };
-  if (App.private_chat !== undefined) {
+  } else if (App.private_chat !== undefined) {
     App.cable.subscriptions.remove(App.private_chat);
   };
 };
@@ -136,20 +135,32 @@ function DeleteChats(){
 //this function adds the new groupdata into the DOM before reinitializing the chat
 function SetChatGroup() {
   if ($('.side_menu_group_info').is(':empty')) {
+
     DeleteChats();
-
     var newchat = $('#messages').data('conversation-id');
-
-    $('#messages').data('conversation-id', newchat);
-    $('#group_id').attr('value', newchat)
+    $('#group_id').attr('value', newchat);
+    $('.side_menu_chat_input').find('form').attr('class', 'new_personal_message');
+    $('.side_menu_chat_input').find('form').attr('id', 'new_personal_message');
+    if ($('.side_menu_chat_input').find('#group_id').attr('id') === "group_id") {
+      $('.side_menu_chat_input').find('#group_id').attr('name', 'conversation_id');
+      $('.side_menu_chat_input').find('#group_id').attr('id', 'conversation_id');
+      $('.side_menu_chat_input').find('#message_body').attr('name', 'personal_message[body]')
+      $('.side_menu_chat_input').find('#message_body').attr('id', 'personal_message_body')
+    };
     LoadPrivateChat();
   } else {
+
     DeleteChats();
-
     var newgroup = $('#messages').data('group-id');
-
-    $('#messages').data('group-id', newgroup);
-    $('#group_id').attr('value', newgroup)
+    $('#group_id').attr('value', newgroup);
+    $('.side_menu_chat_input').find('form').attr('class', 'new_message');
+    $('.side_menu_chat_input').find('form').attr('id', 'new_message');
+    if ($('.side_menu_chat_input').find('#conversation_id').attr('id') === "conversation_id") {
+      $('.side_menu_chat_input').find('#conversation_id').attr('name', 'group_id');
+      $('.side_menu_chat_input').find('#conversation_id').attr('id', 'group_id');
+      $('.side_menu_chat_input').find('#personal_message_body').attr('name', 'message[body]')
+      $('.side_menu_chat_input').find('#personal_message_body').attr('id', 'message_body')
+    };
     LoadChat();
   };
 };
