@@ -2,11 +2,16 @@ class ConversationsController < ApplicationController
 
 
   def new
-    @conversation = Conversation.create(name: 'placeholder')
     other_user = User.find(params[:user_id])
-    @conversation.users << current_user
-    @conversation.users << other_user
-    redirect_to user_show_conversation_path, user_id: other_user.id
+
+    if Conversation.findconvo(current_user, other_user) != false
+      redirect_to user_show_conversation_path, user_id: other_user.id
+    else
+      @conversation = Conversation.create(name: 'placeholder')
+      @conversation.users << current_user
+      @conversation.users << other_user
+      redirect_to user_show_conversation_path, user_id: other_user.id
+    end
   end
 
   def show
@@ -14,7 +19,6 @@ class ConversationsController < ApplicationController
     @personal_messages = PersonalMessage.all
     @otheruser = User.find(params[:user_id])
     @conversation = Conversation.findconvo(current_user, @otheruser)
-    Conversation.findconvo(current_user, @otheruser)
   end
 
 end
