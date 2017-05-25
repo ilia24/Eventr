@@ -7,7 +7,7 @@ class ConversationsController < ApplicationController
     if Conversation.findconvo(current_user, other_user) != false
       redirect_to user_show_conversation_path, user_id: other_user.id
     else
-      @conversation = Conversation.create(name: 'placeholder')
+      @conversation = Conversation.create(name: 'Private Chat')
       @conversation.users << current_user
       @conversation.users << other_user
       redirect_to user_show_conversation_path, user_id: other_user.id
