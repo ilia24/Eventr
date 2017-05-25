@@ -148,7 +148,7 @@
       </div>
 
       <!-- GROUP CONTENT CONTAINER -->
-      <% if (@user != nil) && (@user.groups.empty? != true) %>
+      <% if (current_user != nil) && (current_user.groups.empty? != true) %>
       <div class="side_menu_group_content">
 
         <div class="side_menu_group_event_details">
@@ -159,14 +159,14 @@
 
         <div class="side_menu_group_info">
 
-          <h4><%= @user.groups.first.name %> </h4>
+          <h4><%= current_user.groups.first.name %> </h4>
 
           <div class="side_menu_group_members">
-            <h5><%= @user.groups.first.users.count %> EVENTRS GOING</h5>
+            <h5><%= current_user.groups.first.users.count %> EVENTRS GOING</h5>
           </div>
 
           <div class="side_menu_group_members_list">
-            <% @user.groups.first.users.all.each do |u| %>
+            <% current_user.groups.first.users.all.each do |u| %>
               <div class="profile_thumbnail">
               <a href="<%=user_path(u.id)%>">
               <%= image_tag(u.avatar.thumb) %>
@@ -177,14 +177,14 @@
         </div>
 
         <div class="side_menu_chat">
-          <%= render "groups/sidebar_chat", g: @user.groups.first %>
+          <%= render "groups/sidebar_chat", g: current_user.groups.first %>
         </div>
-        <% if (@user != nil) && (@user.groups.empty? != true) %>
+        <% if (current_user != nil) && (current_user.groups.empty? != true) %>
         <div class="side_menu_chat_input">
           <div class="map_icon_container">
             <i class="fa fa-map-marker fa-lg"></i>
           </div>
-          <%= render "groups/sidebar_form", g: @user.groups.first %>
+          <%= render "groups/sidebar_form", g: current_user.groups.first %>
         </div>
         <% end %>
 
