@@ -20,4 +20,14 @@ class Conversation < ApplicationRecord
     end
     return false
   end
+
+  def opposite_convo_user(user)
+    self.users.each do |u|
+      if u == user
+        next
+      else
+        return u
+      end
+    end
+  end
 end

@@ -1,6 +1,7 @@
 $(function() {
-function LoadChat() {
 
+//THIS FUNCTION IS RESPONSIBLE FOR LOADING GROUP CHATS
+function LoadChat() {
   // this code scrolls the chatbox to the bottom
   var messages, messages_to_bottom;
   messages = $('#messages');
@@ -49,6 +50,56 @@ function LoadChat() {
   }
 };
 
+//THIS FUNCTION IS RESPONSIBLE FOR LOADING PRIVATE CHATS//
+function LoadPrivateChat() {
+  // this code scrolls the chatbox to the bottom
+  var messages, messages_to_bottom;
+  messages = $('#messages');
+  if ($('#messages').length > 0) {
+    messages_to_bottom = function() {
+      return messages.scrollTop(messages.prop("scrollHeight"));
+    };
+    messages_to_bottom();
+
+//This code creates an AC subscription to the specific group channel, and establishes base functions
+    App.private_chat = App.cable.subscriptions.create({
+      channel: "ConvoChannel",
+      conversation_id: messages.data('conversation-id')
+    }, {
+      connected: function() {
+        console.log('PCHAT: connected to ' +  messages.data('conversation-id'))
+      },
+      disconnected: function() {
+        console.log('PCHAT: disconnected from ' +  messages.data('conversation-id'))
+      },
+      received: function(data) {
+        messages.append(data['chat']);
+        return messages_to_bottom();
+      },
+      send_chat: function(textdata, convo_id) {
+        return this.perform('send_chat', {
+          body: textdata,
+          conversation_id: convo_id
+        });
+      }
+    });
+
+    // this is responsible for actually sending a message
+    return $('#new_personal_message').submit(function(e) {
+      var $this, textarea;
+      $this = $(this);
+      textarea = $this.find('#personal_message_body');
+      messages = $('#messages');
+      if ($.trim(textarea.val()).length > 1) {
+        App.private_chat.send_chat(textarea.val(), messages.data('conversation-id'));
+        textarea.val('');
+      }
+      e.preventDefault();
+      return false;
+    });
+  }
+};
+
 if (document.cookie === "") {
   console.log('user not logged in, not launching chat cable')
   return
@@ -60,25 +111,60 @@ if (document.cookie === "") {
 //note about eventdata: i added the top info in a field called eventdata then deleted it, to allow me to send
 //extra data in 1 ajax call, as opposed to making 2 ajax calls on 1 click
 
-//General functions to use through sidemenu ajax
+//GENERAL SIDEBAR FUNCTIONS
 
 //this function removes the old sidebar data, and creates the top part & messages
 function AppendData(d) {
   $( "#messages" ).remove();
   $(".side_menu_chat").append(d);
   $(".side_menu_group_info").empty();
-  $(".side_menu_group_info").append($("#eventdata").children());
-  $("#eventdata").remove();
+  if ($("#eventdata").length) {
+    $(".side_menu_group_info").append($("#eventdata").children());
+    $("#eventdata").remove();
+  };
+};
+
+function DeleteChats(){
+  if (App.global_chat !== undefined) {
+    App.cable.subscriptions.remove(App.global_chat);
+  } else if (App.private_chat !== undefined) {
+    App.cable.subscriptions.remove(App.private_chat);
+  };
 };
 
 //this function adds the new groupdata into the DOM before reinitializing the chat
 function SetChatGroup() {
-  App.cable.subscriptions.remove(App.global_chat);
-  var newgroup = $('#messages').data('group-id');
-  $('#messages').data('group-id', newgroup);
-  $('#group_id').attr('value', newgroup)
-  LoadChat();
+  if ($('.side_menu_group_info').is(':empty')) {
+
+    DeleteChats();
+    var newchat = $('#messages').data('conversation-id');
+    $('#group_id').attr('value', newchat);
+    $('.side_menu_chat_input').find('form').attr('class', 'new_personal_message');
+    $('.side_menu_chat_input').find('form').attr('id', 'new_personal_message');
+    if ($('.side_menu_chat_input').find('#group_id').attr('id') === "group_id") {
+      $('.side_menu_chat_input').find('#group_id').attr('name', 'conversation_id');
+      $('.side_menu_chat_input').find('#group_id').attr('id', 'conversation_id');
+      $('.side_menu_chat_input').find('#message_body').attr('name', 'personal_message[body]')
+      $('.side_menu_chat_input').find('#message_body').attr('id', 'personal_message_body')
+    };
+    LoadPrivateChat();
+  } else {
+
+    DeleteChats();
+    var newgroup = $('#messages').data('group-id');
+    $('#group_id').attr('value', newgroup);
+    $('.side_menu_chat_input').find('form').attr('class', 'new_message');
+    $('.side_menu_chat_input').find('form').attr('id', 'new_message');
+    if ($('.side_menu_chat_input').find('#conversation_id').attr('id') === "conversation_id") {
+      $('.side_menu_chat_input').find('#conversation_id').attr('name', 'group_id');
+      $('.side_menu_chat_input').find('#conversation_id').attr('id', 'group_id');
+      $('.side_menu_chat_input').find('#personal_message_body').attr('name', 'message[body]')
+      $('.side_menu_chat_input').find('#personal_message_body').attr('id', 'message_body')
+    };
+    LoadChat();
+  };
 };
+
 
 
 function ToggleChatView() {
@@ -117,8 +203,8 @@ function MenuLogic(){
 };
 
 
-//this is when a user clicks on an event in the sidebar
-$('.grouplink').on('click', function(e) {
+//this is when a user clicks on an eventchat/privatechat in the sidebar
+$('.grouplink, .chatlink').on('click', function(e) {
   e.preventDefault();
 
   $('.event_details_btn').toggleClass('event_details_btn_slide_in');
@@ -137,8 +223,6 @@ $('.grouplink').on('click', function(e) {
   }).fail(function(data){
     console.log('ajax submission failed');
   });
-
-
 });
 
 //this code is for when the user clicks a group link on the event page
