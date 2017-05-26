@@ -263,6 +263,15 @@
   }
 }
 
+// USER PROFILE
+
+// Removes p class for mobile
+@media screen and (max-width:495px){
+  #edit_profile_text {
+    display: none;
+  }
+}
+
 // FOOTER
 
 @media screen and (max-width:1013px) {
