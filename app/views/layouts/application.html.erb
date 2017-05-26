@@ -116,9 +116,9 @@
   <div class="trigger_chat_btn_container">
 
     <div class="notification_count">
-      <% if @user && @user.ownedrequests.empty? == false %>
+      <% if current_user && current_user.ownedrequests.empty? == false %>
         <i class="fa fa-circle fa-lg"></i>
-        <h6> <%= @user.ownedrequests.count %> </h6>
+        <h6> <%= current_user.ownedrequests.count %> </h6>
       <% end %>
     </div>
 
@@ -177,21 +177,6 @@
           </div>
 
 
-          <div id="eventdata">
-            <h4></h4>
-
-            <div class="side_menu_group_members">
-              <h5> EVENTRS GOING</h5>
-            </div>
-
-            <div class="side_menu_group_members_list">
-                <div class="profile_thumbnail">
-                  <a href="">
-                  </a>
-                </div>
-            </div>
-
-          </div>
         </div>
         <% if (current_user != nil)%>
         <div class="side_menu_chat_input">
@@ -273,9 +258,9 @@
 
         <div class="side_menu_main_eventrs">
           <h5 id="eventrs">EVENTRS <i class="fa fa-chevron-up"></i></h5>
-          <% if (current_user != nil) && (current_user.conversations.empty? != true) %>
+          <% if (current_user != nil) %>
             <div class="side_menu_main_eventrs_list">
-            <% current_user.conversations.all.each do |c| %>
+            <% current_user.conversations.each do |c| %>
                 <%=link_to user_show_conversation_url(c.opposite_convo_user(current_user).id), class: 'chatlink' do %>
                 <div class="side_menu_main_eventrs_item">
                   <div class="profile_thumbnail">

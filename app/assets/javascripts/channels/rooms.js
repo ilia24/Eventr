@@ -103,9 +103,6 @@ function LoadPrivateChat() {
 if (document.cookie === "") {
   console.log('user not logged in, not launching chat cable')
   return
-} else {
-  LoadChat();
-  $("#eventdata").remove();
 };
 
 //note about eventdata: i added the top info in a field called eventdata then deleted it, to allow me to send
