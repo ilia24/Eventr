@@ -1,6 +1,1 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  email: ilia
-  password_digest: ilia
-  avatar: nil

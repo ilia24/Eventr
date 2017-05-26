@@ -34,16 +34,14 @@
 
   <div class="event_going">
 
-    <% if event.users.count == 1 %>
-        <h6><strong><%=event.users.count%> </strong>EVENTR GOING</h6>
+    <% if event.goings.length == 1 %>
+        <h6><strong><%=event.goings.length%> </strong>EVENTR GOING</h6>
     <% else %>
-        <h6><strong><%=event.users.count%> </strong>EVENTRS GOING</h6>
+        <h6><strong><%=event.goings.length%> </strong>EVENTRS GOING</h6>
     <% end %>
 
     <div class="button_sm">
-      <a href= "<%=join_event_path(event)%>">
-        interested
-      </a>
+      <%= link_to 'interested', join_event_url(event),  :target => 'new' %>
     </div>
   </div>
 
