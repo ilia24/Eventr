@@ -1,10 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://ogp.me/ns/fb#">
   <head>
     <title>Eventr</title>
     <%= action_cable_meta_tag %>
     <%= csrf_meta_tags %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta property="og:title" content="Eventr" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.eventr.ca" />
+    <meta property="og:image" content="<%= image_url("eventr-logo.svg")%>" />
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
