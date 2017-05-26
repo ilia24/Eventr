@@ -232,6 +232,9 @@
 }
 
 @media screen and (max-width:848px){
+  .groups_content {
+    height: auto;
+  }
   .groups_wrapper {
     margin-right: 0;
   }
