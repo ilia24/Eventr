@@ -17,23 +17,33 @@
         <h5>MUSIC LOVER</h5>
       </div>
 
+      <div class="edit_profile">
+
+          <% if current_user == @user %>
+            <%= link_to edit_user_eventrinfo_path(@user) do%>
+              <div class="button_sm">
+                <i class="fa fa-pencil fa-lg"></i>
+                <p>edit profile</p>
+              </div>
+            <% end %>
+          <% else %>
+            <% if Conversation.findconvo(current_user, @user) != false %>
+              <%= link_to 'see chat', user_show_conversation_path(user_id: @user), :class => "see_chat_button" %>
+            <% else %>
+              <%= link_to 'send a message', user_new_conversation_path(user_id: @user), :class => "new_chat_button" %>
+            <%end %>
+          <%end%>
+
+      </div>
+
+
       <div class="user_profile_bio">
+
         <h5>BIO</h5>
         <% if @user.eventrinfo != nil %>
         <%= "#{@user.eventrinfo.bio}" %>
         <%  else %>
         <% end %>
-
-        <% if current_user == @user %>
-          <p> <%= link_to "Edit your profile", edit_user_eventrinfo_path(@user) %> </p>
-        <% else %>
-          <% if Conversation.findconvo(current_user, @user) != false %>
-            <%= link_to 'see chat', user_show_conversation_path(user_id: @user), :class => "see_chat_button" %>
-          <% else %>
-            <%= link_to 'send a message', user_new_conversation_path(user_id: @user), :class => "new_chat_button" %>
-          <%end %>
-
-        <%end%>
 
       </div>
 
