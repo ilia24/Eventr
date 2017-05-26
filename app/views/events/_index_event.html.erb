@@ -19,7 +19,7 @@
 
       <div class="event_name_time_loc">
         <div class="event_name">
-          <%= link_to "#{event.name}", event, :class => "link" %>
+          <%= link_to "#{event.name}", event, :class => "link", target: :_blank %>
         </div>
         <div class="event_time">
           <h5> <%= event.time.strftime('%-I:%M %p')%> </h5>
