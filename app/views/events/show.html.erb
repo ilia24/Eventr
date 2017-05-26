@@ -44,7 +44,6 @@
     </div>
 
     <!-- GROUPS SECTION -->
-
     <div class="heading_btn">
       <h4>GROUPS</h4>
       <div id="create_group_btn_container">
@@ -58,12 +57,12 @@
 
     <div class="groups_wrapper">
 
-      <!-- Creat a new group form -->
+      <!-- Create a new group form -->
       <%= render 'groups/group_form' %>
 
       <!-- Individual group containers -->
       <div class="groups_container">
-        <% @event.groups.each do |g| %>
+        <% @groups.each do |g| %>
           <% if g.id != nil %>
             <li class="groups">
                 <%= render 'groups/single_group', g: g %>
@@ -77,6 +76,7 @@
 
     </div>
 
+<% if true == false %>
     <!-- REVIEWS SECTION -->
 
     <!-- <div class="reviews">
@@ -118,6 +118,7 @@
       <% end %>
     </div>
  -->
+ <% end %>
 
     <div class="edit_delete">
       <% if session[:user_id] == @event.user_id %>
@@ -137,20 +138,22 @@
       <div id="map" data-parameter1='<%= @event.latitude %>' data-parameter2='<%= @event.longitude %>'></div>
     </div>
 
-    <h5 id="event_show_heading">
+    <div class="event_show_eventrs_going_container">
+      <h5 id="event_show_heading">
       <% count = @event.goings.count %>
       <% if count > 1 %>
       <%= "#{count} EVENTRS GOING" %>
       <% else %>
       <%= "#{count} EVENTR GOING" %>
       <%end%>
-    </h4>
-    <div>
-      <% if @event.users.include? current_user %>
+      
+      </h5>
+      <!-- <% if @event.users.include? current_user %>
+
         <%= link_to 'Leave event', leave_event_path(@event) %> <br>
       <% else %>
         <%= link_to 'Going', join_event_path(@event) %> <br>
-      <%end%>
+      <%end%> -->
 
       <ul class="event_show_eventrs_going">
       <% @event.users.each do |u| %>

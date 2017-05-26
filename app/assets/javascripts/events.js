@@ -18,6 +18,13 @@ if($('#map').length) {
     });
 };
 
+if (screen.width < 1140) {
+
+  $('.event_side_info').detach().prependTo('.event_description_wrapper');
+  $('.event_side_info').insertAfter('.event_show_header');
+
+};
+
 
 // These two secitons of code are responsible for opening and closing the group create form
 $('#single_group').on('click', function(e){
