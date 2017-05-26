@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 20170524185213) do
   end
 
   create_table "conversations", force: :cascade do |t|
-    t.integer  "name"
+    t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

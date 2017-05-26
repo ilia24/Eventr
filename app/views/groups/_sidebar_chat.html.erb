@@ -9,13 +9,19 @@
   <h4><%= g.name %> </h4>
 
   <div class="side_menu_group_members">
+    <% count = g.users.count %>
+    <% if count >1 %>
     <h5><%= g.users.count %> EVENTRS GOING</h5>
+    <% else %>
+    <h5><%= g.users.count %> EVENTR GOING</h5>
+    <% end %>
+
   </div>
 
   <div class="side_menu_group_members_list">
     <% g.users.all.each do |u| %>
       <div class="profile_thumbnail">
-        <a href="<%=user_path(u.id)%>">
+        <a href="<%=user_path(u.id)%>", target="_blank">
         <%= image_tag(u.avatar.thumb) %>
         </a>
       </div>

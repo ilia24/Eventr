@@ -3,7 +3,8 @@
   <div class="event_img_content">
 
     <div class="event_img">
-      <img src="<%="#{event.cover}"%>">
+      <a href="<%=event_path(event)%>", target="_blank"> <img src="<%="#{event.cover}"%>">
+      </a>
     </div>
 
     <div class="event_content">
@@ -19,7 +20,7 @@
 
       <div class="event_name_time_loc">
         <div class="event_name">
-          <%= link_to "#{event.name}", event, :class => "link" %>
+          <%= link_to "#{event.name}", event, :class => "link", target: :_blank %>
         </div>
         <div class="event_time">
           <h5> <%= event.time.strftime('%-I:%M %p')%> </h5>
@@ -41,7 +42,9 @@
     <% end %>
 
     <div class="button_sm">
-      <%= link_to 'interested', join_event_url(event),  :target => 'new' %>
+
+        <%= link_to "going", join_event_url(event),  target: :_blank %>
+
     </div>
   </div>
 

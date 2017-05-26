@@ -138,12 +138,18 @@
       <div id="map" data-parameter1='<%= @event.latitude %>' data-parameter2='<%= @event.longitude %>'></div>
     </div>
 
-
     <div class="event_show_eventrs_going_container">
       <h5 id="event_show_heading">
-        <%= "#{@event.goings.length} EVENTRS GOING" %>
-      </h4>
+      <% count = @event.goings.count %>
+      <% if count > 1 %>
+      <%= "#{count} EVENTRS GOING" %>
+      <% else %>
+      <%= "#{count} EVENTR GOING" %>
+      <%end%>
+      
+      </h5>
       <!-- <% if @event.users.include? current_user %>
+
         <%= link_to 'Leave event', leave_event_path(@event) %> <br>
       <% else %>
         <%= link_to 'Going', join_event_path(@event) %> <br>
@@ -151,7 +157,7 @@
 
       <ul class="event_show_eventrs_going">
       <% @event.users.each do |u| %>
-      <a href="<%=user_path(u.id)%>">
+      <a href="<%=user_path(u.id)%>", target="_blank">
       <li class="event_show_eventrs_going_thumbnail"><%= image_tag(u.avatar.thumb) %>
       </a>
       </li>
