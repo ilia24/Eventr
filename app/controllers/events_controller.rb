@@ -8,7 +8,6 @@ class EventsController < ApplicationController
 
   def index
     @event = Event.new
-    @events = Event.all
 
 
     if params[:search]
@@ -21,13 +20,14 @@ class EventsController < ApplicationController
         @events = Event.category_search(params[:category_search]).order("created_at DESC")
         flash[:notice] = "There are #{@events.count} results matching your search"
     else
-      @events = Event.all.order("created_at DESC")
+      @events = Event.all.includes(:goings)
     end
   end
 
   def show
-    @event = Event.find(params[:id])
+    @event = Event.includes([:goings, :groups, {:users => :eventrinfo}]).find(params[:id])
     @group = @event.groups.build
+    @groups = Group.includes(:users).where("event_id = ?", @event.id)
 
     if current_user
       @review = @event.reviews.build

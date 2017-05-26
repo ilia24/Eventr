@@ -44,7 +44,6 @@
     </div>
 
     <!-- GROUPS SECTION -->
-
     <div class="heading_btn">
       <h4>GROUPS</h4>
       <div id="create_group_btn_container">
@@ -58,12 +57,12 @@
 
     <div class="groups_wrapper">
 
-      <!-- Creat a new group form -->
+      <!-- Create a new group form -->
       <%= render 'groups/group_form' %>
 
       <!-- Individual group containers -->
       <div class="groups_container">
-        <% @event.groups.each do |g| %>
+        <% @groups.each do |g| %>
           <% if g.id != nil %>
             <li class="groups">
                 <%= render 'groups/single_group', g: g %>
@@ -77,6 +76,7 @@
 
     </div>
 
+<% if true == false %>
     <!-- REVIEWS SECTION -->
 
     <!-- <div class="reviews">
@@ -118,6 +118,7 @@
       <% end %>
     </div>
  -->
+ <% end %>
 
     <div class="edit_delete">
       <% if session[:user_id] == @event.user_id %>
@@ -138,8 +139,7 @@
     </div>
 
     <h5 id="event_show_heading">
-      <% count = @event.goings.count %>
-      <%= "#{count} EVENTRS GOING" %>
+      <%= "#{@event.goings.length} EVENTRS GOING" %>
     </h4>
     <div>
       <% if @event.users.include? current_user %>
