@@ -164,13 +164,59 @@
 
 // EVENT SHOW
 
-@media screen and (max-width:823px){
+@media screen and (max-width:848px){
+    .event_main_info {
+      width: 100%;
+    }
+    .event_side_info {
+      width: 100%;
+    }
+    .event_map_wrapper {
+      flex-basis: 100%;
+      padding-right: 0;
+      box-sizing: border-box;
+      margin-top: 24px;
+        #map {
+          height: 200px;
+        }
+    }
+    .event_description_wrapper {
+      margin-right: 0;
+    }
+}
+
+@media screen and (max-width:822px){
   .title_content {
     margin: 0 24px 0 24px;
   }
+  .event_main_wrapper {
+    margin: 24px 24px 0 24px;
+  }
 }
 
-@media screen and (max-width:1140px){
+@media screen and (max-width:520px){
+  .event_show_header {
+    height: 230px;
+    img {
+      height: 100%;
+      width: auto;
+    }
+  }
+}
+
+@media screen and (max-width:414px){
+  .title_content {
+    margin: 0 24px 0 24px;
+  }
+  .title_info {
+    h2 {
+      font-size: 16px;
+      margin-top: 6px;
+    }
+  }
+}
+
+@media screen and (min-width:849px) and (max-width:1140px){
   .event_main_info {
     width: 100%;
   }
