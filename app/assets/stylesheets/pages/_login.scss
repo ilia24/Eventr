@@ -22,4 +22,14 @@
   text-transform: uppercase;
   font-weight: 400;
   text-align: center;
+  color: #7f7f7f;
+}
+
+#sign_up_link {
+  color: #262626;
+  margin-left: 12px;
+}
+
+#sign_up_link:hover {
+  text-decoration: underline;
 }
