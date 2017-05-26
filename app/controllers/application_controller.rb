@@ -44,7 +44,9 @@ end
   end
 
   def current_user
-    session[:user_id] && User.find(session[:user_id])
+    if session[:user_id]
+      return User.includes(:eventrinfo, :groups, :members, :conversations, :personal_messages).find(session[:user_id])
+    end
   end
 
   helper_method :current_user, :ensure_logged_in, :ensure_hostinfo_filled_out
