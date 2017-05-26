@@ -10,7 +10,14 @@ class ConversationsController < ApplicationController
       @conversation = Conversation.create
       @conversation.users << current_user
       @conversation.users << other_user
-      redirect_to user_show_conversation_path, user_id: other_user.id
+      respond_to do |format|
+         format.html do
+
+           if request.xhr?
+             render :partial => '/conversations/sidebar_chat', locals: {c: @conversation}
+           end
+         end
+       end
     end
   end
 

@@ -14,7 +14,7 @@
         <% if Conversation.findconvo(current_user, user) != false %>
           <%= link_to 'see chat', user_show_conversation_path(user_id: user), :class => "see_chat_button" %>
         <% else %>
-          <%= link_to 'send a message', user_new_conversation_path(user_id: user), :class => "new_chat_button" %>
+          <%= link_to 'send a message', user_new_conversation_url(user_id: user), :class => "new_chat_button" %>
         <%end %>
   <%end%>
 </li>

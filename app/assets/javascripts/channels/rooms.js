@@ -244,7 +244,7 @@ $('.grouplink, .chatlink').on('click', function(e) {
 });
 
 //this code is for when a user clicks on "see message" on a user page
-$('.see_chat_button').on('click', function(e) {
+$('.see_chat_button, .new_chat_button').on('click', function(e) {
   e.preventDefault();
 
   $.ajax({
