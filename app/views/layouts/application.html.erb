@@ -44,7 +44,6 @@
   <!-- NAVIGATION BAR -->
 
   <nav>
-
     <div class="logo">
       <a href="/" id="eventr_logo_btn">
         <%= image_tag ("eventr-logo.svg"), :class=>"eventr_home_btn_on"%>
@@ -124,7 +123,7 @@
     <div class="notification_count">
       <% if current_user && current_user.ownedrequests.empty? == false %>
         <i class="fa fa-circle fa-lg"></i>
-        <h6> <%= current_user.ownedrequests.count %> </h6>
+        <h6> <%= current_user.ownedrequests.length %> </h6>
       <% end %>
     </div>
 
@@ -249,7 +248,7 @@
                   </div>
                   <div class="main_menu_group_content">
                     <h4><%= g.name %></h4>
-                    <h6><%= g.users.count %> EVENTRS</h6>
+                    <h6><%= g.users.length %> EVENTRS</h6>
                   </div>
                 </div>
               <% end %>
