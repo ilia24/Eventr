@@ -21,16 +21,22 @@ ActiveRecord::Schema.define(version: 20170524185213) do
   end
 
   create_table "conversations", force: :cascade do |t|
-    t.integer  "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "author_id"
+    t.integer  "receiver_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["author_id", "receiver_id"], name: "index_conversations_on_author_id_and_receiver_id", unique: true
+    t.index ["author_id"], name: "index_conversations_on_author_id", unique: true
+    t.index ["receiver_id"], name: "index_conversations_on_receiver_id", unique: true
   end
 
   create_table "eventrinfos", force: :cascade do |t|
-    t.integer "user_id"
-    t.string  "first_name"
-    t.string  "last_name"
-    t.text    "bio"
+    t.integer  "user_id"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.text     "bio"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "events", force: :cascade do |t|
@@ -53,9 +59,11 @@ ActiveRecord::Schema.define(version: 20170524185213) do
   end
 
   create_table "goings", force: :cascade do |t|
-    t.integer "number"
-    t.integer "user_id"
-    t.integer "event_id"
+    t.integer  "number"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "user_id"
+    t.integer  "event_id"
   end
 
   create_table "groups", force: :cascade do |t|
@@ -68,11 +76,13 @@ ActiveRecord::Schema.define(version: 20170524185213) do
   end
 
   create_table "hostinfos", force: :cascade do |t|
-    t.integer "user_id"
-    t.string  "name"
-    t.string  "address"
-    t.integer "capacity"
-    t.string  "website"
+    t.integer  "user_id"
+    t.string   "name"
+    t.string   "address"
+    t.integer  "capacity"
+    t.string   "website"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "members", force: :cascade do |t|
@@ -105,11 +115,13 @@ ActiveRecord::Schema.define(version: 20170524185213) do
   create_table "personal_messages", force: :cascade do |t|
     t.text     "body"
     t.integer  "conversation_id"
-    t.integer  "user_id"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.integer  "author_id"
+    t.integer  "receiver_id"
+    t.index ["author_id"], name: "index_personal_messages_on_author_id"
     t.index ["conversation_id"], name: "index_personal_messages_on_conversation_id"
-    t.index ["user_id"], name: "index_personal_messages_on_user_id"
+    t.index ["receiver_id"], name: "index_personal_messages_on_receiver_id"
   end
 
   create_table "requests", force: :cascade do |t|
@@ -133,9 +145,11 @@ ActiveRecord::Schema.define(version: 20170524185213) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "password_digest"
-    t.string "email"
-    t.string "avatar"
+    t.string   "password_digest"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.string   "email"
+    t.string   "avatar"
   end
 
 end

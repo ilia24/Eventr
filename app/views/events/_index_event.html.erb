@@ -41,9 +41,7 @@
     <% end %>
 
     <div class="button_sm">
-      <a href= "<%=join_event_path(event)%>">
-        interested
-      </a>
+        <%= link_to "interested", join_event_url(event),  target: :_blank %>
     </div>
   </div>
 
