@@ -1,6 +1,20 @@
 <div class="pmessage">
-  <p><%= personal_message.body %></p>
-  <p>at <strong><%= personal_message.created_at %></strong><br>
-    by <strong><%= personal_message.user.email %></strong></p>
-  <hr>
+  <div class="chat_user">
+    <div class="profile_thumbnail">
+      <a href="<%=user_path(personal_message.user.id)%>">
+      <%= image_tag(personal_message.user.avatar.thumb) %>
+      </a>
+    </div>
+    <div class="side_menu_chat_name_msg">
+      <div class="name_time">
+        <% if personal_message.user.eventrinfo != nil %>
+          <h5><%= personal_message.user.eventrinfo.first_name %> <%= personal_message.user.eventrinfo.last_name %></h5>
+        <% else %>
+          <h5><%= personal_message.user.email %></h5>
+        <% end %>
+        <h5><%= personal_message.timestamp %></h5>
+      </div>
+      <p><%= personal_message.body %></p>
+    </div>
+  </div>
 </div>

@@ -6,7 +6,11 @@
   </div>
   <div class="side_menu_chat_name_msg">
     <div class="name_time">
-      <h5><%= message.user.eventrinfo.first_name %> <%= message.user.eventrinfo.last_name %></h5>
+      <% if message.user.eventrinfo != nil %>
+        <h5><%= message.user.eventrinfo.first_name %> <%= message.user.eventrinfo.last_name %></h5>
+      <% else %>
+        <h5><%= message.user.email %> </h5>
+      <% end %>
       <h5><%= message.timestamp %></h5>
     </div>
     <p><%= message.body %></p>
