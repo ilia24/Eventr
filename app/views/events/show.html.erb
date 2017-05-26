@@ -154,7 +154,7 @@
 
       <ul class="event_show_eventrs_going">
       <% @event.users.each do |u| %>
-      <a href="<%=user_path(u.id)%>">
+      <a href="<%=user_path(u.id)%>", target="_blank">
       <li class="event_show_eventrs_going_thumbnail"><%= image_tag(u.avatar.thumb) %>
       </a>
       </li>
