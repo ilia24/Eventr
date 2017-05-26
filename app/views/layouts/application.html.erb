@@ -71,11 +71,11 @@
       <a href="/">HOME</a>
       <a href="/events">BROWSE</a>
 
-        <% if current_user %>
-          <% if User.find(session[:user_id]).eventrinfo ==nil  %>
+        <% if @cuser %>
+          <% if @cuser.eventrinfo ==nil  %>
             <div class="profile_thumbnail_wrapper">
               <div class="profile_thumbnail">
-                <%= image_tag(current_user.avatar, :class=>"dropbtn") %>
+                <%= image_tag(@cuser.avatar, :class=>"dropbtn") %>
               </div>
               <div id="myDropdown" class="dropdown-content">
                 <%= image_tag("dropdown-arrow-01.svg") %>
@@ -86,7 +86,7 @@
             <%else%>
             <div class="profile_thumbnail_wrapper">
               <div class="profile_thumbnail">
-                <%= image_tag(current_user.avatar, :class=>"dropbtn") %>
+                <%= image_tag(@cuser.avatar, :class=>"dropbtn") %>
               </div>
               <div id="myDropdown" class="dropdown-content">
                 <%= image_tag("dropdown-arrow-01.svg") %>
@@ -121,9 +121,9 @@
   <div class="trigger_chat_btn_container">
 
     <div class="notification_count">
-      <% if current_user && current_user.ownedrequests.empty? == false %>
+      <% if @cuser && @cuser.ownedrequests.empty? == false %>
         <i class="fa fa-circle fa-lg"></i>
-        <h6> <%= current_user.ownedrequests.length %> </h6>
+        <h6> <%= @cuser.ownedrequests.length %> </h6>
       <% end %>
     </div>
 
@@ -183,7 +183,7 @@
 
 
         </div>
-        <% if (current_user != nil)%>
+        <% if (@cuser != nil)%>
         <div class="side_menu_chat_input">
           <div class="map_icon_container">
             <i class="fa fa-map-marker fa-lg"></i>
@@ -202,9 +202,9 @@
         <h5 id="pending">PENDING REQUESTS <i class="fa fa-chevron-up"></i></h5>
 
         <div class="side_menu_main_pending">
-          <% if current_user != nil %>
-          <% if current_user.ownedrequests.empty? != true %>
-          <% current_user.ownedrequests.each do |request| %>
+          <% if @cuser != nil %>
+          <% if @cuser.ownedrequests.empty? != true %>
+          <% @cuser.ownedrequests.each do |request| %>
                     <div class="request_pending_container">
 
                       <div class="profile_thumbnail">
@@ -238,8 +238,8 @@
           <h5 id="groups">GROUPS <i class="fa fa-chevron-up"></i></h5>
 
           <div class="side_menu_main_groups_list">
-            <% if current_user != nil %>
-            <% current_user.groups.each do |g| %>
+            <% if @cuser != nil %>
+            <% @cuser.groups.each do |g| %>
 
               <%=link_to event_group_url(g.event.id, g.id), class: 'grouplink' do %>
                 <div class="side_menu_main_groups_item">
@@ -263,20 +263,20 @@
 
         <div class="side_menu_main_eventrs">
           <h5 id="eventrs">EVENTRS <i class="fa fa-chevron-up"></i></h5>
-          <% if (current_user != nil) %>
+          <% if (@cuser != nil) %>
             <div class="side_menu_main_eventrs_list">
-            <% current_user.conversations.each do |c| %>
-                <%=link_to user_show_conversation_url(c.opposite_convo_user(current_user).id), class: 'chatlink' do %>
+            <% @cuser.conversations.each do |c| %>
+                <%=link_to user_show_conversation_url(c.opposite_convo_user(@cuser).id), class: 'chatlink' do %>
                 <div class="side_menu_main_eventrs_item">
                   <div class="profile_thumbnail">
-                    <%= image_tag(c.opposite_convo_user(current_user).avatar.thumb) %>
+                    <%= image_tag(c.opposite_convo_user(@cuser).avatar.thumb) %>
                   </div>
                   <div class="side_menu_chat_name_msg">
                     <div class="name_time">
-                      <% if c.opposite_convo_user(current_user).eventrinfo != nil %>
-                          <h5><%= c.opposite_convo_user(current_user).eventrinfo.first_name %> <%= c.opposite_convo_user(current_user).eventrinfo.last_name %></h5>
+                      <% if c.opposite_convo_user(@cuser).eventrinfo != nil %>
+                          <h5><%= c.opposite_convo_user(@cuser).eventrinfo.first_name %> <%= c.opposite_convo_user(@cuser).eventrinfo.last_name %></h5>
                       <% else %>
-                          <h5><%= c.opposite_convo_user(current_user).email %></h5>
+                          <h5><%= c.opposite_convo_user(@cuser).email %></h5>
                       <%end%>
                       <% if c.personal_messages.exists? %>
                         <P><%= c.personal_messages.last.body %></p>

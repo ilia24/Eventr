@@ -8,6 +8,9 @@ def load_chatfunc
   # @events = Event.all
   @event = Event.new
   @group = Group.new
+  if current_user
+    @cuser = current_user
+  end
 end
 
   def ensure_logged_in
