@@ -204,6 +204,21 @@
   }
 }
 
+@media screen and (max-width:484px){
+  .new_group_form_container {
+    transform: translateY(-404px);
+  }
+  .formdisp {
+    transform: translateY(0);
+  }
+  .groups_container {
+    transform: translateY(-400px);
+  }
+  .shift {
+    transform: translateY(24px);
+  }
+}
+
 @media screen and (max-width:414px){
   .title_content {
     margin: 0 24px 0 24px;
@@ -213,6 +228,12 @@
       font-size: 16px;
       margin-top: 6px;
     }
+  }
+}
+
+@media screen and (max-width:848px){
+  .groups_wrapper {
+    margin-right: 0;
   }
 }
 
