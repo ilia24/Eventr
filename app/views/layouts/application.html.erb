@@ -148,7 +148,6 @@
       </div>
 
       <!-- GROUP CONTENT CONTAINER -->
-      <% if (current_user != nil)%>
       <div class="side_menu_group_content">
 
         <div class="side_menu_group_event_details">
@@ -213,8 +212,9 @@
         <h5 id="pending">PENDING REQUESTS <i class="fa fa-chevron-up"></i></h5>
 
         <div class="side_menu_main_pending">
-          <% if @user.ownedrequests.empty? != true %>
-          <% @user.ownedrequests.each do |request| %>
+          <% if current_user != nil %>
+          <% if current_user.ownedrequests.empty? != true %>
+          <% current_user.ownedrequests.each do |request| %>
                     <div class="request_pending_container">
 
                       <div class="profile_thumbnail">
@@ -239,6 +239,7 @@
 
                 <% end %>
           <% end %>
+          <% end %>
         </div>
 
         <!-- GROUPS SECTION -->
@@ -247,7 +248,8 @@
           <h5 id="groups">GROUPS <i class="fa fa-chevron-up"></i></h5>
 
           <div class="side_menu_main_groups_list">
-            <% @user.groups.each do |g| %>
+            <% if current_user != nil %>
+            <% current_user.groups.each do |g| %>
 
               <%=link_to event_group_url(g.event.id, g.id), class: 'grouplink' do %>
                 <div class="side_menu_main_groups_item">
@@ -260,14 +262,13 @@
                   </div>
                 </div>
               <% end %>
-
+            <% end %>
             <% end %>
           </div>
 
         </div>
 
 
-        <% end %>
         <!-- EVENTRS SECTION -->
 
         <div class="side_menu_main_eventrs">
@@ -304,8 +305,8 @@
     </div>
 
   </div>
-
   <body>
+
     <%= yield %>
 
     <footer>
