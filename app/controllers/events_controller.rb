@@ -29,7 +29,7 @@ class EventsController < ApplicationController
     @group = @event.groups.build
     @groups = Group.includes(:users).where("event_id = ?", @event.id)
 
-    if current_user
+    if @cuser
       @review = @event.reviews.build
     end
   end
@@ -44,7 +44,7 @@ class EventsController < ApplicationController
 
   def create
     @event = Event.new(event_params)
-    @event.user = current_user
+    @event.user = @cuser
     # @event.users << @user
 
     if @event.save
@@ -83,8 +83,8 @@ class EventsController < ApplicationController
 
   def leave
     @event = Event.find(params[:event_id])
-    @event.users.delete(current_user)
-    @event.dropusergroups(current_user)
+    @event.users.delete(@cuser)
+    @event.dropusergroups(@cuser)
     flash[:alert] = 'You have left the event and associated groups!'
     redirect_to event_path(@event)
   end

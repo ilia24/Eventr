@@ -24,10 +24,10 @@
         <%  else %>
         <% end %>
 
-        <% if current_user == @user %>
+        <% if @cuser == @user %>
           <p> <%= link_to "Edit your profile", edit_user_eventrinfo_path(@user) %> </p>
         <% else %>
-          <% if Conversation.findconvo(current_user, @user) != false %>
+          <% if Conversation.findconvo(@cuser, @user) != false %>
             <%= link_to 'see chat', user_show_conversation_path(user_id: @user), :class => "see_chat_button" %>
           <% else %>
             <%= link_to 'send a message', user_new_conversation_path(user_id: @user), :class => "new_chat_button" %>

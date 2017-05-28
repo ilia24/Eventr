@@ -4,11 +4,11 @@ class ConversationsController < ApplicationController
   def new
     other_user = User.find(params[:user_id])
 
-    if Conversation.findconvo(current_user, other_user) != false
+    if Conversation.findconvo(@cuser, other_user) != false
       redirect_to user_show_conversation_path, user_id: other_user.id
     else
       @conversation = Conversation.create
-      @conversation.users << current_user
+      @conversation.users << @cuser
       @conversation.users << other_user
       respond_to do |format|
          format.html do
@@ -25,7 +25,7 @@ class ConversationsController < ApplicationController
     @personal_message = PersonalMessage.new
     @personal_messages = PersonalMessage.all
     @otheruser = User.find(params[:user_id])
-    @conversation = Conversation.findconvo(current_user, @otheruser)
+    @conversation = Conversation.findconvo(@cuser, @otheruser)
     respond_to do |format|
        format.html do
 

@@ -15,7 +15,7 @@
 
     <div class="dropdown_menu_mobile">
       <div class="dropdown_menu_user">
-        <%= link_to "#{current_user.eventrinfo.first_name}", (user_path(session[:user_id])) %>
+        <%= link_to "#{@cuser.eventrinfo.first_name}", (user_path(session[:user_id])) %>
         <i class="fa fa-user-o fa-lg"></i>
       </div>
       <div class="dropdown_menu_links">
