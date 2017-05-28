@@ -1,6 +1,6 @@
 
-<% if current_user %>
-  <% if current_user.eventrinfo == nil  %>
+<% if @cuser %>
+  <% if @cuser.eventrinfo == nil  %>
     <div class="dropdown_menu_mobile">
       <div class="dropdown_menu_user">
         <%= link_to 'Complete your profile', new_user_eventrinfo_path(session[:user_id]),:id=> "dropdown_profile_link" %>

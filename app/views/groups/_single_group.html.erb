@@ -1,7 +1,7 @@
 <div class="groups_content">
-  <% if current_user == nil %>
+  <% if @cuser == nil %>
     <h4><%= g.name %></h4>
-  <% elsif g.users.ids.include? current_user.id %>
+  <% elsif g.users.ids.include? @cuser.id %>
     <h4><%= link_to g.name, event_group_path(@event, g), class: "eventgrouplink" %></h4>
   <% else %>
     <h4><%= link_to g.name, event_group_path(@event, g), class: "intrudergrouplink" %></h4>
@@ -28,10 +28,10 @@
   <h6> <strong><%= g.users.length %></strong> EVENTRS </h6>
 
 
-  <% if g.users.include? current_user %>
+  <% if g.users.include? @cuser %>
     <%= button_to "Leave group", leave_group_path(@event, g.id), :method => "get", :class => "button_sm", :id => 'leavebutton' %>
   <% elsif g.private == true %>
-    <% if g.invited_users.include? current_user %>
+    <% if g.invited_users.include? @cuser %>
       <%= button_to "Cancel request?", delete_request_to_join_group_path(@event, g.id), :method => "delete", :class => "button_sm" %>
     <% else %>
       <%= button_to "Request to join", request_to_join_group_path(@event, g.id), :method => "get", :class => "button_sm" %>
