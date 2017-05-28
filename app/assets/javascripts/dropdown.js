@@ -11,7 +11,7 @@ $(function() {
 
   if (screen.width < 1241) {
 
-    $('#eventr_logo_btn').bind('click', function(e){
+    $('#eventr_logo_btn').click( function(e){
       e.preventDefault();
 
     });
