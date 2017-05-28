@@ -142,13 +142,16 @@
 }
 
 
-
+// Event containers fill page when down to 1 column
 @media screen and (max-width:812px){
   .event_container {
     width: 100%;
     .event_img img{
       height: auto;
     }
+  }
+  .event_name_time_loc {
+    max-width: none;
   }
 }
 
