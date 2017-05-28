@@ -163,6 +163,11 @@
       </li>
       <%end%>
       </ul>
+      <% if @event.users.include? @cuser %>
+        <%= link_to 'Leave event', leave_event_path(@event) %> <br>
+      <% else %>
+        <%= link_to 'Going', join_event_path(@event) %> <br>
+      <%end%>
     </div>
 
   </div>
