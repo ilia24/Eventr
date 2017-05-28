@@ -10,7 +10,7 @@ before_action :ensure_proper_user, only: [:create, :edit, :update, :destroy]
   def create
     # @eventrinfo = @user.eventrinfo.build(eventrinfo_params)
     @eventrinfo = Eventrinfo.new(:first_name => eventrinfo_params[:first_name], :last_name => eventrinfo_params[:last_name],:bio => eventrinfo_params[:bio])
-    @eventrinfo.user = current_user
+    @eventrinfo.user = @cuser
 
       if eventrinfo_params[:avatar] != nil
         @user.avatar = eventrinfo_params[:avatar]
@@ -59,7 +59,7 @@ end
 
   def ensure_proper_user
     @user = User.find(params[:user_id])
-    if @user != current_user
+    if @user != @cuser
       flash[:alert] = "you do not have permission to access that page"
       redirect_to root_path
     end

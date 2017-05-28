@@ -8,7 +8,7 @@ class ReviewsController < ApplicationController
 
   def create
     @review = @event.reviews.build(review_params)
-    @review.user = current_user
+    @review.user = @cuser
 
     if @review.save
       flash[:notice] = 'Review posted succesfully!'
