@@ -6,9 +6,24 @@
 }
 
 .user_profile_container {
+  padding: 0 24px 0 24px;
   width: 600px;
   margin-top: 80px;
+}
 
+.edit_profile {
+  position: relative;
+  float: right;
+  margin: 36px 24px 0 0;
+  .button_sm {
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+    padding-right: 15px;
+    p {
+      margin: 0 0 0 4px;
+    }
+  }
 }
 
 .user_profile_top {
