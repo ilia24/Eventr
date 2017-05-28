@@ -10,6 +10,8 @@ def load_chatfunc
   # @group = Group.new
   if current_user
     @cuser = current_user
+    @user = current_user
+    cookies[:user_id] = @user.id
   end
 end
 
@@ -19,13 +21,6 @@ end
       redirect_to new_session_url
   end
 end
-
-# def cookie_set
-#     @user = current_user
-#     return unless current_user
-#     cookies[:user_id] = @user.id
-# end
-
 
   def ensure_hostinfo_filled_out
     @user = User.find(session[:user_id])
