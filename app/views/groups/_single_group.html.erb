@@ -7,7 +7,7 @@
     <h4><%= link_to g.name, event_group_path(@event, g), class: "intrudergrouplink" %></h4>
   <% end %>
 
-<ul>
+<ul class='groupmembers'>
   <% g.users.each do |u| %>
     <li class="profile_member">
     <a href="<%=user_path(u.id)%>", target="_blank">

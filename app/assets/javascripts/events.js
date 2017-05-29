@@ -88,9 +88,13 @@ function leaveGroup(g) {
 
   }).done(function(data){
     console.log('ajax submission succeeded');
-    var groupbox = g.parentElement.parentElement;
-    groupbox.remove();
-    $('#submitgroupbutton').removeAttr("disabled")
+    var groupbox = $(g.parentElement.parentElement);
+    if (groupbox.find('.profile_member').length > 1) {
+      groupbox.find('.groupmembers li:last-child').remove();
+    } else {
+      groupbox.remove();
+    };
+    $('#submitgroupbutton').removeAttr("disabled");
   }).fail(function(data){
     console.log('ajax submission failed');
   }).always(function(){
