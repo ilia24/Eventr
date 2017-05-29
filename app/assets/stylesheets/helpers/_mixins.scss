@@ -144,6 +144,36 @@
   }
 }
 
+@media screen and (max-width:542px){
+  .jlegend {
+    top: 40%;
+  }
+}
+
+@media screen and (max-width:640px){
+  .index_header_container {
+    height: auto;
+  }
+}
+
+@media screen and (max-width:464px){
+  .jlegend_text {
+    height: auto;
+    h4 {
+      color: white;
+      font-weight: 400;
+      letter-spacing: 6px;
+    }
+    .button_container {
+      margin-top: 24px;
+      .button_sm_outline {
+        padding: 10px 15px;
+        width: auto;
+      }
+    }
+  }
+}
+
 
 // Event containers fill page when down to 1 column
 @media screen and (max-width:812px){
