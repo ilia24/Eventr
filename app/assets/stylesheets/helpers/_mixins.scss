@@ -236,6 +236,15 @@
       margin-top: 6px;
     }
   }
+  .carousel_item_text {
+    width: 70%;
+  }
+  .carousel_item_text{
+    top: 60%;
+    .button_container {
+      margin-top: 24px;
+    }
+  }
 }
 
 @media screen and (max-width:848px){
