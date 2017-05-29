@@ -39,5 +39,14 @@ def adduser(user)
   end
 end
 
+def useringroup(user)
+  self.groups.all.each do |g|
+    if g.users.include? user
+      return true
+    end
+  end
+  false
+end
+
 
 end

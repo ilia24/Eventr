@@ -103,7 +103,7 @@ function leaveGroup(g) {
 
       $('.joinbutton').on('click', function(e) {
         // e.preventDefault();
-        
+
         var group = e.currentTarget.form;
         // joinGroup(group);
       });
@@ -121,6 +121,10 @@ function leaveGroup(g) {
 
 $('.joinbutton').on('click', function(g){
   console.log('join fired');
+});
+
+$('.alreadybutton').on('click', function(g){
+  g.preventDefault();
 });
 
 // this is the JS code to bind the leavegroup function to the leavegroup button
