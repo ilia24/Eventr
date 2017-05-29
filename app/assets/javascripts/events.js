@@ -91,6 +91,22 @@ function leaveGroup(g) {
     var groupbox = $(g.parentElement.parentElement);
     if (groupbox.find('.profile_member').length > 1) {
       groupbox.find('.groupmembers li:last-child').remove();
+      var action = groupbox.find('#leavebutton').parent().attr('action');
+      var newaction = action.replace('leave', 'join');
+      groupbox.find('#leavebutton').parent().attr('action', newaction);
+      groupbox.find('#leavebutton').unbind();
+      groupbox.find('#leavebutton').attr({
+        value: 'join',
+        id: 'nil',
+        class: 'joinbutton'
+      });
+
+      $('.joinbutton').on('click', function(e) {
+        // e.preventDefault();
+        
+        var group = e.currentTarget.form;
+        // joinGroup(group);
+      });
     } else {
       groupbox.remove();
     };
@@ -100,8 +116,12 @@ function leaveGroup(g) {
   }).always(function(){
     console.log('ajax ran');
   });
-
 };
+
+
+$('.joinbutton').on('click', function(g){
+  console.log('join fired');
+});
 
 // this is the JS code to bind the leavegroup function to the leavegroup button
 $('#leavebutton').on('click', function(lbut) {
