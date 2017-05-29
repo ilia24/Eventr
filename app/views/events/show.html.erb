@@ -17,6 +17,18 @@
       <span class="title_location"><%= @event.location %></span>
     </div>
 
+
+      <% if @event.users.include? @cuser %>
+      <%= link_to leave_event_path(@event) do%>
+        <div class="button_sm">Leave event</div>
+      <% end %>
+      <% else %>
+      <%= link_to join_event_path(@event) do%>
+        <div class="button_sm">Going</div>
+      <% end %>
+      <%end%>
+    </div>
+
   </div>
 </div>
 
@@ -163,11 +175,6 @@
       </li>
       <%end%>
       </ul>
-      <% if @event.users.include? @cuser %>
-        <%= link_to 'Leave event', leave_event_path(@event) %> <br>
-      <% else %>
-        <%= link_to 'Going', join_event_path(@event) %> <br>
-      <%end%>
     </div>
 
   </div>
