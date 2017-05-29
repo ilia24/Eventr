@@ -7,6 +7,11 @@
   margin-right: 12px;
   margin-bottom: 50px;
 }
+
+.event_container:nth-last-child(-n+4) {
+  box-shadow: none;
+  border: none;
+}
 //
 // .event_container:first-child{
 //   margin-left: 0;

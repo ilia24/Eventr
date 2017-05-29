@@ -5,6 +5,7 @@ function LoadChat() {
   // this code scrolls the chatbox to the bottom
   var messages, messages_to_bottom;
   messages = $('#messages');
+
   if ($('#messages').length > 0) {
     messages_to_bottom = function() {
       return messages.scrollTop(messages.prop("scrollHeight"));
@@ -47,6 +48,8 @@ function LoadChat() {
       e.preventDefault();
       return false;
     });
+
+
   }
 };
 
