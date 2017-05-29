@@ -25,6 +25,7 @@ if (screen.width < 1140) {
 
 };
 
+// Change heading size for mobile
 if ($(window).width() <= 464) {
 
   $(function() {
@@ -34,6 +35,15 @@ if ($(window).width() <= 464) {
   });
 
 };
+
+if ($('#event_img').width() < 292) {
+
+  $(this).css('height', 'auto');
+  $(this).css('width', '100%')
+
+};
+
+
 
 
 // These two secitons of code are responsible for opening and closing the group create form

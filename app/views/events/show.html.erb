@@ -50,7 +50,7 @@
         <% if current_user %>
         <p id="single_group"> <%= link_to '+ Create a new group', new_event_group_path(@event) %> </p>
         <% else %>
-        <p> <%= link_to 'Log In to create a new group', new_session_path %></p>
+        <p id="login_create_group"> <%= link_to 'Log in to create a new group', new_session_path %></p>
         <% end %>
       </div>
     </div>
@@ -146,7 +146,7 @@
       <% else %>
       <%= "#{count} EVENTR GOING" %>
       <%end%>
-      
+
       </h5>
       <!-- <% if @event.users.include? current_user %>
 
