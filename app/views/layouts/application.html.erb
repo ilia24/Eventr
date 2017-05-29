@@ -13,8 +13,6 @@
     <meta property="og:description" content="Eventr is the best way to find new friends to go to events with!" />
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCicAETBLou3SdGkO9emwhptyQWfSD6Sp0"></script>
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700" rel="stylesheet">
 
     <!-- Favicon -->
@@ -38,6 +36,7 @@
 
     <%= stylesheet_link_tag "owl.carousel" %>
     <%= stylesheet_link_tag "owl.theme.default.min" %>
+
 
   </head>
 
@@ -301,7 +300,8 @@
 
     <footer>
       <%= render 'layouts/footer' %>
-
+      <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCicAETBLou3SdGkO9emwhptyQWfSD6Sp0"></script>
     </footer>
 
     <div class="error">
