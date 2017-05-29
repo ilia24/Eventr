@@ -40,6 +40,22 @@
 
 .jlegend_text {
   text-align: center;
+  .button_container {
+    display: flex;
+    justify-content: center;
+  }
+  .button_sm_outline {
+    text-align: center;
+    border: solid 2px white;
+    width: 200px;
+    padding: 15px 0 15px 0;
+    h4{
+      color: white;
+      font-weight: 400;
+      letter-spacing: 1px;
+      font-size: 12px;
+    }
+  }
 }
 
 .jlegend h3 {
