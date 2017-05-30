@@ -69,3 +69,12 @@
 .hidegrouplink {
   transform: translateX(-188px) !important;
 }
+
+#buy_ticket {
+  color: white;
+  transition: 0.3s ease;
+}
+
+#buy_ticket:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
