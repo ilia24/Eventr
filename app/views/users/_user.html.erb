@@ -1,20 +1,30 @@
-
-<li>
+<li class="user_chat_box">
   <%if user != @cuser%>
         <% if user.eventrinfo != nil %>
           <a href="<%=user_path(user.id)%>">
-          <%= image_tag(user.avatar.thumb)%>
-          <%= user.eventrinfo.first_name %> <%= user.eventrinfo.last_name %></a>
+            <%= image_tag(user.avatar.thumb)%>
+            <div class="user_chat_name">
+              <h3>
+                <%= user.eventrinfo.first_name %> <%= user.eventrinfo.last_name %>
+              </h3>
+            </div>
+          </a>
         <% else %>
           <a href="<%=user_path(user.id)%>">
-          <%= image_tag(user.avatar.thumb)%>
-          <%= user.email %></a> |
+            <%= image_tag(user.avatar.thumb)%>
+            <%= user.email %>
+          </a> |
         <%end%>
 
         <% if Conversation.findconvo(@cuser, user) != false %>
           <%= link_to 'see chat', user_show_conversation_path(user_id: user), :class => "see_chat_button" %>
         <% else %>
-          <%= link_to 'send a message', user_new_conversation_url(user_id: user), :class => "new_chat_button" %>
+          <%= link_to user_new_conversation_url(user_id: user), :class => "new_chat_button" do%>
+            <div class="button_sm">
+              <i class="fa fa-paper-plane"></i>
+              <p id="edit_profile_text">send message</p>
+            </div>
+          <%end %>
         <%end %>
   <%end%>
 </li>

@@ -1,6 +1,42 @@
-.messages_chat {
+#messages_heading {
+  margin-left: 100px;
+}
+
+.messages_chat_container {
   margin: 70px 100px 0 100px;
+}
+
+.messages_chat {
+  padding-left: 0;
+  display: flex;
+  margin: 0 -12px;
   li {
     list-style-type: none;
+  }
+  .user_chat_box {
+    background-color: white;
+    padding: 24px;
+    border: 1px solid #d4d4d4;
+    width: 300px;
+    margin: 0 12px;
+    .user_chat_name {
+      margin-left: 12px;
+      display: inline-block;
+      h3 {
+        margin: 0;
+        color: #262626;
+      }
+    }
+    .button_sm {
+      margin-top: 24px;
+      display: flex;
+      justify-content: center;
+      #edit_profile_text {
+        margin: 0 0 0 6px;
+      }
+    }
+  }
+  li:first-child, li:last-child{
+    display: none;
   }
 }
