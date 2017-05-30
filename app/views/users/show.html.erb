@@ -28,9 +28,19 @@
             <% end %>
           <% else %>
             <% if Conversation.findconvo(@cuser, @user) != false %>
-              <%= link_to 'see chat', user_show_conversation_path(user_id: @user), :class => "see_chat_button" %>
+              <%= link_to user_show_conversation_path(user_id: @user), :class => "see_chat_button" do %>
+                <div class="button_sm">
+                  <i class="fa fa-comment-o"></i>
+                  <p id="edit_profile_text">see chat</p>
+                </div>
+                <% end %>
             <% else %>
-              <%= link_to 'send a message', user_new_conversation_path(user_id: @user), :class => "new_chat_button" %>
+              <%= link_to user_new_conversation_path(user_id: @user), :class => "new_chat_button" do%>
+                <div class="button_sm">
+                  <i class="fa fa-paper-plane"></i>
+                  <p id="edit_profile_text">send message</p>
+                </div>
+                <% end %>
             <%end %>
           <%end%>
 
@@ -44,17 +54,6 @@
         <%= "#{@user.eventrinfo.bio}" %>
         <% end %>
 
-        <% if @cuser == @user %>
-          <p> <%= link_to "Edit your profile", edit_user_eventrinfo_path(@user) %> </p>
-        <% else %>
-          <% if Conversation.findconvo(@cuser, @user) != false %>
-            <%= link_to 'see chat', user_show_conversation_path(user_id: @user), :class => "see_chat_button" %>
-          <% else %>
-            <%= link_to 'send a message', user_new_conversation_path(user_id: @user), :class => "new_chat_button" %>
-          <%end %>
-
-        <%end%>
-
       </div>
 
     </div>
@@ -63,7 +62,7 @@
 
     <div class="user_profile_activity">
       <% @user.events.each do |e| %>
-      <%= render 'events/single_event_profile', event: e %>
+        <%= render 'events/single_event_profile', event: e %>
       <%end%>
     </div>
 
