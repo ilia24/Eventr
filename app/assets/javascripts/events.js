@@ -25,6 +25,26 @@ if (screen.width < 1140) {
 
 };
 
+// Change heading size for mobile
+if ($(window).width() <= 464) {
+
+  $(function() {
+    $('h3').each(function(i, em) {
+       $(em).replaceWith('<h4>'+$(em).html()+'</h4>');
+    });
+  });
+
+};
+
+if ($('#event_img').width() < 292) {
+
+  $(this).css('height', 'auto');
+  $(this).css('width', '100%')
+
+};
+
+
+
 
 // These two secitons of code are responsible for opening and closing the group create form
 $('#single_group').on('click', function(e){

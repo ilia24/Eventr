@@ -12,6 +12,7 @@
 .index_header {
   height: 100%;
   width: 100%;
+  position: relative;
 }
 
 .event_index_search_mobile {
@@ -35,11 +36,31 @@
   position: absolute;
   width: 100%;
   z-index: 1;
-  margin-top: 89px;
+  left: 50%;
+  top: 45%;
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
 }
 
 .jlegend_text {
   text-align: center;
+  .button_container {
+    display: flex;
+    justify-content: center;
+  }
+  .button_sm_outline {
+    text-align: center;
+    border: solid 2px white;
+    width: 200px;
+    padding: 15px 0 15px 0;
+    h4{
+      color: white;
+      font-weight: 400;
+      letter-spacing: 1px;
+      font-size: 12px;
+    }
+  }
 }
 
 .jlegend h3 {

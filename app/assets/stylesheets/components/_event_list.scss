@@ -7,6 +7,11 @@
   margin-right: 12px;
   margin-bottom: 50px;
 }
+
+.event_container:nth-last-child(-n+4) {
+  box-shadow: none;
+  border: none;
+}
 //
 // .event_container:first-child{
 //   margin-left: 0;
@@ -24,19 +29,18 @@
 
 .event_img img{
   position: absolute;
-  left: 50%;
-  top: 50%;
   height: 120%;
   width: auto;
+  left: 50%;
+  top: 50%;
   -webkit-transform: translate(-50%,-50%);
   -ms-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
 }
 
 .event_content {
-  padding-top: 24px;
-  padding-left: 24px;
-  padding-right: 24px;
+  padding: 24px 24px 0 24px;
+  display: flex;
 }
 
 .event_date {
