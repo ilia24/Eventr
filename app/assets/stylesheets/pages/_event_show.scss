@@ -72,23 +72,32 @@
 }
 
 .title_header h2{
-  margin: 0;
-  text-align: left;
+  margin: 6px 0;
 }
 
 .title_content {
+  width: 100%;
   padding-top: 24px;
   padding-bottom: 24px;
   margin-left: 100px;
   margin-right: 100px;
-  display: inline-block;
-  a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
+.event_show_date_name_loc {
+  margin-left: 36px;
+  display: flex;
+  flex-direction: column;
+  h2 {
+    display: inline-block;
   }
 }
 
 .title_info {
-  margin-left: 36px;
+  display: flex;
+  align-items: center;
 }
 
 .event_main_wrapper {

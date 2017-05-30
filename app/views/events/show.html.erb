@@ -1,20 +1,23 @@
 <div class="title_header">
   <div class="title_content">
 
-    <div class="event_show_date">
-      <div class="event_mon">
-        <%= @event.date.strftime("%^b") %>
-      </div>
-
-      <div class="event_show_day">
-        <%= @event.date.strftime("%d") %>
-      </div>
-    </div>
 
     <div class="title_info">
-      <span class="title_date"><%= @event.date.strftime("%A, %B %-d at %I:%M %p") %></span>
-      <h2><%= @event.name %></h2>
-      <span class="title_location"><%= @event.location %></span>
+      <div class="event_show_date">
+        <div class="event_mon">
+          <%= @event.date.strftime("%^b") %>
+        </div>
+
+        <div class="event_show_day">
+          <%= @event.date.strftime("%d") %>
+        </div>
+      </div>
+
+      <div class="event_show_date_name_loc">
+        <span class="title_date"><%= @event.date.strftime("%A, %B %-d at %I:%M %p") %></span>
+        <h2><%= @event.name %></h2>
+        <span class="title_location"><%= @event.location %></span>
+      </div>
     </div>
 
       <% if @event.users.include? @cuser %>
