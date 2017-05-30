@@ -203,6 +203,51 @@ function MenuLogic(){
 };
 };
 
+// This is an ajax call to leave a group
+function leaveGroup(g) {
+  $.ajax({
+    method: $(g).attr('method'),
+    url: $(g).attr('action'),
+    dataType: 'html'
+
+  }).done(function(data){
+    console.log('ajaxs submission succeeded');
+    var groupbox = $(g.parentElement.parentElement);
+    if (groupbox.find('.profile_member').length > 1) {
+      groupbox.find('.groupmembers li:last-child').remove();
+      var action = groupbox.find('#leavebutton').parent().attr('action');
+      var newaction = action.replace('leave', 'join');
+      groupbox.find('#leavebutton').parent().attr('action', newaction);
+      groupbox.find('#leavebutton').unbind();
+      groupbox.find('#leavebutton').attr({
+        value: 'join',
+        id: 'nil',
+        class: 'joinbutton'
+      });
+      if ($('.side_menu_chat_input').hasClass("show_chat")) {
+        $('.side_menu_main_content').toggleClass( "main_slide_in" );
+        $('.side_menu_group_content').toggleClass( "group_slide_out" );
+        $('.side_menu_chat_input').toggleClass( "show_chat" );
+        $('.side_menu_back_chat').toggleClass( "back_chat_slide_in" );
+      };
+      $('.joinbutton').on('click', function(e) {
+        // e.preventDefault();
+
+        var group = e.currentTarget.form;
+        // joinGroup(group);
+      });
+    } else {
+      groupbox.remove();
+    };
+    $('#submitgroupbutton').removeAttr("disabled");
+  }).fail(function(data){
+    console.log('ajax submission failed');
+  }).always(function(){
+    console.log('ajax ran');
+  });
+};
+
+
 //this code is for when the user clicks a group link on the event page
 $('.eventgrouplink').on('click', function(e) {
   e.preventDefault();
@@ -223,6 +268,53 @@ $('.eventgrouplink').on('click', function(e) {
   });
 });
 
+// This is an ajax call to create a new group within the event page
+$('#new_group').on('submit', function(e) {
+  e.preventDefault();
+
+  $.ajax({
+    method: $(this).attr('method'),
+    url: $(this).attr('action'),
+    data: $(this).serialize(),
+    dataType: 'html'
+
+  }).done(function(data){
+    console.log('ajax submission succeeded')
+    var group = $('<li>').html(data).attr('class', 'groups');
+    $('.groups_container').prepend(group);
+    $('.new_group_form_container').toggleClass( "formdisp" );
+    $('.groups_container').toggleClass("shift");
+    $('#single_group').toggleClass('hidegrouplink');
+    $('#leavebutton').on('click', function(e) {
+      e.preventDefault();
+      var group = e.currentTarget.form;
+      leaveGroup(group);
+    });
+    $('.eventgrouplink').on('click', function(e) {
+      e.preventDefault();
+
+      $.ajax({
+        method: 'GET',
+        url: $(this).attr('href'),
+        data: $(this).serialize(),
+        dataType: 'html'
+
+      }).done(function(data){
+        console.log('ajax submission succeeded');
+        AppendData(data);
+        SetChatGroup();
+        MenuLogic();
+      }).fail(function(data){
+        console.log('ajax submission failed');
+      });
+    });
+  }).fail(function(data){
+    console.log('ajax submission failed');
+  }).always(function(){
+    console.log('ajax ran');
+  });
+
+});
 //PRIV CHAT ajax
 //this is when a user clicks on an eventchat/privatechat in the sidebar
 $('.grouplink, .chatlink').on('click', function(e) {

@@ -67,38 +67,6 @@ $('#closegroupform').on('click', function(e) {
 
 
 
-
-// This is an ajax call to create a new group within the event page
-$('#new_group').on('submit', function(e) {
-  e.preventDefault();
-
-  $.ajax({
-    method: $(this).attr('method'),
-    url: $(this).attr('action'),
-    data: $(this).serialize(),
-    dataType: 'html'
-
-  }).done(function(data){
-    console.log('ajax submission succeeded')
-    var group = $('<li>').html(data).attr('class', 'groups');
-    $('.groups_container').prepend(group);
-    $('.new_group_form_container').toggleClass( "formdisp" );
-    $('.groups_container').toggleClass("shift");
-    $('#single_group').toggleClass('hidegrouplink');
-    $('#leavebutton').on('click', function(e) {
-      e.preventDefault();
-      var group = e.currentTarget.form;
-      leaveGroup(group);
-    });
-  }).fail(function(data){
-    console.log('ajax submission failed');
-  }).always(function(){
-    console.log('ajax ran');
-  });
-
-});
-
-
 // This is an ajax call to leave a group
 function leaveGroup(g) {
   $.ajax({
@@ -120,7 +88,12 @@ function leaveGroup(g) {
         id: 'nil',
         class: 'joinbutton'
       });
-
+      if ($('.side_menu_chat_input').hasClass("show_chat")) {
+        $('.side_menu_main_content').toggleClass( "main_slide_in" );
+        $('.side_menu_group_content').toggleClass( "group_slide_out" );
+        $('.side_menu_chat_input').toggleClass( "show_chat" );
+        $('.side_menu_back_chat').toggleClass( "back_chat_slide_in" );
+      };
       $('.joinbutton').on('click', function(e) {
         // e.preventDefault();
 
