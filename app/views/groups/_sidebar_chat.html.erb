@@ -9,11 +9,10 @@
   <h4><%= g.name %> </h4>
 
   <div class="side_menu_group_members">
-    <% count = g.users.count %>
-    <% if count >1 %>
-    <h5><%= g.users.count %> EVENTRS GOING</h5>
+    <% if g.users.length >1 %>
+    <h5><%= g.users.length %> EVENTRS GOING</h5>
     <% else %>
-    <h5><%= g.users.count %> EVENTR GOING</h5>
+    <h5>1 EVENTR GOING</h5>
     <% end %>
 
   </div>

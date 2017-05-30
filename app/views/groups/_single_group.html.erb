@@ -7,7 +7,7 @@
     <h4><%= link_to g.name, event_group_path(@event, g), class: "intrudergrouplink" %></h4>
   <% end %>
 
-<ul>
+<ul class='groupmembers'>
   <% g.users.each do |u| %>
     <li class="profile_member">
     <a href="<%=user_path(u.id)%>", target="_blank">
@@ -37,7 +37,11 @@
       <%= button_to "Request to join", request_to_join_group_path(@event, g.id), :method => "get", :class => "button_sm" %>
     <% end %>
   <% else %>
-    <%= button_to "Join", join_group_path(@event, g.id), :method => "get", :class => "button_sm" %>
+    <% if @event.useringroup(@cuser) == true %>
+        <%= button_to "Already in Group", root_path, :class => 'alreadybutton'%>
+    <% else %>
+        <%= button_to "Join", join_group_path(@event, g.id), :method => "get", :class => "button_sm", :class => 'joinbutton' %>
+    <% end %>
   <%end%>
 
 </div>
