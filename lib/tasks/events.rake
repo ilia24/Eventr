@@ -101,18 +101,32 @@ task :get_fb_events => :environment do
      else
        cover = resp.dig('cover', 'source')
      end
-
+     city = resp.dig('place', 'location', 'city')
+     street = resp.dig('place', 'location', 'street')
+     postcode = resp.dig('place', 'location', 'zip')
 # this establishes the rest of the creation variables
      picurl3 =  smallpic.first[0]
      name =  resp['name']
      description = resp['description']
-     location =  resp.dig('place', 'location', 'street')
+
+      if (street != nil) && (city != nil) && (postcode != nil)
+        location = "#{street}, #{city}, #{postcode}"
+      elsif (street != nil) && (city != nil)
+        location = "#{street}, #{city}"
+      elsif (street != nil) && (postcode != nil)
+        location = "#{street}, #{postcode}"
+      elsif (street != nil)
+        location = "#{street}"
+      else
+        location = nil
+      end
+
      latitude = resp.dig('place', 'location', 'latitude')
      longitude = resp.dig('place', 'location', 'longitude')
      time = resp['start_time']
      date = resp['start_time']
 # this makes sure that the adress is workable within our system
-     if (latitude.nil? && longitude.nil?) && (location.nil?)
+     if (latitude.nil? && longitude.nil?) && location.nil?
        puts "#{name} has invalid address, event not saved"
        next
      end
