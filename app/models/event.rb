@@ -47,9 +47,4 @@ def useringroup(user)
   end
   false
 end
-
-def spaceddescription
-  desc = self.description
-  this = desc.scan(/^\S*\./)
-end
 end
