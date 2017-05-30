@@ -25,7 +25,13 @@
 
 
 <div class="event_going">
-  <h6> <strong><%= g.users.length %></strong> EVENTRS </h6>
+  <h6>
+    <% if g.users.length > 1 %>
+      <strong><%= g.users.length %></strong> EVENTRS
+    <% else %>
+      <strong>1</strong> EVENTR
+    <% end %>
+  </h6>
 
 
   <% if g.users.include? @cuser %>
