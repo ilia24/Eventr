@@ -13,7 +13,7 @@ task :get_fb_events => :environment do
      event = e['id']
      puts e['id']
      puts "#{counter} Events grabbed & saved"
-     resp = HTTParty.get("https://graph.facebook.com/v2.7/#{event}?fields=photos%7Bfrom%2Ccreated_time%2Cwebp_images%7D%2Cname%2C%20description%2C%20place%2C%20ticket_uri%2C%20start_time%2Cadmins%7Bname%7D%2Ccover&access_token=#{token}")
+     resp = HTTParty.get("https://graph.facebook.com/v2.7/#{event}?fields=photos%7Bfrom%2Ccreated_time%2Cimages%7D%2Cname%2C%20description%2C%20place%2C%20ticket_uri%2C%20start_time%2Cadmins%7Bname%7D%2Ccover&access_token=#{token}")
 
     #  this makes the first series of authentication, it makes sure the pictures are uploaded from an admin account
      pictures = []
@@ -36,7 +36,7 @@ task :get_fb_events => :environment do
     else
      resp['photos']['data'].each do |photo_data|
        if (admin_id_list.each.include? photo_data['from']['id']) || (whitelist.include? photo_data['from']['name'])
-         photo_data['webp_images'].each do |picture|
+         photo_data['images'].each do |picture|
            pic = []
            pic << picture['source']
            pic << picture['height']
