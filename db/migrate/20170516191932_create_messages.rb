@@ -7,5 +7,10 @@ class CreateMessages < ActiveRecord::Migration[5.0]
 
       t.timestamps
     end
+    create_table :comments do |t|
+      t.text :content
+      t.references :message, foreign_key: true
+      t.references :user, foreign_key: true
+    end
   end
 end
