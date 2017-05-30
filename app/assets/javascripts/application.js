@@ -23,3 +23,4 @@
 //= require avatar_upload.js
 //= require footer_remove.js
 //= require scroll.js
+//= require nav_links.js
