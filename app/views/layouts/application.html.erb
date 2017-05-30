@@ -90,6 +90,8 @@
               <div id="myDropdown" class="dropdown-content">
                 <%= image_tag("dropdown-arrow-01.svg") %>
                 <%= link_to "#{@cuser.eventrinfo.first_name}", (user_path(session[:user_id])), :id=> "dropdown_profile_link" %>
+                <a id="hidden_nav" href="/">HOME</a>
+                <a id="hidden_nav" href="/events">BROWSE</a>
                 <%= link_to 'Message', users_path %>
                 <%= link_to 'Log Out', session_path("current"), :method => :delete%>
               </div>
