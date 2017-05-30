@@ -135,18 +135,14 @@
     <div class="event_show_eventrs_going_container">
       <h5 id="event_show_heading">
       <% if @event.goings.length > 1 %>
-      <%= "#{@event.goings.length} EVENTRS GOING" %>
-      <% else %>
-      <%= "1 EVENTR GOING" %>
+        <%= "#{@event.goings.length} EVENTRS GOING" %>
+      <% elsif @event.goings.length == 1 %>
+        <%= "1 EVENTR GOING" %>
+      <% else%>
+        <%= "0 EVENTRS GOING" %>
       <%end%>
 
       </h5>
-      <!-- <% if @event.users.include? current_user %>
-
-        <%= link_to 'Leave event', leave_event_path(@event) %> <br>
-      <% else %>
-        <%= link_to 'Going', join_event_path(@event) %> <br>
-      <%end%> -->
 
       <ul class="event_show_eventrs_going">
       <% @event.users.each do |u| %>
@@ -159,7 +155,7 @@
       <% if @event.users.include? @cuser %>
         <%= link_to 'Leave event', leave_event_path(@event) %> <br>
       <% else %>
-        <%= link_to 'Going', join_event_path(@event) %> <br>
+        <%= link_to 'GO!', join_event_path(@event) %> <br>
       <%end%>
     </div>
 
