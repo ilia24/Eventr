@@ -72,9 +72,14 @@
 
 #buy_ticket {
   color: white;
-  transition: 0.3s ease;
+  .button_sm_outline{
+    background-color: none;
+    transition: 0.3s ease;
+  }
 }
 
-#buy_ticket:hover {
-  background-color: rgba(255, 255, 255, 0.2);
+#buy_ticket {
+  .button_sm_outline:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+  }
 }

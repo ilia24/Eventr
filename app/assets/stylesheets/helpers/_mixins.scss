@@ -60,7 +60,7 @@
   }
 }
 
-@media screen and (max-width:415px){
+@media screen and (max-width:414px){
   .owl-carousel{
     margin-top: 24px !important;
   }
@@ -70,6 +70,12 @@
   }
   .index_main {
     margin-top: 36px !important;
+  }
+  .carousel_item_text {
+    .button_sm_outline {
+      width: auto;
+      padding: 10px 15px;
+    }
   }
 }
 
