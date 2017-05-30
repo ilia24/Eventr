@@ -309,6 +309,37 @@
   }
 }
 
+// Reposition going button
+@media screen and (max-width:600px){
+  .title_content {
+    display: inline-block;
+    justify-content: initial;
+    align-items: initial;
+    a {
+      margin: auto;
+      .button_sm {
+        width: 90px;
+        position: relative;
+        left: 120px;
+        margin-top: 24px;
+
+      }
+    }
+  }
+}
+
+// Reduce going button size for mobile
+@media screen and (max-width:414px){
+  .title_content{
+    .button_sm {
+      padding: 10px;
+    }
+  }
+}
+
+
+
+
 // USER PROFILE
 
 // Removes p class for mobile

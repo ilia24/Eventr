@@ -72,20 +72,35 @@
 }
 
 .title_header h2{
-  margin: 0;
-  text-align: left;
+  margin: 6px 0;
 }
 
 .title_content {
+  width: 100%;
   padding-top: 24px;
   padding-bottom: 24px;
   margin-left: 100px;
   margin-right: 100px;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  a {
+    margin-left: 24px;
+  }
+}
+
+.event_show_date_name_loc {
+  margin-left: 36px;
+  display: flex;
+  flex-direction: column;
+  h2 {
+    display: inline-block;
+  }
 }
 
 .title_info {
-  margin-left: 36px;
+  display: flex;
+  align-items: center;
 }
 
 .event_main_wrapper {
@@ -114,6 +129,7 @@
   padding: 24px;
   border: solid 1px #dfdfdf;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08);
+  word-wrap: break-word;
 }
 
 .form_field {
