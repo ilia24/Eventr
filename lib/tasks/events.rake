@@ -9,6 +9,7 @@ task :get_fb_events => :environment do
   #  this establishs the base loop which iterates over all the accumulated ID's above
   #  and it also makes a base counter to be able to see things happenining in the console
    counter = 0
+
    parsed_response['data'].each do |e|
      event = e['id']
      puts e['id']
